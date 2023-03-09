@@ -424,10 +424,7 @@ namespace Krisiun_Project
                                 if (drills.Frente == true)
                                 {
                                    
-                                        if (primeiroPonto == null || (point.X == primeiroPonto.Value.X && point.Y == primeiroPonto.Value.Y))
-                                        {
-                                            if (!primeiroPontoDesenhado)
-                                            {
+                                      
                                                 if (PontoX.Contains(pointF))
                                                   {
                                                       posicaotextoz1 += 10;
@@ -436,27 +433,19 @@ namespace Krisiun_Project
                                         g.DrawRectangle(pen1, x, pitchinicialZ(), kei, fukasa);
                                         g.FillRectangle(brush1, x, pitchinicialZ(), kei, fukasa);
                                         PontoX.Add(pointF);
-                                                primeiroPontoDesenhado = true;
+
+                                    posicaotextoz1 = 5;
 
 
-                                                Sohumdesenho.Add(pointF1);
-                                            }
-
-                                            // desenha o objeto...
-                                        }
-                                        else
-                                        {
-                                            continue;
-                                        }
+                                    Sohumdesenho.Add(pointF1);
+                                                                                       // desenha o objeto...
+                                     
                                       
                                     
 
                                 }
 
-                                if (primeiroPonto == null)
-                                {
-                                    primeiroPonto = point;
-                                }
+                               
                                 if (drills.Tras == true)
                                 {
                                     g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() + peca.z + posicaotextoz2);
@@ -492,7 +481,6 @@ namespace Krisiun_Project
                     }
                     // Adicione mais condicionais aqui para outras ferramentas
 
-                    posicaotextoz1 = 5;
                     // ... 
                 }
             }
