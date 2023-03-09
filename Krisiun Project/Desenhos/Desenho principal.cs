@@ -2,6 +2,7 @@
 using Krisiun_Project.janela_principal;
 using Krisiun_Project.Numeros;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.SqlTypes;
@@ -421,7 +422,7 @@ namespace Krisiun_Project
                                     g.FillRectangle(brush1, x, pitchinicialZ() + peca.z - fukasa, kei, fukasa);
                                 }
                                     
-
+                                if(coordenadas.Count >= 1) { return; }
                             }
                             //daqui pra baixo é o desenho do lado
 
