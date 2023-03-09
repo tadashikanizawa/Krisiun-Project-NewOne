@@ -284,11 +284,14 @@ namespace Krisiun_Project
                     var pen1 = Pens.DarkCyan;
                     Graphics g = e.Graphics;
                     var font  = new Font("Arial", 7);
-                    
-                    float meiox = meio.PontoInicialX();
+
+                List<PointF> PontoX = new List<PointF>();
+                float meiox = meio.PontoInicialX();
                     float meioy = meio.PontoInicialY();
                     float halfpecax = peca.width / 2;
                     float halfpecay = peca.height / 2;
+                float posicaotextoz1 = 5;
+                float posicaotextoz2 = 5;   
                 StringFormat stringformat = new StringFormat();
                 stringformat.FormatFlags = StringFormatFlags.DirectionVertical;
 
@@ -407,16 +410,27 @@ namespace Krisiun_Project
                                 SizeF valortam = g.MeasureString(valor, font);
                                 float valorx = valortam.Width / 2;
                                 float posicaotexto = x + halfkei - valorx;
+       
                                 brush1.Color = Color.FromArgb(100, drills.Color);
                                 if (drills.Frente == true)
                                 {
-                                    g.DrawString(valor,font,brush,posicaotexto,pitchinicialZ() - valortam.Height - 5);
+
+                                    PointF pointF = new PointF(point.X, pitchinicialZ());
+
+                                    if(PontoX.Contains(pointF))
+                                    {
+                                        posicaotextoz1 += 10;
+                                    }
+                                    if(PontoX.Count>=1)
+                                    { return; }
+                                    g.DrawString(valor,font,brush,posicaotexto,pitchinicialZ() - valortam.Height - posicaotextoz1);
                                     g.DrawRectangle(pen1, x, pitchinicialZ(), kei, fukasa);
                                     g.FillRectangle(brush1, x, pitchinicialZ(), kei, fukasa);
+                                    PontoX.Add(pointF);
                                 }
                                 if(drills.Tras == true)
                                 {
-                                    g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() + peca.z + 5);
+                                    g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() + peca.z + posicaotextoz2);
                                     g.DrawRectangle(pen1, x, pitchinicialZ() + peca.z - fukasa, kei, fukasa);
                                     g.FillRectangle(brush1, x, pitchinicialZ() + peca.z - fukasa, kei, fukasa);
                                 }
@@ -427,6 +441,8 @@ namespace Krisiun_Project
 
 
                         }
+
+                        posicaotextoz1 = 5;
                     }
                     // Verifica se a ferramenta é uma instância de Taps
                     else if (ferramenta is Tap taps)
