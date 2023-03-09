@@ -1,0 +1,27 @@
+﻿22/02 - Quarta 
+Arrumei a DGV_frente:
+- precisa arrumar a DGV_tras. 
+- dar um jeito nas coordenadas.
+
+22/02-1923
+- inclui botao de excluir nas DGV.
+
+21:30
+- Criei uma nova form para adicionar Ferramentas. (Precisa melhorar a interface e adicionar as escolhas)
+
+
+23/02
+05:07 - Ta complicado esse negócio de mudar os lados.
+14:50 - melhorei o botão de excluir da DVG. Vou instanciar ferramenta sem Bool.
+
+
+16:50 - Dividi em 2 listas e a coisa até que funcionou.
+
+17:30 - Começei a fazer funcionar o painel de criar trecos.
+
+19:18 - Parei pra ver anime. Estava organizando os códigos das DGV em uma classe separada.
+
+24/02
+05:14 - Estou tentando corrigir o bug que começou a ocorrer ao transformar DGV_CellContentClick em método.
+
+06:21 - Adicionando List de TextBox aos métodos pra ficar mais organizado (Grandes chances de dar Ruim).
