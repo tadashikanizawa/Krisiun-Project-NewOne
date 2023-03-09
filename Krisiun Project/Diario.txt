@@ -31,4 +31,7 @@ Arrumei a DGV_frente:
 
 06/03
 
-07:55 - a variavel do panel esta esta invertido (coloquei mais uma, Panel1 e Panel2, o de frente e de tras ta invertido)
+07:55 - a variavel do panel esta esta invertido (coloquei mais u
+ma, Panel1 e Panel2, o de frente e de tras ta invertido)
+
+teste do github
