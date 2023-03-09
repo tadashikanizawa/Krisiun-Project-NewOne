@@ -295,7 +295,9 @@ namespace Krisiun_Project
                 float posicaotextoz2 = 5;   
                 StringFormat stringformat = new StringFormat();
                 stringformat.FormatFlags = StringFormatFlags.DirectionVertical;
-                bool isFirst = true;
+                PointF? primeiroPonto = null;
+                bool primeiroPontoDesenhado = false;
+
 
                 // Itera sobre as ferramentas e desenha cada uma na superfície do Panel
                 foreach (var ferramenta in ferramentas)
@@ -421,23 +423,41 @@ namespace Krisiun_Project
                       
                                 if (drills.Frente == true)
                                 {
-                                    if (isFirst)
-                                    {
-
-                                        if (PontoX.Contains(pointF))
+                                   
+                                        if (primeiroPonto == null || (point.X == primeiroPonto.Value.X && point.Y == primeiroPonto.Value.Y))
                                         {
-                                            posicaotextoz1 += 10;
-                                        }
+                                            if (!primeiroPontoDesenhado)
+                                            {
+                                                if (PontoX.Contains(pointF))
+                                                  {
+                                                      posicaotextoz1 += 10;
+                                                  }
                                         g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() - valortam.Height - posicaotextoz1);
                                         g.DrawRectangle(pen1, x, pitchinicialZ(), kei, fukasa);
                                         g.FillRectangle(brush1, x, pitchinicialZ(), kei, fukasa);
                                         PontoX.Add(pointF);
-                                        isFirst = false;
-                                    }
-                                    Sohumdesenho.Add(pointF1);
+                                                primeiroPontoDesenhado = true;
+
+
+                                                Sohumdesenho.Add(pointF1);
+                                            }
+
+                                            // desenha o objeto...
+                                        }
+                                        else
+                                        {
+                                            continue;
+                                        }
+                                      
+                                    
 
                                 }
-                                if(drills.Tras == true)
+
+                                if (primeiroPonto == null)
+                                {
+                                    primeiroPonto = point;
+                                }
+                                if (drills.Tras == true)
                                 {
                                     g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() + peca.z + posicaotextoz2);
                                     g.DrawRectangle(pen1, x, pitchinicialZ() + peca.z - fukasa, kei, fukasa);
@@ -451,7 +471,7 @@ namespace Krisiun_Project
 
                         }
 
-                        posicaotextoz1 = 5;
+                     
                     }
                     // Verifica se a ferramenta é uma instância de Taps
                     else if (ferramenta is Tap taps)
@@ -472,6 +492,7 @@ namespace Krisiun_Project
                     }
                     // Adicione mais condicionais aqui para outras ferramentas
 
+                    posicaotextoz1 = 5;
                     // ... 
                 }
             }
