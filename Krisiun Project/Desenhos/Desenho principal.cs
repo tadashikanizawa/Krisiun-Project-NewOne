@@ -286,6 +286,7 @@ namespace Krisiun_Project
                     var font  = new Font("Arial", 7);
 
                 List<PointF> PontoX = new List<PointF>();
+                List<PointF> Sohumdesenho = new List<PointF>();
                 float meiox = meio.PontoInicialX();
                     float meioy = meio.PontoInicialY();
                     float halfpecax = peca.width / 2;
@@ -294,6 +295,7 @@ namespace Krisiun_Project
                 float posicaotextoz2 = 5;   
                 StringFormat stringformat = new StringFormat();
                 stringformat.FormatFlags = StringFormatFlags.DirectionVertical;
+                bool isFirst = true;
 
                 // Itera sobre as ferramentas e desenha cada uma na superfície do Panel
                 foreach (var ferramenta in ferramentas)
@@ -412,21 +414,28 @@ namespace Krisiun_Project
                                 float posicaotexto = x + halfkei - valorx;
        
                                 brush1.Color = Color.FromArgb(100, drills.Color);
+
+                                PointF pointF = new PointF(point.X, pitchinicialZ());
+                                PointF pointF1 = new PointF(x, pitchinicialZ());
+                          
+                      
                                 if (drills.Frente == true)
                                 {
-
-                                    PointF pointF = new PointF(point.X, pitchinicialZ());
-
-                                    if(PontoX.Contains(pointF))
+                                    if (isFirst)
                                     {
-                                        posicaotextoz1 += 10;
+
+                                        if (PontoX.Contains(pointF))
+                                        {
+                                            posicaotextoz1 += 10;
+                                        }
+                                        g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() - valortam.Height - posicaotextoz1);
+                                        g.DrawRectangle(pen1, x, pitchinicialZ(), kei, fukasa);
+                                        g.FillRectangle(brush1, x, pitchinicialZ(), kei, fukasa);
+                                        PontoX.Add(pointF);
+                                        isFirst = false;
                                     }
-                                    if(PontoX.Count>=1)
-                                    { return; }
-                                    g.DrawString(valor,font,brush,posicaotexto,pitchinicialZ() - valortam.Height - posicaotextoz1);
-                                    g.DrawRectangle(pen1, x, pitchinicialZ(), kei, fukasa);
-                                    g.FillRectangle(brush1, x, pitchinicialZ(), kei, fukasa);
-                                    PontoX.Add(pointF);
+                                    Sohumdesenho.Add(pointF1);
+
                                 }
                                 if(drills.Tras == true)
                                 {
