@@ -442,14 +442,11 @@ namespace Krisiun_Project
                 var pen1 = Pens.DarkCyan;
                 Graphics g = e.Graphics;
                 var font = new Font("Arial", 7);
-
-                float posicaotextoz1 = 5;
-                float posicaotextoz2 = 5;
                 List<PointF>textposition = new List<PointF>();
-                StringFormat stringformat = new StringFormat();
-                stringformat.FormatFlags = StringFormatFlags.DirectionVertical;
                 Dictionary<string, string> textValues = new Dictionary<string, string>();
                 Dictionary<string, string> textValues1 = new Dictionary<string, string>();
+              //Dictionary<string, List<Ferramentas>> ferramentasPorPosicao = new Dictionary<string, List<Ferramentas>>();
+
 
                 foreach (var ferramenta in ferramentas)
                 {
@@ -460,10 +457,7 @@ namespace Krisiun_Project
                         // Obtém as coordenadas do Drills
                         var coordenadas = drills.CoordenadasList;
                         var x = coordenadas[drills.numlado].X;
-                        var y = coordenadas[drills.numlado].Y;
-                    
                         var shinx = shin.x;
-
                         float fukasa = drills.Fukasa * peca.scale;
                         float kei = drills.Kei * peca.scale;
                         float halfkei = kei / 2;
@@ -471,16 +465,14 @@ namespace Krisiun_Project
                         x = x + shinx - halfkei;
                         SolidBrush brush1 = new SolidBrush(drills.Color);
 
-                        string valor = "φ" + drills.Kei.ToString();
-                        SizeF valortam = g.MeasureString(valor, font);
-                        float valorx = valortam.Width / 2;
-                        float posicaotexto = x + halfkei - valorx;
-
-                        brush1.Color = Color.FromArgb(100, drills.Color);
+                        string valor = "φ" + drills.Kei.ToString() + "深" + drills.Fukasa.ToString();
+                        brush1.Color = Color.FromArgb(150, drills.Color);
                         PointF point = new PointF(coordenadas[drills.numlado].X, coordenadas[drills.numlado].Y);
+          
                         textposition.Add(point);
-              
 
+                        // Adiciona a ferramenta à lista de ferramentas na posição correspondente
+    
 
                         if (drills.Frente == true)
                         {
@@ -509,6 +501,8 @@ namespace Krisiun_Project
                             g.FillRectangle(brush1, x, pitchinicialZ() + peca.z - fukasa, kei, fukasa);
                         }
 
+                        // Obtem a lista de ferramentas na posição atual do Drills
+                     
 
                     }
                 }
@@ -550,6 +544,7 @@ namespace Krisiun_Project
                         g.DrawString(text, font, brush, x, y);
                     }
                 }
+
             }
 
         }
