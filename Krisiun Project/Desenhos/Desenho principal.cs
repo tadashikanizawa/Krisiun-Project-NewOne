@@ -279,24 +279,20 @@ namespace Krisiun_Project
             {
                 // Define um pincel e uma caneta para desenhar as ferramentas
                 Pen pen = new Pen(Color.Black, 2);
-                    //pen.DashStyle = DashStyle.Dot;
-                    Brush brush = Brushes.Black;
-                    var pen1 = Pens.DarkCyan;
-                    Graphics g = e.Graphics;
-                    var font  = new Font("Arial", 7);
+                //pen.DashStyle = DashStyle.Dot;
+                Brush brush = Brushes.Black;
+                var pen1 = Pens.DarkCyan;
+                Graphics g = e.Graphics;
+                var font = new Font("Arial", 7);
 
-                List<PointF> PontoX = new List<PointF>();
-                List<PointF> Sohumdesenho = new List<PointF>();
                 float meiox = meio.PontoInicialX();
-                    float meioy = meio.PontoInicialY();
-                    float halfpecax = peca.width / 2;
-                    float halfpecay = peca.height / 2;
-                float posicaotextoz1 = 5;
-                float posicaotextoz2 = 5;   
+                float meioy = meio.PontoInicialY();
+                float halfpecax = peca.width / 2;
+                float halfpecay = peca.height / 2;
+
                 StringFormat stringformat = new StringFormat();
                 stringformat.FormatFlags = StringFormatFlags.DirectionVertical;
-                PointF? primeiroPonto = null;
-                bool primeiroPontoDesenhado = false;
+
 
 
                 // Itera sobre as ferramentas e desenha cada uma na superfície do Panel
@@ -326,10 +322,10 @@ namespace Krisiun_Project
                                 x *= -1;
                                 shinx = shin.x1;
                             }
-                            if(inverterY == true)
+                            if (inverterY == true)
                             {
                                 y *= -1;
-                                    shiny = shin.y1;
+                                shiny = shin.y1;
                             }
                             float kei = drills.Kei * peca.scale;
                             float halfkei = kei / 2;
@@ -340,12 +336,12 @@ namespace Krisiun_Project
 
                             //sobre as linhas
                             var linhax1 = x + halfkei;
-                            var linhax2 = meiox + halfpecax + linhaextra ; // lado direito
+                            var linhax2 = meiox + halfpecax + linhaextra; // lado direito
                             var linhax3 = meiox - halfpecax - linhaextra; //lado esquerdo
                             var linhay1 = y + halfkei;
                             var linhay2 = meioy - halfpecay - linhaextra;
                             var linhay3 = meioy + halfpecay + linhaextra;
-                          
+
 
                             //sobre as escritas
                             string pitchx = point.X.ToString();
@@ -353,114 +349,68 @@ namespace Krisiun_Project
                             SizeF tamx = g.MeasureString(pitchx, font);
                             SizeF tamy = g.MeasureString(pitchy, font);
                             float vx1 = tamx.Width; //pitchx
-                            float vy1= tamx.Height;//pitchx
+                            float vy1 = tamx.Height;//pitchx
                             float vx2 = tamy.Width;//pitchy
                             float vy2 = tamy.Height;//pitchy
                             float pontox = linhax2; //ladi direito
                             float pontox1 = linhax3 - vx2; //lado esquerto
-                            float pontoy = linhay1 - vy1/2; //lado de cima
+                            float pontoy = linhay1 - vy1 / 2; //lado de cima
                             float pontoy1 = linhay2 - vy2;
 
 
 
                             // Desenha o ponto na superfície do Panel
                             Pen pen2 = new Pen(Color.Black, 3);
-                      
-                        
-                                if (panel.Name == "paneld_f"&&drills.Tras == true && drills.Frente==false && fukasa < peca.sizez)
-                                {
-                                    pen2.DashStyle = DashStyle.Dot;
+
+
+                            if (panel.Name == "paneld_f" && drills.Tras == true && drills.Frente == false && fukasa < peca.sizez)
+                            {
+                                pen2.DashStyle = DashStyle.Dot;
                                 brush1.Color = Color.FromArgb(50, drills.Color);
 
-                                }
+                            }
                             if (panel.Name == "panel_b" && drills.Tras == false && drills.Frente == true && fukasa < peca.sizez)
                             {
                                 pen2.DashStyle = DashStyle.Dot;
 
                                 brush1.Color = Color.FromArgb(50, drills.Color);
                             }
-                          
-                            if(panel.Name != "panel_yoko")
-                            { 
-                            g.DrawEllipse(pen2, x, y, kei, kei);
-                            g.FillEllipse(brush1, x, y, kei, kei);//esse aparentemente funciona
+
+                            if (panel.Name != "panel_yoko")
+                            {
+                                g.DrawEllipse(pen2, x, y, kei, kei);
+                                g.FillEllipse(brush1, x, y, kei, kei);//esse aparentemente funciona
 
                                 //desnha a linha e a escrita (linha horizontal, Pitch de Y)
-                           // System.Diagnostics.Debug.WriteLine("x = " + x);
-                            if (x <= shin.x)
-                            {
-                                g.DrawLine(pen1, linhax1, linhay1, linhax3, linhay1);
-                                g.DrawString(pitchy, font, brush, pontox1, pontoy);
-                            }
-                            if (x > shin.x)
-                            {
-                                g.DrawLine(pen1, linhax1, linhay1, linhax2, linhay1);
-                                g.DrawString(pitchy, font, brush, pontox, pontoy);
-                            }
-                            if (y <= shin.y)
-                            { 
-                            g.DrawLine(pen1, linhax1,linhay1,linhax1, linhay2); //linha vertical (Pitch de X)
-                            g.DrawString(pitchx, font, brush, linhax1 - vy1/2, pontoy1, stringformat);
-                            }
-                            if (y > shin.y)
-                            {
-                                g.DrawLine(pen1, linhax1, linhay1, linhax1, linhay3); //linha vertical (Pitch de X)
-                                g.DrawString(pitchx, font, brush, linhax1 - vy1 / 2, linhay3, stringformat);
-                            }
-                            }
-                            if (panel.Name == "panel_yoko")
-                            {
-                                string valor = "φ" + drills.Kei.ToString();
-                                SizeF valortam = g.MeasureString(valor, font);
-                                float valorx = valortam.Width / 2;
-                                float posicaotexto = x + halfkei - valorx;
-       
-                                brush1.Color = Color.FromArgb(100, drills.Color);
-
-                                PointF pointF = new PointF(point.X, pitchinicialZ());
-                                PointF pointF1 = new PointF(x, pitchinicialZ());
-                          
-                      
-                                if (drills.Frente == true)
+                                // System.Diagnostics.Debug.WriteLine("x = " + x);
+                                if (x <= shin.x)
                                 {
-                                   
-                                      
-                                                if (PontoX.Contains(pointF))
-                                                  {
-                                                      posicaotextoz1 += 10;
-                                                  }
-                                        g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() - valortam.Height - posicaotextoz1);
-                                        g.DrawRectangle(pen1, x, pitchinicialZ(), kei, fukasa);
-                                        g.FillRectangle(brush1, x, pitchinicialZ(), kei, fukasa);
-                                        PontoX.Add(pointF);
-
-                                    posicaotextoz1 = 5;
-
-
-                                    Sohumdesenho.Add(pointF1);
-                                                                                       // desenha o objeto...
-                                     
-                                      
-                                    
-
+                                    g.DrawLine(pen1, linhax1, linhay1, linhax3, linhay1);
+                                    g.DrawString(pitchy, font, brush, pontox1, pontoy);
                                 }
-
-                               
-                                if (drills.Tras == true)
+                                if (x > shin.x)
                                 {
-                                    g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() + peca.z + posicaotextoz2);
-                                    g.DrawRectangle(pen1, x, pitchinicialZ() + peca.z - fukasa, kei, fukasa);
-                                    g.FillRectangle(brush1, x, pitchinicialZ() + peca.z - fukasa, kei, fukasa);
+                                    g.DrawLine(pen1, linhax1, linhay1, linhax2, linhay1);
+                                    g.DrawString(pitchy, font, brush, pontox, pontoy);
                                 }
-                                    
-
+                                if (y <= shin.y)
+                                {
+                                    g.DrawLine(pen1, linhax1, linhay1, linhax1, linhay2); //linha vertical (Pitch de X)
+                                    g.DrawString(pitchx, font, brush, linhax1 - vy1 / 2, pontoy1, stringformat);
+                                }
+                                if (y > shin.y)
+                                {
+                                    g.DrawLine(pen1, linhax1, linhay1, linhax1, linhay3); //linha vertical (Pitch de X)
+                                    g.DrawString(pitchx, font, brush, linhax1 - vy1 / 2, linhay3, stringformat);
+                                }
                             }
+
                             //daqui pra baixo é o desenho do lado
 
 
                         }
 
-                     
+
                     }
                     // Verifica se a ferramenta é uma instância de Taps
                     else if (ferramenta is Tap taps)
@@ -485,151 +435,83 @@ namespace Krisiun_Project
                 }
             }
 
-
-
-            //bagulho velho no qual era suposto desenhar só um bagulho.
-            #region codigo velho
-            public void desenholado(PaintEventArgs e, IEnumerable<Ferramentas> ferramentas)
+            public void desenholadonew(PaintEventArgs e, IEnumerable<Ferramentas> ferramentas)
             {
-                Dictionary<PointF, List<Ferramentas>> ferramentasPorCoordenada = new Dictionary<PointF, List<Ferramentas>>();
-                this.peca = peca;
-                float sizex = peca.width;
-                float sizez = peca.z;
-                float x = pitchinicialX();
-                float y = pitchinicialY();
-                float z = pitchinicialZ();
+                Pen pen = new Pen(Color.Black, 2);
+                //pen.DashStyle = DashStyle.Dot;
+                Brush brush = Brushes.Black;
+                var pen1 = Pens.DarkCyan;
                 Graphics g = e.Graphics;
-                //Pen pen = new Pen(Color.Black, 1);
-                //Font font = new Font("Arial", 7);
-                //Brush brush = new SolidBrush(Color.Black);
-                // g.DrawString("LADO", font, brush, 10, 10);
-                //  g.DrawRectangle(pen, x, z, sizex, sizez);
-                // Agrupar as ferramentas por coordenada
+                var font = new Font("Arial", 7);
+
+                List<PointF> PontoX = new List<PointF>();
+                List<PointF> Sohumdesenho = new List<PointF>();
+                float meiox = meio.PontoInicialX();
+                float meioy = meio.PontoInicialY();
+                float halfpecax = peca.width / 2;
+                float halfpecay = peca.height / 2;
+                float posicaotextoz1 = 5;
+                float posicaotextoz2 = 5;
+                StringFormat stringformat = new StringFormat();
+                stringformat.FormatFlags = StringFormatFlags.DirectionVertical;
+                PointF? primeiroPonto = null;
+                bool primeiroPontoDesenhado = false;
+
                 foreach (var ferramenta in ferramentas)
                 {
-                    foreach (var coordenada in ferramenta.CoordenadasList)
+                    // Verifica se a ferramenta é uma instância de Drills
+                    if (ferramenta is Drills drills)
                     {
-                        if (ferramentasPorCoordenada.ContainsKey(coordenada))
+                        // Obtém as coordenadas do Drills
+                        var coordenadas = drills.CoordenadasList;
+                        var x = coordenadas[0].X;
+                        var y = coordenadas[0].Y;
+                        float kei = drills.Kei;
+                        float halfkei = kei / 2;
+                        var shinx = shin.x;
+                        var shiny = shin.y;
+                        bool frente = drills.Frente;
+                        bool tras = drills.Tras;
+                        float fukasa = drills.Fukasa * peca.scale;
+                        SolidBrush brush1 = new SolidBrush(drills.Color);
+
+                        string valor = "φ" + drills.Kei.ToString();
+                        SizeF valortam = g.MeasureString(valor, font);
+                        float valorx = valortam.Width / 2;
+                        float posicaotexto = x + halfkei - valorx;
+
+                        brush1.Color = Color.FromArgb(100, drills.Color);
+
+                  
+
+
+                        if (drills.Frente == true)
                         {
-                            ferramentasPorCoordenada[coordenada].Add(ferramenta);
+                           
+                            g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() - valortam.Height - posicaotextoz1);
+                            g.DrawRectangle(pen1, x, pitchinicialZ(), kei, fukasa);
+                            g.FillRectangle(brush1, x, pitchinicialZ(), kei, fukasa);
+                         
+                            posicaotextoz1 = 5;
+                        
+                            //  Sohumdesenho[0].X
                         }
-                        else
+
+
+                        if (drills.Tras == true)
                         {
-                            ferramentasPorCoordenada[coordenada] = new List<Ferramentas> { ferramenta };
+                            g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() + peca.z + posicaotextoz2);
+                            g.DrawRectangle(pen1, x, pitchinicialZ() + peca.z - fukasa, kei, fukasa);
+                            g.FillRectangle(brush1, x, pitchinicialZ() + peca.z - fukasa, kei, fukasa);
                         }
+
+
                     }
                 }
 
-                // Desenhar as ferramentas agrupadas por coordenada
-                foreach (var kvp in ferramentasPorCoordenada)
-                {
-                    var coordenada = kvp.Key;
-                    var ferramentasNaCoordenada = kvp.Value;
-
-                    // Calcular a posição do primeiro objeto na coordenada
-                    float offsetX = x + 5;
-                    float offsetX1 = x;
-                    if (ferramentasNaCoordenada.Count > 1)
-                    {
-                        offsetX = -(ferramentasNaCoordenada.Count - 1) * (ferramentasNaCoordenada[0].Kei + 10) / 2f;
-                    }
-
-                    // Desenhar as ferramentas na mesma coordenada no mesmo lugar
-                    bool coordenadaRepetida = ferramentasNaCoordenada.Count > 1;
-                    foreach (var ferramenta in ferramentasNaCoordenada)
-                    {
-                        float kei = ferramenta.Kei;
-                        float fukasa = ferramenta.Fukasa;
-                        float hankei = ferramenta.Kei / 2;
-                        if (ferramenta.Tras == true)
-                        { z = z + peca.sizez; }
-                        if (coordenadaRepetida)
-                        {
-
-                            g.DrawRectangle(Pens.Black, coordenada.X + offsetX1, z, ferramenta.Kei, ferramenta.Fukasa);
-                            // o offsetX1 é o X, o z é o Y, o Kei é o tamanho do retangulo e o Fukasa é a altura do retangulo
-                        }
-                        else
-                        {
-                            g.DrawRectangle(Pens.Black, coordenada.X + offsetX, z, ferramenta.Kei, ferramenta.Fukasa);
-                            offsetX += ferramenta.Kei + 10;
-                        }
-                    }
-                }
-            }
-            public void desenholado1(PaintEventArgs e, IEnumerable<Ferramentas> ferramentas)
-            {
-                Dictionary<PointF, List<Ferramentas>> ferramentasPorCoordenada = new Dictionary<PointF, List<Ferramentas>>();
-                this.peca = peca;
-                float sizex = peca.width;
-                float sizez = peca.z;
-                float x = pitchinicialX();
-                float y = pitchinicialY();
-                float z = pitchinicialZ();
-                Graphics g = e.Graphics;
-                //Pen pen = new Pen(Color.Black, 1);
-                //Font font = new Font("Arial", 7);
-                //Brush brush = new SolidBrush(Color.Black);
-                // g.DrawString("LADO", font, brush, 10, 10);
-                //  g.DrawRectangle(pen, x, z, sizex, sizez);
-                // Agrupar as ferramentas por coordenada
-                foreach (var ferramenta in ferramentas)
-                {
-                    foreach (var coordenada in ferramenta.CoordenadasList)
-                    {
-                        if (ferramentasPorCoordenada.ContainsKey(coordenada))
-                        {
-                            ferramentasPorCoordenada[coordenada].Add(ferramenta);
-                        }
-                        else
-                        {
-                            ferramentasPorCoordenada[coordenada] = new List<Ferramentas> { ferramenta };
-                        }
-                    }
-                }
-
-                // Desenhar as ferramentas agrupadas por coordenada
-                foreach (var kvp in ferramentasPorCoordenada)
-                {
-                    var coordenada = kvp.Key;
-                    var ferramentasNaCoordenada = kvp.Value;
-
-                    // Calcular a posição do primeiro objeto na coordenada
-                    float offsetX = x + 5;
-                    float offsetX1 = x;
-                    if (ferramentasNaCoordenada.Count > 1)
-                    {
-                        offsetX = -(ferramentasNaCoordenada.Count - 1) * (ferramentasNaCoordenada[0].Kei + 10) / 2f;
-                    }
-
-                    // Desenhar as ferramentas na mesma coordenada no mesmo lugar
-                    bool coordenadaRepetida = ferramentasNaCoordenada.Count > 1;
-                    foreach (var ferramenta in ferramentasNaCoordenada)
-                    {
-                        float kei = ferramenta.Kei;
-                        float fukasa = ferramenta.Fukasa;
-                        float hankei = ferramenta.Kei / 2;
-                        if (ferramenta.Tras == true)
-                        { z = z + peca.sizez; }
-                        if (coordenadaRepetida)
-                        {
-
-                            g.DrawRectangle(Pens.Black, coordenada.X + offsetX1, z, ferramenta.Kei, ferramenta.Fukasa);
-                            // o offsetX1 é o X, o z é o Y, o Kei é o tamanho do retangulo e o Fukasa é a altura do retangulo
-                        }
-                        else
-                        {
-                            g.DrawRectangle(Pens.Black, coordenada.X + offsetX, z, ferramenta.Kei, ferramenta.Fukasa);
-                            offsetX += ferramenta.Kei + 10;
-                        }
-                    }
-                }
+                //bagulho velho no qual era suposto desenhar só um bagulho.
             }
 
-
-
-            #endregion
         }
-
     }
 }
