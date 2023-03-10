@@ -404,54 +404,7 @@ namespace Krisiun_Project
                                     g.DrawString(pitchx, font, brush, linhax1 - vy1 / 2, linhay3, stringformat);
                                 }
                             }
-                            if (panel.Name == "panel_yoko")
-                            {
-                                string valor = "φ" + drills.Kei.ToString();
-                                SizeF valortam = g.MeasureString(valor, font);
-                                float valorx = valortam.Width / 2;
-                                float posicaotexto = x + halfkei - valorx;
-       
-                                brush1.Color = Color.FromArgb(100, drills.Color);
-
-                                PointF pointF = new PointF(point.X, pitchinicialZ());
-                                PointF pointF1 = new PointF(x, pitchinicialZ());
-                          
                       
-                                if (drills.Frente == true)
-                                {
-                                   
-                                      
-                                                if (PontoX.Contains(pointF))
-                                                  {
-                                                      posicaotextoz1 += 10;
-                                                  }
-                                        g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() - valortam.Height - posicaotextoz1);
-                                        g.DrawRectangle(pen1, x, pitchinicialZ(), kei, fukasa);
-                                        g.FillRectangle(brush1, x, pitchinicialZ(), kei, fukasa);
-                                        PontoX.Add(pointF);
-
-                                    posicaotextoz1 = 5;
-
-
-                                    Sohumdesenho.Add(pointF1);
-                                                                                       // desenha o objeto...
-                                     
-                                      
-                                    
-
-                                }
-
-                               
-                                if (drills.Tras == true)
-                                {
-                                    g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() + peca.z + posicaotextoz2);
-                                    g.DrawRectangle(pen1, x, pitchinicialZ() + peca.z - fukasa, kei, fukasa);
-                                    g.FillRectangle(brush1, x, pitchinicialZ() + peca.z - fukasa, kei, fukasa);
-                                }
-                                    
-
-                            }
-                            //daqui pra baixo é o desenho do lado
 
 
                         }
@@ -477,7 +430,6 @@ namespace Krisiun_Project
                     }
                     // Adicione mais condicionais aqui para outras ferramentas
 
-                    posicaotextoz1 = 5;
                     // ... 
                 }
             }
@@ -513,13 +465,16 @@ namespace Krisiun_Project
                         var coordenadas = drills.CoordenadasList;
                         var x = coordenadas[0].X;
                         var y = coordenadas[0].Y;
-                        float kei = drills.Kei;
-                        float halfkei = kei / 2;
+                    
                         var shinx = shin.x;
                         var shiny = shin.y;
                         bool frente = drills.Frente;
                         bool tras = drills.Tras;
                         float fukasa = drills.Fukasa * peca.scale;
+                        float kei = drills.Kei * peca.scale;
+                        float halfkei = kei / 2;
+                        x *= peca.scale;
+                        x = x + shinx - halfkei;
                         SolidBrush brush1 = new SolidBrush(drills.Color);
 
                         string valor = "φ" + drills.Kei.ToString();
