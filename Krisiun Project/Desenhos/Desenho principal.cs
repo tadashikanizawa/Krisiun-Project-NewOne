@@ -448,7 +448,8 @@ namespace Krisiun_Project
                 List<PointF>textposition = new List<PointF>();
                 StringFormat stringformat = new StringFormat();
                 stringformat.FormatFlags = StringFormatFlags.DirectionVertical;
- 
+                Dictionary<string, string> textValues = new Dictionary<string, string>();
+                Dictionary<string, string> textValues1 = new Dictionary<string, string>();
 
                 foreach (var ferramenta in ferramentas)
                 {
@@ -462,9 +463,7 @@ namespace Krisiun_Project
                         var y = coordenadas[drills.numlado].Y;
                     
                         var shinx = shin.x;
-                        var shiny = shin.y;
-                        bool frente = drills.Frente;
-                        bool tras = drills.Tras;
+
                         float fukasa = drills.Fukasa * peca.scale;
                         float kei = drills.Kei * peca.scale;
                         float halfkei = kei / 2;
@@ -480,17 +479,20 @@ namespace Krisiun_Project
                         brush1.Color = Color.FromArgb(100, drills.Color);
                         PointF point = new PointF(coordenadas[drills.numlado].X, coordenadas[drills.numlado].Y);
                         textposition.Add(point);
-                        
+              
 
 
                         if (drills.Frente == true)
                         {
-                           
-                            g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() - valortam.Height - posicaotextoz1);
+                            var posicao = $"{point.X},{point.Y}";
+                            if (!textValues.ContainsKey(posicao))
+                                textValues[posicao] = string.Empty;
+                            textValues[posicao] += $"{valor}\n ";
+                            //  g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() - valortam.Height - posicaotextoz1);
                             g.DrawRectangle(pen1, x, pitchinicialZ(), kei, fukasa);
                             g.FillRectangle(brush1, x, pitchinicialZ(), kei, fukasa);
                          
-                            posicaotextoz1 = 5;
+                     
                         
                             //  Sohumdesenho[0].X
                         }
@@ -498,7 +500,11 @@ namespace Krisiun_Project
 
                         if (drills.Tras == true)
                         {
-                            g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() + peca.z + posicaotextoz2);
+                            var posicao = $"{point.X},{point.Y}";
+                            if (!textValues1.ContainsKey(posicao))
+                                textValues1[posicao] = string.Empty;
+                            textValues1[posicao] += $"{valor}\n ";
+                            // g.DrawString(valor, font, brush, posicaotexto, pitchinicialZ() + peca.z + posicaotextoz2);
                             g.DrawRectangle(pen1, x, pitchinicialZ() + peca.z - fukasa, kei, fukasa);
                             g.FillRectangle(brush1, x, pitchinicialZ() + peca.z - fukasa, kei, fukasa);
                         }
@@ -506,8 +512,44 @@ namespace Krisiun_Project
 
                     }
                 }
+                foreach (var position in textValues.Keys)
+                {
+                    var text = textValues[position].TrimEnd();
+                    if (text.Length > 0)
+                    {
+                        var parts = position.Split(',');
+                        var x = float.Parse(parts[0]);
+                        x *= peca.scale;
+                        x = x + shin.x;
+                        var y = pitchinicialZ() - 5;
 
-                //bagulho velho no qual era suposto desenhar só um bagulho.
+                        var rect = g.MeasureString(text, font);
+                        x -= rect.Width / 2;
+                        y -= rect.Height;
+
+                        // Desenha o texto centralizado em relação à posição do ponto
+                        g.DrawString(text, font, brush, x, y);
+                    }
+                }
+                foreach (var position in textValues1.Keys)
+                {
+                    var text = textValues1[position].TrimEnd();
+                    if (text.Length > 0)
+                    {
+                        var parts = position.Split(',');
+                        var x = float.Parse(parts[0]);
+                        x *= peca.scale;
+                        x = x + shin.x;
+                        var y = pitchinicialZ() + peca.z + 2;
+
+                        var rect = g.MeasureString(text, font);
+                        x -= rect.Width / 2;
+                     
+
+                        // Desenha o texto centralizado em relação à posição do ponto
+                        g.DrawString(text, font, brush, x, y);
+                    }
+                }
             }
 
         }
