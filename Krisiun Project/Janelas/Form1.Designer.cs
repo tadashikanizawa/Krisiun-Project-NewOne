@@ -184,6 +184,7 @@
             this.comboBoxCores = new System.Windows.Forms.ComboBox();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ferramentasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.panel_inverso.SuspendLayout();
             this.panel_lado.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -203,6 +204,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listDrillsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_inverso
@@ -1751,6 +1753,13 @@
             // 
             this.ferramentasBindingSource1.DataSource = typeof(Krisiun_Project.G_Code.Ferramentas);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(743, 224);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(31, 19);
+            this.numericUpDown1.TabIndex = 94;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1758,6 +1767,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1781, 717);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.comboBoxCores);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button7);
@@ -1813,6 +1823,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listDrillsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1974,6 +1985,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.ComboBox comboBoxCores;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 

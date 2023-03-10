@@ -443,28 +443,23 @@ namespace Krisiun_Project
                 Graphics g = e.Graphics;
                 var font = new Font("Arial", 7);
 
-                List<PointF> PontoX = new List<PointF>();
-                List<PointF> Sohumdesenho = new List<PointF>();
-                float meiox = meio.PontoInicialX();
-                float meioy = meio.PontoInicialY();
-                float halfpecax = peca.width / 2;
-                float halfpecay = peca.height / 2;
                 float posicaotextoz1 = 5;
                 float posicaotextoz2 = 5;
+                List<PointF>textposition = new List<PointF>();
                 StringFormat stringformat = new StringFormat();
                 stringformat.FormatFlags = StringFormatFlags.DirectionVertical;
-                PointF? primeiroPonto = null;
-                bool primeiroPontoDesenhado = false;
+ 
 
                 foreach (var ferramenta in ferramentas)
                 {
+
                     // Verifica se a ferramenta é uma instância de Drills
                     if (ferramenta is Drills drills)
                     {
                         // Obtém as coordenadas do Drills
                         var coordenadas = drills.CoordenadasList;
-                        var x = coordenadas[0].X;
-                        var y = coordenadas[0].Y;
+                        var x = coordenadas[drills.numlado].X;
+                        var y = coordenadas[drills.numlado].Y;
                     
                         var shinx = shin.x;
                         var shiny = shin.y;
@@ -483,8 +478,9 @@ namespace Krisiun_Project
                         float posicaotexto = x + halfkei - valorx;
 
                         brush1.Color = Color.FromArgb(100, drills.Color);
-
-                  
+                        PointF point = new PointF(coordenadas[drills.numlado].X, coordenadas[drills.numlado].Y);
+                        textposition.Add(point);
+                        
 
 
                         if (drills.Frente == true)
