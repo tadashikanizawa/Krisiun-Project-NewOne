@@ -130,6 +130,8 @@ namespace Krisiun_Project
             public float scale;
             public float basex;
             public float basey;
+            public string zuban;
+            public string hinmei;
             public Peca()
             {
                 this.scale = 1f;

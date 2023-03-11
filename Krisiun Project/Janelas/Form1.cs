@@ -41,6 +41,7 @@ namespace Krisiun_Project
         private DGV_Codes datagridcodes;
         private Form2 form2;
         private Form3 form3;
+        private Form5 form5;
         private Grupos grupos;
         private Zairyo.Desenho d;
         private NSB nsb;
@@ -74,6 +75,7 @@ namespace Krisiun_Project
             this.grupos = new Grupos();
             this.datagridcodes = new DGV_Codes(this, peca);
             this.form3 = new Form3(peca, this, meio, shin, bugs, bools);
+            this.form5 = new Form5(ferramentas, peca, this);
             this.nsb = new NSB();
             var nSB = NSBLoader.Load();
 
@@ -716,7 +718,11 @@ namespace Krisiun_Project
         }
         #endregion
         #region Botões e Textboxs do Solid Drill
-
+        private void comboBoxCores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
+            panel_update();
+        }
         private void drill_kei_tb_TextChanged(object sender, EventArgs e)
         {
             men_frente_kei_tb.Text = drill_kei_tb.Text;
@@ -1053,10 +1059,11 @@ namespace Krisiun_Project
             form3.ShowDialog();
         }
         #endregion
-        private void comboBoxCores_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        private void button12_Click(object sender, EventArgs e)
         {
-            Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
-            panel_update();
+            form5.ShowDialog();
         }
     }
 

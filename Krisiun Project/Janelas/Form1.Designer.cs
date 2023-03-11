@@ -186,6 +186,7 @@
             this.colorDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ferramentasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.panel_inverso.SuspendLayout();
             this.panel_lado.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1771,13 +1772,24 @@
             this.button11.Text = "button11";
             this.button11.UseVisualStyleBackColor = true;
             // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(700, 664);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(112, 93);
+            this.button12.TabIndex = 94;
+            this.button12.Text = "button12";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(2019, 768);
+            this.ClientSize = new System.Drawing.Size(2002, 768);
+            this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.comboBoxCores);
             this.Controls.Add(this.button10);
@@ -1997,6 +2009,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
     }
 }
 

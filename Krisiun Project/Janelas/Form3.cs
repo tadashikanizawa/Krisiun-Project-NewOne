@@ -146,5 +146,20 @@ namespace Krisiun_Project.Janelas
             form1.panel_update();
             this.Close();
         }
+
+        private void himen_tb_TextChanged(object sender, EventArgs e)
+        {
+            peca.hinmei = himen_tb.Text;
+        }
+
+        private void zuban_tb_TextChanged(object sender, EventArgs e)
+        {
+            peca.zuban = zuban_tb.Text;
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

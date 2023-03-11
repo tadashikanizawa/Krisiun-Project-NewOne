@@ -228,6 +228,7 @@
             this.zuban_tb.Name = "zuban_tb";
             this.zuban_tb.Size = new System.Drawing.Size(206, 19);
             this.zuban_tb.TabIndex = 32;
+            this.zuban_tb.TextChanged += new System.EventHandler(this.zuban_tb_TextChanged);
             // 
             // label1
             // 
@@ -244,6 +245,7 @@
             this.himen_tb.Name = "himen_tb";
             this.himen_tb.Size = new System.Drawing.Size(206, 19);
             this.himen_tb.TabIndex = 30;
+            this.himen_tb.TextChanged += new System.EventHandler(this.himen_tb_TextChanged);
             // 
             // button1
             // 
@@ -272,6 +274,7 @@
             this.Controls.Add(this.himen_tb);
             this.Name = "Form3";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
