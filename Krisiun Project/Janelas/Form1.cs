@@ -385,7 +385,8 @@ namespace Krisiun_Project
 
             d.lado(e, peca);
             //d.desenholado(e, ferramentas.ListTotal);
-            d.DesenharFerramentas(e, ferramentas.ListTotal, false, false, panel_yoko, panel_yoko);
+            //d.DesenharFerramentas(e, ferramentas.ListTotal, false, false, panel_yoko, panel_yoko);
+            d.desenholadonew(e, ferramentas.ListTotal);
         }
         private void frente_rd_CheckedChanged(object sender, EventArgs e)
         {

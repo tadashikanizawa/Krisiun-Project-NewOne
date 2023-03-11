@@ -32,6 +32,7 @@ namespace Krisiun_Project.G_Code
         public BindingList<Ferramentas> ListTras { get; set; }
         public BindingList<Drills> ListDrills { get; set; }
         private Dictionary<int, Coordenadas> coordenadas = new Dictionary<int, Coordenadas>();
+        public int numlado { get;set; }
 
         public Ferramentas()
         {
@@ -40,6 +41,7 @@ namespace Krisiun_Project.G_Code
             ListFrente = new BindingList<Ferramentas>();
             ListTras = new BindingList<Ferramentas>();
             ListDrills = new BindingList<Drills>();
+            numlado = 0; 
            // XYList = new List<PointF>();
 
         
