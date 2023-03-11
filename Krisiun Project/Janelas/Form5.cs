@@ -51,5 +51,18 @@ namespace Krisiun_Project.Janelas
         {
             peca.zuban = zuban_tb.Text;
         }
+
+        private void omote_radio_CheckedChanged(object sender, EventArgs e)
+        {
+            if(omote_radio.Checked) { peca.omote = 1; }
+            else { peca.omote = 2; }
+
+        }
+
+        private void ura_radio_CheckedChanged(object sender, EventArgs e)
+        {
+            if(ura_radio.Checked) { peca.ura = 1; }
+            else { peca.ura = 2; }
+        }
     }
 }

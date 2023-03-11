@@ -132,6 +132,8 @@ namespace Krisiun_Project
             public float basey;
             public string zuban;
             public string hinmei;
+            public int omote;
+            public int ura;
             public Peca()
             {
                 this.scale = 1f;
@@ -141,6 +143,8 @@ namespace Krisiun_Project
                 this.z = 40;
                 this.basex = 50;
                 this.basey = 50;
+                this.omote = 1;
+                this.ura = 2;
             }
 
             public void UpdateSize(float x, float y, float z)

@@ -48,6 +48,7 @@
             this.ura_radio.TabStop = true;
             this.ura_radio.Text = "裏面";
             this.ura_radio.UseVisualStyleBackColor = true;
+            this.ura_radio.CheckedChanged += new System.EventHandler(this.ura_radio_CheckedChanged);
             // 
             // omote_radio
             // 
@@ -59,6 +60,7 @@
             this.omote_radio.TabStop = true;
             this.omote_radio.Text = "表面";
             this.omote_radio.UseVisualStyleBackColor = true;
+            this.omote_radio.CheckedChanged += new System.EventHandler(this.omote_radio_CheckedChanged);
             // 
             // button1
             // 
