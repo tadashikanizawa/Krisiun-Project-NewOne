@@ -42,9 +42,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.ferramentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.ferramentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,6 +160,7 @@
             this.button3.TabIndex = 45;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -169,10 +170,7 @@
             this.button4.TabIndex = 46;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // ferramentasBindingSource
-            // 
-            this.ferramentasBindingSource.DataSource = typeof(Krisiun_Project.G_Code.Ferramentas);
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // listBox1
             // 
@@ -191,6 +189,10 @@
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(221, 400);
             this.listBox2.TabIndex = 48;
+            // 
+            // ferramentasBindingSource
+            // 
+            this.ferramentasBindingSource.DataSource = typeof(Krisiun_Project.G_Code.Ferramentas);
             // 
             // Form5
             // 

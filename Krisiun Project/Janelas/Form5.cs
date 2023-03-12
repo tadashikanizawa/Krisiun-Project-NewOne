@@ -22,9 +22,32 @@ namespace Krisiun_Project.Janelas
             InitializeComponent();
             this.ferramentas = ferramentas; 
             this.peca = peca;
-            listBox1.DataSource = ferramentas.ListDrills;
+            listBox1.DataSource = ferramentas.ListFrente;
             listBox1.ValueMember = "Nome";
 
+        }
+        private void IncrementOrDecrementSelectedObjectValue(bool increment)
+        {
+            // obtém o objeto selecionado na ListBox
+            var selectedItem = listBox1.SelectedItem as Ferramentas;
+
+            if (selectedItem != null)
+            {
+                // adiciona ou remove 1 da propriedade Value do objeto
+                if (increment)
+                {
+                    selectedItem.Index++;
+                }
+                else
+                {
+                    selectedItem.Index--;
+                }
+                MessageBox.Show(selectedItem.Index.ToString());
+                // atualiza a ListBox e a BindingList
+                listBox1.DataSource = null;
+                listBox1.DataSource = ferramentas.ListFrente;
+                listBox1.ValueMember = "Nome";
+            }
         }
 
         private void Form5_Load(object sender, EventArgs e)
@@ -69,5 +92,15 @@ namespace Krisiun_Project.Janelas
             else { peca.ura = 2; }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            IncrementOrDecrementSelectedObjectValue(true);
+    
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            IncrementOrDecrementSelectedObjectValue(false);
+        }
     }
 }
