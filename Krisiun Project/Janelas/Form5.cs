@@ -1,5 +1,6 @@
 ﻿using Krisiun_Project.G_Code;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Krisiun_Project.Janelas
 {
@@ -20,10 +22,9 @@ namespace Krisiun_Project.Janelas
             InitializeComponent();
             this.ferramentas = ferramentas; 
             this.peca = peca;
-            listBox1.DataSource = ferramentas.ListFrente;
-            listBox2.DataSource = ferramentas.ListTras;
-            listBox1.DisplayMember = "ToolName + ' φ ' + Kei.ToString()";
-       
+            listBox1.DataSource = ferramentas.ListDrills;
+            listBox1.ValueMember = "Nome";
+
         }
 
         private void Form5_Load(object sender, EventArgs e)
@@ -67,5 +68,6 @@ namespace Krisiun_Project.Janelas
             if(ura_radio.Checked) { peca.ura = 1; }
             else { peca.ura = 2; }
         }
+
     }
 }

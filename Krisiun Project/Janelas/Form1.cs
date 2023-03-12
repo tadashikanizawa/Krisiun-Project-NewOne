@@ -491,6 +491,30 @@ namespace Krisiun_Project
                 }
             }
         }
+        private void Load_TextboxString<T>(ComboBox textBox, TextBox textBox1, T objeto, string nomePropriedade) where T : class
+        {
+            if (lastSelectedDgv != null)
+            {
+                string valor = textBox.Text;
+                string valor1 = textBox1.Text;
+                string valor2 = valor + "φ" + valor1;
+                    T objetoSelecionado = lastSelectedDgv.CurrentRow.DataBoundItem as T;
+                    if (objetoSelecionado != null)
+                    {
+                        PropertyInfo propertyInfo = typeof(T).GetProperty(nomePropriedade);
+                        if (propertyInfo != null)
+                        {
+                            propertyInfo.SetValue(objetoSelecionado, Convert.ChangeType(valor2, propertyInfo.PropertyType));
+                            lastSelectedDgv.Refresh();
+                            dataGridView1.Refresh();
+                            dataGridView2.Refresh();
+                            dataGridView3.Refresh();
+                        }
+                    }
+
+                
+            }
+        }
         private void Load_Combobox<T>(ComboBox comboBox, T objeto, string nomePropriedade) where T : class
         {
             if (lastSelectedDgv != null)
@@ -875,6 +899,7 @@ namespace Krisiun_Project
             Load_Textbox<Drills>(tool_tb, null, "ToolNumber");
             Load_Combobox<Drills>(drill_combobox, null, "ToolName");
             Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
+            Load_TextboxString<Drills>(drill_combobox, drill_kei_tb, null, "Nome");
             panel_update();
 
         }
