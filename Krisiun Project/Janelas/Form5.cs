@@ -20,6 +20,9 @@ namespace Krisiun_Project.Janelas
             InitializeComponent();
             this.ferramentas = ferramentas; 
             this.peca = peca;
+            listBox1.DataSource = ferramentas.ListFrente;
+            listBox2.DataSource = ferramentas.ListTras;
+            listBox1.DisplayMember = "ToolName + ' φ ' + Kei.ToString()";
        
         }
 
