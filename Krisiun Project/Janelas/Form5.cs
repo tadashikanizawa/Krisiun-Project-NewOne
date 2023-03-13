@@ -23,33 +23,55 @@ namespace Krisiun_Project.Janelas
             this.ferramentas = ferramentas; 
             this.peca = peca;
             listBox1.DataSource = ferramentas.ListFrente;
-            listBox1.ValueMember = "Nome";
+            listBox1.ValueMember = "Index";
+            listBox1.DisplayMember = "Nome";
+            listBox2.DataSource = ferramentas.ListTras;
+            listBox2.ValueMember = "Index";
+            listBox2.DisplayMember = "Nome";
 
         }
-        private void IncrementOrDecrementSelectedObjectValue(bool increment)
+        private void AlterarOrdemfrente(bool subir)
         {
-            // obtém o objeto selecionado na ListBox
-            var selectedItem = listBox1.SelectedItem as Ferramentas;
-
-            if (selectedItem != null)
+            int selectedIndex = listBox1.SelectedIndex;
+            if (selectedIndex >= 0 && selectedIndex < ferramentas.ListFrente.Count)
             {
-                // adiciona ou remove 1 da propriedade Value do objeto
-                if (increment)
+                int newIndex = selectedIndex + (subir ? -1 : 1);
+                if (newIndex >= 0 && newIndex < ferramentas.ListFrente.Count)
                 {
-                    selectedItem.Index++;
+                    var item = ferramentas.ListFrente[selectedIndex];
+                    ferramentas.ListFrente.RemoveAt(selectedIndex);
+                    ferramentas.ListFrente.Insert(newIndex, item);
+                    listBox1.DataSource = null;
+                    listBox1.DataSource = ferramentas.ListFrente;
+                    listBox1.SelectedIndex = newIndex;
+                    listBox1.DisplayMember = "Nome";
+                    listBox1.ValueMember= "Index";
+                    
                 }
-                else
+            }
+        }
+        private void AlterarOrdemtras(bool subir)
+        {
+            int selectedIndex = listBox2.SelectedIndex;
+            if (selectedIndex >= 0 && selectedIndex < ferramentas.ListTras.Count)
+            {
+                int newIndex = selectedIndex + (subir ? -1 : 1);
+                if (newIndex >= 0 && newIndex < ferramentas.ListTras.Count)
                 {
-                    selectedItem.Index--;
+                    var item = ferramentas.ListTras[selectedIndex];
+                    ferramentas.ListTras.RemoveAt(selectedIndex);
+                    ferramentas.ListTras.Insert(newIndex, item);
+                    listBox2.DataSource = null;
+                    listBox2.DataSource = ferramentas.ListTras;
+                    listBox2.SelectedIndex = newIndex;
+                    listBox2.DisplayMember = "Nome";
+                    listBox2.ValueMember = "Index";
+
                 }
-                MessageBox.Show(selectedItem.Index.ToString());
-                // atualiza a ListBox e a BindingList
-                listBox1.DataSource = null;
-                listBox1.DataSource = ferramentas.ListFrente;
-                listBox1.ValueMember = "Nome";
             }
         }
 
+       
         private void Form5_Load(object sender, EventArgs e)
         {
             himen_tb.Text = peca.hinmei;
@@ -94,13 +116,25 @@ namespace Krisiun_Project.Janelas
 
         private void button3_Click(object sender, EventArgs e)
         {
-            IncrementOrDecrementSelectedObjectValue(true);
+            // IncrementOrDecrementSelectedObjectValue(true);
+            AlterarOrdemfrente(true);
     
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            IncrementOrDecrementSelectedObjectValue(false);
+            //IncrementOrDecrementSelectedObjectValue(false);
+            AlterarOrdemfrente(false);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AlterarOrdemtras(true);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AlterarOrdemtras(false);
         }
     }
 }
