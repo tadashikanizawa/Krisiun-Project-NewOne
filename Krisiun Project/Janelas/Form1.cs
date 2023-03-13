@@ -206,7 +206,7 @@ namespace Krisiun_Project
             pb.DrawToBitmap(bitmap, pb.ClientRectangle);
 
             // Salvar o bitmap em jpg
-            string dir = Path.GetDirectoryName(Application.ExecutablePath);
+            string dir = pastas.CaminhoRaiz;
             string ar = strg;
             bitmap.Save(Path.Combine(dir, ar), System.Drawing.Imaging.ImageFormat.Jpeg);
         }

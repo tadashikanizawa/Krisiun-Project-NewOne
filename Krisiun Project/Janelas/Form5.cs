@@ -143,7 +143,12 @@ namespace Krisiun_Project.Janelas
         private void button1_Click(object sender, EventArgs e)
         {
             pastas.CriarPastas(peca.hinmei, peca.zuban);
-            form1.SavePictureBoxAsJPG(form1.paneld_f, "Teste1");
+            if(ferramentas.ListFrente.Count > 0 ) { 
+            form1.SavePictureBoxAsJPG(form1.paneld_f, "Front.jpeg");
+            }
+            if(ferramentas.ListTras.Count > 0 ) { 
+            form1.SavePictureBoxAsJPG(form1.panel_b, "Back.jpeg");
+            }
         }
     }
 }

@@ -48,7 +48,7 @@ namespace Krisiun_Project.G_Code
             this.CaminhoO46 = Path.Combine(pastaMinhaClasse, Pasta46).ToString();
             this.CaminhoO56 = Path.Combine(pastaMinhaClasse, Pasta56MB).ToString();
             this.CaminhoOKK = Path.Combine(pastaMinhaClasse, PastaOKK).ToString();
-            this.CaminhoRaiz = pastaRaiz;
+            this.CaminhoRaiz = nomePasta;
          
         }
     }
