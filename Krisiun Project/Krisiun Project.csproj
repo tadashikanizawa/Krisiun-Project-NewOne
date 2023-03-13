@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="Desenhos\ColorItem.cs" />
     <Compile Include="G-Code\Mentori.cs" />
+    <Compile Include="G-Code\Pastas.cs" />
     <Compile Include="G-Code\Tap.cs" />
     <Compile Include="G-Code\Coordenadas.cs" />
     <Compile Include="G-Code\Ferramentas.cs" />

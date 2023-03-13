@@ -46,6 +46,7 @@ namespace Krisiun_Project
         private Zairyo.Desenho d;
         private NSB nsb;
         private ColorItem coloritem;
+        private Pastas pastas;
         //private  NSBLoader nSB;
         // private NSBLoader nsbs;
         public BindingSource bindingSource = new BindingSource();
@@ -68,6 +69,7 @@ namespace Krisiun_Project
             this.shin = new Shindashi(meio);
             this.t = new Tests();
             this.addtb = new Addtextbox(t, coordenadas);
+            this.pastas = new Pastas();
             this.ferramentas = new Ferramentas();
             this.taps = new Tap();
             this.brocas = new Drills();
@@ -75,7 +77,7 @@ namespace Krisiun_Project
             this.grupos = new Grupos();
             this.datagridcodes = new DGV_Codes(this, peca);
             this.form3 = new Form3(peca, this, meio, shin, bugs, bools);
-            this.form5 = new Form5(ferramentas, peca, this);
+            this.form5 = new Form5(ferramentas, peca, this, pastas);
             this.nsb = new NSB();
             var nSB = NSBLoader.Load();
 
@@ -113,6 +115,7 @@ namespace Krisiun_Project
             atualizarComboBoxCores();
             addcore();
             comboBoxCores.SelectedIndex = 5;
+            
 
         }
         public Color[] cores = new Color[] { Color.Black, Color.Cyan, Color.Red, Color.Blue, Color.Green, Color.Gray, Color.Pink, Color.Purple, Color.LightGray };
@@ -187,17 +190,7 @@ namespace Krisiun_Project
         }
         #region Tamanho_Escala_Base
 
-        //private void shikaku_rd_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    if (shikaku_rd.Checked) { sizey.Enabled = true; }
-        //}
-
-        //private void maru_rb_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    sizey.Enabled = false;
-        //    panel_update();
-        //}
-
+     
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -205,7 +198,7 @@ namespace Krisiun_Project
 
             SavePictureBoxAsJPG(panel_b, "tras.jpg");
         }
-        private void SavePictureBoxAsJPG(Panel pb, String strg)
+        public void SavePictureBoxAsJPG(Panel pb, String strg)
         {
             Bitmap bitmap = new Bitmap(pb.Width, pb.Height);
 
@@ -219,62 +212,7 @@ namespace Krisiun_Project
         }
 
 
-        //private void textBox3_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (string.IsNullOrEmpty(sizex.Text)) { return; }
-        //    bugs.sohnums(sizex, e);
-        //    //    t.teste(sizex.Text);
-
-
-        //    if (float.TryParse(sizex.Text, out float x) &&
-        //        float.TryParse(sizey.Text, out float y) &&
-        //        float.TryParse(sizez.Text, out float z))
-        //    {
-        //        if (maru_rb.Checked)
-        //        { peca.width = x; peca.height = x; peca.z = z; sizey.Enabled = false; basex_tb.Enabled = false; basex_tb.Text = (x / 2).ToString(); basey_tb.Enabled = false; basey_tb.Text = (x / 2).ToString(); sizey.Text = sizex.Text; }
-
-        //        if (shikaku_rd.Checked)
-        //        {
-        //            peca.width = x; peca.height = y; peca.z = z; basex_tb.Enabled = true; basey_tb.Enabled = true; sizey.Enabled = true;
-        //            float p = peca.width / 2;
-        //            basex_tb.Text = p.ToString();
-
-        //        }
-        //        panel_update();
-        //    }
-
-        //}
-        //private void sizey_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (string.IsNullOrEmpty(sizey.Text)) { return; }
-        //    bugs.sohnums(sizey, e);
-
-        //    if (float.TryParse(sizex.Text, out float x) &&
-        //        float.TryParse(sizey.Text, out float y) &&
-        //        float.TryParse(sizez.Text, out float z))
-        //    {
-        //        peca.width = x; peca.height = y; peca.z = z;
-        //        panel_update();
-        //    }
-        //    float p = peca.height / 2;
-        //    basey_tb.Text = p.ToString();
-
-        //}
-        //private void sizez_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (string.IsNullOrEmpty(sizez.Text)) { return; }
-        //    bugs.sohnums(sizey, e);
-
-        //    if (float.TryParse(sizex.Text, out float x) &&
-        //        float.TryParse(sizey.Text, out float y) &&
-        //        float.TryParse(sizez.Text, out float z))
-        //    {
-        //        peca.width = x; peca.height = y; peca.z = z;
-        //        panel_update();
-        //    }
-
-
-        //}
+   
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -307,36 +245,7 @@ namespace Krisiun_Project
             scale_tb.Text = escala.ToString();
             panel_update();
         }
-        //private void basex_tb_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (string.IsNullOrEmpty(basex_tb.Text)) { return; };
-        //    bugs.sohnums(basex_tb, e);
-        //    bugs.sohnums(basey_tb, e);
-        //    if (float.TryParse(basex_tb.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out float x) &&
-        //        float.TryParse(basey_tb.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out float y))
-        //    {
-        //        meio.calculo_de_base(shin, peca, basex_tb, basey_tb);
-
-        //        himen_tb.Text = shin.x.ToString();
-        //        zuban_tb.Text = shin.y.ToString();
-        //        panel_update();
-        //    }
-        //    else
-        //    {
-        //        // o valor não é um número válido
-        //    }
-        //}
-
-        //private void basey_tb_TextChanged(object sender, EventArgs e)
-        //{
-
-        //    if (string.IsNullOrEmpty(basey_tb.Text)) { return; };
-        //    bugs.sohnums(basey_tb, e);
-        //    meio.calculo_de_base(shin, peca, basex_tb, basey_tb);
-        //    himen_tb.Text = shin.x.ToString();
-        //    zuban_tb.Text = shin.y.ToString();
-        //    panel_update();
-        //}
+     
         #endregion
         #region Sobre_Paineis_de_Desenho
         private void y_inv_checkbox_CheckedChanged(object sender, EventArgs e)

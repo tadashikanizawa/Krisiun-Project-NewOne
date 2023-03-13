@@ -39,7 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -76,12 +75,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(62, 169);
+            this.button1.Location = new System.Drawing.Point(16, 153);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 54);
+            this.button1.Size = new System.Drawing.Size(204, 274);
             this.button1.TabIndex = 2;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -131,7 +131,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(802, 12);
+            this.label4.Location = new System.Drawing.Point(645, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 12);
             this.label4.TabIndex = 42;
@@ -141,25 +141,16 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(514, 12);
+            this.label5.Location = new System.Drawing.Point(357, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 12);
             this.label5.TabIndex = 41;
             this.label5.Text = "表リスト";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1007, 288);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 91);
-            this.button2.TabIndex = 43;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("MS UI Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button3.Location = new System.Drawing.Point(384, 203);
+            this.button3.Location = new System.Drawing.Point(227, 200);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(36, 108);
             this.button3.TabIndex = 45;
@@ -170,7 +161,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("MS UI Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button4.Location = new System.Drawing.Point(384, 317);
+            this.button4.Location = new System.Drawing.Point(227, 314);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(36, 113);
             this.button4.TabIndex = 46;
@@ -182,7 +173,7 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(426, 30);
+            this.listBox1.Location = new System.Drawing.Point(269, 27);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(221, 400);
             this.listBox1.TabIndex = 47;
@@ -191,7 +182,7 @@
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 12;
-            this.listBox2.Location = new System.Drawing.Point(714, 30);
+            this.listBox2.Location = new System.Drawing.Point(557, 27);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(221, 400);
             this.listBox2.TabIndex = 48;
@@ -203,7 +194,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("MS UI Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button5.Location = new System.Drawing.Point(672, 317);
+            this.button5.Location = new System.Drawing.Point(515, 314);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(36, 113);
             this.button5.TabIndex = 50;
@@ -214,7 +205,7 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("MS UI Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button6.Location = new System.Drawing.Point(672, 203);
+            this.button6.Location = new System.Drawing.Point(515, 200);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(36, 108);
             this.button6.TabIndex = 49;
@@ -227,14 +218,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1150, 568);
+            this.ClientSize = new System.Drawing.Size(802, 568);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -266,7 +256,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.BindingSource ferramentasBindingSource;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;

@@ -15,20 +15,23 @@ namespace Krisiun_Project.Janelas
 {
     public partial class Form5 : Form
     {
+        private Form1 form1;
         private Ferramentas ferramentas;
-        private Pitch_principal.Peca peca;  
-        public Form5(Ferramentas ferramentas, Pitch_principal.Peca peca, Form1 form1)
+        private Pitch_principal.Peca peca;
+        private Pastas pastas;
+        public Form5(Ferramentas ferramentas, Pitch_principal.Peca peca, Form1 form1, Pastas pastas)
         {
             InitializeComponent();
-            this.ferramentas = ferramentas; 
+            this.ferramentas = ferramentas;
             this.peca = peca;
+            this.form1 = form1;
             listBox1.DataSource = ferramentas.ListFrente;
             listBox1.ValueMember = "Index";
             listBox1.DisplayMember = "Nome";
             listBox2.DataSource = ferramentas.ListTras;
             listBox2.ValueMember = "Index";
             listBox2.DisplayMember = "Nome";
-
+            this.pastas = pastas;
         }
         private void AlterarOrdemfrente(bool subir)
         {
@@ -135,6 +138,12 @@ namespace Krisiun_Project.Janelas
         private void button5_Click(object sender, EventArgs e)
         {
             AlterarOrdemtras(false);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pastas.CriarPastas(peca.hinmei, peca.zuban);
+            form1.SavePictureBoxAsJPG(form1.paneld_f, "Teste1");
         }
     }
 }
