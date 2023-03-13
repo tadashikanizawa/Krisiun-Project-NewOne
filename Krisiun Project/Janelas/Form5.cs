@@ -91,6 +91,12 @@ namespace Krisiun_Project.Janelas
                 omote_radio.Checked = false;
             }
             else {  omote_radio.Enabled = true; }
+            if (ferramentas.ListFrente.Count == 0 && ferramentas.ListTras.Count == 0 ) 
+            {
+                button1.Enabled = false;
+            }
+
+            else { button1.Enabled = true; }
         }
 
         private void himen_tb_TextChanged(object sender, EventArgs e)
