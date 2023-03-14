@@ -19,6 +19,7 @@ namespace Krisiun_Project.Janelas
         private Ferramentas ferramentas;
         private Pitch_principal.Peca peca;
         private Pastas pastas;
+        private Tejun tejun;
         public Form5(Ferramentas ferramentas, Pitch_principal.Peca peca, Form1 form1, Pastas pastas)
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace Krisiun_Project.Janelas
             listBox2.ValueMember = "Index";
             listBox2.DisplayMember = "Nome";
             this.pastas = pastas;
+            this.tejun = new Tejun(ferramentas, this, peca, pastas);
         }
         private void AlterarOrdemfrente(bool subir)
         {
@@ -148,7 +150,9 @@ namespace Krisiun_Project.Janelas
             }
             if(ferramentas.ListTras.Count > 0 ) { 
             form1.SavePictureBoxAsJPG(form1.panel_b, "Back.jpeg");
+
             }
+            tejun.teste();
         }
     }
 }
