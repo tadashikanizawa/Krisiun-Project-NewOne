@@ -28,16 +28,18 @@ namespace Krisiun_Project.G_Code
             this.pastas = pastas;
   
         }
-        public void teste()
+        public void tejuncapa(int num, string lado, string pic)
         {
-            string nomeArquivo = "Untitled-5.txt";
+            string nomeArquivo = "Cabeca.txt";
             string pastadosoft = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
             string caminhoCompleto = Path.Combine(pastadosoft, nomeArquivo);
             string hinmei = peca.hinmei;
             string zuban = peca.zuban;
-            string imagem1 = Path.Combine(pastas.CaminhoRaiz, "Front.jpeg");
+            string subtitulo = num.ToString() + "-" + lado;
+            string imagem1 = Path.Combine(pastas.CaminhoRaiz, pic);
             //  MessageBox.Show(imagem);
             string imagemBase64 = "";
+            int tamanhodaimagem = 500;
             using (Image imagem = Image.FromFile(imagem1))
             {
                 using (MemoryStream ms = new MemoryStream())
@@ -52,9 +54,14 @@ namespace Krisiun_Project.G_Code
                 string html = File.ReadAllText(caminhoCompleto);
                 html = html.Replace("{HINMEI}", hinmei);
                 html = html.Replace("{ZUBAN}", zuban);
+                html = html.Replace("{TAMANHO}", tamanhodaimagem.ToString());
+                html = html.Replace("{SUBTITULO}", subtitulo);
+
                 html = html.Replace("{IMAGEN}", "data:image/jpeg;base64," + imagemBase64);
+                // Adicione o atributo style com a largura desejada na tag <img> do arquivo HTML
+
                 string pasta = pastas.CaminhoRaiz;
-                string nomeArquivo1 = "teste4.html";
+                string nomeArquivo1 = subtitulo + " - 手順書" + ".html";
                 string caminhoCompleto1 = Path.Combine(pasta, nomeArquivo1);
                 if (!string.IsNullOrEmpty(html))
                 {

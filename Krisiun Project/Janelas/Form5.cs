@@ -158,7 +158,11 @@ namespace Krisiun_Project.Janelas
             form1.SavePictureBoxAsJPG(form1.panel_b, "Back.jpeg");
 
             }
-            tejun.teste();
+            if(ferramentas.ListFrente.Count !=0) { tejun.tejuncapa(peca.omote, "表加工", "Front.jpeg"); }
+
+            if (ferramentas.ListTras.Count != 0) { tejun.tejuncapa(peca.ura, "裏加工", "Back.jpeg"); }
+
+            //tejun.tejuncapa(1, "wololo", "Front.jpeg");
         }
     }
 }
