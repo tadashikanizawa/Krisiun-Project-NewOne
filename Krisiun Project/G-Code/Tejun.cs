@@ -64,7 +64,24 @@ namespace Krisiun_Project.G_Code
                 string nomeArquivo1 = subtitulo + " - 手順書" + ".html";
                 string caminhoCompleto1 = Path.Combine(pasta, nomeArquivo1);
                 if (!string.IsNullOrEmpty(html))
-                {
+                {   // Criar tabela HTML com base na lista de objetos
+                    StringBuilder tabelaHtml = new StringBuilder();
+                    tabelaHtml.Append("<table>");
+                    tabelaHtml.Append("<tr><th>ツール</th><th>深さ</th></tr>");
+
+                    foreach (var objeto in ferramentas.ListFrente)
+                    {
+                        tabelaHtml.Append("<tr>");
+                        tabelaHtml.Append($"<td>{objeto.Nome}</td>");
+                        tabelaHtml.Append($"<td>{objeto.Fukasa}</td>");
+                        tabelaHtml.Append("</tr>");
+                    }
+
+                    tabelaHtml.Append("</table>");
+
+                    // Substituir marcador {TABELA} com a tabela HTML gerada
+                    html = html.Replace("{TABELA}", tabelaHtml.ToString());
+
                     using (StreamWriter sw = File.CreateText(caminhoCompleto1))
                     {
                         sw.Write(html);

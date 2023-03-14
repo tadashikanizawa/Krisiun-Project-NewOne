@@ -64,7 +64,7 @@
                 <td><div class="white-box"></div></td>
             </tr>
             <tr>
-                <td>確認テスト4</td>
+                <td>確認テスト66</td>
                 <td><div class="white-box"></div></td>
             </tr>
             <tr>
@@ -73,5 +73,8 @@
             </tr>
         </table>
     </div>
+    <div class="lista">
+    {TABELA}
+</div>
 </body>
 </html>
