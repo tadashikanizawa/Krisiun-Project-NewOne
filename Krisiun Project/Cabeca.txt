@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> {HINMEI} - {ZUBAN} </title>
+    <style type="text/css">
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .subheader {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .image {
+            margin-right: 10px;
+            float: left;
+        }
+        .text {
+            float: right;
+            margin-top: 20px;
+            margin-right: 10px;
+            font-size: 14px;
+            line-height: 1.2em;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        .white-box {
+            background-color: white;
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+         {HINMEI} - {ZUBAN}
+    </div>
+    <div class="subheader">
+        {SUBTITULO}
+    </div>
+    <img src="{IMAGEN}" alt="Imagem" style="width: {TAMANHO}px;" />
+    <div class="text">
+        <table>
+            <tr>
+                <td>確認テスト1</td>
+                <td><div class="white-box"></div></td>
+            </tr>
+            <tr>
+                <td>確認テスト2</td>
+                <td><div class="white-box"></div></td>
+            </tr>
+            <tr>
+                <td>確認テスト3</td>
+                <td><div class="white-box"></div></td>
+            </tr>
+            <tr>
+                <td>確認テスト4</td>
+                <td><div class="white-box"></div></td>
+            </tr>
+            <tr>
+                <td>確認テスト5</td>
+                <td><div class="white-box"></div></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
