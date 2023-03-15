@@ -76,7 +76,7 @@ namespace Krisiun_Project.G_Code
 
                         );
 
-
+                    if(lado == "表加工") { 
                     foreach (var objeto in ferramentas.ListFrente)
                     {
                         tabelaHtml.Append("<tr>");
@@ -95,7 +95,28 @@ namespace Krisiun_Project.G_Code
 
                     // Substituir marcador {TABELA} com a tabela HTML gerada
                     html = html.Replace("{TABELA}", tabelaHtml.ToString());
+                    }
+                    if (lado == "裏加工")
+                    {
+                        foreach (var objeto in ferramentas.ListTras)
+                        {
+                            tabelaHtml.Append("<tr>");
 
+                            tabelaHtml.Append($"<td>{objeto.ToolNumber}</td>");
+                            tabelaHtml.Append($"<td>{objeto.ToolName}</td>");
+                            tabelaHtml.Append($"<td>{"φ" + objeto.Kei}</td>");
+
+                            tabelaHtml.Append($"<td>{objeto.Fukasa}</td>");
+
+                            tabelaHtml.Append($"<td>{objeto.Description}</td>");
+                            tabelaHtml.Append(" </tr>");
+                        }
+
+                        tabelaHtml.Append("</table>");
+
+                        // Substituir marcador {TABELA} com a tabela HTML gerada
+                        html = html.Replace("{TABELA}", tabelaHtml.ToString());
+                    }
                     using (StreamWriter sw = File.CreateText(caminhoCompleto1))
                     {
                         sw.Write(html);

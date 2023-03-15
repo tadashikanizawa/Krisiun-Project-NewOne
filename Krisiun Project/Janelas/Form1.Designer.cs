@@ -702,7 +702,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(88, 304);
+            this.button4.Location = new System.Drawing.Point(88, 400);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 61);
             this.button4.TabIndex = 87;
@@ -723,7 +723,7 @@
             this.panel_men_tras.Controls.Add(this.men_tras_tam);
             this.panel_men_tras.Controls.Add(this.men_tras_kei);
             this.panel_men_tras.Controls.Add(this.label19);
-            this.panel_men_tras.Location = new System.Drawing.Point(119, 179);
+            this.panel_men_tras.Location = new System.Drawing.Point(119, 275);
             this.panel_men_tras.Margin = new System.Windows.Forms.Padding(2);
             this.panel_men_tras.Name = "panel_men_tras";
             this.panel_men_tras.Size = new System.Drawing.Size(113, 120);
@@ -832,7 +832,7 @@
             this.panel_men_frente.Controls.Add(this.men_frente_tam_tb);
             this.panel_men_frente.Controls.Add(this.men_frente_kei_tb);
             this.panel_men_frente.Controls.Add(this.label31);
-            this.panel_men_frente.Location = new System.Drawing.Point(3, 179);
+            this.panel_men_frente.Location = new System.Drawing.Point(3, 275);
             this.panel_men_frente.Margin = new System.Windows.Forms.Padding(2);
             this.panel_men_frente.Name = "panel_men_frente";
             this.panel_men_frente.Size = new System.Drawing.Size(113, 120);
@@ -1044,7 +1044,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button5.Location = new System.Drawing.Point(3, 303);
+            this.button5.Location = new System.Drawing.Point(3, 399);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(78, 65);
             this.button5.TabIndex = 26;

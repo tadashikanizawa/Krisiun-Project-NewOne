@@ -87,13 +87,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Desenhos\ColorItem.cs" />
-    <Compile Include="G-Code\Mentori.cs" />
+    <Compile Include="Ferramentas\Mentori.cs" />
+    <Compile Include="G-Code\GCodeGenerator.cs" />
     <Compile Include="G-Code\Pastas.cs" />
-    <Compile Include="G-Code\Tap.cs" />
-    <Compile Include="G-Code\Coordenadas.cs" />
-    <Compile Include="G-Code\Ferramentas.cs" />
+    <Compile Include="Ferramentas\Tap.cs" />
+    <Compile Include="Ferramentas\Coordenadas.cs" />
+    <Compile Include="Ferramentas\Ferramentas.cs" />
     <Compile Include="G-Code\Grupos.cs" />
-    <Compile Include="G-Code\Drills.cs" />
+    <Compile Include="Ferramentas\Drills.cs" />
     <Compile Include="Dados Aleatorios1\NSB.cs" />
     <Compile Include="G-Code\Tejun.cs" />
     <Compile Include="Janelas\DGV_Codes.cs" />
@@ -216,7 +217,6 @@
     <Content Include="Diario.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="G-Code\HTMLPage1.html" />
     <Content Include="kougu.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
