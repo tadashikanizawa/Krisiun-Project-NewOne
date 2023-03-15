@@ -67,14 +67,28 @@ namespace Krisiun_Project.G_Code
                 {   // Criar tabela HTML com base na lista de objetos
                     StringBuilder tabelaHtml = new StringBuilder();
                     tabelaHtml.Append("<table>");
-                    tabelaHtml.Append("<tr><th>ツール</th><th>深さ</th></tr>");
+                    tabelaHtml.Append("<tr><th style=\"width: 50px;\">ツール番号</th>" +
+                        "<th style=\"width: 50px;\">ツール</th>" +
+                        "<th style=\"width: 50px;\">径</th>" +
+                        "<th style =\"width: 50px;\">深さ</th>" +
+
+                        "<th style =\"width: 150px;\">加工案内</th></tr>"
+
+                        );
+
 
                     foreach (var objeto in ferramentas.ListFrente)
                     {
                         tabelaHtml.Append("<tr>");
-                        tabelaHtml.Append($"<td>{objeto.Nome}</td>");
+
+                        tabelaHtml.Append($"<td>{objeto.ToolNumber}</td>");
+                        tabelaHtml.Append($"<td>{objeto.ToolName}</td>");
+                        tabelaHtml.Append($"<td>{"φ" + objeto.Kei}</td>");
+
                         tabelaHtml.Append($"<td>{objeto.Fukasa}</td>");
-                        tabelaHtml.Append("</tr>");
+
+                        tabelaHtml.Append($"<td>{objeto.Description}</td>");
+                        tabelaHtml.Append(" </tr>");
                     }
 
                     tabelaHtml.Append("</table>");

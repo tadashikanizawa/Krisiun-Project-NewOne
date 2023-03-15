@@ -39,6 +39,7 @@
             width: 20px;
             height: 20px;
         }
+
     </style>
 </head>
 <body>
@@ -73,7 +74,9 @@
             </tr>
         </table>
     </div>
+   
     <div class="lista">
+
     {TABELA}
 </div>
 </body>
