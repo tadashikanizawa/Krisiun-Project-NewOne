@@ -2,21 +2,25 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Configuration;
 
 namespace Krisiun_Project.G_Code
 {
-    internal class GCodeGenerator
+    public class GCodeGenerator
+       
     {
         public Ferramentas ferramentas;
-        public GCodeGenerator(Ferramentas ferramentas)
+        public Pastas pastas;
+        public GCodeGenerator(Ferramentas ferramentas, Pastas pastas)
         {
             this.ferramentas = ferramentas;
+            this.pastas = pastas;
         }
 
-        public StringBuilder inicio_osp(bool oogaka, bool kousoki, bool frente, bool verso , object ferramenta)
+        public StringBuilder inicio_osp(bool kousoki, object ferramenta)
         {
             StringBuilder cabeca= new StringBuilder();
 
@@ -25,6 +29,8 @@ namespace Krisiun_Project.G_Code
                 int toolnum = 0;
                  float kei = 0;
             string tipo = null;
+            string troca = "M06";
+            string resfriamento = "M08";
             // numero da ferramenta
 
 
@@ -34,30 +40,33 @@ namespace Krisiun_Project.G_Code
             if (ferramenta is Drills drill)
             {
                 toolnum = drill.ToolNumber;
+                if (kousoki == true) { toolnum = drill.ToolNumberK; troca = "M207"; }
                 kei = drill.Kei;
                 tipo = drill.ToolName;
+                resfriamento = drill.Resfriamento;
             }
             else if (ferramenta is Tap tap)
             {
                 // Atribua as propriedades do objeto Tap.
             }
 
-            string numpro1 = numpro.ToString().PadLeft(2, '0');
-          
-            if(oogaka == true) { toolnum = ferramentas.ToolNumber; }
-            if(kousoki == true) { toolnum = ferramentas.ToolNumberK; }
+            string numpro1 = numpro.ToString().PadLeft(2, '0');        
             string toolnum1 = toolnum.ToString().PadLeft(2, '0');
-            
-            //kei
-           
             string kei1 = kei.ToString();
             
             //tipo
          
             cabeca.AppendLine("N00" + numpro1);
             cabeca.AppendLine("(N00" + numpro1 + ") - T" + toolnum1 + " -" + tipo + "- φ"+ kei1 );
-            
+            cabeca.AppendLine("G0Z500.");
+            cabeca.AppendLine("T"+toolnum1);
+            cabeca.AppendLine(troca);
+            cabeca.AppendLine("G0X0.Y0.");
+            cabeca.AppendLine("G0G56Z85.H" + toolnum1);
+            cabeca.AppendLine(resfriamento);
+            SaveStringBuilderToFile(pastas.CaminhoO56, cabeca);
             return cabeca;
+
         
         
         }
@@ -95,5 +104,15 @@ namespace Krisiun_Project.G_Code
 
             return gCode.ToString();
         }
+
+            public static void SaveStringBuilderToFile(string filePath, StringBuilder content)
+            {
+                // Converte o StringBuilder em uma string
+                string contentAsString = content.ToString();
+
+                // Salva a string em um arquivo .txt
+                File.WriteAllText(filePath, contentAsString);
+            }
+        
     }
 }

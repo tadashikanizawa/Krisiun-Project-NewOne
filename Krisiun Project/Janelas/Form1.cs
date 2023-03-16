@@ -42,6 +42,7 @@ namespace Krisiun_Project
         private Form2 form2;
         private Form3 form3;
         private Form5 form5;
+        private GCodeGenerator gCodeGenerator;
         private Grupos grupos;
         private Zairyo.Desenho d;
         private NSB nsb;
@@ -75,9 +76,11 @@ namespace Krisiun_Project
             this.brocas = new Drills();
             this.form2 = new Form2(this, ferramentas, bools);
             this.grupos = new Grupos();
+
+            this.gCodeGenerator = new GCodeGenerator(ferramentas, pastas);
             this.datagridcodes = new DGV_Codes(this, peca);
             this.form3 = new Form3(peca, this, meio, shin, bugs, bools);
-            this.form5 = new Form5(ferramentas, peca, this, pastas);
+            this.form5 = new Form5(ferramentas, peca, this, pastas, gCodeGenerator);
             this.nsb = new NSB();
             var nSB = NSBLoader.Load();
 
@@ -650,6 +653,14 @@ namespace Krisiun_Project
         }
         #endregion
         #region Botões e Textboxs do Solid Drill
+
+        private void drill_combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (drill_combobox.SelectedIndex <= 2) { Resfri_Combobox.SelectedIndex = 2; }
+            else { Resfri_Combobox.SelectedIndex = 0; }
+
+
+        }
         private void comboBoxCores_SelectedIndexChanged(object sender, EventArgs e)
         {
             Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
@@ -806,6 +817,7 @@ namespace Krisiun_Project
             Load_Textbox<Drills>(drill_z_tb, null, "Fukasa");
             Load_Textbox<Drills>(tool_tb, null, "ToolNumber");
             Load_Combobox<Drills>(drill_combobox, null, "ToolName");
+            Load_Combobox<Drills>(Resfri_Combobox, null, "Resfriamento");
             Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
             Load_TextboxString<Drills>(drill_combobox, drill_kei_tb, null, "Nome");
             panel_update();
@@ -998,6 +1010,7 @@ namespace Krisiun_Project
         {
             form5.ShowDialog();
         }
+
     }
 
 }

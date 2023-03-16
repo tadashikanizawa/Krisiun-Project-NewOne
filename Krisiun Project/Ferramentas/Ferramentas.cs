@@ -18,6 +18,7 @@ namespace Krisiun_Project.G_Code
         public string ToolName { get; set; } //3
         public float Kei { get; set; } //4
         public float Fukasa { get; set; }
+        public string Resfriamento { get; set; }
         public bool Frente { get; set; }
         public bool Tras { get; set; }
         public bool Lado1 { get; set; }

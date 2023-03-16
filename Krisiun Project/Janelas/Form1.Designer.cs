@@ -187,6 +187,7 @@
             this.ferramentasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.Resfri_Combobox = new System.Windows.Forms.ComboBox();
             this.panel_inverso.SuspendLayout();
             this.panel_lado.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -686,6 +687,7 @@
             // 
             // panel_ana
             // 
+            this.panel_ana.Controls.Add(this.Resfri_Combobox);
             this.panel_ana.Controls.Add(this.button4);
             this.panel_ana.Controls.Add(this.panel_men_tras);
             this.panel_ana.Controls.Add(this.panel_men_frente);
@@ -976,6 +978,7 @@
             this.drill_combobox.Name = "drill_combobox";
             this.drill_combobox.Size = new System.Drawing.Size(113, 20);
             this.drill_combobox.TabIndex = 25;
+            this.drill_combobox.SelectedIndexChanged += new System.EventHandler(this.drill_combobox_SelectedIndexChanged);
             // 
             // label25
             // 
@@ -1781,6 +1784,19 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
+            // Resfri_Combobox
+            // 
+            this.Resfri_Combobox.FormattingEnabled = true;
+            this.Resfri_Combobox.Items.AddRange(new object[] {
+            "M08",
+            "M12",
+            "M51",
+            "M339"});
+            this.Resfri_Combobox.Location = new System.Drawing.Point(131, 204);
+            this.Resfri_Combobox.Name = "Resfri_Combobox";
+            this.Resfri_Combobox.Size = new System.Drawing.Size(121, 20);
+            this.Resfri_Combobox.TabIndex = 88;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2009,6 +2025,7 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         public System.Windows.Forms.Panel panel_b;
+        private System.Windows.Forms.ComboBox Resfri_Combobox;
     }
 }
 

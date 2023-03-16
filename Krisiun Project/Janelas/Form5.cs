@@ -20,12 +20,15 @@ namespace Krisiun_Project.Janelas
         private Pitch_principal.Peca peca;
         private Pastas pastas;
         private Tejun tejun;
-        public Form5(Ferramentas ferramentas, Pitch_principal.Peca peca, Form1 form1, Pastas pastas)
+        private GCodeGenerator gCodeGenerator;
+        public Form5(Ferramentas ferramentas, Pitch_principal.Peca peca, Form1 form1, Pastas pastas, GCodeGenerator gCodeGenerator )
         {
             InitializeComponent();
             this.ferramentas = ferramentas;
             this.peca = peca;
             this.form1 = form1;
+            this.pastas = pastas;
+            this.gCodeGenerator = gCodeGenerator;
             listBox1.DataSource = ferramentas.ListFrente;
             listBox1.ValueMember = "Index";
             listBox1.DisplayMember = "Nome";
@@ -163,6 +166,7 @@ namespace Krisiun_Project.Janelas
             if (ferramentas.ListTras.Count != 0) { tejun.tejuncapa(peca.ura, "裏加工", "Back.jpeg"); }
 
             //tejun.tejuncapa(1, "wololo", "Front.jpeg");
+            gCodeGenerator.inicio_osp(false,ferramentas);
         }
     }
 }
