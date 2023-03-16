@@ -68,11 +68,7 @@ namespace Krisiun_Project.G_Code
                 // Adicione mais tipos de ferramentas conforme necessário.
             }
 
-            // Gerar GCode para CoordenadaList
-            //foreach (PointF ponto in ferramentas.CoordenadaList)
-            //{
-            //    gCode.AppendLine($"G01 X{ponto.X} Y{ponto.Y}");
-            //}
+           
 
             // Rodapé do GCode
             gCode.AppendLine("M30");
