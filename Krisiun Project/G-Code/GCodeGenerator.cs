@@ -10,50 +10,31 @@ namespace Krisiun_Project.G_Code
 {
     internal class GCodeGenerator
     {
-        public Ferramentas ferramentas;
+        private Ferramentas ferramentas;
         public GCodeGenerator(Ferramentas ferramentas)
         {
             this.ferramentas = ferramentas;
         }
 
-        public StringBuilder inicio_osp(bool oogaka, bool kousoki, bool frente, bool verso , object ferramenta)
+        public StringBuilder inicio(bool oogaka, bool kousoki, bool frente, bool verso)
         {
             StringBuilder cabeca= new StringBuilder();
 
          
                 int numpro = 1;
-                int toolnum = 0;
-                 float kei = 0;
-            string tipo = null;
             // numero da ferramenta
-
-
-
-            //Adicione mais tipos de ferramentas conforme necessário.
-
-            if (ferramenta is Drills drill)
-            {
-                toolnum = drill.ToolNumber;
-                kei = drill.Kei;
-                tipo = drill.ToolName;
-            }
-            else if (ferramenta is Tap tap)
-            {
-                // Atribua as propriedades do objeto Tap.
-            }
-
             string numpro1 = numpro.ToString().PadLeft(2, '0');
-          
+            int toolnum = 0;
             if(oogaka == true) { toolnum = ferramentas.ToolNumber; }
             if(kousoki == true) { toolnum = ferramentas.ToolNumberK; }
             string toolnum1 = toolnum.ToString().PadLeft(2, '0');
             
             //kei
-           
+            float kei = ferramentas.Kei;
             string kei1 = kei.ToString();
             
             //tipo
-         
+            string tipo = ferramentas.ToolName;
             cabeca.AppendLine("N00" + numpro1);
             cabeca.AppendLine("(N00" + numpro1 + ") - T" + toolnum1 + " -" + tipo + "- φ"+ kei1 );
             
