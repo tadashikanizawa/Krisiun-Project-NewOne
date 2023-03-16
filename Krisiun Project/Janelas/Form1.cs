@@ -194,9 +194,8 @@ namespace Krisiun_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SavePictureBoxAsJPG(paneld_f, "frente.jpg");
-
-            SavePictureBoxAsJPG(panel_b, "tras.jpg");
+            ferramentas.addtoolnumberK();
+            MessageBox.Show(ferramentas.ListFrente[1].ToolNumberK.ToString());
         }
         public void SavePictureBoxAsJPG(Panel pb, String strg)
         {

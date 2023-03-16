@@ -14,6 +14,7 @@ namespace Krisiun_Project.G_Code
         public string Nome { get; set; }
         public Tipo_de_Corte Tipo { get; set; } //1
         public int ToolNumber { get; set; } //2
+        public int ToolNumberK { get; set;}
         public string ToolName { get; set; } //3
         public float Kei { get; set; } //4
         public float Fukasa { get; set; }
@@ -48,7 +49,32 @@ namespace Krisiun_Project.G_Code
         
         }
 
-        
+        public void addtoolnumberK()
+        {
+            if (ListFrente.Count != 0)
+            { 
+            {
+                for (int i = 0; i < ListFrente.Count; i++)
+                {
+                    // Aqui você pode definir o valor da propriedade com base na posição do objeto
+                    // Neste exemplo, estamos atribuindo o índice do objeto (posição) como o novo valor de ToolNumberK
+                    ListFrente[i].ToolNumberK = i + 1;
+                }
+            }
+            }
+            if (ListTras.Count != 0)
+            { 
+            {
+                for (int i = 0; i < ListTras.Count; i++)
+                {
+                    // Aqui você pode definir o valor da propriedade com base na posição do objeto
+                    // Neste exemplo, estamos atribuindo o índice do objeto (posição) como o novo valor de ToolNumberK
+                    ListTras[i].ToolNumberK = i + 1;
+                }
+
+            }
+            }
+        }
 
         public void AddCoordenadas(int index, Coordenadas coordenadas)
         {
