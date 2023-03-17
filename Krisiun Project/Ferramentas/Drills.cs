@@ -29,6 +29,17 @@ namespace Krisiun_Project.G_Code
             drills.Nome = "wololo";
             drills.Sentan = true;
         }
+        protected override void UpdateKaitenAndOkuri()
+        {
+            if (!string.IsNullOrEmpty(_toolName) && _kei > 0)
+            {
+
+
+                Kaiten = _toolName.Length * 20; 
+                Okuri = (int)(_kei * 200); 
+            }
+        }
+
 
     }
 

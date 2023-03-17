@@ -15,9 +15,28 @@ namespace Krisiun_Project.G_Code
         public Tipo_de_Corte Tipo { get; set; } //1
         public int ToolNumber { get; set; } //2
         public int ToolNumberK { get; set;}
-        public string ToolName { get; set; } //3
-        public float Kei { get; set; } //4
+        public string _toolName;
+        public string ToolName
+        {
+            get { return _toolName; }
+            set
+            { _toolName = value;
+                UpdateKaitenAndOkuri();
+            }
+        }
+        public float _kei;
+        public float Kei
+        {
+            get { return _kei; }
+            set
+            {
+                _kei = value;
+                UpdateKaitenAndOkuri();
+            }
+        } 
         public float Fukasa { get; set; }
+        public int Kaiten { get; set; }
+        public int Okuri { get; set; }
         public string Resfriamento { get; set; }
         public bool Frente { get; set; }
         public bool Tras { get; set; }
@@ -49,7 +68,13 @@ namespace Krisiun_Project.G_Code
 
         
         }
-
+        protected virtual void UpdateKaitenAndOkuri()
+        {
+            // Atualize as propriedades Kaiten e Okuri com base no ToolName e Kei
+            // Exemplo:
+            Kaiten = _toolName.Length * 10; // Apenas um exemplo, você deve substituir pela lógica desejada
+            Okuri = (int)(_kei * 100); // Apenas um exemplo, você deve substituir pela lógica desejada
+        }
         public void addtoolnumberK()
         {
             if (ListFrente.Count != 0)

@@ -134,7 +134,7 @@ namespace Krisiun_Project.G_Code
             StringBuilder gCodeForDrill = new StringBuilder();
 
             // Velocidade de rotação
-            int spindleSpeed = 1000;
+            int spindleSpeed = drill.Kaiten;
             gCodeForDrill.AppendLine($"S{spindleSpeed} M03");
 
             // Comando G81
