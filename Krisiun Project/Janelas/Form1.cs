@@ -77,7 +77,7 @@ namespace Krisiun_Project
             this.form2 = new Form2(this, ferramentas, bools);
             this.grupos = new Grupos();
 
-            this.gCodeGenerator = new GCodeGenerator(ferramentas, pastas);
+            this.gCodeGenerator = new GCodeGenerator(ferramentas, pastas, peca);
             this.datagridcodes = new DGV_Codes(this, peca);
             this.form3 = new Form3(peca, this, meio, shin, bugs, bools);
             this.form5 = new Form5(ferramentas, peca, this, pastas, gCodeGenerator);

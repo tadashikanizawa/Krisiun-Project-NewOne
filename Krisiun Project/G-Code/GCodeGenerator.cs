@@ -14,12 +14,32 @@ namespace Krisiun_Project.G_Code
     {
         public Ferramentas ferramentas;
         public Pastas pastas;
-        public GCodeGenerator(Ferramentas ferramentas, Pastas pastas)
+        public Pitch_principal.Peca peca;
+        public GCodeGenerator(Ferramentas ferramentas, Pastas pastas, Pitch_principal.Peca peca)
         {
             this.ferramentas = ferramentas;
             this.pastas = pastas;
+            this.peca = peca;
         }
+        public StringBuilder comecodoprograma(bool omote, bool ura)
+        {
+            string zuban = peca.zuban;
+            string hinmen = peca.hinmei;
+            string lado = "";
+            int num = 1;
 
+            if(omote == true) { lado = "- 表 / OMOTE"; num = peca.omote; }
+            if(ura == true) { lado = "- 裏 / URA"; num = peca.ura; }
+            StringBuilder inicio = new StringBuilder();
+            inicio.AppendLine("01");
+            inicio.AppendLine("(" + hinmen + "/" + zuban + ")");
+            inicio.AppendLine(num.ToString().PadLeft(2,'0') + lado);
+            inicio.AppendLine("G0Z500.");
+            inicio.AppendLine("G15H1");
+            inicio.AppendLine("M369");
+
+            return inicio;
+        }
         public StringBuilder inicio_osp(bool kousoki, object ferramenta)
         {
             StringBuilder cabeca= new StringBuilder();
@@ -64,7 +84,9 @@ namespace Krisiun_Project.G_Code
             cabeca.AppendLine("G0X0.Y0.");
             cabeca.AppendLine("G0G56Z85.H" + toolnum1);
             cabeca.AppendLine(resfriamento);
-            SaveStringBuilderToFile(pastas.CaminhoO56, cabeca);
+            cabeca.AppendLine("(INICIO)");
+            
+            //SaveStringBuilderToFile(pastas.CaminhoO56, cabeca);
             return cabeca;
 
         
@@ -75,7 +97,9 @@ namespace Krisiun_Project.G_Code
             StringBuilder gCode = new StringBuilder();
 
             // Cabeçalho do GCode
-            gCode.AppendLine("%");
+            StringBuilder comeco = new StringBuilder();
+            comeco = comecodoprograma(true, false);
+            gCode.Append(comeco);
             gCode.AppendLine("G90 G94 G17 G91.1");
 
             // Gerar GCode para objetos na ListaMista
@@ -83,7 +107,7 @@ namespace Krisiun_Project.G_Code
             {
                 if (ferramenta is Drills drill)
                 {
-                    // Adicione o GCode específico para o objeto Drill.
+                    inicio_osp(false, drill); // Adicione o GCode específico para o objeto Drill.
                 }
                 else if (ferramenta is Tap tap)
                 {
@@ -105,13 +129,41 @@ namespace Krisiun_Project.G_Code
             return gCode.ToString();
         }
 
-            public static void SaveStringBuilderToFile(string filePath, StringBuilder content)
+        private StringBuilder GenerateGCodeForDrill(Drills drill)
+        {
+            StringBuilder gCodeForDrill = new StringBuilder();
+
+            // Velocidade de rotação
+            int spindleSpeed = 1000;
+            gCodeForDrill.AppendLine($"S{spindleSpeed} M03");
+
+            // Comando G81
+            PointF primeiraCoordenada = drill.CoordenadasList[0];
+            float fukasa = drill.Fukasa;
+            gCodeForDrill.AppendLine($"G81 X{primeiraCoordenada.X} Y{primeiraCoordenada.Y} R5.0 Z{fukasa}");
+
+            // Coordenadas restantes
+            for (int i = 1; i < drill.CoordenadasList.Count; i++)
+            {
+                PointF coordenada = drill.CoordenadasList[i];
+                string xCoord = coordenada.X % 1 == 0 ? $"{coordenada.X}." : $"{coordenada.X}";
+                string yCoord = coordenada.Y % 1 == 0 ? $"{coordenada.Y}." : $"{coordenada.Y}";
+                gCodeForDrill.AppendLine($"X{xCoord} Y{yCoord}");
+            }
+            gCodeForDrill.AppendLine("G0Z85.");
+            gCodeForDrill.AppendLine("G0Z500.");
+
+            return gCodeForDrill;
+        }
+
+
+        public static void SaveStringBuilderToFile(string filePath, StringBuilder content)
             {
                 // Converte o StringBuilder em uma string
                 string contentAsString = content.ToString();
 
                 // Salva a string em um arquivo .txt
-                File.WriteAllText(filePath, contentAsString);
+                File.WriteAllText(Path.Combine(filePath, "teste.txt"), contentAsString);
             }
         
     }

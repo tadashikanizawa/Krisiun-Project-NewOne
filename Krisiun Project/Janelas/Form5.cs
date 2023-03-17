@@ -166,7 +166,8 @@ namespace Krisiun_Project.Janelas
             if (ferramentas.ListTras.Count != 0) { tejun.tejuncapa(peca.ura, "裏加工", "Back.jpeg"); }
 
             //tejun.tejuncapa(1, "wololo", "Front.jpeg");
-            gCodeGenerator.inicio_osp(false,ferramentas);
+            //gCodeGenerator.inicio_osp(false,ferramentas);
+            gCodeGenerator.GenerateGCode(ferramentas);
         }
     }
 }
