@@ -37,11 +37,12 @@ namespace Krisiun_Project.G_Code
             {// Busque o dicionário de valores de Kaiten para o TipoDrill selecionado
 
                 TipoDeDrills.UpdateKaitenValueBasedOnMaterial(TipoDrill, peca, KaitenValues);
-                MessageBox.Show(TipoDrill.KaitenValue.ToString());
+          
                 float valorkaiten = TipoDrill.KaitenValue / _kei;
                 Kaiten = Convert.ToInt32(valorkaiten);
 
                 float valorokuri = valorkaiten * 0.1f;
+                if(valorokuri > 300) { valorokuri = 300; }
 
                 Okuri = Convert.ToInt32(valorokuri);
 
