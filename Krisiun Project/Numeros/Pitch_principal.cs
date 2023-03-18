@@ -1,4 +1,5 @@
-﻿using Krisiun_Project.Numeros;
+﻿using Krisiun_Project.Dados_Aleatorios1;
+using Krisiun_Project.Numeros;
 using System;
 using System.Windows.Forms;
 
@@ -134,6 +135,8 @@ namespace Krisiun_Project
             public string hinmei;
             public int omote;
             public int ura;
+            public Material Material;
+
             public Peca()
             {
                 this.scale = 1f;

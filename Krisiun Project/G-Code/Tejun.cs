@@ -56,7 +56,7 @@ namespace Krisiun_Project.G_Code
                 html = html.Replace("{ZUBAN}", zuban);
                 html = html.Replace("{TAMANHO}", tamanhodaimagem.ToString());
                 html = html.Replace("{SUBTITULO}", subtitulo);
-
+                html = html.Replace("{ZAITSU}", peca.Material.Name.ToString());
                 html = html.Replace("{IMAGEN}", "data:image/jpeg;base64," + imagemBase64);
                 // Adicione o atributo style com a largura desejada na tag <img> do arquivo HTML
 

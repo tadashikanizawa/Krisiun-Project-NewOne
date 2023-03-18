@@ -1,22 +1,22 @@
-﻿using System;
+﻿using Krisiun_Project.G_Code;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Krisiun_Project.Dados_Aleatorios1
 {
-    internal class Material
+    public class Material
     {
         public string Name { get; set; }
-        public float KaitenValue { get; set; }
 
-        public Material(string name, float kaitenValue)
+        public Material(string name)
         {
             Name = name;
-            KaitenValue = kaitenValue;
         }
 
 
@@ -40,7 +40,9 @@ namespace Krisiun_Project.Dados_Aleatorios1
         public static List<Material> LoadMaterialsFromFile()
         {
             List<Material> materials = new List<Material>();
-            string filePath = "";
+            string dir = Path.GetDirectoryName(Application.ExecutablePath);
+            string ar = "Material.csv";
+            string filePath = Path.Combine(dir, ar);
             using (StreamReader reader = new StreamReader(filePath))
             {
                 // Pule o cabeçalho, se houver
@@ -52,20 +54,14 @@ namespace Krisiun_Project.Dados_Aleatorios1
                     string[] parts = line.Split(',');
 
                     string name = parts[0];
-                    float kaitenValue = float.Parse(parts[1], CultureInfo.InvariantCulture);
+                   // float kaitenValue = float.Parse(parts[1], CultureInfo.InvariantCulture);
 
-                    materials.Add(new Material(name, kaitenValue));
+                    materials.Add(new Material(name));
                 }
             }
 
             return materials;
         }
     }
-    public enum MaterialEnum
-    {
-        SKD11,
-        S50C,
-        // Outros materiais
-    }
-
+    
 }

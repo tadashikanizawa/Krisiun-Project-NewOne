@@ -14,17 +14,12 @@ namespace Krisiun_Project.G_Code
         public ObservableCollection<Drills> test { get; set; }
 
         public ObservableCollection<Tap> test1 { get; set; }
-        public Tap()
+        public Tap(Pitch_principal.Peca peca): base(peca)
         {
             this.prog = new Programas();
             ListTap = new List<Tap>();
         }
-        public void addtap()
-        {
-            Tap tap = new Tap();
-            tap.Nome = "tapa";
-
-        }
+    
 
     }
 }

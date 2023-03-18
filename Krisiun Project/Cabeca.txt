@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title> {HINMEI} - {ZUBAN} </title>
+    <title> {HINMEI} - {ZUBAN} - {ZAITSU} </title>
     <style type="text/css">
         .header {
             font-size: 24px;

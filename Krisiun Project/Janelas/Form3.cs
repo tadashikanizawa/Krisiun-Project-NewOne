@@ -1,6 +1,9 @@
-﻿using Krisiun_Project.janela_principal;
+﻿using Krisiun_Project.Dados_Aleatorios1;
+using Krisiun_Project.G_Code;
+using Krisiun_Project.janela_principal;
 using Krisiun_Project.Numeros;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Forms;
 
@@ -24,8 +27,16 @@ namespace Krisiun_Project.Janelas
             this.bugs = bugs;
             this.form1 = form1;
             this.bools = bools;
+            LoadDrills();
         }
+        private void LoadDrills()
+        {
+            List<Material> Materiais = Material.LoadMaterialsFromFile();
 
+            comboBox1.DataSource = Materiais;
+            comboBox1.DisplayMember = "Name";
+            comboBox1.ValueMember = "Name";
+        }
         private void sizex_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(sizex.Text)) { return; }
@@ -160,6 +171,11 @@ namespace Krisiun_Project.Janelas
         private void Form3_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            peca.Material = (Material)comboBox1.SelectedItem;
         }
     }
 }

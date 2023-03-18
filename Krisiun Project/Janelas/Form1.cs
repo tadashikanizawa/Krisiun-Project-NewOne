@@ -33,11 +33,13 @@ namespace Krisiun_Project
         private ToolNumber toolnum;
         private Addtextbox addtb;
         private Tests t;
+        private DrillMaterialKey drillMaterialKey;
         private Bools bools;
-        private Drills brocas;
+        private Drills Mydrills;
         private Coordenadas coordenadas;
         private CoordenadasGrupo xygrupo;
         private Ferramentas ferramentas;
+        private TipoDeDrills tipoDeDrills;
         private DGV_Codes datagridcodes;
         private Form2 form2;
         private Form3 form3;
@@ -61,19 +63,23 @@ namespace Krisiun_Project
         {
             InitializeComponent();
             this.bools = new Bools();
+
+            this.drillMaterialKey = new DrillMaterialKey(null,null);
             this.coordenadas = new Coordenadas();
             this.meio = new Pitch(bools);
             this.d = new Zairyo.Desenho(bools);
             this.toolnum = new ToolNumber();
             this.peca = new Peca();
+            this.ferramentas = new Ferramentas(peca);
+
+
+            this.Mydrills = new Drills(peca);
             this.bugs = new Bugs.Bugs_Txb();
             this.shin = new Shindashi(meio);
             this.t = new Tests();
             this.addtb = new Addtextbox(t, coordenadas);
             this.pastas = new Pastas();
-            this.ferramentas = new Ferramentas();
-            this.taps = new Tap();
-            this.brocas = new Drills();
+            this.taps = new Tap(peca);
             this.form2 = new Form2(this, ferramentas, bools);
             this.grupos = new Grupos();
 
@@ -85,8 +91,7 @@ namespace Krisiun_Project
             var nSB = NSBLoader.Load();
 
             bindingSource4.DataSource = null;
-            drill_combobox.DataSource = Enum.GetValues(typeof(TipoDrill));
-            drill_combobox.DisplayMember = "ToString";
+          
             dgvCoordenadas.DataSource = bindingSource4;
 
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
@@ -117,6 +122,8 @@ namespace Krisiun_Project
             panel_update();
             atualizarComboBoxCores();
             addcore();
+            LoadDrills();
+            Mydrills.LoadKaitenValuesFromCsv();
             comboBoxCores.SelectedIndex = 8;
             
 
@@ -157,9 +164,16 @@ namespace Krisiun_Project
         public List<ComboBox> ComboBoxList = new List<ComboBox>();
         private BindingSource gruposCoordenadasBindingSource = new BindingSource();
         #endregion
-        
+
         // Atribui o BindingSource à lista de grupos de coordenadas
-   
+        private void LoadDrills()
+        {
+            List<TipoDeDrills> listaDeDrills = TipoDeDrills.LoadDrills();
+
+            drill_combobox.DataSource = listaDeDrills;
+            drill_combobox.DisplayMember = "Name";
+            drill_combobox.ValueMember = "Name";
+        }
         private void add_tb_naLista()
         {
             TextBoxes.Add(Num_pro_textbox); //[0]
@@ -466,6 +480,30 @@ namespace Krisiun_Project
                 }
             }
         }
+        private void Load_ComboboxDrillType<T>(ComboBox comboBox, T objeto) where T : class
+        {
+            if (lastSelectedDgv != null)
+            {
+                T objetoSelecionado = lastSelectedDgv.CurrentRow.DataBoundItem as T;
+                if (objetoSelecionado != null)
+                {
+                    Drills selectedDrill = objetoSelecionado as Drills;
+                    if (selectedDrill != null)
+                    {
+                        TipoDeDrills drillType = comboBox.SelectedItem as TipoDeDrills;
+                        if (drillType != null)
+                        {
+                            selectedDrill.TipoDrill = drillType;
+                            lastSelectedDgv.Refresh();
+                            dataGridView1.Refresh();
+                            dataGridView2.Refresh();
+                            dataGridView3.Refresh();
+                        }
+                    }
+                }
+            }
+        }
+
         private void Load_Checkbox<T>(CheckBox checkBox, T objeto, string nomePropriedade) where T : class
         {
             if (lastSelectedDgv != null)
@@ -733,7 +771,7 @@ namespace Krisiun_Project
             {
                 if (float.TryParse(valor, out z))
                 {
-                    if ((TipoDrill)drill_combobox.SelectedItem == TipoDrill.ソリッドドリル)
+                    if (drill_combobox.SelectedIndex == 0)
                     {
                         NSB x = nsb.Find(n => n.Dia == kei);
                         if (x != null)
@@ -749,7 +787,7 @@ namespace Krisiun_Project
                             }
                         }
                     }
-                    if ((TipoDrill)drill_combobox.SelectedItem == TipoDrill.カムドリル)
+                    if (drill_combobox.SelectedIndex == 1)
                     {
                         kei *= 5.15f;
                         if (kei < z)
@@ -805,18 +843,19 @@ namespace Krisiun_Project
 
         private void button6_Click(object sender, EventArgs e)
         {
-            taps.addtap();
         }
 
 
 
         private void button4_Click(object sender, EventArgs e)
         {
+            Load_ComboboxDrillType<Drills>(drill_combobox, null);
             Load_Textbox<Drills>(drill_kei_tb, null, "Kei");
             Load_Combobox<Drills>(drill_combobox, null, "DrillTipo");
             Load_Textbox<Drills>(drill_z_tb, null, "Fukasa");
             Load_Textbox<Drills>(tool_tb, null, "ToolNumber");
             Load_Combobox<Drills>(drill_combobox, null, "ToolName");
+
             Load_Combobox<Drills>(Resfri_Combobox, null, "Resfriamento");
             Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
             Load_TextboxString<Drills>(drill_combobox, drill_kei_tb, null, "Nome");
@@ -1011,6 +1050,10 @@ namespace Krisiun_Project
             form5.ShowDialog();
         }
 
+        private void Resfri_Combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

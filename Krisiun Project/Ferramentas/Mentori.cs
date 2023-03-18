@@ -2,5 +2,8 @@
 {
     internal class Mentori : Ferramentas
     {
+        public Mentori(Pitch_principal.Peca peca) : base(peca)
+        {
+        }
     }
 }

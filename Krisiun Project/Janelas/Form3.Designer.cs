@@ -49,6 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.himen_tb = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             this.panel4.Controls.Add(this.basex_tb);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.basey_tb);
-            this.panel4.Location = new System.Drawing.Point(119, 109);
+            this.panel4.Location = new System.Drawing.Point(119, 154);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(99, 113);
             this.panel4.TabIndex = 36;
@@ -121,7 +122,7 @@
             this.panel3.Controls.Add(this.sizez);
             this.panel3.Controls.Add(this.sizey);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(14, 109);
+            this.panel3.Location = new System.Drawing.Point(14, 154);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(99, 113);
             this.panel3.TabIndex = 37;
@@ -192,7 +193,7 @@
             // shikaku_rd
             // 
             this.shikaku_rd.AutoSize = true;
-            this.shikaku_rd.Location = new System.Drawing.Point(78, 87);
+            this.shikaku_rd.Location = new System.Drawing.Point(119, 132);
             this.shikaku_rd.Name = "shikaku_rd";
             this.shikaku_rd.Size = new System.Drawing.Size(59, 16);
             this.shikaku_rd.TabIndex = 35;
@@ -204,7 +205,7 @@
             // maru_rb
             // 
             this.maru_rb.AutoSize = true;
-            this.maru_rb.Location = new System.Drawing.Point(25, 87);
+            this.maru_rb.Location = new System.Drawing.Point(66, 132);
             this.maru_rb.Name = "maru_rb";
             this.maru_rb.Size = new System.Drawing.Size(47, 16);
             this.maru_rb.TabIndex = 34;
@@ -249,7 +250,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(14, 228);
+            this.button1.Location = new System.Drawing.Point(14, 273);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(188, 43);
             this.button1.TabIndex = 38;
@@ -257,12 +258,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(97, 87);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 20);
+            this.comboBox1.TabIndex = 39;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(233, 283);
+            this.ClientSize = new System.Drawing.Size(233, 349);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -307,5 +318,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox himen_tb;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

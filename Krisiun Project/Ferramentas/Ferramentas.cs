@@ -10,6 +10,7 @@ namespace Krisiun_Project.G_Code
     public class Ferramentas
     {
         private Programas prog;
+        public Pitch_principal.Peca peca;
         public int Index { get; set; } //0
         public string Nome { get; set; }
         public Tipo_de_Corte Tipo { get; set; } //1
@@ -58,17 +59,18 @@ namespace Krisiun_Project.G_Code
         private Dictionary<int, Coordenadas> coordenadas = new Dictionary<int, Coordenadas>();
         public int numlado { get;set; }
 
-        public Ferramentas()
+        public Ferramentas(Pitch_principal.Peca peca)
         {
             this.prog = new Programas();
             ListTotal = new BindingList<Ferramentas>();
             ListFrente = new BindingList<Ferramentas>();
             ListTras = new BindingList<Ferramentas>();
             ListDrills = new BindingList<Drills>();
-            numlado = 0; 
-           // XYList = new List<PointF>();
+            numlado = 0;
+            this.peca = peca;
+            // XYList = new List<PointF>();
 
-        
+
         }
         protected virtual void UpdateKaitenAndOkuri()
         {
@@ -124,7 +126,7 @@ namespace Krisiun_Project.G_Code
 
             if (tipo_De_Corte == Tipo_de_Corte.ボーリング孔)
             { //tool.Nome = tipo_De_Corte.ToString() + "φ" + tool.kei.ToString(); }
-                Drills tool = new Drills();
+                Drills tool = new Drills(peca);
                 tool.Index = prog.Numeros;
                 tool.Tipo = tipo_De_Corte;
                 tool.Kei = 1;

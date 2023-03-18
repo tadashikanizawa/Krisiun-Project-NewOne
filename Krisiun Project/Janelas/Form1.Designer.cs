@@ -53,7 +53,6 @@
             this.Add_Coor = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.drillTipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolCumpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sentanDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.indexDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +76,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel_ana = new System.Windows.Forms.Panel();
+            this.Resfri_Combobox = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.panel_men_tras = new System.Windows.Forms.Panel();
             this.men_tras_z = new System.Windows.Forms.TextBox();
@@ -187,7 +187,6 @@
             this.ferramentasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.Resfri_Combobox = new System.Windows.Forms.ComboBox();
             this.panel_inverso.SuspendLayout();
             this.panel_lado.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -456,7 +455,6 @@
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.drillTipoDataGridViewTextBoxColumn,
-            this.toolCumpDataGridViewTextBoxColumn,
             this.zDataGridViewTextBoxColumn,
             this.sentanDataGridViewCheckBoxColumn,
             this.indexDataGridViewTextBoxColumn2,
@@ -488,14 +486,6 @@
             this.drillTipoDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.drillTipoDataGridViewTextBoxColumn.Name = "drillTipoDataGridViewTextBoxColumn";
             this.drillTipoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // toolCumpDataGridViewTextBoxColumn
-            // 
-            this.toolCumpDataGridViewTextBoxColumn.DataPropertyName = "Tool_Cump";
-            this.toolCumpDataGridViewTextBoxColumn.HeaderText = "Tool_Cump";
-            this.toolCumpDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.toolCumpDataGridViewTextBoxColumn.Name = "toolCumpDataGridViewTextBoxColumn";
-            this.toolCumpDataGridViewTextBoxColumn.Width = 150;
             // 
             // zDataGridViewTextBoxColumn
             // 
@@ -701,6 +691,20 @@
             this.panel_ana.Name = "panel_ana";
             this.panel_ana.Size = new System.Drawing.Size(270, 472);
             this.panel_ana.TabIndex = 19;
+            // 
+            // Resfri_Combobox
+            // 
+            this.Resfri_Combobox.FormattingEnabled = true;
+            this.Resfri_Combobox.Items.AddRange(new object[] {
+            "M08",
+            "M12",
+            "M51",
+            "M339"});
+            this.Resfri_Combobox.Location = new System.Drawing.Point(131, 204);
+            this.Resfri_Combobox.Name = "Resfri_Combobox";
+            this.Resfri_Combobox.Size = new System.Drawing.Size(121, 20);
+            this.Resfri_Combobox.TabIndex = 88;
+            this.Resfri_Combobox.SelectedIndexChanged += new System.EventHandler(this.Resfri_Combobox_SelectedIndexChanged);
             // 
             // button4
             // 
@@ -1784,26 +1788,13 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // Resfri_Combobox
-            // 
-            this.Resfri_Combobox.FormattingEnabled = true;
-            this.Resfri_Combobox.Items.AddRange(new object[] {
-            "M08",
-            "M12",
-            "M51",
-            "M339"});
-            this.Resfri_Combobox.Location = new System.Drawing.Point(131, 204);
-            this.Resfri_Combobox.Name = "Resfri_Combobox";
-            this.Resfri_Combobox.Size = new System.Drawing.Size(121, 20);
-            this.Resfri_Combobox.TabIndex = 88;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(2019, 768);
+            this.ClientSize = new System.Drawing.Size(2036, 768);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.comboBoxCores);

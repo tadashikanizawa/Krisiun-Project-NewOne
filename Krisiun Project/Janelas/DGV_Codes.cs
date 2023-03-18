@@ -56,25 +56,19 @@ namespace Krisiun_Project.janela_principal
                     {
                         Drills drillSelecionado = ferramentaSelecionada as Drills;
                       
-                        foreach (TextBox textBox in textBoxs)
-                        {
                             textBoxs[7].Text = drillSelecionado.ToolNumber.ToString(); //7
                             textBoxs[1].Text = drillSelecionado.Kei.ToString(); //1
                             textBoxs[2].Text = drillSelecionado.Fukasa.ToString(); //2
 
-                        }
-                        foreach (ComboBox comboBox in comboBoxes)
-                        {
+                        
                             comboBoxes[0].Text = drillSelecionado.DrillTipo;
                             comboBoxes[1].SelectedIndex = comboBoxes[1].FindStringExact(drillSelecionado.Color.Name);
 
-                        }
-                        foreach (CheckBox checkBox in checkBoxes)
-                        {
+                        
                             checkBoxes[0].Checked = drillSelecionado.Frente;
                             checkBoxes[1].Checked = drillSelecionado.Tras;
                             checkBoxes[2].Checked = drillSelecionado.Sentan;
-                        }
+                        
 
                         // carrega as coordenadas do drill
                         if (e.RowIndex >= 0 && e.ColumnIndex >= 0)

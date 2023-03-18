@@ -7,29 +7,38 @@ using System;
 using Krisiun_Project.Dados_Aleatorios1;
 using System.Globalization;
 using System.IO;
+using static Krisiun_Project.G_Code.TipoDeDrills;
+using static Krisiun_Project.Pitch_principal;
 
 namespace Krisiun_Project.G_Code
 {
     public class Drills : Ferramentas
     {
         public float Z { get; set; }
+     
         public string DrillTipo { get; set; }
+        public TipoDeDrills TipoDrill {get;set;}
+        public Dictionary<DrillMaterialKey, float> KaitenValues{get; set;}
+
         public bool Sentan { get; set; } 
 
-        public Drills()
+        public Drills(Peca peca):base (peca)
         {
             CoordenadasList = new List<PointF>();
-
-
+            KaitenValues = LoadKaitenValuesFromCsv();
+  
         }
-        
+  
+
         protected override void UpdateKaitenAndOkuri()
         {
+         
             if (!string.IsNullOrEmpty(_toolName) && _kei > 0)
             {// Busque o dicionário de valores de Kaiten para o TipoDrill selecionado
 
-            
-                float valorkaiten = 15500 / _kei;
+                TipoDeDrills.UpdateKaitenValueBasedOnMaterial(TipoDrill, peca, KaitenValues);
+                MessageBox.Show(TipoDrill.KaitenValue.ToString());
+                float valorkaiten = TipoDrill.KaitenValue / _kei;
                 Kaiten = Convert.ToInt32(valorkaiten);
 
                 float valorokuri = valorkaiten * 0.1f;
@@ -38,23 +47,66 @@ namespace Krisiun_Project.G_Code
 
             }
         }
+        public Dictionary<DrillMaterialKey, float> LoadKaitenValuesFromCsv()
+        {
+            Dictionary<DrillMaterialKey, float> kaitenValues = new Dictionary<DrillMaterialKey, float>();
+            string dir = Path.GetDirectoryName(Application.ExecutablePath);
+            string ar = "Drill_Kaiten_Value.csv";
+            string filePath = Path.Combine(dir, ar);
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                reader.ReadLine(); // Pula o cabeçalho
 
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] parts = line.Split(',');
+
+                    string materialName = parts[0];
+                    string drillTypeName = parts[1];
+                    float kaitenValue = float.Parse(parts[2]);
+
+                    DrillMaterialKey key = new DrillMaterialKey(drillTypeName, materialName);
+                    kaitenValues[key] = kaitenValue;
+                }
+            }
+            MessageBox.Show(kaitenValues.Count.ToString());
+            return kaitenValues;
+        }
 
     }
-    public class ListaDeDrills
+    public class TipoDeDrills
  
     {
         public string Name { get; set; }
         public float KaitenValue { get; set; }
         public bool Sentan { get; set; }
 
-        public ListaDeDrills(string name, float kaitenValue, bool sentan)
+        public TipoDeDrills(string name, float kaitenValue, bool sentan)
         {
             Name = name;
             KaitenValue = kaitenValue;
             Sentan = sentan;
         }
 
+        public static void UpdateKaitenValueBasedOnMaterial(TipoDeDrills tipodedrill, Peca peca, Dictionary<DrillMaterialKey, float> kaitenValues)
+        {
+            if (peca == null)
+            {
+                // Algum objeto não foi inicializado corretamente
+                return;
+            }
+            if (peca.Material != null)
+            {
+                MessageBox.Show(kaitenValues.Count.ToString());
+                DrillMaterialKey key = new DrillMaterialKey(tipodedrill.Name, peca.Material.Name);
+                if (kaitenValues.TryGetValue(key, out float newKaitenValue))
+                {
+                    tipodedrill.KaitenValue = newKaitenValue;
+                
+                }
+            }
+        }
 
 
         public override bool Equals(object obj)
@@ -64,7 +116,7 @@ namespace Krisiun_Project.G_Code
                 return false;
             }
 
-            ListaDeDrills other = (ListaDeDrills)obj;
+            TipoDeDrills other = (TipoDeDrills)obj;
             return Name.Equals(other.Name);
         }
 
@@ -73,9 +125,9 @@ namespace Krisiun_Project.G_Code
             return Name.GetHashCode();
         }
 
-        public static List<ListaDeDrills> LoadDrills()
+        public static List<TipoDeDrills> LoadDrills()
         {
-            List<ListaDeDrills> listaDeDrills = new List<ListaDeDrills>();
+            List<TipoDeDrills> listaDeDrills = new List<TipoDeDrills>();
             string dir = Path.GetDirectoryName(Application.ExecutablePath);
             string ar = "ListadeDrills.csv";
             string filePath = Path.Combine(dir, ar);
@@ -93,22 +145,46 @@ namespace Krisiun_Project.G_Code
                     float kaitenValue = float.Parse(parts[1], CultureInfo.InvariantCulture);
                     bool Sentan = bool.Parse(parts[2]);
 
-                    listaDeDrills.Add(new ListaDeDrills(name, kaitenValue, Sentan));
+                    listaDeDrills.Add(new TipoDeDrills(name, kaitenValue, Sentan));
                 }
             }
 
             return listaDeDrills;
         }
+      
+
     }
-    public enum TipoDrill
+    public class DrillMaterialKey
     {
-        ソリッドドリル, //0
-        カムドリル, //1
-        イスカルドリル, //2
-        ハイスドリル, //3
-        センタードリル, //4
-        アクアフラット, //5
-        NK, //6
+        public string DrillTypeName { get; set; }
+        public string MaterialName { get; set; }
+        public Dictionary<DrillMaterialKey, float> KaitenValues { get; private set; }
+
+        public DrillMaterialKey(string drillTypeName, string materialName)
+        {
+            DrillTypeName = drillTypeName;
+            MaterialName = materialName;
+         //   KaitenValues = LoadKaitenValuesFromCsv();
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is DrillMaterialKey other)
+            {
+                return DrillTypeName == other.DrillTypeName && MaterialName == other.MaterialName;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return (DrillTypeName, MaterialName).GetHashCode();
+        }
+
+
+
+     
+
     }
 
 }
