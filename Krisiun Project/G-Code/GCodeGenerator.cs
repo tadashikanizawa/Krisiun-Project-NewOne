@@ -79,7 +79,10 @@ namespace Krisiun_Project.G_Code
             //tipo
          
             cabeca.AppendLine("N00" + numpro1);
+            if(ferramenta is Drills)
+            { 
             cabeca.AppendLine("(N00" + numpro1 +  "- T" + toolnum1 + " -" + tipo + "- φ"+ kei1 + ")");
+            }
             cabeca.AppendLine("G0Z500.");
             cabeca.AppendLine("T"+toolnum1);
             cabeca.AppendLine(troca);
