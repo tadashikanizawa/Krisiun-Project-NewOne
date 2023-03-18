@@ -135,6 +135,8 @@ namespace Krisiun_Project
             public string hinmei;
             public int omote;
             public int ura;
+            public bool xinv;
+            public bool yinv;
             public Material Material;
 
             public Peca()
@@ -148,6 +150,7 @@ namespace Krisiun_Project
                 this.basey = 50;
                 this.omote = 1;
                 this.ura = 2;
+                xinv = true;
             }
 
             public void UpdateSize(float x, float y, float z)

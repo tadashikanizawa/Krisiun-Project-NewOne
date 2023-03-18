@@ -266,6 +266,7 @@ namespace Krisiun_Project
         #region Sobre_Paineis_de_Desenho
         private void y_inv_checkbox_CheckedChanged(object sender, EventArgs e)
         {
+            peca.yinv = y_inv_checkbox.Checked;
             panel_update();
         }
         private void paneld_f_Paint(object sender, PaintEventArgs e)
@@ -687,6 +688,7 @@ namespace Krisiun_Project
         }
         private void x_inv_checkbok_CheckedChanged(object sender, EventArgs e)
         {
+            peca.xinv = x_inv_checkbok.Checked;
             panel_update();
         }
         #endregion
@@ -828,6 +830,7 @@ namespace Krisiun_Project
         {
             //  frente_checkBox.Checked = false;
             // tras_checkBox.Checked = false;
+            sentan_cb.Checked = false;
             dataGridView1.ClearSelection();
             dataGridView2.ClearSelection();
               dataGridView3.Select();
