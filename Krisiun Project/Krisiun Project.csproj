@@ -180,6 +180,9 @@
     <None Include="kougu.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="ListadeDrills.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="NSB.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

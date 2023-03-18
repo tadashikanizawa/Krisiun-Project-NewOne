@@ -48,7 +48,9 @@ namespace Krisiun_Project.G_Code
         public Color Color { get; set; }
         //public Coordenadas Coordenadas { get; set; }
         public PointF CoordenadasP { get; set; }
-        public List<PointF> CoordenadasList { get; set; }
+        public int _CoordenadasList;
+        public List<PointF> CoordenadasList
+        { get; set; }
         public BindingList<Ferramentas> ListTotal { get; set; }
         public BindingList<Ferramentas> ListFrente { get; set; }
         public BindingList<Ferramentas> ListTras { get; set; }
@@ -70,10 +72,6 @@ namespace Krisiun_Project.G_Code
         }
         protected virtual void UpdateKaitenAndOkuri()
         {
-            // Atualize as propriedades Kaiten e Okuri com base no ToolName e Kei
-            // Exemplo:
-            Kaiten = _toolName.Length * 10; // Apenas um exemplo, você deve substituir pela lógica desejada
-            Okuri = (int)(_kei * 100); // Apenas um exemplo, você deve substituir pela lógica desejada
         }
         public void addtoolnumberK()
         {

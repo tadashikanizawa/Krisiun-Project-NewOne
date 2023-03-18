@@ -87,9 +87,11 @@ namespace Krisiun_Project.G_Code
 
                         tabelaHtml.Append($"<td>{objeto.Fukasa}</td>");
 
-                            tabelaHtml.Append($"<td>{"S" +objeto.Kaiten}<br>{"F" + objeto.Okuri}</td>");
+                            tabelaHtml.Append("<td><table style=\"border: 1px solid black;\"><tr><td style=\"border: 1px solid black; font-size: 8px;\">");
+                            tabelaHtml.Append($"{"S" + objeto.Kaiten}</td></tr><tr><td style=\"border: 1px solid black; font-size: 8px;\">");
+                            tabelaHtml.Append($"{"F" + objeto.Okuri}</td></tr></table></td>");
                             tabelaHtml.Append(" </tr>");
-                    }
+                        }
 
                     tabelaHtml.Append("</table>");
 
@@ -107,7 +109,9 @@ namespace Krisiun_Project.G_Code
                             tabelaHtml.Append($"<td>{"φ" + objeto.Kei}</td>");
 
                             tabelaHtml.Append($"<td>{objeto.Fukasa}</td>");
-                            tabelaHtml.Append($"<td>{objeto.Description}<br>{objeto.Description}</td>");
+                            tabelaHtml.Append("<td><table style=\"border: 1px solid black;\"><tr><td style=\"border: 1px solid black; font-size: 8px;\">");
+                            tabelaHtml.Append($"{"S" + objeto.Kaiten}</td></tr><tr><td style=\"border: 1px solid black; font-size: 8px;\">");
+                            tabelaHtml.Append($"{"F" + objeto.Okuri}</td></tr></table></td>");
                             tabelaHtml.Append(" </tr>");
                         }
 

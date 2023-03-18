@@ -117,7 +117,7 @@ namespace Krisiun_Project
             panel_update();
             atualizarComboBoxCores();
             addcore();
-            comboBoxCores.SelectedIndex = 5;
+            comboBoxCores.SelectedIndex = 8;
             
 
         }

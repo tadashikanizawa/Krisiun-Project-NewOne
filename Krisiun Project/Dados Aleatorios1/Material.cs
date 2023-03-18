@@ -19,6 +19,8 @@ namespace Krisiun_Project.Dados_Aleatorios1
             KaitenValue = kaitenValue;
         }
 
+
+
         public override bool Equals(object obj)
         {
             if (obj == null || GetType() != obj.GetType())
@@ -35,10 +37,10 @@ namespace Krisiun_Project.Dados_Aleatorios1
             return Name.GetHashCode();
         }
 
-        public static List<Material> LoadMaterialsFromFile(string filePath)
+        public static List<Material> LoadMaterialsFromFile()
         {
             List<Material> materials = new List<Material>();
-
+            string filePath = "";
             using (StreamReader reader = new StreamReader(filePath))
             {
                 // Pule o cabeçalho, se houver
@@ -59,6 +61,11 @@ namespace Krisiun_Project.Dados_Aleatorios1
             return materials;
         }
     }
-   
+    public enum MaterialEnum
+    {
+        SKD11,
+        S50C,
+        // Outros materiais
+    }
 
 }
