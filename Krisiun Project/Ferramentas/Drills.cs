@@ -71,7 +71,6 @@ namespace Krisiun_Project.G_Code
                     kaitenValues[key] = kaitenValue;
                 }
             }
-            MessageBox.Show(kaitenValues.Count.ToString());
             return kaitenValues;
         }
 
@@ -99,7 +98,6 @@ namespace Krisiun_Project.G_Code
             }
             if (peca.Material != null)
             {
-                MessageBox.Show(kaitenValues.Count.ToString());
                 DrillMaterialKey key = new DrillMaterialKey(tipodedrill.Name, peca.Material.Name);
                 if (kaitenValues.TryGetValue(key, out float newKaitenValue))
                 {
