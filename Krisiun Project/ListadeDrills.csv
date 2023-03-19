@@ -1,7 +1,7 @@
-ソリッドドリル,15900,true,M51,true
-カムドリル,15340,true,M51,true
-イスカルドリル,31740,false,M08,true
-アクアフラット,11330,false,M08,false
-NK,5100,false,M08,false
-ドリル,3500,false,M08,false
-センタードリル,2000,false,M08,false
+ソリッドドリル,15900,true,M51,true,G81
+カムドリル,15340,true,M51,true,G81
+イスカルドリル,31740,false,M08,true,G81
+アクアフラット,11330,false,M08,false,G86
+NK,5100,false,M08,false,G86
+ドリル,3500,false,M08,false,G83
+センタードリル,2000,false,M08,false,G81

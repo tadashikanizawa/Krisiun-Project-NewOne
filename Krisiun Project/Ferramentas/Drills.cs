@@ -83,14 +83,16 @@ namespace Krisiun_Project.G_Code
         public bool Sentan { get; set; }
         public string Resfriamento { get; set; }
         public bool OAIR { get; set; }
+        public string Corte { get; set; }
 
-        public TipoDeDrills(string name, float kaitenValue, bool sentan, string resfriamento, bool oair)
+        public TipoDeDrills(string name, float kaitenValue, bool sentan, string resfriamento, bool oair, string corte)
         {
             Name = name;
             KaitenValue = kaitenValue;
             Sentan = sentan;
             Resfriamento = resfriamento;
             OAIR = oair;
+            Corte = corte;
         }
 
         public static void UpdateKaitenValueBasedOnMaterial(TipoDeDrills tipodedrill, Peca peca, Dictionary<DrillMaterialKey, float> kaitenValues)
@@ -149,8 +151,8 @@ namespace Krisiun_Project.G_Code
                     bool Sentan = bool.Parse(parts[2]);
                     string Resfriamento = parts[3];
                     bool OAIR = bool.Parse(parts[4]);
-
-                    listaDeDrills.Add(new TipoDeDrills(name, kaitenValue, Sentan, Resfriamento, OAIR));
+                    string Corte = parts[5];
+                    listaDeDrills.Add(new TipoDeDrills(name, kaitenValue, Sentan, Resfriamento, OAIR, Corte));
                 }
             }
 

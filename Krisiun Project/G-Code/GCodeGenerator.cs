@@ -246,6 +246,11 @@ namespace Krisiun_Project.G_Code
         {
             StringBuilder gCodeForDrill = new StringBuilder();
             int spindleSpeed = drill.Kaiten;
+            string corte = drill.TipoDrill.Corte;
+            string restodoprimeiro = "";
+            if(corte == "G81") { restodoprimeiro = "R5.0Z"; }
+            else if(corte == "G86") { restodoprimeiro = "P1.R5.0Z"; }
+            else if(corte == "G83") { restodoprimeiro = "Q1.K2.R.5Z"; }
             float senta = 0f;
             float fukasa = drill.Fukasa;
             if (fukasa < 0) { fukasa *= -1; }
@@ -264,7 +269,7 @@ namespace Krisiun_Project.G_Code
             if(fukasa > 0) { fukasa *= -1; }
             // Velocidade de rotação
             gCodeForDrill.AppendLine($"S{spindleSpeed} M03");
-
+            
             // Comando G81
             PointF primeiraCoordenada = drill.CoordenadasList[0];
             float xCoordValuep = xinv ? -primeiraCoordenada.X : primeiraCoordenada.X;
@@ -274,7 +279,7 @@ namespace Krisiun_Project.G_Code
             string xCoordp = xCoordValuep % 1 == 0 ? $"{xCoordValuep}.":$"{xCoordValuep}";
             string yCoordp = yCoordValuep % 1 == 0 ? $"{yCoordValuep}.":$"{yCoordValuep}";
 
-            gCodeForDrill.AppendLine($"G81X{xCoordp}Y{yCoordp}R5.0Z{fukasa}F{drill.Okuri}");
+            gCodeForDrill.AppendLine($"{corte}X{xCoordp}Y{yCoordp}{restodoprimeiro}{fukasa}F{drill.Okuri}");
 
             // Coordenadas restantes
             for (int i = 1; i < drill.CoordenadasList.Count; i++)
