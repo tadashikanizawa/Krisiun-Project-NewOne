@@ -417,13 +417,12 @@ namespace Krisiun_Project
                 }
             }
         }
-        private void Load_TextboxString<T>(ComboBox textBox, TextBox textBox1, T objeto, string nomePropriedade) where T : class
+        private void Load_TextboxString<T>(TextBox textBox1, T objeto, string nomePropriedade) where T : class
         {
             if (lastSelectedDgv != null)
             {
-                string valor = textBox.Text;
                 string valor1 = textBox1.Text;
-                string valor2 = valor + "φ" + valor1;
+                string valor2 = valor1;
                     T objetoSelecionado = lastSelectedDgv.CurrentRow.DataBoundItem as T;
                     if (objetoSelecionado != null)
                     {
@@ -439,6 +438,30 @@ namespace Krisiun_Project
                     }
 
                 
+            }
+        }
+        private void Load_TextboxString2<T>(ComboBox textBox, TextBox textBox1, T objeto, string nomePropriedade) where T : class
+        {
+            if (lastSelectedDgv != null)
+            {
+                string valor = textBox.Text;
+                string valor1 = textBox1.Text;
+                string valor2 = valor + "φ" + valor1;
+                T objetoSelecionado = lastSelectedDgv.CurrentRow.DataBoundItem as T;
+                if (objetoSelecionado != null)
+                {
+                    PropertyInfo propertyInfo = typeof(T).GetProperty(nomePropriedade);
+                    if (propertyInfo != null)
+                    {
+                        propertyInfo.SetValue(objetoSelecionado, Convert.ChangeType(valor2, propertyInfo.PropertyType));
+                        lastSelectedDgv.Refresh();
+                        dataGridView1.Refresh();
+                        dataGridView2.Refresh();
+                        dataGridView3.Refresh();
+                    }
+                }
+
+
             }
         }
         private void Load_Combobox<T>(ComboBox comboBox, T objeto, string nomePropriedade) where T : class
@@ -693,7 +716,23 @@ namespace Krisiun_Project
         }
         #endregion
         #region Botões e Textboxs do Solid Drill
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Load_ComboboxDrillType<Drills>(drill_combobox, null);
+            Load_Textbox<Drills>(drill_kei_tb, null, "Kei");
+            Load_Combobox<Drills>(drill_combobox, null, "DrillTipo");
+            Load_Textbox<Drills>(drill_z_tb, null, "Fukasa");
+            Load_Textbox<Drills>(tool_tb, null, "ToolNumber");
+      
+            Load_Combobox<Drills>(drill_combobox, null, "ToolName");
 
+            Load_Combobox<Drills>(Resfri_Combobox, null, "Resfriamento");
+            Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
+            Load_TextboxString2<Drills>(drill_combobox, drill_kei_tb, null, "Nome");
+            Load_TextboxString<Drills>(Num_pro_textbox, null, "Description");
+            panel_update();
+
+        }
         private void drill_combobox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (drill_combobox.SelectedIndex <= 2) { Resfri_Combobox.SelectedIndex = 2; }
@@ -850,21 +889,7 @@ namespace Krisiun_Project
 
 
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Load_ComboboxDrillType<Drills>(drill_combobox, null);
-            Load_Textbox<Drills>(drill_kei_tb, null, "Kei");
-            Load_Combobox<Drills>(drill_combobox, null, "DrillTipo");
-            Load_Textbox<Drills>(drill_z_tb, null, "Fukasa");
-            Load_Textbox<Drills>(tool_tb, null, "ToolNumber");
-            Load_Combobox<Drills>(drill_combobox, null, "ToolName");
-
-            Load_Combobox<Drills>(Resfri_Combobox, null, "Resfriamento");
-            Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
-            Load_TextboxString<Drills>(drill_combobox, drill_kei_tb, null, "Nome");
-            panel_update();
-
-        }
+     
         int counter = 0;
 
         #endregion

@@ -700,9 +700,9 @@
             "M12",
             "M51",
             "M339"});
-            this.Resfri_Combobox.Location = new System.Drawing.Point(131, 204);
+            this.Resfri_Combobox.Location = new System.Drawing.Point(9, 178);
             this.Resfri_Combobox.Name = "Resfri_Combobox";
-            this.Resfri_Combobox.Size = new System.Drawing.Size(121, 20);
+            this.Resfri_Combobox.Size = new System.Drawing.Size(60, 20);
             this.Resfri_Combobox.TabIndex = 88;
             this.Resfri_Combobox.SelectedIndexChanged += new System.EventHandler(this.Resfri_Combobox_SelectedIndexChanged);
             // 
@@ -936,7 +936,7 @@
             // 
             // Num_pro_textbox
             // 
-            this.Num_pro_textbox.Location = new System.Drawing.Point(3, 8);
+            this.Num_pro_textbox.Location = new System.Drawing.Point(75, 178);
             this.Num_pro_textbox.Name = "Num_pro_textbox";
             this.Num_pro_textbox.Size = new System.Drawing.Size(80, 19);
             this.Num_pro_textbox.TabIndex = 2;
