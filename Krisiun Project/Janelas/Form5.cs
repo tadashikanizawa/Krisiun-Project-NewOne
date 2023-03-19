@@ -154,6 +154,7 @@ namespace Krisiun_Project.Janelas
         private void button1_Click(object sender, EventArgs e)
         {
             pastas.CriarPastas(peca.hinmei, peca.zuban);
+            ferramentas.addtoolnumberK();
             if(ferramentas.ListFrente.Count > 0 ) { 
             form1.SavePictureBoxAsJPG(form1.paneld_f, "Front.jpeg");
             }
@@ -165,7 +166,8 @@ namespace Krisiun_Project.Janelas
 
             if (ferramentas.ListTras.Count != 0) { tejun.tejuncapa(peca.ura, "裏加工", "Back.jpeg"); }
 
-            gCodeGenerator.GenerateGCodeFrente(ferramentas);
+            gCodeGenerator.GenerateGCode(ferramentas.ListFrente, ferramentas, true, false);
+            gCodeGenerator.GenerateGCode(ferramentas.ListTras, ferramentas, false, true);
         }
     }
 }

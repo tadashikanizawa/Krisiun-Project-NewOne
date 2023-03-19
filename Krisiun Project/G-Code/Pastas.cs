@@ -15,10 +15,16 @@ namespace Krisiun_Project.G_Code
         public static string Pasta56MB;
         public static string PastaOKK;
         public static string Pasta46;
+        public static string Fabricio;
         public string CaminhoO56 { get; set; }
         public string CaminhoO46 { get; set; }
         public string CaminhoOKK { get; set; }
-        public string CaminhoRaiz { get; set; } 
+        public string CaminhoRaiz { get; set; } //pasta raiz dos programas gerados
+        //daqui pra baixo é para o fabricio
+        public string CaminhoO56F { get; set; }
+        public string CaminhoO46F { get; set; }
+        public string CaminhoOKKF { get; set; }
+        public string CaminhoRaizF { get; set; }
 
         public Pastas()
         {
@@ -26,7 +32,7 @@ namespace Krisiun_Project.G_Code
             Pasta56MB = "OkumaMB56";
             PastaOKK = "OKK76VM";
             Pasta46 = "Okuma46VA";
-
+            Fabricio = "Fabricio";
 
         }
 
@@ -45,9 +51,17 @@ namespace Krisiun_Project.G_Code
             Directory.CreateDirectory(Path.Combine(pastaMinhaClasse, Pasta56MB));
             Directory.CreateDirectory(Path.Combine(pastaMinhaClasse, Pasta46));
             Directory.CreateDirectory(Path.Combine(pastaMinhaClasse, PastaOKK));
+            Directory.CreateDirectory(Path.Combine(pastaMinhaClasse, Fabricio));
+            string pastaFabricio = Path.Combine(pastaMinhaClasse, Fabricio);
+            Directory.CreateDirectory(Path.Combine(pastaFabricio, Pasta56MB));
+            Directory.CreateDirectory(Path.Combine(pastaFabricio, Pasta46));
+            Directory.CreateDirectory(Path.Combine(pastaFabricio, PastaOKK));
             this.CaminhoO46 = Path.Combine(pastaMinhaClasse, Pasta46).ToString();
             this.CaminhoO56 = Path.Combine(pastaMinhaClasse, Pasta56MB).ToString();
             this.CaminhoOKK = Path.Combine(pastaMinhaClasse, PastaOKK).ToString();
+            this.CaminhoO56F = Path.Combine(pastaFabricio, Pasta56MB).ToString();
+            this.CaminhoO46F = Path.Combine(pastaFabricio, Pasta46).ToString();
+            this.CaminhoOKKF = Path.Combine(pastaFabricio, PastaOKK).ToString();
             this.CaminhoRaiz = nomePasta;
          
         }
