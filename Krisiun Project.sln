@@ -5,6 +5,11 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krisiun Project", "Krisiun Project\Krisiun Project.csproj", "{74D96536-F676-4A5E-9FD9-B321E3F9A18B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{94BB448A-67FD-48F0-8449-E55DCC922784}"
+	ProjectSection(SolutionItems) = preProject
+		TejunLista.html = TejunLista.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

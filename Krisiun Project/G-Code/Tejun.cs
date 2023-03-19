@@ -1,6 +1,7 @@
 ﻿using Krisiun_Project.Janelas;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -28,9 +29,9 @@ namespace Krisiun_Project.G_Code
             this.pastas = pastas;
   
         }
-        public void tejuncapa(int num, string lado, string pic)
+        public void tejuncapa(BindingList<Ferramentas> ferramentaslist, int num, string lado, string pic)
         {
-            string nomeArquivo = "Cabeca.txt";
+            string nomeArquivo = "Cabeca.html";
             string pastadosoft = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
             string caminhoCompleto = Path.Combine(pastadosoft, nomeArquivo);
             string hinmei = peca.hinmei;
@@ -39,7 +40,7 @@ namespace Krisiun_Project.G_Code
             string imagem1 = Path.Combine(pastas.CaminhoRaiz, pic);
             //  MessageBox.Show(imagem);
             string imagemBase64 = "";
-            int tamanhodaimagem = 500;
+            int tamanhodaimagem = 1000;
             int numpro = 1;
             using (Image imagem = Image.FromFile(imagem1))
             {
@@ -68,61 +69,42 @@ namespace Krisiun_Project.G_Code
                 {   // Criar tabela HTML com base na lista de objetos
                     StringBuilder tabelaHtml = new StringBuilder();
                     tabelaHtml.Append("<table>");
-                    tabelaHtml.Append("<tr><th style=\"width: 50px;\">N</th>" +
-                        "<tr><th style=\"width: 50px;\">ツール番号</th>" +
-                        "<th style=\"width: 50px;\">ツール</th>" +
-                        "<th style=\"width: 50px;\">径</th>" +
-                        "<th style =\"width: 50px;\">深さ</th>" +
+                    tabelaHtml.Append("<tr><th style=\"width: 50px;\">N</th>" + //1
+                        "<th style=\"width: 50px;\">ツール番号</th>" +  //2
+                        "<th style=\"width: 50px;\">ツール</th>" + //3
+                        "<th style=\"width: 50px;\">径</th>" + //4
+                        "<th style=\"width: 50px;\">加工案内</th>" + //5
+                        "<th style =\"width: 50px;\">深さ</th>" + //6
 
-                        "<th style =\"width: 150px;\">条件</th></tr>"
+                        "<th style =\"width: 150px;\">条件</th></tr>" //7
 
                         );
 
-                    if(lado == "表加工") { 
-                    foreach (var objeto in ferramentas.ListFrente)
+                  
+                    foreach (var objeto in ferramentaslist)
                     {
                         tabelaHtml.Append("<tr>");
-                            tabelaHtml.Append($"<td>{numpro}</td>");
-                        tabelaHtml.Append($"<td>{objeto.ToolNumber}</td>");
-                        tabelaHtml.Append($"<td>{objeto.ToolName}</td>");
-                        tabelaHtml.Append($"<td>{"φ" + objeto.Kei}</td>");
+                            tabelaHtml.Append($"<td>{numpro}</td>");//1
+                        tabelaHtml.Append($"<td>{objeto.ToolNumber}</td>");//2
+                        tabelaHtml.Append($"<td>{objeto.ToolName}</td>");//3
+                        tabelaHtml.Append($"<td>{"φ" + objeto.Kei}</td>");//4
+                            tabelaHtml.Append($"<td>{"φ" + objeto.Description}</td>");//4
 
-                        tabelaHtml.Append($"<td>{objeto.Fukasa}</td>");
+                            tabelaHtml.Append($"<td>{objeto.Fukasa}</td>");
 
                             tabelaHtml.Append("<td><table style=\"border: 1px solid black;\"><tr><td style=\"border: 1px solid black; font-size: 8px;\">");
                             tabelaHtml.Append($"{"S" + objeto.Kaiten}</td></tr><tr><td style=\"border: 1px solid black; font-size: 8px;\">");
                             tabelaHtml.Append($"{"F" + objeto.Okuri}</td></tr></table></td>");
                             tabelaHtml.Append(" </tr>");
-                        }
+                    }
 
                     tabelaHtml.Append("</table>");
 
                     // Substituir marcador {TABELA} com a tabela HTML gerada
                     html = html.Replace("{TABELA}", tabelaHtml.ToString());
                         numpro++;
-                    }
-                    if (lado == "裏加工")
-                    {
-                        foreach (var objeto in ferramentas.ListTras)
-                        {
-                            tabelaHtml.Append("<tr>");
-
-                            tabelaHtml.Append($"<td>{objeto.ToolNumber}</td>");
-                            tabelaHtml.Append($"<td>{objeto.ToolName}</td>");
-                            tabelaHtml.Append($"<td>{"φ" + objeto.Kei}</td>");
-
-                            tabelaHtml.Append($"<td>{objeto.Fukasa}</td>");
-                            tabelaHtml.Append("<td><table style=\"border: 1px solid black;\"><tr><td style=\"border: 1px solid black; font-size: 8px;\">");
-                            tabelaHtml.Append($"{"S" + objeto.Kaiten}</td></tr><tr><td style=\"border: 1px solid black; font-size: 8px;\">");
-                            tabelaHtml.Append($"{"F" + objeto.Okuri}</td></tr></table></td>");
-                            tabelaHtml.Append(" </tr>");
-                        }
-
-                        tabelaHtml.Append("</table>");
-
-                        // Substituir marcador {TABELA} com a tabela HTML gerada
-                        html = html.Replace("{TABELA}", tabelaHtml.ToString());
-                    }
+                    
+                
                     using (StreamWriter sw = File.CreateText(caminhoCompleto1))
                     {
                         sw.Write(html);
