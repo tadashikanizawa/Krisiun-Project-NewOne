@@ -40,7 +40,10 @@ namespace Krisiun_Project.G_Code
             inicio.AppendLine("G15H1");
             inicio.AppendLine("M369");
             }
+            if(okk == true)
+            {
 
+            }
 
 
             return inicio;
