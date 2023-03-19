@@ -40,6 +40,7 @@ namespace Krisiun_Project.G_Code
             //  MessageBox.Show(imagem);
             string imagemBase64 = "";
             int tamanhodaimagem = 500;
+            int numpro = 1;
             using (Image imagem = Image.FromFile(imagem1))
             {
                 using (MemoryStream ms = new MemoryStream())
@@ -67,12 +68,13 @@ namespace Krisiun_Project.G_Code
                 {   // Criar tabela HTML com base na lista de objetos
                     StringBuilder tabelaHtml = new StringBuilder();
                     tabelaHtml.Append("<table>");
-                    tabelaHtml.Append("<tr><th style=\"width: 50px;\">ツール番号</th>" +
+                    tabelaHtml.Append("<tr><th style=\"width: 50px;\">N</th>" +
+                        "<tr><th style=\"width: 50px;\">ツール番号</th>" +
                         "<th style=\"width: 50px;\">ツール</th>" +
                         "<th style=\"width: 50px;\">径</th>" +
                         "<th style =\"width: 50px;\">深さ</th>" +
 
-                        "<th style =\"width: 150px;\">加工案内</th></tr>"
+                        "<th style =\"width: 150px;\">条件</th></tr>"
 
                         );
 
@@ -80,7 +82,7 @@ namespace Krisiun_Project.G_Code
                     foreach (var objeto in ferramentas.ListFrente)
                     {
                         tabelaHtml.Append("<tr>");
-
+                            tabelaHtml.Append($"<td>{numpro}</td>");
                         tabelaHtml.Append($"<td>{objeto.ToolNumber}</td>");
                         tabelaHtml.Append($"<td>{objeto.ToolName}</td>");
                         tabelaHtml.Append($"<td>{"φ" + objeto.Kei}</td>");
@@ -97,6 +99,7 @@ namespace Krisiun_Project.G_Code
 
                     // Substituir marcador {TABELA} com a tabela HTML gerada
                     html = html.Replace("{TABELA}", tabelaHtml.ToString());
+                        numpro++;
                     }
                     if (lado == "裏加工")
                     {

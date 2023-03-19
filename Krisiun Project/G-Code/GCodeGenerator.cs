@@ -23,6 +23,83 @@ namespace Krisiun_Project.G_Code
             this.pastas = pastas;
             this.peca = peca;
         }
+        public string GenerateGCode(BindingList<Ferramentas> ferramentasList, Ferramentas ferramentas, bool omote, bool ura)
+        {
+            if (ferramentasList.Count == 0)
+            {
+                //MessageBox.Show("Não há objetos na lista");
+                return null;
+            }
+            StringBuilder gCode56 = new StringBuilder();
+            StringBuilder gCode46 = new StringBuilder();
+            StringBuilder gcodeokk = new StringBuilder();
+            StringBuilder gCode56F = new StringBuilder();
+            StringBuilder gCode46F = new StringBuilder();
+            StringBuilder gCodeokkF = new StringBuilder();
+
+            // Cabeçalho do GCode
+            StringBuilder comeco = new StringBuilder();
+            StringBuilder comecookk = new StringBuilder();
+            StringBuilder comecoF = new StringBuilder();
+            StringBuilder comecoF2 = new StringBuilder();
+            comeco = comecodoprograma(omote, ura, false, false, ferramentas);
+            comecookk = comecodoprograma(omote, ura, true, false, ferramentas);
+            comecoF = comecodoprograma(omote, ura, false, true, ferramentas);
+            gCode56.Append(comeco);
+            gCode46.Append(comeco);
+            gcodeokk.Append(comecookk);
+            gCode56F.Append(comecoF);
+            gCode46F.Append(comecoF);
+            gCodeokkF.Append(comecoF);
+            int num = 1;
+            // Gerar GCode para objetos na ListaMista
+            foreach (object ferramenta in ferramentasList)
+            {
+                if (ferramenta is Drills drill)
+                {
+                     //Kanizawa Style
+                    gCode56.Append(inicio_osp(false, false, drill, num, false));
+                    gCode46.Append(inicio_osp(true, false, drill, num, false));
+                    gcodeokk.Append(inicio_osp(false, true, drill, num, false));
+                    gCode56F.Append(inicio_osp(false, false, drill, num, true));
+                    gCode46F.Append(inicio_osp(true, false, drill, num, true));
+                    gCodeokkF.Append(inicio_osp(false, true, drill, num, true));
+
+                    gCode46.Append(GenerateGCodeForDrill(drill, omote, ura, false, false));
+                    gCode56.Append(GenerateGCodeForDrill(drill, omote, ura, false, false));
+                    gcodeokk.Append(GenerateGCodeForDrill(drill, omote, ura, true, false));
+                    gCode46F.Append(GenerateGCodeForDrill(drill,omote, ura, false, true));
+                    gCode56F.Append(GenerateGCodeForDrill(drill,omote, ura, false, true));
+                    gCodeokkF.Append(GenerateGCodeForDrill(drill,omote, ura, true, true));
+                }
+                else if (ferramenta is Tap tap)
+                {
+                    // Adicione o GCode específico para o objeto Tap.
+                }
+                //else if (ferramenta is Endmill endmill)
+                //{
+                //    // Adicione o GCode específico para o objeto Endmill.
+                //}
+                // Adicione mais tipos de ferramentas conforme necessário.
+                num++;
+            }
+
+
+
+            // Rodapé do GCode
+            gCode56.AppendLine("M2");
+            gCode46.AppendLine("M2");
+            gcodeokk.AppendLine("M2");
+            gCode46.Append(final());
+            gCode56.Append(final());
+            gCode46F.Append(final());
+            gCode56F.Append(final());
+            string nome = "herbocinetica";
+            if (omote == true) { nome += "frente.txt"; }
+            if (ura == true) { nome += "tras.txt"; }
+            SaveStringBuilderToFile(gCode56, gCode46, gcodeokk,gCode56F,gCode46F,gCodeokkF, nome);
+            return gCode56.ToString();
+        }
         public StringBuilder comecodoprograma(bool omote, bool ura, bool okk, bool Kanizawa, Ferramentas ferramentas)
         {
             string zuban = peca.zuban;
@@ -31,7 +108,7 @@ namespace Krisiun_Project.G_Code
             int num = 1;
             int numpro = 1;
             
-            if(omote == true) { lado = "- 表 / OMOTE"; num = peca.omote; }
+            if(omote == true) {lado = "- 表 / OMOTE"; num = peca.omote; }
             if(ura == true) { lado = "- 裏 / URA"; num = peca.ura; }
             StringBuilder inicio = new StringBuilder();
             inicio.AppendLine("01");
@@ -40,9 +117,9 @@ namespace Krisiun_Project.G_Code
                 inicio.AppendLine("#600=54");
             }
             inicio.AppendLine("(" + hinmen + "/" + zuban + ")");
-            inicio.AppendLine(num.ToString().PadLeft(2,'0') + lado);
+            inicio.AppendLine("("+ num.ToString().PadLeft(2,'0') + lado + ")");
 
-            if (okk == false || Kanizawa == false)
+            if (okk == false && Kanizawa == false)
             {
             inicio.AppendLine("G0Z500.");
             inicio.AppendLine("G15H1");
@@ -70,6 +147,20 @@ namespace Krisiun_Project.G_Code
                         numpro++;
                     }
                 }
+                if (ura == true)
+                {
+                    foreach (object ferramenta in ferramentas.ListTras)
+                    {
+                        if (ferramenta is Drills drill)
+                        {
+                            inicio.AppendLine("CALL ON" + numpro.ToString().PadLeft(2, '0') + " PH=1 (" + drill.Nome + ")");
+                        }
+
+
+                        numpro++;
+                    }
+                }
+                inicio.AppendLine("M2");
             }
 
             return inicio;
@@ -149,81 +240,7 @@ namespace Krisiun_Project.G_Code
         
         }
        
-        public string GenerateGCode(BindingList<Ferramentas> ferramentasList, Ferramentas ferramentas, bool omote, bool ura)
-        {
-            if (ferramentasList.Count == 0)
-            {
-                //MessageBox.Show("Não há objetos na lista");
-                return null;
-            }
-            StringBuilder gCode56 = new StringBuilder();
-            StringBuilder gCode46 = new StringBuilder();
-            StringBuilder gcodeokk = new StringBuilder();
-            StringBuilder gCode56F = new StringBuilder();
-            StringBuilder gCode46F = new StringBuilder();
-            StringBuilder gCodeokkF = new StringBuilder();
-
-            // Cabeçalho do GCode
-            StringBuilder comeco = new StringBuilder();
-            StringBuilder comecookk = new StringBuilder();
-            StringBuilder comecoF = new StringBuilder();
-            StringBuilder comecoF2 = new StringBuilder();
-            comeco = comecodoprograma(omote, ura, false, false, ferramentas);
-            comecookk = comecodoprograma(omote, ura, true, false, ferramentas);
-            comecoF = comecodoprograma(omote,ura,false,true, ferramentas);
-            gCode56.Append(comeco);
-            gCode46.Append(comeco);
-            gcodeokk.Append(comecookk);
-            gCode56F.Append(comecoF);
-            int num = 1;
-            // Gerar GCode para objetos na ListaMista
-            foreach (object ferramenta in ferramentasList)
-            {
-                if (ferramenta is Drills drill)
-                {  StringBuilder inicio56 = new StringBuilder();
-                    StringBuilder inicio46 = new StringBuilder();
-                    StringBuilder inicioKK = new StringBuilder();
-                    StringBuilder gcodedrill = new StringBuilder();
-                    StringBuilder gcodedrillokk = new StringBuilder();
-                    inicio56 = inicio_osp(false, false, drill, num, false);
-                    inicio46 = inicio_osp(true, false, drill, num, false);
-                    inicioKK = inicio_osp(false, true, drill, num, false);
-
-                    gcodedrill = GenerateGCodeForDrill(drill,omote, ura, false,false);
-                    gcodedrillokk = GenerateGCodeForDrill(drill,omote, ura,true, false);
-                    gCode56.Append(inicio56);
-                    gCode46.Append(inicio46);
-                    gcodeokk.Append(inicioKK);
-                    
-                    gCode46.Append(gcodedrill);
-                    gCode56.Append(gcodedrill);
-                    gcodeokk.Append(gcodedrillokk);
-
-                }
-                else if (ferramenta is Tap tap)
-                {
-                    // Adicione o GCode específico para o objeto Tap.
-                }
-                //else if (ferramenta is Endmill endmill)
-                //{
-                //    // Adicione o GCode específico para o objeto Endmill.
-                //}
-                // Adicione mais tipos de ferramentas conforme necessário.
-                num++;
-            }
-
-           
-
-            // Rodapé do GCode
-            gCode56.AppendLine("M2");
-            gCode46.AppendLine("M2");
-            gcodeokk.AppendLine("M2");
-            string nome = "herbocinetica";
-            if(omote == true) { nome += "frente.txt"; }
-            if(ura == true) { nome += "tras.txt"; }
-            SaveStringBuilderToFile(gCode56,gCode46, gcodeokk, nome);
-            return gCode56.ToString();
-        }
+   
         
         private StringBuilder GenerateGCodeForDrill(Drills drill, bool frente, bool tras, bool okk, bool Kanizawa)
         {
@@ -245,7 +262,6 @@ namespace Krisiun_Project.G_Code
                 
             }
             if(fukasa > 0) { fukasa *= -1; }
-            MessageBox.Show(senta.ToString());
             // Velocidade de rotação
             gCodeForDrill.AppendLine($"S{spindleSpeed} M03");
 
@@ -276,7 +292,7 @@ namespace Krisiun_Project.G_Code
             }
             gCodeForDrill.AppendLine("G0Z85.");
             gCodeForDrill.AppendLine("G0Z500.");
-            if(okk == false) { gCodeForDrill.AppendLine("CALL OAIR2"); }
+            if(okk == false && drill.TipoDrill.OAIR == true){ gCodeForDrill.AppendLine("CALL OAIR2"); }
             gCodeForDrill.AppendLine("(FIM DO FURADOR)");
             if(Kanizawa ==true)
             { gCodeForDrill.AppendLine("RTS"); }
@@ -285,30 +301,49 @@ namespace Krisiun_Project.G_Code
         }
 
 
-        public  void SaveStringBuilderToFile(StringBuilder okuma56, StringBuilder okuma46, StringBuilder OKK76, string nome)
+        public  void SaveStringBuilderToFile(StringBuilder okuma56, StringBuilder okuma46, StringBuilder OKK76, StringBuilder okuma56f, StringBuilder okuma46f, StringBuilder okkf, string nome)
             {
                 // Converte o StringBuilder em uma string
                 string contentAsString56 = okuma56.ToString();
                 string contentAsString46 = okuma46.ToString();
                 string contentAsString76 = OKK76.ToString();
-            string filePath1 = pastas.CaminhoO56.ToString();
-            string filePath2 = pastas.CaminhoO46.ToString();    
-            string filePath3 = pastas.CaminhoOKK.ToString();
+                string contentAsString56f = okuma56f.ToString();
+                string contentAsString46f = okuma46f.ToString();
+                string contentAsStringokkf = okkf.ToString();
 
-            string path1 = Path.Combine(filePath1, nome);
-            string path2 = Path.Combine(filePath2, nome);
-            string path3 = Path.Combine(filePath3, nome);
+                string filePath1 = pastas.CaminhoO56.ToString();
+                string filePath2 = pastas.CaminhoO46.ToString();    
+                string filePath3 = pastas.CaminhoOKK.ToString();
+                string filePath4 = pastas.CaminhoO56F.ToString();
+                string filePath5 = pastas.CaminhoO46F.ToString();
+                string filePath6 = pastas.CaminhoOKKF.ToString();
+                string path1 = Path.Combine(filePath1, nome);
+                string path2 = Path.Combine(filePath2, nome);
+                string path3 = Path.Combine(filePath3, nome);
+                string path4 = Path.Combine(filePath4, nome);
+                string path5 = Path.Combine(filePath5, nome);
+                string path6 = Path.Combine(filePath6, nome);
 
             // Salva a string em um arquivo .txt
             File.WriteAllText(path1, contentAsString56);
             File.WriteAllText(path2, contentAsString46);
             File.WriteAllText(path3, contentAsString76);
+            File.WriteAllText(path4, contentAsString56f);
+            File.WriteAllText(path5, contentAsString46f);
+            File.WriteAllText(path6, contentAsStringokkf);
             }
 
         public StringBuilder final()
         {
             StringBuilder final = new StringBuilder();
-            final.AppendLine("");
+            final.AppendLine("/");
+            final.AppendLine("OAIR2(M206)");
+            final.AppendLine("M132");
+            final.AppendLine("G0Z1000M339");
+            final.AppendLine("M5");
+            final.AppendLine("G4P7");
+            final.AppendLine("M133");
+            final.AppendLine("RTS");
             return final;
         }
     }
