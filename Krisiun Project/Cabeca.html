@@ -39,15 +39,37 @@
             width: 20px;
             height: 20px;
         }
+        .small-header {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
+        .small-subheader {
+            font-size: 7px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        table.small-table {
+            font-size: 12px;
+        }
+
+            table.small-table th,
+            table.small-table td {
+                font-size: 12px;
+            }
     </style>
 </head>
 <body>
     <div class="header">
-         {HINMEI} - {ZUBAN}
+        {HINMEI} - {ZUBAN}
     </div>
     <div class="subheader">
         {SUBTITULO}
+    </div>
+    <div class="small-subheader">
+        {ZAIROU}
     </div>
     <img src="{IMAGEN}" alt="Imagem" style="width: {TAMANHO}px;" />
     <div class="text">
@@ -74,6 +96,6 @@
             </tr>
         </table>
     </div>
-   </body>
+</body>
 </html>
  

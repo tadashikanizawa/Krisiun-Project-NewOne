@@ -38,6 +38,7 @@ namespace Krisiun_Project.G_Code
             string zuban = peca.zuban;
             string subtitulo = num.ToString() + "-" + lado;
             string imagem1 = Path.Combine(pastas.CaminhoRaiz, pic);
+            string tamanho = peca.sizex.ToString() + "-" + peca.sizey + "-" + peca.sizez;
             //  MessageBox.Show(imagem);
             string imagemBase64 = "";
             int tamanhodaimagem = 1000;
@@ -58,6 +59,7 @@ namespace Krisiun_Project.G_Code
                 html = html.Replace("{ZUBAN}", zuban);
                 html = html.Replace("{TAMANHO}", tamanhodaimagem.ToString());
                 html = html.Replace("{SUBTITULO}", subtitulo);
+                html = html.Replace("{ZAIROU}", tamanho);
                 html = html.Replace("{ZAITSU}", peca.Material.Name.ToString());
                 html = html.Replace("{IMAGEN}", "data:image/jpeg;base64," + imagemBase64);
                 // Adicione o atributo style com a largura desejada na tag <img> do arquivo HTML
