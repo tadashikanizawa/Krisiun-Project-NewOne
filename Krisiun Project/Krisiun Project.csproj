@@ -186,6 +186,9 @@
     <None Include="ListadeDrills.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="ListadeMentori.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Material.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

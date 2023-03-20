@@ -103,8 +103,7 @@ namespace Krisiun_Project
             dataGridView2.DataSource = bindingSource1;
             bindingSource2.DataSource = ferramentas.ListTotal;
             dataGridView3.DataSource = bindingSource2;
-            bindingSource3.DataSource = ferramentas.ListDrills;
-            dataGridView4.DataSource = bindingSource3;
+          
             gruposCoordenadasBindingSource.DataSource = gruposCoordenadas;
 
             // Atribui o BindingSource como DataSource da ListBox
@@ -123,6 +122,12 @@ namespace Krisiun_Project
             atualizarComboBoxCores();
             addcore();
             LoadDrills();
+            // LoadMentori();
+
+            List<TiposdeMentori> tiposdeMentoris = TiposdeMentori.LoadMentoriCuter();
+            //List<TipoDeDrills> listaDeDrills = TipoDeDrills.LoadDrills();
+          //  bindingSource3.DataSource = tiposdeMentoris;
+            dataGridView4.DataSource = tiposdeMentoris;
             Mydrills.LoadKaitenValuesFromCsv();
             comboBoxCores.SelectedIndex = 8;
             
@@ -166,6 +171,18 @@ namespace Krisiun_Project
         #endregion
 
         // Atribui o BindingSource à lista de grupos de coordenadas
+       
+        private void LoadMentori()
+        {
+            List<TiposdeMentori> tiposdeMentoris = TiposdeMentori.LoadMentoriCuter();
+            men_frente_tipo_combo.DataSource = tiposdeMentoris;
+            //men_frente_tipo_combo.DisplayMember = "Tool";
+           // men_frente_tipo_combo.ValueMember = "Tool";
+            men_tras_tipo_combo.DataSource = tiposdeMentoris;
+            //men_tras_tipo_combo.DisplayMember = "Tool";
+            //men_tras_tipo_combo.ValueMember = "Tool";
+        }
+        
         private void LoadDrills()
         {
             List<TipoDeDrills> listaDeDrills = TipoDeDrills.LoadDrills();
