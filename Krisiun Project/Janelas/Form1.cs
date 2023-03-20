@@ -1009,7 +1009,7 @@ namespace Krisiun_Project
                     dataGridView2.Refresh();
                 }
             }
-
+            panel_update();
         }
     
 

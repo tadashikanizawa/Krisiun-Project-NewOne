@@ -38,7 +38,7 @@ namespace Krisiun_Project.G_Code
             string zuban = peca.zuban;
             string subtitulo = num.ToString() + "-" + lado;
             string imagem1 = Path.Combine(pastas.CaminhoRaiz, pic);
-            string tamanho = peca.sizex.ToString() + "-" + peca.sizey + "-" + peca.sizez;
+            string tamanho = "品物のサイズ:" + peca.sizex.ToString() + "-" + peca.sizey + "-" + peca.sizez;
             //  MessageBox.Show(imagem);
             string imagemBase64 = "";
             int tamanhodaimagem = 1000;
