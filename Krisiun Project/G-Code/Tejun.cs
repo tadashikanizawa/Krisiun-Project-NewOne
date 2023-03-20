@@ -76,7 +76,7 @@ namespace Krisiun_Project.G_Code
             }
 
         }
-        public void tejunlista(BindingList<Ferramentas> ferramentaslist, int num, string lado)
+        public void tejunlista(BindingList<Ferramentas> ferramentaslist, int num, string lado, bool kousoki)
         {
             string nomeArquivo = "TejunLista.html";
             string pastadosoft = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
@@ -100,6 +100,7 @@ namespace Krisiun_Project.G_Code
 
                 string pasta = pastas.CaminhoRaiz;
                 string nomeArquivo1 = subtitulo + " - 手順書Pag2" + ".html";
+                if(kousoki == true)  { nomeArquivo1 = subtitulo + " - 手順書Pag2" + " - 高速" + ".html"; }
                 string caminhoCompleto1 = Path.Combine(pasta, nomeArquivo1);
                 if (!string.IsNullOrEmpty(html))
                 {   // Criar tabela HTML com base na lista de objetos
@@ -125,7 +126,14 @@ namespace Krisiun_Project.G_Code
                         tabelaHtml.Append($"<td>{numpro}</td>");//1
 
                         tabelaHtml.Append($"<td>{kosuu}</td>");//2
-                        tabelaHtml.Append($"<td>{"T" + objeto.ToolNumber}</td>");//3
+                        if (kousoki == true)
+                        {
+                            tabelaHtml.Append($"<td>{"T" + objeto.ToolNumberK}</td>");//3
+                        }
+                        else
+                        {
+                            tabelaHtml.Append($"<td>{"T" + objeto.ToolNumber}</td>");
+                        }//3
                         tabelaHtml.Append($"<td>{objeto.ToolName}</td>");//4
                         tabelaHtml.Append($"<td>{"φ" + objeto.Kei}</td>");//5
                         tabelaHtml.Append($"<td>{objeto.Description}</td>");//6

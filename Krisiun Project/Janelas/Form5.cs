@@ -165,9 +165,20 @@ namespace Krisiun_Project.Janelas
 
             gCodeGenerator.GenerateGCode(ferramentas.ListFrente, ferramentas, true, false);
             gCodeGenerator.GenerateGCode(ferramentas.ListTras, ferramentas, false, true);
-            if (ferramentas.ListFrente.Count !=0) { tejun.tejuncapa(peca.omote, "表加工", "Front.jpeg"); tejun.tejunlista(ferramentas.ListFrente, peca.omote, "表加工"); }
+            if (ferramentas.ListFrente.Count !=0)
+            { 
+                tejun.tejuncapa(peca.omote, "表加工", "Front.jpeg"); 
+                tejun.tejunlista(ferramentas.ListFrente, peca.omote, "表加工", false);
+                tejun.tejunlista(ferramentas.ListFrente, peca.omote, "表加工", true);
+            }
 
-            if (ferramentas.ListTras.Count != 0) { tejun.tejuncapa(peca.ura, "裏加工", "Back.jpeg"); tejun.tejunlista(ferramentas.ListTras, peca.ura, "裏加工"); }
+            if (ferramentas.ListTras.Count != 0) 
+            {
+                tejun.tejuncapa(peca.ura, "裏加工", "Back.jpeg");
+                tejun.tejunlista(ferramentas.ListTras, peca.ura, "裏加工",false);
+                tejun.tejunlista(ferramentas.ListTras, peca.ura, "裏加工", true);
+
+            }
 
         }
     }
