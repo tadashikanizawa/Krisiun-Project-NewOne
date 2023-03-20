@@ -593,7 +593,7 @@ namespace Krisiun_Project
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            datagridcodes.RemoverFerramenta(dataGridView3, ferramentas.ListFrente, e);
+           // datagridcodes.RemoverFerramenta(dataGridView3, ferramentas.ListFrente, e);
         }
 
 
@@ -1083,10 +1083,8 @@ namespace Krisiun_Project
         {
 
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        private void button11_Click(object sender, EventArgs e)
         {
-
         }
     }
 

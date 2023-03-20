@@ -28,7 +28,11 @@ namespace Krisiun_Project.janela_principal
 
         private void button1_Click(object sender, EventArgs e)
         {
-       
+            if(dataGridView1.Rows.Count == 1)
+            {
+                MessageBox.Show("Nenhuma ferramenta foi adicionada");
+                return;
+            }
             tools.addferramenta1((Tipo_de_Corte)comboBox1.SelectedItem, dataGridView1);
 
             this.Close();

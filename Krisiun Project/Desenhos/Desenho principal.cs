@@ -111,14 +111,24 @@ namespace Krisiun_Project
                 this.peca = peca;
                 float sizex = peca.width;
                 float sizez = peca.z;
+                string zenchou = peca.sizez.ToString();
+                SizeF size = e.Graphics.MeasureString(zenchou, new Font("Arial", 7));
+                float tamlarzen = size.Width;
+                float tamaltzen = size.Height;
                 float x = pitchinicialX();
                 float z = pitchinicialZ();
                 Graphics g = e.Graphics;
                 Pen pen = new Pen(Color.Black, 1);
                 Font font = new Font("Arial", 7);
                 Brush brush = new SolidBrush(Color.Black);
+                float posicaodotextoy = z + sizez / 2;
+                posicaodotextoy = posicaodotextoy - tamaltzen / 2;
                 g.DrawString("LADO", font, brush, 10, 10);
                 g.DrawRectangle(pen, x, z, sizex, sizez);
+                g.DrawLine(pen, x - 10, z, x - 20, z);
+                g.DrawLine(pen, x-10,z+sizez, x-20, z+sizez);
+                g.DrawLine(pen, x-13,z, x-13, z+sizez);
+               g.DrawString(zenchou, font, brush, x-13-tamlarzen, posicaodotextoy);
 
             }
 
@@ -456,6 +466,7 @@ namespace Krisiun_Project
                     {
                         // Obtém as coordenadas do Drills
                         var coordenadas = drills.CoordenadasList;
+
                         var x = coordenadas[drills.numlado].X;
                         var shinx = shin.x;
                         float fukasa = drills.Fukasa * peca.scale;
