@@ -88,6 +88,7 @@ namespace Krisiun_Project.G_Code
             //  MessageBox.Show(imagem);
  
             int numpro = 1;
+            int kosuu = 0;
             
             if (File.Exists(caminhoCompleto))
             {
@@ -105,35 +106,39 @@ namespace Krisiun_Project.G_Code
                     StringBuilder tabelaHtml = new StringBuilder();
                     tabelaHtml.Append("<table class=\"small-table\">");
                     tabelaHtml.Append("<tr><th style=\"width: 50px;\">N</th>" + //1
-                        "<th style=\"width: 50px;\">ツール番号</th>" +  //2
-                        "<th style=\"width: 50px;\">ツール</th>" + //3
-                        "<th style=\"width: 50px;\">径</th>" + //4
-                        "<th style=\"width: 50px;\">加工案内</th>" + //5
-                        "<th style =\"width: 50px;\">深さ</th>" + //6
+                        "<th style=\"width: 30px;\">個数</th>" + //2
+                         "<th style=\"width: 30px;\">ツール番号</th>" +//3
+                        "<th style=\"width: 50px;\">ツール</th>" + //4
+                        "<th style=\"width: 50px;\">径</th>" + //5
+                        "<th style=\"width: 50px;\">加工案内</th>" + //6
+                        "<th style =\"width: 50px;\">深さ</th>" + //7
 
-                        "<th style =\"width: 150px;\">条件-" + peca.Material.Name.ToString() + "</th></tr>" //7
+                        "<th style =\"width: 150px;\">条件-" + peca.Material.Name.ToString() + "</th></tr>" //8
 
                         );
 
 
                     foreach (var objeto in ferramentaslist)
                     {
+                        kosuu = objeto.CoordenadasList.Count();
                         tabelaHtml.Append("<tr>");
                         tabelaHtml.Append($"<td>{numpro}</td>");//1
-                        tabelaHtml.Append($"<td>{"T" + objeto.ToolNumber}</td>");//2
-                        tabelaHtml.Append($"<td>{objeto.ToolName}</td>");//3
-                        tabelaHtml.Append($"<td>{"φ" + objeto.Kei}</td>");//4
-                        tabelaHtml.Append($"<td>{objeto.Description}</td>");//4
+
+                        tabelaHtml.Append($"<td>{kosuu}</td>");//2
+                        tabelaHtml.Append($"<td>{"T" + objeto.ToolNumber}</td>");//3
+                        tabelaHtml.Append($"<td>{objeto.ToolName}</td>");//4
+                        tabelaHtml.Append($"<td>{"φ" + objeto.Kei}</td>");//5
+                        tabelaHtml.Append($"<td>{objeto.Description}</td>");//6
                         if(objeto is Drills drills)
                         { 
-                        tabelaHtml.Append($"<td>{drills.Fukasa + "("+ drills.Z+")"}</td>");
+                        tabelaHtml.Append($"<td>{drills.Fukasa + "("+ drills.Z+")"}</td>"); //7
                         }
                         else {
-                            tabelaHtml.Append($"<td>{objeto.Fukasa}</td>");
+                            tabelaHtml.Append($"<td>{objeto.Fukasa}</td>");//7
                         }
-                        tabelaHtml.Append("<td><table style=\"border: 1px solid black;\"><tr><td style=\"border: 1px solid black; font-size: 8px;\">");
-                        tabelaHtml.Append($"{"S" + objeto.Kaiten}</td></tr><tr><td style=\"border: 1px solid black; font-size: 8px;\">");
-                        tabelaHtml.Append($"{"F" + objeto.Okuri}</td></tr></table></td>");
+                        tabelaHtml.Append("<td><table style=\"border: 1px solid black;\"><tr><td style=\"border: 1px solid black; font-size: 8px;\">");//8
+                        tabelaHtml.Append($"{"S" + objeto.Kaiten}</td></tr><tr><td style=\"border: 1px solid black; font-size: 8px;\">");//8
+                        tabelaHtml.Append($"{"F" + objeto.Okuri}</td></tr></table></td>");//8
                         tabelaHtml.Append(" </tr>");
                         numpro++;
                     }
