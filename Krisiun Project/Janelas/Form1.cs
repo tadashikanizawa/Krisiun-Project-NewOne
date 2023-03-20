@@ -440,13 +440,14 @@ namespace Krisiun_Project
                 
             }
         }
+        public int index = 0;
         private void Load_TextboxString2<T>(ComboBox textBox, TextBox textBox1, T objeto, string nomePropriedade) where T : class
         {
             if (lastSelectedDgv != null)
             {
                 string valor = textBox.Text;
                 string valor1 = textBox1.Text;
-                string valor2 = valor + "φ" + valor1;
+                string valor2 = index.ToString() +"-" + valor + "φ" + valor1;
                 T objetoSelecionado = lastSelectedDgv.CurrentRow.DataBoundItem as T;
                 if (objetoSelecionado != null)
                 {
@@ -461,7 +462,7 @@ namespace Krisiun_Project
                     }
                 }
 
-
+                index++;
             }
         }
         private void Load_Combobox<T>(ComboBox comboBox, T objeto, string nomePropriedade) where T : class
@@ -1079,6 +1080,11 @@ namespace Krisiun_Project
         }
 
         private void Resfri_Combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

@@ -49,6 +49,9 @@ namespace Krisiun_Project.janela_principal
 
         }
 
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+        }
     }
 }

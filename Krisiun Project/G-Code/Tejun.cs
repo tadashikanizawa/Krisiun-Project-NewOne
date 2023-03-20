@@ -111,7 +111,7 @@ namespace Krisiun_Project.G_Code
                         "<th style=\"width: 50px;\">加工案内</th>" + //5
                         "<th style =\"width: 50px;\">深さ</th>" + //6
 
-                        "<th style =\"width: 150px;\">条件" + peca.Material.Name.ToString() + "</th></tr>" //7
+                        "<th style =\"width: 150px;\">条件-" + peca.Material.Name.ToString() + "</th></tr>" //7
 
                         );
 
@@ -124,20 +124,25 @@ namespace Krisiun_Project.G_Code
                         tabelaHtml.Append($"<td>{objeto.ToolName}</td>");//3
                         tabelaHtml.Append($"<td>{"φ" + objeto.Kei}</td>");//4
                         tabelaHtml.Append($"<td>{objeto.Description}</td>");//4
-
-                        tabelaHtml.Append($"<td>{objeto.Fukasa}</td>");
-
+                        if(objeto is Drills drills)
+                        { 
+                        tabelaHtml.Append($"<td>{drills.Fukasa + "("+ drills.Z+")"}</td>");
+                        }
+                        else {
+                            tabelaHtml.Append($"<td>{objeto.Fukasa}</td>");
+                        }
                         tabelaHtml.Append("<td><table style=\"border: 1px solid black;\"><tr><td style=\"border: 1px solid black; font-size: 8px;\">");
                         tabelaHtml.Append($"{"S" + objeto.Kaiten}</td></tr><tr><td style=\"border: 1px solid black; font-size: 8px;\">");
                         tabelaHtml.Append($"{"F" + objeto.Okuri}</td></tr></table></td>");
                         tabelaHtml.Append(" </tr>");
+                        numpro++;
                     }
 
                     tabelaHtml.Append("</table>");
 
                     // Substituir marcador {TABELA} com a tabela HTML gerada
                     html = html.Replace("{TABELA}", tabelaHtml.ToString());
-                    numpro++;
+                   
 
 
                     using (StreamWriter sw = File.CreateText(caminhoCompleto1))

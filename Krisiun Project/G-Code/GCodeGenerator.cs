@@ -260,13 +260,15 @@ namespace Krisiun_Project.G_Code
             if(tras == false) { xinv = false; yinv = false; }
             double radianos = graus * (Math.PI / 180);
             double raio = drill.Kei / 2;
-            if (drill.Sentan == true && drill.TipoDrill.Sentan == true)
+            if (drill.Sentan == true)
             {
                 senta = (float)(Math.Tan(radianos) * raio);
                 fukasa += (float)Math.Round(senta,3);
+                drill.TamSentan = senta;
+                drill.Z = fukasa;
                 
             }
-            if(fukasa > 0) { fukasa *= -1; }
+            if (fukasa > 0) { fukasa *= -1; }
             // Velocidade de rotação
             gCodeForDrill.AppendLine($"S{spindleSpeed} M03");
             

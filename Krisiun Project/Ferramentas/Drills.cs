@@ -17,6 +17,7 @@ namespace Krisiun_Project.G_Code
         public float Z { get; set; }
      
         public string DrillTipo { get; set; }
+        public float TamSentan { get; set; }
         public TipoDeDrills TipoDrill {get;set;}
         public Dictionary<DrillMaterialKey, float> KaitenValues{get; set;}
 

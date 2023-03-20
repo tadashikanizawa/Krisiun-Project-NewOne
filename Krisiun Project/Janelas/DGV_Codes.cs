@@ -59,7 +59,7 @@ namespace Krisiun_Project.janela_principal
                             textBoxs[7].Text = drillSelecionado.ToolNumber.ToString(); //7
                             textBoxs[1].Text = drillSelecionado.Kei.ToString(); //1
                             textBoxs[2].Text = drillSelecionado.Fukasa.ToString(); //2
-                        textBoxs[0].Text = drillSelecionado.Description.ToString();
+                            textBoxs[0].Text = drillSelecionado.Description.ToString();
                         
                             comboBoxes[0].Text = drillSelecionado.DrillTipo;
                             comboBoxes[1].SelectedIndex = comboBoxes[1].FindStringExact(drillSelecionado.Color.Name);

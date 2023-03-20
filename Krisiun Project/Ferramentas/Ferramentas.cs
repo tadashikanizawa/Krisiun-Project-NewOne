@@ -131,6 +131,7 @@ namespace Krisiun_Project.G_Code
                 tool.Tipo = tipo_De_Corte;
                 tool.Kei = 1;
                 tool.Color = Color.LightGray;
+                tool.Description = "É nóis";
                 ListDrills.Add(tool);
                 tool.CoordenadasList = new List<PointF>();
 
