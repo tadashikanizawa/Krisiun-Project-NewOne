@@ -184,6 +184,7 @@ namespace Krisiun_Project
             TextBoxes.Add(men_frente_z_tb);//[5]
             TextBoxes.Add(men_frente_dan_tb);//[6]
             TextBoxes.Add(tool_tb); //7
+        
 
             TextBoxes.Add(men_tras_tam); //8
             TextBoxes.Add(men_tras_kei); //9
@@ -1085,7 +1086,26 @@ namespace Krisiun_Project
         }
         private void button11_Click(object sender, EventArgs e)
         {
+            if (dataGridView3.CurrentRow != null)
+            {
+                int index = dataGridView3.CurrentRow.Index;
+                Ferramentas ferramentaSelecionada = ferramentas.ListTotal[index];
+
+                if(ferramentaSelecionada is Drills drill)
+                if (drill.CoordenadasList.Count == drill.numlado + 1)
+                {
+                    drill.numlado = 0;
+                }
+                else
+                {
+                    drill.numlado += 1;
+                }
+
+                dataGridView3.Refresh();
+                panel_update();
+            }
         }
+    
     }
 
 }

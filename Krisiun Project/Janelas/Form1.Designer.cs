@@ -136,7 +136,6 @@
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.numlado_tb = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -218,7 +217,7 @@
             this.panel_inverso.Controls.Add(this.label9);
             this.panel_inverso.Controls.Add(this.y_inv_checkbox);
             this.panel_inverso.Controls.Add(this.x_inv_checkbok);
-            this.panel_inverso.Location = new System.Drawing.Point(2038, 6);
+            this.panel_inverso.Location = new System.Drawing.Point(2038, 38);
             this.panel_inverso.Name = "panel_inverso";
             this.panel_inverso.Size = new System.Drawing.Size(197, 40);
             this.panel_inverso.TabIndex = 22;
@@ -329,7 +328,7 @@
             // 
             // scale_tb
             // 
-            this.scale_tb.Location = new System.Drawing.Point(2343, 10);
+            this.scale_tb.Location = new System.Drawing.Point(2343, 42);
             this.scale_tb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.scale_tb.Name = "scale_tb";
             this.scale_tb.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -342,7 +341,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("MS UI Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button3.Location = new System.Drawing.Point(1363, 8);
+            this.button3.Location = new System.Drawing.Point(1363, 40);
             this.button3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(62, 39);
@@ -354,7 +353,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("MS UI Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(1433, 8);
+            this.button2.Location = new System.Drawing.Point(1433, 40);
             this.button2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(62, 39);
@@ -365,7 +364,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(218, 1184);
+            this.button1.Location = new System.Drawing.Point(218, 1216);
             this.button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 34);
@@ -406,7 +405,7 @@
             this.panel1.Controls.Add(this.code_rd);
             this.panel1.Controls.Add(this.tras_rd);
             this.panel1.Controls.Add(this.frente_rd);
-            this.panel1.Location = new System.Drawing.Point(1505, 10);
+            this.panel1.Location = new System.Drawing.Point(1505, 42);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(310, 30);
@@ -428,7 +427,7 @@
             // paneld_f
             // 
             this.paneld_f.BackColor = System.Drawing.Color.White;
-            this.paneld_f.Location = new System.Drawing.Point(1363, 58);
+            this.paneld_f.Location = new System.Drawing.Point(1363, 90);
             this.paneld_f.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.paneld_f.Name = "paneld_f";
             this.paneld_f.Size = new System.Drawing.Size(1667, 1046);
@@ -438,7 +437,7 @@
             // panel_b
             // 
             this.panel_b.BackColor = System.Drawing.Color.White;
-            this.panel_b.Location = new System.Drawing.Point(1363, 58);
+            this.panel_b.Location = new System.Drawing.Point(1363, 90);
             this.panel_b.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel_b.Name = "panel_b";
             this.panel_b.Size = new System.Drawing.Size(1667, 1050);
@@ -449,7 +448,7 @@
             // 
             this.panel_Code.Controls.Add(this.Add_Coor);
             this.panel_Code.Controls.Add(this.dataGridView4);
-            this.panel_Code.Location = new System.Drawing.Point(1363, 58);
+            this.panel_Code.Location = new System.Drawing.Point(1363, 90);
             this.panel_Code.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel_Code.Name = "panel_Code";
             this.panel_Code.Size = new System.Drawing.Size(1667, 1050);
@@ -505,7 +504,7 @@
             // 
             this.dgvCoordenadas.ColumnHeadersHeight = 34;
             this.dgvCoordenadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvCoordenadas.Location = new System.Drawing.Point(1100, 63);
+            this.dgvCoordenadas.Location = new System.Drawing.Point(1100, 95);
             this.dgvCoordenadas.MultiSelect = false;
             this.dgvCoordenadas.Name = "dgvCoordenadas";
             this.dgvCoordenadas.RowHeadersVisible = false;
@@ -520,7 +519,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(1141, 312);
+            this.button9.Location = new System.Drawing.Point(1141, 344);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(204, 50);
             this.button9.TabIndex = 90;
@@ -530,7 +529,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(1222, 373);
+            this.button7.Location = new System.Drawing.Point(1222, 405);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(123, 74);
             this.button7.TabIndex = 37;
@@ -540,7 +539,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(1141, 256);
+            this.button8.Location = new System.Drawing.Point(1141, 288);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(205, 50);
             this.button8.TabIndex = 39;
@@ -561,7 +560,7 @@
             this.panel_ana.Controls.Add(this.tool_tb);
             this.panel_ana.Controls.Add(this.label26);
             this.panel_ana.Controls.Add(this.button5);
-            this.panel_ana.Location = new System.Drawing.Point(691, 15);
+            this.panel_ana.Location = new System.Drawing.Point(691, 47);
             this.panel_ana.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel_ana.Name = "panel_ana";
             this.panel_ana.Size = new System.Drawing.Size(404, 708);
@@ -999,7 +998,7 @@
             this.mentoriBBoolDataGridViewCheckBoxColumn1,
             this.colorDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.listFrenteBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 538);
+            this.dataGridView1.Location = new System.Drawing.Point(25, 570);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -1041,7 +1040,7 @@
             // panel_yoko
             // 
             this.panel_yoko.BackColor = System.Drawing.Color.White;
-            this.panel_yoko.Location = new System.Drawing.Point(1363, 760);
+            this.panel_yoko.Location = new System.Drawing.Point(1363, 792);
             this.panel_yoko.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel_yoko.Name = "panel_yoko";
             this.panel_yoko.Size = new System.Drawing.Size(1667, 375);
@@ -1074,7 +1073,7 @@
             this.mentoriBBoolDataGridViewCheckBoxColumn2,
             this.colorDataGridViewTextBoxColumn1});
             this.dataGridView2.DataSource = this.ferramentasBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(308, 538);
+            this.dataGridView2.Location = new System.Drawing.Point(308, 570);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -1125,7 +1124,7 @@
             this.mentoriFBoolDataGridViewCheckBoxColumn,
             this.mentoriBBoolDataGridViewCheckBoxColumn});
             this.dataGridView3.DataSource = this.listTotalBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(8, 8);
+            this.dataGridView3.Location = new System.Drawing.Point(8, 40);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.RowHeadersWidth = 62;
@@ -1188,7 +1187,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(118, 514);
+            this.label14.Location = new System.Drawing.Point(118, 546);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(62, 18);
             this.label14.TabIndex = 30;
@@ -1197,7 +1196,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(398, 514);
+            this.label15.Location = new System.Drawing.Point(398, 546);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(62, 18);
             this.label15.TabIndex = 31;
@@ -1205,7 +1204,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(37, 1144);
+            this.button6.Location = new System.Drawing.Point(37, 1176);
             this.button6.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(172, 74);
@@ -1219,7 +1218,7 @@
             this.lado_checkbox.AutoSize = true;
             this.lado_checkbox.Checked = true;
             this.lado_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.lado_checkbox.Location = new System.Drawing.Point(1852, 14);
+            this.lado_checkbox.Location = new System.Drawing.Point(1852, 46);
             this.lado_checkbox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lado_checkbox.Name = "lado_checkbox";
             this.lado_checkbox.Size = new System.Drawing.Size(52, 22);
@@ -1321,7 +1320,7 @@
             // 
             // txtY
             // 
-            this.txtY.Location = new System.Drawing.Point(1249, 222);
+            this.txtY.Location = new System.Drawing.Point(1249, 254);
             this.txtY.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtY.Name = "txtY";
             this.txtY.Size = new System.Drawing.Size(96, 25);
@@ -1330,7 +1329,7 @@
             // 
             // txtX
             // 
-            this.txtX.Location = new System.Drawing.Point(1118, 222);
+            this.txtX.Location = new System.Drawing.Point(1118, 254);
             this.txtX.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtX.Name = "txtX";
             this.txtX.Size = new System.Drawing.Size(96, 25);
@@ -1339,7 +1338,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(1188, 950);
+            this.button10.Location = new System.Drawing.Point(1188, 982);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(157, 39);
             this.button10.TabIndex = 92;
@@ -1367,7 +1366,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(1258, 514);
+            this.button11.Location = new System.Drawing.Point(1258, 546);
             this.button11.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(95, 56);
@@ -1379,7 +1378,7 @@
             // button12
             // 
             this.button12.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button12.Location = new System.Drawing.Point(1167, 996);
+            this.button12.Location = new System.Drawing.Point(1167, 1028);
             this.button12.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(187, 140);
@@ -1400,7 +1399,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1097, 226);
+            this.label1.Location = new System.Drawing.Point(1097, 258);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(19, 18);
             this.label1.TabIndex = 95;
@@ -1409,18 +1408,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1225, 229);
+            this.label2.Location = new System.Drawing.Point(1225, 261);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(19, 18);
             this.label2.TabIndex = 96;
             this.label2.Text = "Y";
-            // 
-            // numlado_tb
-            // 
-            this.numlado_tb.Location = new System.Drawing.Point(1249, 482);
-            this.numlado_tb.Name = "numlado_tb";
-            this.numlado_tb.Size = new System.Drawing.Size(100, 25);
-            this.numlado_tb.TabIndex = 97;
             // 
             // dataGridViewTextBoxColumn17
             // 
@@ -1889,8 +1881,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1924, 1050);
-            this.Controls.Add(this.numlado_tb);
+            this.ClientSize = new System.Drawing.Size(1976, 1102);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button12);
@@ -2117,7 +2108,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox numlado_tb;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
     }
 }
