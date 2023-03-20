@@ -79,11 +79,12 @@ namespace Krisiun_Project.G_Code
                     int largura = int.Parse(parts[6], CultureInfo.InvariantCulture);
                     float tsukidashi = float.Parse(parts[7], CultureInfo.InvariantCulture);
 
-                    MessageBox.Show(tool + "," + diametro.ToString() +"," + profundidade.ToString() + "," + kaiten.ToString() + "," + okuri.ToString() + "," + kataban + "," + largura.ToString() + "," + tsukidashi.ToString() );
+                  //  MessageBox.Show(tool + "," + diametro.ToString() +"," + profundidade.ToString() + "," + kaiten.ToString() + "," + okuri.ToString() + "," + kataban + "," + largura.ToString() + "," + tsukidashi.ToString() );
                     listaDeMentori.Add(new TiposdeMentori(tool, diametro, profundidade, kaiten, okuri, kataban, largura, tsukidashi));
                 }
-            }
 
+            }
+            MessageBox.Show(listaDeMentori[0].Tool + "," + listaDeMentori[0].Diametro.ToString() + "," + listaDeMentori[0].Profundidade.ToString() + "," + listaDeMentori[0].Kaiten.ToString() + "," + listaDeMentori[0].Okuri.ToString() + "," + listaDeMentori[0].Kataban + "," + listaDeMentori[0].Largura.ToString() + "," + listaDeMentori[0].TsukidashiMax.ToString());
             return listaDeMentori;
         }
 

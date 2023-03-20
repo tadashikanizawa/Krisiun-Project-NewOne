@@ -36,6 +36,7 @@ namespace Krisiun_Project
         private DrillMaterialKey drillMaterialKey;
         private Bools bools;
         private Drills Mydrills;
+        private TiposdeMentori TiposdeMentori;
         private Coordenadas coordenadas;
         private CoordenadasGrupo xygrupo;
         private Ferramentas ferramentas;
@@ -122,7 +123,7 @@ namespace Krisiun_Project
             atualizarComboBoxCores();
             addcore();
             LoadDrills();
-            // LoadMentori();
+            LoadMentori();
 
             List<TiposdeMentori> tiposdeMentoris = TiposdeMentori.LoadMentoriCuter();
             //List<TipoDeDrills> listaDeDrills = TipoDeDrills.LoadDrills();
