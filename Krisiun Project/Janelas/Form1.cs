@@ -125,10 +125,8 @@ namespace Krisiun_Project
             LoadDrills();
             LoadMentori();
 
-            List<TiposdeMentori> tiposdeMentoris = TiposdeMentori.LoadMentoriCuter();
-            //List<TipoDeDrills> listaDeDrills = TipoDeDrills.LoadDrills();
           //  bindingSource3.DataSource = tiposdeMentoris;
-            dataGridView4.DataSource = tiposdeMentoris;
+            dataGridView4.DataSource = TiposdeMentori.LoadMentoriCuter();
             Mydrills.LoadKaitenValuesFromCsv();
             comboBoxCores.SelectedIndex = 8;
             
@@ -176,12 +174,13 @@ namespace Krisiun_Project
         private void LoadMentori()
         {
             List<TiposdeMentori> tiposdeMentoris = TiposdeMentori.LoadMentoriCuter();
-            men_frente_tipo_combo.DataSource = tiposdeMentoris;
-            //men_frente_tipo_combo.DisplayMember = "Tool";
-           // men_frente_tipo_combo.ValueMember = "Tool";
+           
+            men_frente_tipo_combo.DataSource = tiposdeMentoris;        
+           men_frente_tipo_combo.DisplayMember = "Tool";
+           men_frente_tipo_combo.ValueMember = "Tool";
             men_tras_tipo_combo.DataSource = tiposdeMentoris;
-            //men_tras_tipo_combo.DisplayMember = "Tool";
-            //men_tras_tipo_combo.ValueMember = "Tool";
+            men_tras_tipo_combo.DisplayMember = "Tool";
+            men_tras_tipo_combo.ValueMember = "Tool";
         }
         
         private void LoadDrills()
