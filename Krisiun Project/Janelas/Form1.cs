@@ -124,9 +124,9 @@ namespace Krisiun_Project
             addcore();
             LoadDrills();
             LoadMentori();
-
+            List<TiposdeMentori> ListadeMentoris1 = TiposdeMentori.LoadMentoriCuter();
           //  bindingSource3.DataSource = tiposdeMentoris;
-            dataGridView4.DataSource = TiposdeMentori.LoadMentoriCuter();
+            dataGridView4.DataSource = ListadeMentoris1;
             Mydrills.LoadKaitenValuesFromCsv();
             comboBoxCores.SelectedIndex = 8;
             
@@ -1122,7 +1122,30 @@ namespace Krisiun_Project
                 panel_update();
             }
         }
-    
+
+        private void men_frente_z_tb_TextChanged(object sender, EventArgs e)
+        {
+            if (float.TryParse(men_frente_z_tb.Text, out float valor))
+            { 
+                if (valor > tamcutter)
+                {
+                    MessageBox.Show("Valor maior que o tamanho do cutter");
+                }
+                
+            }
+        }
+        public float tamcutter;
+        private void men_frente_tipo_combo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
+
+            // Verificar se o objeto selecionado não é nulo
+            if (selectedMentori != null)
+            {
+                // Atualize a TextBox com o valor da propriedade
+                tamcutter = selectedMentori.Profundidade;
+            }
+        }
     }
 
 }
