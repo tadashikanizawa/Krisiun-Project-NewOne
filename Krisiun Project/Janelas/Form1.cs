@@ -1129,7 +1129,8 @@ namespace Krisiun_Project
             { 
                 if (valor > tamcutter)
                 {
-                    MessageBox.Show("Valor maior que o tamanho do cutter");
+                    if(valor < 0) { valor *= -1; }
+                    MessageBox.Show("このカッターの刃長は"　+ tamcutter.ToString() + "ので。大丈夫でしょうか？");
                 }
                 
             }
