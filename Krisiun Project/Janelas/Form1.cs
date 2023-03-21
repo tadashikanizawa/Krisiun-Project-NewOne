@@ -41,6 +41,7 @@ namespace Krisiun_Project
         private CoordenadasGrupo xygrupo;
         private Ferramentas ferramentas;
         private TipoDeDrills tipoDeDrills;
+        private TiposdeMentori tiposdeMentori;
         private DGV_Codes datagridcodes;
         private Form2 form2;
         private Form3 form3;
@@ -72,7 +73,7 @@ namespace Krisiun_Project
             this.toolnum = new ToolNumber();
             this.peca = new Peca();
             this.ferramentas = new Ferramentas(peca);
-
+          
 
             this.Mydrills = new Drills(peca);
             this.bugs = new Bugs.Bugs_Txb();
@@ -757,6 +758,7 @@ namespace Krisiun_Project
             Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
             Load_TextboxString2<Drills>(drill_combobox, drill_kei_tb, null, "Nome");
             Load_TextboxString<Drills>(Num_pro_textbox, null, "Description");
+
             panel_update();
 
         }
@@ -1159,12 +1161,27 @@ namespace Krisiun_Project
         private void men_frente_checkbox_CheckedChanged(object sender, EventArgs e)
         {
             var selecionado = GetSelectedObject();
-            if (selecionado != null)
+            
+            TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
+      
+            Mentori mentori = new Mentori(peca);
+            mentori.TipoDeCutter = selectedMentori;
+            mentori.ToolName = selectedMentori.Tool;
+            if(ferramentas.ListTotal.Contains(mentori) == false)
+            { 
+            ferramentas.ListTotal.Add(mentori);
+            }
+            dataGridView3.Refresh();
+
+            if (selecionado != null && selectedMentori != null)
             {
-                    if(selecionado is Drills drill)
+                if (selecionado is Drills drill && drill.Mentori != null)
                 {
-                    drill.Mentori.TipoDeCutter = (TiposdeMentori)men_frente_tipo_combo.SelectedItem;
-                    MessageBox.Show(drill.Mentori.Kaiten.ToString());
+                    drill.Mentori = mentori;
+
+                    drill.Mentori_F_Bool = men_frente_checkbox.Checked;
+
+
                 }
             }
         }

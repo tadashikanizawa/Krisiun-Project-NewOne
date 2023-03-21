@@ -28,6 +28,25 @@ namespace Krisiun_Project.G_Code
             MenFrente = new List<Ferramentas> { };
             MenTras = new List<Ferramentas> { };
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Mentori other = (Mentori)obj;
+            return ToolName == other.ToolName && TipoDeCutter.Equals(other.TipoDeCutter);
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = 17;
+            hash = hash * 23 + (ToolName?.GetHashCode() ?? 0);
+            hash = hash * 23 + (TipoDeCutter?.GetHashCode() ?? 0);
+            return hash;
+        }
     }
 
     public class TiposdeMentori
@@ -52,6 +71,7 @@ namespace Krisiun_Project.G_Code
             Kataban = kataban;
             Largura = largura;
             TsukidashiMax = tsukidashiMax;
+        
         }
         public override bool Equals(object obj)
         {

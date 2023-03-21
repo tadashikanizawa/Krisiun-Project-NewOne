@@ -46,6 +46,7 @@ namespace Krisiun_Project.G_Code
         public bool Mentori_F_Bool { get; set; }
         public bool Mentori_B_Bool { get; set; }
         public Mentori Mentori { get; set; }
+        public TiposdeMentori MentoriCutter { get; set; }    
         public string Description { get; set; }
         public Color Color { get; set; }
         //public Coordenadas Coordenadas { get; set; }
