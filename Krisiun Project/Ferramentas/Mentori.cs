@@ -7,10 +7,10 @@ using System.Xml.Linq;
 
 namespace Krisiun_Project.G_Code
 {
-    internal class Mentori : Ferramentas
+    public class Mentori : Ferramentas
     {
 
-        public TiposdeMentori Tipo { get; set; }
+        public TiposdeMentori TipoDeCutter { get; set; }
         public Ferramentas Lugar { get; set; }
         public float Z { get; set; }    
         public float Kei { get; set; }  
@@ -19,6 +19,7 @@ namespace Krisiun_Project.G_Code
         public float Diametro { get; set; }
         public float Profundidade { get; set; }
         public int Largura { get;set; }
+
         public List<Ferramentas> MenFrente { get; set; }
         public List<Ferramentas> MenTras { get;set; }
         
