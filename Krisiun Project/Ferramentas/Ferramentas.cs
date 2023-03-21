@@ -58,7 +58,8 @@ namespace Krisiun_Project.G_Code
         public BindingList<Ferramentas> ListFrente { get; set; }
         public BindingList<Ferramentas> ListTras { get; set; }
         public BindingList<Drills> ListDrills { get; set; }
-        public BindingList<Mentori> MentoriFrente { get; set; }
+        public BindingList<Ferramentas> ListMentoriFrente { get; set; }
+        public BindingList<Ferramentas> ListMentoriTras { get; set; }
         private Dictionary<int, Coordenadas> coordenadas = new Dictionary<int, Coordenadas>();
         public int numlado { get;set; }
 
@@ -68,7 +69,10 @@ namespace Krisiun_Project.G_Code
             ListTotal = new BindingList<Ferramentas>();
             ListFrente = new BindingList<Ferramentas>();
             ListTras = new BindingList<Ferramentas>();
+            ListMentoriFrente = new BindingList<Ferramentas>();
+            ListMentoriTras = new BindingList<Ferramentas>();
             ListDrills = new BindingList<Drills>();
+
             numlado = 0;
             this.peca = peca;
             // XYList = new List<PointF>();

@@ -1167,9 +1167,33 @@ namespace Krisiun_Project
             Mentori mentori = new Mentori(peca);
             mentori.TipoDeCutter = selectedMentori;
             mentori.ToolName = selectedMentori.Tool;
+            if (men_frente_checkbox.Checked == true)
+            {
+
+            
             if(ferramentas.ListTotal.Contains(mentori) == false)
             { 
             ferramentas.ListTotal.Add(mentori);
+
+            }
+            if(ferramentas.ListFrente.Contains(mentori) == false)
+            {
+                ferramentas.ListFrente.Add(mentori);
+            }
+            }
+            else
+            {
+                if(ferramentas.ListTotal.Contains(mentori))
+                {
+                    if(ferramentas.ListMentoriFrente.Count == 0 && ferramentas.ListMentoriTras.Count ==0)
+                    { 
+                    ferramentas.ListTotal.Remove(mentori);
+                    }
+                }
+                if(ferramentas.ListFrente.Contains(mentori) && ferramentas.ListMentoriFrente.Count ==0)
+                {
+                    ferramentas.ListFrente.Remove(mentori);
+                }
             }
             dataGridView3.Refresh();
 
@@ -1180,8 +1204,17 @@ namespace Krisiun_Project
                     drill.Mentori = mentori;
 
                     drill.Mentori_F_Bool = men_frente_checkbox.Checked;
-
-
+                    if(men_frente_checkbox.Checked == true)
+                    {
+                        ferramentas.ListMentoriFrente.Add(drill);
+                    }
+                    else
+                    {
+                        if(ferramentas.ListMentoriFrente.Contains(drill))
+                        {
+                            ferramentas.ListMentoriFrente.Remove(drill);
+                        }
+                    }
                 }
             }
         }
