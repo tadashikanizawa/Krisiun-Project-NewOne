@@ -7,11 +7,26 @@ using System.Xml.Linq;
 
 namespace Krisiun_Project.G_Code
 {
-    internal class Mentori : Ferramentas
+    public class Mentori : Ferramentas
     {
+
+        public TiposdeMentori TipoDeCutter { get; set; }
+        public Ferramentas Lugar { get; set; }
+        public float Z { get; set; }    
+        public float Kei { get; set; }  
+        public float C { get; set; }
+        public float Dansa { get; set; }
+        public float Diametro { get; set; }
+        public float Profundidade { get; set; }
+        public int Largura { get;set; }
+
+        public List<Ferramentas> MenFrente { get; set; }
+        public List<Ferramentas> MenTras { get;set; }
+        
         public Mentori(Pitch_principal.Peca peca) : base(peca)
         {
-            
+            MenFrente = new List<Ferramentas> { };
+            MenTras = new List<Ferramentas> { };
         }
     }
 

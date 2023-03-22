@@ -585,6 +585,14 @@ namespace Krisiun_Project
         #region Sobre as DataGridView
         //o bagulho pra identificar qual datagrid ta seleciona
         private DataGridView lastSelectedDgv = null;
+        private Ferramentas GetSelectedObject()
+        {
+            if (dataGridView3.CurrentRow != null)
+            {
+                return (Ferramentas)dataGridView3.CurrentRow.DataBoundItem;
+            }
+            return null;
+        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1145,6 +1153,19 @@ namespace Krisiun_Project
             {
                 // Atualize a TextBox com o valor da propriedade
                 tamcutter = selectedMentori.Profundidade;
+            }
+        }
+
+        private void men_frente_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            var selecionado = GetSelectedObject();
+            if (selecionado != null)
+            {
+                    if(selecionado is Drills drill)
+                {
+                    drill.Mentori.TipoDeCutter = (TiposdeMentori)men_frente_tipo_combo.SelectedItem;
+                    MessageBox.Show(drill.Mentori.Kaiten.ToString());
+                }
             }
         }
     }
