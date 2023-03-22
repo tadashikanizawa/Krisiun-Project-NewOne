@@ -47,7 +47,7 @@ namespace Krisiun_Project.G_Code
             return hash;
         }
     }
-}
+
 
     public class TiposdeMentori
     {
