@@ -1159,12 +1159,60 @@ namespace Krisiun_Project
         private void men_frente_checkbox_CheckedChanged(object sender, EventArgs e)
         {
             var selecionado = GetSelectedObject();
-            if (selecionado != null)
+
+            TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
+
+            Mentori mentori = new Mentori(peca);
+            mentori.TipoDeCutter = selectedMentori;
+            mentori.ToolName = selectedMentori.Tool;
+            if (men_frente_checkbox.Checked == true)
             {
-                    if(selecionado is Drills drill)
+
+
+                if (ferramentas.ListTotal.Contains(mentori) == false)
                 {
-                    drill.Mentori.TipoDeCutter = (TiposdeMentori)men_frente_tipo_combo.SelectedItem;
-                    MessageBox.Show(drill.Mentori.Kaiten.ToString());
+                    ferramentas.ListTotal.Add(mentori);
+
+                }
+                if (ferramentas.ListFrente.Contains(mentori) == false)
+                {
+                    ferramentas.ListFrente.Add(mentori);
+                }
+            }
+            else
+            {
+                if (ferramentas.ListTotal.Contains(mentori))
+                {
+                    if (ferramentas.ListMentoriFrente.Count == 0 && ferramentas.ListMentoriTras.Count == 0)
+                    {
+                        ferramentas.ListTotal.Remove(mentori);
+                    }
+                }
+                if (ferramentas.ListFrente.Contains(mentori) && ferramentas.ListMentoriFrente.Count == 0)
+                {
+                    ferramentas.ListFrente.Remove(mentori);
+                }
+            }
+            dataGridView3.Refresh();
+
+            if (selecionado != null && selectedMentori != null)
+            {
+                if (selecionado is Drills drill && drill.Mentori != null)
+                {
+                    drill.Mentori = mentori;
+
+                    drill.Mentori_F_Bool = men_frente_checkbox.Checked;
+                    if (men_frente_checkbox.Checked == true)
+                    {
+                        ferramentas.ListMentoriFrente.Add(drill);
+                    }
+                    else
+                    {
+                        if (ferramentas.ListMentoriFrente.Contains(drill))
+                        {
+                            ferramentas.ListMentoriFrente.Remove(drill);
+                        }
+                    }
                 }
             }
         }
