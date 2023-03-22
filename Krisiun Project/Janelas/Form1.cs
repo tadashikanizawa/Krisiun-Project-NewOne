@@ -41,7 +41,6 @@ namespace Krisiun_Project
         private CoordenadasGrupo xygrupo;
         private Ferramentas ferramentas;
         private TipoDeDrills tipoDeDrills;
-        private TiposdeMentori tiposdeMentori;
         private DGV_Codes datagridcodes;
         private Form2 form2;
         private Form3 form3;
@@ -73,7 +72,7 @@ namespace Krisiun_Project
             this.toolnum = new ToolNumber();
             this.peca = new Peca();
             this.ferramentas = new Ferramentas(peca);
-          
+
 
             this.Mydrills = new Drills(peca);
             this.bugs = new Bugs.Bugs_Txb();
@@ -758,7 +757,6 @@ namespace Krisiun_Project
             Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
             Load_TextboxString2<Drills>(drill_combobox, drill_kei_tb, null, "Nome");
             Load_TextboxString<Drills>(Num_pro_textbox, null, "Description");
-
             panel_update();
 
         }
@@ -1161,60 +1159,12 @@ namespace Krisiun_Project
         private void men_frente_checkbox_CheckedChanged(object sender, EventArgs e)
         {
             var selecionado = GetSelectedObject();
-       
-
-            TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
-            Mentori mentori = new Mentori(peca);
-            mentori.TipoDeCutter = selectedMentori;
-            mentori.ToolName = selectedMentori.Tool;
-            if (men_frente_checkbox.Checked == true)
+            if (selecionado != null)
             {
-
-            
-            if(ferramentas.ListTotal.Contains(mentori) == false)
-            { 
-            ferramentas.ListTotal.Add(mentori);
-
-            }
-            if(ferramentas.ListFrente.Contains(mentori) == false)
-            {
-                ferramentas.ListFrente.Add(mentori);
-            }
-            }
-            else
-            {
-                if(ferramentas.ListTotal.Contains(mentori))
+                    if(selecionado is Drills drill)
                 {
-                    if(ferramentas.ListMentoriFrente.Count == 0 && ferramentas.ListMentoriTras.Count ==0)
-                    { 
-                    ferramentas.ListTotal.Remove(mentori);
-                    }
-                }
-                if(ferramentas.ListFrente.Contains(mentori) && ferramentas.ListMentoriFrente.Count ==0)
-                {
-                    ferramentas.ListFrente.Remove(mentori);
-                }
-            }
-            dataGridView3.Refresh();
-            }
-            if (selecionado != null && selectedMentori != null)
-            {
-                if (selecionado is Drills drill && drill.Mentori != null)
-                {
-                    drill.Mentori = mentori;
-
-                    drill.Mentori_F_Bool = men_frente_checkbox.Checked;
-                    if(men_frente_checkbox.Checked == true)
-                    {
-                        ferramentas.ListMentoriFrente.Add(drill);
-                    }
-                    else
-                    {
-                        if(ferramentas.ListMentoriFrente.Contains(drill))
-                        {
-                            ferramentas.ListMentoriFrente.Remove(drill);
-                        }
-                    }
+                    drill.Mentori.TipoDeCutter = (TiposdeMentori)men_frente_tipo_combo.SelectedItem;
+                    MessageBox.Show(drill.Mentori.Kaiten.ToString());
                 }
             }
         }
