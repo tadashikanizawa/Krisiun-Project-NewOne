@@ -1161,18 +1161,20 @@ namespace Krisiun_Project
         private void men_frente_checkbox_CheckedChanged(object sender, EventArgs e)
         {
             var selecionado = GetSelectedObject();
-            
+       
+
             TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
-      
             Mentori mentori = new Mentori(peca);
             mentori.TipoDeCutter = selectedMentori;
             mentori.ToolName = selectedMentori.Tool;
-            if(ferramentas.ListTotal.Contains(mentori) == false)
-            { 
-            ferramentas.ListTotal.Add(mentori);
-            }
+            if (men_frente_checkbox.Checked == true)
+            {  
+                if(ferramentas.ListTotal.Contains(mentori) == false)
+                    { 
+                    ferramentas.ListTotal.Add(mentori);
+                    }
             dataGridView3.Refresh();
-
+            }
             if (selecionado != null && selectedMentori != null)
             {
                 if (selecionado is Drills drill && drill.Mentori != null)
