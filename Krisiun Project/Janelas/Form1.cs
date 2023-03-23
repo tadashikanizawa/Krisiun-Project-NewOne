@@ -179,6 +179,7 @@ namespace Krisiun_Project
             men_frente_tipo_combo.DataSource = tiposdeMentoris;        
            men_frente_tipo_combo.DisplayMember = "Tool";
            men_frente_tipo_combo.ValueMember = "Tool";
+            men_frente_tipo_combo.SelectedIndex = 0;
             men_tras_tipo_combo.DataSource = tiposdeMentoris;
             men_tras_tipo_combo.DisplayMember = "Tool";
             men_tras_tipo_combo.ValueMember = "Tool";
@@ -1161,29 +1162,41 @@ namespace Krisiun_Project
         private void men_frente_checkbox_CheckedChanged(object sender, EventArgs e)
         {
             var selecionado = GetSelectedObject();
-            
-            TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
-      
             Mentori mentori = new Mentori(peca);
-            mentori.TipoDeCutter = selectedMentori;
-            mentori.ToolName = selectedMentori.Tool;
-            if(ferramentas.ListTotal.Contains(mentori) == false)
-            { 
-            ferramentas.ListTotal.Add(mentori);
-            }
-            dataGridView3.Refresh();
-
-            if (selecionado != null && selectedMentori != null)
+            TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
+            if (men_frente_checkbox.Checked == true)
             {
-                if (selecionado is Drills drill && drill.Mentori != null)
+                mentori.TipoDeCutter = selectedMentori;
+                mentori.ToolName = selectedMentori.Tool;
+                mentori.Nome = selectedMentori.Tool;
+                mentori.Index = 0;
+                mentori.Frente = true;
+           
+            if (ferramentas.ListTotal.Contains(mentori) == false)
                 {
-                    drill.Mentori = mentori;
-
-                    drill.Mentori_F_Bool = men_frente_checkbox.Checked;
-
-
+                    ferramentas.ListTotal.Add(mentori);
                 }
+                if (ferramentas.ListFrente.Contains(mentori) == false) { ferramentas.ListFrente.Add(mentori); }
+                dataGridView3.Refresh();
             }
+            else {
+                {
+                if (ferramentas.ListFrente.Contains(mentori) == true) { ferramentas.ListFrente.Remove(mentori); }
+                if (ferramentas.ListTotal.Contains(mentori) == true) { ferramentas.ListTotal.Remove(mentori); }
+                dataGridView3.Refresh();
+                } }
+            if (selecionado != null && selectedMentori != null)
+                {
+                    if (selecionado is Drills drill)
+                    {
+                        drill.Mentori = mentori;
+
+                        drill.Mentori_F_Bool = men_frente_checkbox.Checked;
+                        dataGridView3.Update();
+
+                    }
+                }
+           
         }
     }
 

@@ -71,10 +71,35 @@ namespace Krisiun_Project.G_Code
                     gCode46F.Append(GenerateGCodeForDrill(drill,omote, ura, false, true));
                     gCode56F.Append(GenerateGCodeForDrill(drill,omote, ura, false, true));
                     gCodeokkF.Append(GenerateGCodeForDrill(drill,omote, ura, true, true));
+                   // gCode56.Append(GenerateGElipse(-26.752, 87.502,12,500,22,22));
                 }
                 else if (ferramenta is Tap tap)
                 {
                     // Adicione o GCode específico para o objeto Tap.
+                }
+                else if( ferramenta is Mentori mentori)
+                {
+                    gCode56.Append(inicio_osp(false, false, mentori, num, false));
+                    gCode46.Append(inicio_osp(true, false, mentori, num, false));
+                    gcodeokk.Append(inicio_osp(false, true, mentori, num, false));
+                    gCode56F.Append(inicio_osp(false, false, mentori, num, true));
+                    gCode46F.Append(inicio_osp(true, false, mentori, num, true));
+                    gCodeokkF.Append(inicio_osp(false, true, mentori, num, true));
+                    foreach (Ferramentas ferramentas1 in ferramentasList)
+                    {
+                        if(omote==true)
+                        {
+                            if (ferramentas1.Mentori_F_Bool == true)
+                            {
+                                if (ferramentas1.Mentori == mentori)
+                                {
+
+                                }
+
+                            }
+                        }
+
+                    }
                 }
                 //else if (ferramenta is Endmill endmill)
                 //{
@@ -194,6 +219,12 @@ namespace Krisiun_Project.G_Code
             {
                 // Atribua as propriedades do objeto Tap.
             }
+            else if (ferramenta is Mentori mentori)
+            {
+                toolnum = mentori.ToolNumber;
+                if(kousoki == true) { toolnum = mentori.ToolNumberK; troca = "M207"; }
+
+            }
 
             string numpro1 = numpro.ToString().PadLeft(2, '0');
             string toolnum1 = toolnum.ToString().PadLeft(2, '0');
@@ -306,7 +337,47 @@ namespace Krisiun_Project.G_Code
 
             return gCodeForDrill;
         }
+        public static string GenerateGElipse(double centerX, double centerY, double endMillDiameter, int feedRate, double ellipseWidth, double ellipseHeight)
+        {
+            string gCode = "";
 
+            int numArcs = 8;
+            double angleIncrement = 360.0 / numArcs;
+
+            double prevX = centerX - (ellipseWidth / 2) - (endMillDiameter / 2);
+            double prevY = centerY;
+
+            gCode += $"G90 G01 X{prevX} Y{prevY} Z-8.5 F{feedRate}" + Environment.NewLine;
+
+            for (int i = 1; i <= numArcs; i++)
+            {
+                double startAngle = (i - 1) * angleIncrement;
+                double endAngle = i * angleIncrement;
+
+                double startX = centerX + (ellipseWidth / 2) * Math.Cos(startAngle * Math.PI / 180);
+                double startY = centerY + (ellipseHeight / 2) * Math.Sin(startAngle * Math.PI / 180);
+
+                double endX = centerX + (ellipseWidth / 2) * Math.Cos(endAngle * Math.PI / 180);
+                double endY = centerY + (ellipseHeight / 2) * Math.Sin(endAngle * Math.PI / 180);
+
+                double angleOffset = Math.Atan2(endY - startY, endX - startX);
+                double offsetX = (endMillDiameter / 2) * Math.Cos(angleOffset);
+                double offsetY = (endMillDiameter / 2) * Math.Sin(angleOffset);
+
+                double arcCenterX = startX + offsetX;
+                double arcCenterY = startY + offsetY;
+
+                double iValue = arcCenterX - prevX;
+                double jValue = arcCenterY - prevY;
+
+                gCode += $"G03 X{endX} Y{endY} I{iValue} J{jValue} F{feedRate}" + Environment.NewLine;
+
+                prevX = endX;
+                prevY = endY;
+            }
+
+            return gCode;
+        }
 
         public  void SaveStringBuilderToFile(StringBuilder okuma56, StringBuilder okuma46, StringBuilder OKK76, StringBuilder okuma56f, StringBuilder okuma46f, StringBuilder okkf, string nome)
             {

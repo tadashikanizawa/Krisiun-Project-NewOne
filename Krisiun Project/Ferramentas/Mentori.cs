@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
@@ -46,7 +47,33 @@ namespace Krisiun_Project.G_Code
             hash = hash * 23 + (TipoDeCutter?.GetHashCode() ?? 0);
             return hash;
         }
+        public static string GenerateGCode(double x, double y, double arcDiameter, double toolDiameter, double extraAngle)
+        {
+            double radius = arcDiameter / 2;
+            double toolRadius = toolDiameter / 2;
+            double effectiveRadius = radius - toolRadius;
+
+            double centerX = x;
+            double centerY = y - effectiveRadius;
+
+            double initialAngleRadians = 3 * Math.PI / 2; // 270 graus em radianos
+            double initialX = centerX + effectiveRadius * Math.Cos(initialAngleRadians);
+            double initialY = centerY + effectiveRadius * Math.Sin(initialAngleRadians);
+
+            double totalAngle = 360 + extraAngle;
+            double totalAngleRadians = (270 + totalAngle) * Math.PI / 180;
+
+            double x2 = centerX + effectiveRadius * Math.Cos(totalAngleRadians);
+            double y2 = centerY + effectiveRadius * Math.Sin(totalAngleRadians);
+
+            string gCode = $"G01 X{initialX} Y{initialY} F100\n";
+            gCode += $"G03 X{initialX} Y{initialY} I{centerX - initialX} J{centerY - initialY} F100\n";
+            gCode += $"G03 X{x2} Y{y2} I{centerX - initialX} J{centerY - initialY} F100";
+
+            return gCode;
+        }
     }
+}
 
 
     public class TiposdeMentori

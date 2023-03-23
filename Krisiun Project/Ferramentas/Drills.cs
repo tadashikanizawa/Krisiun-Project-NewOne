@@ -27,6 +27,7 @@ namespace Krisiun_Project.G_Code
         {
             CoordenadasList = new List<PointF>();
             KaitenValues = LoadKaitenValuesFromCsv();
+        
   
         }
   

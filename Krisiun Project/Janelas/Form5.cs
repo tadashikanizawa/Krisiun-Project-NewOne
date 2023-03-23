@@ -52,7 +52,7 @@ namespace Krisiun_Project.Janelas
                     listBox1.DataSource = null;
                     listBox1.DataSource = ferramentas.ListFrente;
                     listBox1.SelectedIndex = newIndex;
-                    listBox1.DisplayMember = "Index" + "Nome";
+                    listBox1.DisplayMember = "Nome";
                     listBox1.ValueMember= "Index";
                     
                 }
@@ -72,7 +72,7 @@ namespace Krisiun_Project.Janelas
                     listBox2.DataSource = null;
                     listBox2.DataSource = ferramentas.ListTras;
                     listBox2.SelectedIndex = newIndex;
-                    listBox2.DisplayMember = "Index" + "Nome";
+                    listBox2.DisplayMember = "Nome";
                     listBox2.ValueMember = "Index";
 
                 }

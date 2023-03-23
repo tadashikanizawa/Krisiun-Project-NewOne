@@ -59,6 +59,7 @@ namespace Krisiun_Project.G_Code
         public BindingList<Ferramentas> ListTras { get; set; }
         public BindingList<Drills> ListDrills { get; set; }
         public BindingList<Mentori> MentoriFrente { get; set; }
+        public BindingList<Mentori> MentoriTras { get; set; }
         private Dictionary<int, Coordenadas> coordenadas = new Dictionary<int, Coordenadas>();
         public int numlado { get;set; }
 
