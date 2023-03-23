@@ -51,45 +51,7 @@ namespace Krisiun_Project.G_Code
             return hash;
         }
 
-        public  StringBuilder GcodeInicial(Mentori mentori, Ferramentas ferramenta, bool frente, bool tras, bool okk, bool Kanizawa)
-        {
-            StringBuilder gCode = new StringBuilder();
-            int kaiten = mentori.Kaiten;
-            int okuri = mentori.Okuri;
-            float z = ferramenta.Mentori.Z;
-            if(z <0)
-            {
-                z = z * -1;
-            }
-            float ponta = mentori.Kei;
-            float diaburaco = ferramenta.Mentori.MenKei;
-            float C = ferramenta.Mentori.C;
-            float Dansa = ferramenta.Mentori.Dansa;
-            if(Dansa <0)
-            {
-                Dansa = Dansa * -1;
-            }
-
-            float kei = diaburaco + C - z;
-            float valorz = z + Dansa;
-
-            bool xinv = peca.xinv;
-            bool yinv = peca.yinv;
-
-
-            gCode.AppendLine($"S{mentori.Kaiten}M3");
-            for (int i = 1; i < ferramenta.CoordenadasList.Count; i++)
-            {// Multiplica a coordenada X por -1 se xinv for verdadeiro
-
-
-                PointF coordenada = ferramenta.CoordenadasList[i];
-                float xCoordValue = xinv ? -coordenada.X : coordenada.X;
-                float yCoordValue = yinv ? -coordenada.Y : coordenada.Y;
-                gCode.Append(GenerateMentori(xCoordValue,yCoordValue,valorz,kei,ponta,okuri,10));
-            }
-            gCode.AppendLine("G0Z500.");
-            return gCode;
-        }
+      
 
         public static StringBuilder GenerateMentori(float x, float y, float z, float arcDiameter, float toolDiameter, int Okuri, float extraAngle)
         {
@@ -125,6 +87,7 @@ namespace Krisiun_Project.G_Code
             double y2 = y + centerY + effectiveRadius * Math.Sin(totalAngleRadians);
 
             double hayaiokuri = centerY + toolRadius + 0.2;
+            hayaiokuri = Math.Round(hayaiokuri,3);
             string hayaiokuristring = hayaiokuri % 1 == 0 ? $"{hayaiokuri}." : $"{hayaiokuri}";
 
             x2 = Math.Round(x2 / 2,3);
