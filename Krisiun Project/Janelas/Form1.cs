@@ -1172,6 +1172,8 @@ namespace Krisiun_Project
                 mentori.ToolNumber = selectedMentori.MenCutterToolNum;
                 mentori.Nome = selectedMentori.Tool;
                 mentori.Kei = selectedMentori.Diametro;
+                mentori.Kaiten = selectedMentori.Kaiten;
+                mentori.Okuri  = selectedMentori.Okuri;
 
                 mentori.Index = 0;
                 mentori.Frente = true;
@@ -1194,9 +1196,25 @@ namespace Krisiun_Project
                     if (selecionado is Drills drill)
                     {
                         drill.Mentori = mentori;
-
+                        
                         drill.Mentori_F_Bool = men_frente_checkbox.Checked;
-                        dataGridView3.Update();
+                    if(float.TryParse(men_frente_kei_tb.Text, out float menkei))
+                    { 
+                    drill.Mentori.MenKei = menkei;
+                    }
+                    if(float.TryParse(men_frente_tam_tb.Text, out float  tam))
+                    {
+                        drill.Mentori.C = tam;
+                    }
+                    if(float.TryParse(men_frente_dan_tb.Text, out float dan))
+                    {
+                        drill.Mentori.Dansa = dan;
+                    }
+                    if(float.TryParse(men_frente_z_tb.Text,out float z))
+                    {
+                        drill.Mentori.Z = z;
+                    }
+                    dataGridView3.Update();
 
                     }
                 }
