@@ -122,8 +122,10 @@ namespace Krisiun_Project.G_Code
 
 
                     foreach (var objeto in ferramentaslist)
-                    {
-                        kosuu = objeto.CoordenadasList.Count();
+                    {   if(objeto.CoordenadasList != null)
+                        {
+                            kosuu = objeto.CoordenadasList.Count();
+                        }
                         tabelaHtml.Append("<tr>");
                         tabelaHtml.Append($"<td>{numpro}</td>");//1
 

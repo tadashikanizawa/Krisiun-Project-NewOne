@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
@@ -28,6 +30,7 @@ namespace Krisiun_Project.G_Code
         {
             MenFrente = new List<Ferramentas> { };
             MenTras = new List<Ferramentas> { };
+            this.peca = peca;
         }
         public override bool Equals(object obj)
         {
@@ -47,28 +50,96 @@ namespace Krisiun_Project.G_Code
             hash = hash * 23 + (TipoDeCutter?.GetHashCode() ?? 0);
             return hash;
         }
-        public static string GenerateGCode(double x, double y, double arcDiameter, double toolDiameter, double extraAngle)
+
+        public  StringBuilder GcodeInicial(Mentori mentori, Ferramentas ferramenta, bool frente, bool tras, bool okk, bool Kanizawa)
         {
+            StringBuilder gCode = new StringBuilder();
+            int kaiten = mentori.Kaiten;
+            int okuri = mentori.Okuri;
+            float z = ferramenta.Mentori.Z;
+            if(z <0)
+            {
+                z = z * -1;
+            }
+            float ponta = mentori.Kei;
+            float diaburaco = ferramenta.Mentori.MenKei;
+            float C = ferramenta.Mentori.C;
+            float Dansa = ferramenta.Mentori.Dansa;
+            if(Dansa <0)
+            {
+                Dansa = Dansa * -1;
+            }
+
+            float kei = diaburaco + C - z;
+            float valorz = z + Dansa;
+
+            bool xinv = peca.xinv;
+            bool yinv = peca.yinv;
+
+
+            gCode.AppendLine($"S{mentori.Kaiten}M3");
+            for (int i = 1; i < ferramenta.CoordenadasList.Count; i++)
+            {// Multiplica a coordenada X por -1 se xinv for verdadeiro
+
+
+                PointF coordenada = ferramenta.CoordenadasList[i];
+                float xCoordValue = xinv ? -coordenada.X : coordenada.X;
+                float yCoordValue = yinv ? -coordenada.Y : coordenada.Y;
+                gCode.Append(GenerateMentori(xCoordValue,yCoordValue,valorz,kei,ponta,okuri,10));
+            }
+            gCode.AppendLine("G0Z500.");
+            return gCode;
+        }
+
+        public static StringBuilder GenerateMentori(float x, float y, float z, float arcDiameter, float toolDiameter, int Okuri, float extraAngle)
+        {
+            StringBuilder gCode = new StringBuilder();
             double radius = arcDiameter / 2;
             double toolRadius = toolDiameter / 2;
             double effectiveRadius = radius - toolRadius;
 
+            string xinicial = x % 1 == 0 ? $"{x}." : $"{x}";
+            string yinicial = y % 1 == 0 ? $"{y}." : $"{y}";
+            if(z > 0) { z*= -1; }
+            string zinicial = z % 1 == 0 ? $"{z}." : $"{z}";
+
             double centerX = x;
-            double centerY = y - effectiveRadius;
+            double centerY = Math.Round(y - effectiveRadius,3);
+            string centerxstring = centerX % 1 == 0 ? $"{centerX}." : $"{centerX}";
+            string centerystring = centerY % 1 == 0 ? $"{centerY}." : $"{centerY}";
+
 
             double initialAngleRadians = 3 * Math.PI / 2; // 270 graus em radianos
-            double initialX = centerX + effectiveRadius * Math.Cos(initialAngleRadians);
-            double initialY = centerY + effectiveRadius * Math.Sin(initialAngleRadians);
+            double initialX = Math.Round(centerX + effectiveRadius * Math.Cos(initialAngleRadians),3);
+            double initialY = Math.Round(centerY + effectiveRadius * Math.Sin(initialAngleRadians), 3);
+
+            double valorJ = Math.Round(centerY - initialY,3);
+            double valorI = Math.Round(centerX - initialX,3);
+            string valorJstring = valorJ % 1 == 0 ? $"{valorJ}." : $"{valorJ}";
+            string valorIstring = valorI % 1 == 0 ? $"{valorI}." : $"{valorI}";
 
             double totalAngle = 360 + extraAngle;
             double totalAngleRadians = (270 + totalAngle) * Math.PI / 180;
 
-            double x2 = centerX + effectiveRadius * Math.Cos(totalAngleRadians);
-            double y2 = centerY + effectiveRadius * Math.Sin(totalAngleRadians);
+            double x2 = x + centerX + effectiveRadius * Math.Cos(totalAngleRadians);
+            double y2 = y + centerY + effectiveRadius * Math.Sin(totalAngleRadians);
 
-            string gCode = $"G01 X{initialX} Y{initialY} F100\n";
-            gCode += $"G03 X{initialX} Y{initialY} I{centerX - initialX} J{centerY - initialY} F100\n";
-            gCode += $"G03 X{x2} Y{y2} I{centerX - initialX} J{centerY - initialY} F100";
+            double hayaiokuri = centerY + toolRadius + 0.2;
+            string hayaiokuristring = hayaiokuri % 1 == 0 ? $"{hayaiokuri}." : $"{hayaiokuri}";
+
+            x2 = Math.Round(x2 / 2,3);
+            y2= Math.Round(y2 / 2, 3);
+
+            string x2string = x2 % 1 == 0 ? $"{x2}." : $"{x2}";
+            string y2string = y2 % 1 == 0 ? $"{y2}." : $"{y2}";
+
+            gCode.AppendLine($"G0X{xinicial}Y{yinicial}");
+             gCode.AppendLine($"G0X{xinicial}Y{yinicial}Z{zinicial}");
+            gCode.AppendLine($"G0X{xinicial}Y{hayaiokuristring}");
+            gCode.AppendLine($"G01X{centerxstring}Y{centerystring}F100");
+            gCode.AppendLine($"G03 X{centerxstring} Y{centerystring} I{valorIstring} J{valorJstring} F{Okuri}");
+            gCode.AppendLine($"G03 X{x2string} Y{y2string} I{valorIstring} J{valorJstring} F{Okuri}");
+            gCode.AppendLine("G0Z85.");
 
             return gCode;
         }

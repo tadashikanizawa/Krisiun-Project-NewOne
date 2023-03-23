@@ -94,6 +94,7 @@ namespace Krisiun_Project.G_Code
                                 if (ferramentas1.Mentori == mentori)
                                 {
 
+                                    gCode56.Append(GcodeMentori(mentori,ferramentas1,omote,ura,false,false));
                                 }
 
                             }
@@ -222,7 +223,10 @@ namespace Krisiun_Project.G_Code
             else if (ferramenta is Mentori mentori)
             {
                 toolnum = mentori.ToolNumber;
-                if(kousoki == true) { toolnum = mentori.ToolNumberK; troca = "M207"; }
+                if (kousoki == true) { toolnum = mentori.ToolNumberK; troca = "M207"; }
+                kei = mentori.Kei;
+                tipo = mentori.ToolName.Replace("(","-").Replace(")","-");
+                resfriamento = "M08";
 
             }
 
@@ -234,7 +238,7 @@ namespace Krisiun_Project.G_Code
                 if (resfriamento == "M51") { resfriamento = "M58G04X3."; }
             }
             //tipo
-            if(Kanizawa == true)
+            if (Kanizawa == true)
             {
                 cabeca.AppendLine("/");
                 cabeca.AppendLine("ON" + numpro1);
@@ -245,10 +249,11 @@ namespace Krisiun_Project.G_Code
             {
                 cabeca.AppendLine("G90G#600");
             }
-            if (ferramenta is Drills)
+            if (ferramenta is Drills || ferramenta is Mentori) 
             {
                 cabeca.AppendLine("(N00" + numpro1 + "- T" + toolnum1 + " -" + tipo + "- φ" + kei1 + ")");
             }
+      
             cabeca.AppendLine("G0Z500.");
             cabeca.AppendLine("T" + toolnum1);
             cabeca.AppendLine(troca);
@@ -271,8 +276,7 @@ namespace Krisiun_Project.G_Code
         
         }
        
-   
-        
+      
         private StringBuilder GenerateGCodeForDrill(Drills drill, bool frente, bool tras, bool okk, bool Kanizawa)
         {
             StringBuilder gCodeForDrill = new StringBuilder();
@@ -337,6 +341,47 @@ namespace Krisiun_Project.G_Code
 
             return gCodeForDrill;
         }
+
+        public StringBuilder GcodeMentori(Mentori mentori, Ferramentas ferramenta, bool frente, bool tras, bool okk, bool Kanizawa)
+        {
+            StringBuilder gCode = new StringBuilder();
+            int kaiten = mentori.Kaiten;
+            int okuri = mentori.Okuri;
+            float z = ferramenta.Mentori.Z;
+            if (z < 0)
+            {
+                z = z * -1;
+            }
+            float ponta = mentori.Kei;
+            float diaburaco = ferramenta.Mentori.MenKei;
+            float C = ferramenta.Mentori.C * 2;
+            float Dansa = ferramenta.Mentori.Dansa;
+            if (Dansa < 0)
+            {
+                Dansa = Dansa * -1;
+            }
+
+            float kei = diaburaco + C - z;
+            float valorz = z + Dansa;
+
+            bool xinv = peca.xinv;
+            bool yinv = peca.yinv;
+
+
+            gCode.AppendLine($"S{mentori.Kaiten}M3");
+            for (int i = 0; i < ferramenta.CoordenadasList.Count; i++)
+            {// Multiplica a coordenada X por -1 se xinv for verdadeiro
+
+
+                PointF coordenada = ferramenta.CoordenadasList[i];
+                float xCoordValue = xinv ? -coordenada.X : coordenada.X;
+                float yCoordValue = yinv ? -coordenada.Y : coordenada.Y;
+                gCode.Append(Mentori.GenerateMentori(xCoordValue, yCoordValue, valorz, kei, ponta, okuri, 10));
+            }
+            gCode.AppendLine("G0Z500.");
+            return gCode;
+        }
+
         public static string GenerateGElipse(double centerX, double centerY, double endMillDiameter, int feedRate, double ellipseWidth, double ellipseHeight)
         {
             string gCode = "";
