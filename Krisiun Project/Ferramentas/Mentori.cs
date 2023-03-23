@@ -14,7 +14,7 @@ namespace Krisiun_Project.G_Code
         public TiposdeMentori TipoDeCutter { get; set; }
         public Ferramentas Lugar { get; set; }
         public float Z { get; set; }    
-        public float Kei { get; set; }  
+        public float MenKei { get; set; }  
         public float C { get; set; }
         public float Dansa { get; set; }
         public float Diametro { get; set; }
@@ -73,7 +73,7 @@ namespace Krisiun_Project.G_Code
             return gCode;
         }
     }
-}
+
 
 
     public class TiposdeMentori
@@ -86,9 +86,10 @@ namespace Krisiun_Project.G_Code
         public string Kataban { get;set; }
         public int Largura { get; set; }
         public float TsukidashiMax { get; set; }
+        public int MenCutterToolNum { get; set; }
 
 
-        public TiposdeMentori(string tool, float diametro, float profundidade, int kaiten, int okuri, string kataban, int largura, float tsukidashiMax)
+        public TiposdeMentori(string tool, float diametro, float profundidade, int kaiten, int okuri, string kataban, int largura, float tsukidashiMax, int menCutterToolNum)
         {
             Tool = tool;
             Diametro = diametro;
@@ -98,6 +99,7 @@ namespace Krisiun_Project.G_Code
             Kataban = kataban;
             Largura = largura;
             TsukidashiMax = tsukidashiMax;
+            MenCutterToolNum = menCutterToolNum;
         }
         public override bool Equals(object obj)
         {
@@ -139,9 +141,10 @@ namespace Krisiun_Project.G_Code
                     string kataban = parts[5].ToString();
                     int largura = int.Parse(parts[6], CultureInfo.InvariantCulture);
                     float tsukidashi = float.Parse(parts[7], CultureInfo.InvariantCulture);
+                    int menCutterToolNum = int.Parse(parts[8], CultureInfo.InvariantCulture);
 
                     //  MessageBox.Show(tool + "," + diametro.ToString() +"," + profundidade.ToString() + "," + kaiten.ToString() + "," + okuri.ToString() + "," + kataban + "," + largura.ToString() + "," + tsukidashi.ToString() );
-                    listaDeMentori.Add(new TiposdeMentori(tool, diametro, profundidade, kaiten, okuri, kataban, largura, tsukidashi));
+                    listaDeMentori.Add(new TiposdeMentori(tool, diametro, profundidade, kaiten, okuri, kataban, largura, tsukidashi, menCutterToolNum));
                 }
 
             }

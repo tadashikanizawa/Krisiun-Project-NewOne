@@ -1164,11 +1164,15 @@ namespace Krisiun_Project
             var selecionado = GetSelectedObject();
             Mentori mentori = new Mentori(peca);
             TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
+            MessageBox.Show(selectedMentori.Diametro.ToString());
             if (men_frente_checkbox.Checked == true)
             {
                 mentori.TipoDeCutter = selectedMentori;
                 mentori.ToolName = selectedMentori.Tool;
+                mentori.ToolNumber = selectedMentori.MenCutterToolNum;
                 mentori.Nome = selectedMentori.Tool;
+                mentori.Kei = selectedMentori.Diametro;
+
                 mentori.Index = 0;
                 mentori.Frente = true;
            
