@@ -95,11 +95,6 @@ namespace Krisiun_Project.G_Code
                                 {
 
                                     gCode56.Append(GcodeMentori(mentori,ferramentas1,omote,ura,false,false));
-                                    gCode46.Append(GcodeMentori(mentori, ferramentas1, omote, ura, false, false));
-                                    gcodeokk.Append(GcodeMentori(mentori, ferramentas1, omote, ura, true, false));
-                                    gCode56F.Append(GcodeMentori(mentori, ferramentas1 ,omote,ura,false,true));
-                                    gCode46F.Append(GcodeMentori(mentori, ferramentas1, omote, ura, false, true));
-                                    gCodeokkF.Append(GcodeMentori(mentori, ferramentas1, omote, ura, true, true));
                                 }
 
                             }
@@ -126,8 +121,8 @@ namespace Krisiun_Project.G_Code
             gCode46F.Append(final());
             gCode56F.Append(final());
             string nome = "herbocinetica";
-            if (omote == true) { nome += "frente.MIN"; }
-            if (ura == true) { nome += "tras.MIN"; }
+            if (omote == true) { nome += "frente.txt"; }
+            if (ura == true) { nome += "tras.txt"; }
             SaveStringBuilderToFile(gCode56, gCode46, gcodeokk,gCode56F,gCode46F,gCodeokkF, nome);
             return gCode56.ToString();
         }
@@ -230,7 +225,7 @@ namespace Krisiun_Project.G_Code
                 toolnum = mentori.ToolNumber;
                 if (kousoki == true) { toolnum = mentori.ToolNumberK; troca = "M207"; }
                 kei = mentori.Kei;
-                tipo = mentori.ToolName.Replace("(","-").Replace(")","");
+                tipo = mentori.ToolName.Replace("(","-").Replace(")","-");
                 resfriamento = "M08";
 
             }
@@ -384,10 +379,6 @@ namespace Krisiun_Project.G_Code
                 gCode.Append(Mentori.GenerateMentori(xCoordValue, yCoordValue, valorz, kei, ponta, okuri, 10));
             }
             gCode.AppendLine("G0Z500.");
-            if(Kanizawa == true)
-            {
-                gCode.AppendLine("RTS");
-            }
             return gCode;
         }
 
