@@ -141,10 +141,10 @@ namespace Krisiun_Project.G_Code
                         tabelaHtml.Append($"<td>{objeto.ToolName}</td>");//4
                         tabelaHtml.Append($"<td>{"φ" + objeto.Kei}</td>");//5
                         tabelaHtml.Append("<td>"); // Início da célula da coluna 加工案内
-                        if (objeto is Mentori mentori)
+                        if (objeto is Mentori)
                         {
                             tabelaHtml.Append("<table style=\"border: 1px solid black;\">"); // Tabela para informações do objeto Mentori
-                            foreach (var item in mentori.MenFrente)
+                            foreach (var item in ferramentas.MentoriFrente)
                             {
                                 tabelaHtml.Append("<tr><td style=\"border: 1px solid black; font-size: 8px;\">");
                                 tabelaHtml.Append($"{"Ø" + item.Kei + "/(" + item.Mentori.MenKei + ") - C" + item.Mentori.C + "/ Z" + item.Mentori.Z + "(+" + item.Mentori.Dansa + ")"}</td></tr>");

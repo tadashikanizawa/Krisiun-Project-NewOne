@@ -60,16 +60,16 @@ namespace Krisiun_Project.janela_principal
 
                     checkBoxes[3].Checked = ferramentaSelecionada.Mentori_F_Bool;
                     checkBoxes[4].Checked = ferramentaSelecionada.Mentori_B_Bool;
-                        TiposdeMentori selectedMentori = (TiposdeMentori)ferramentaSelecionada.Mentori.MentoriCutter;
+                        //TiposdeMentori selectedMentori = (TiposdeMentori)ferramentaSelecionada.Mentori.MentoriCutter;
 
-                        // Encontre o índice do item selecionado na ComboBox.
-                        int selectedIndex = comboBoxes[2].Items.IndexOf(selectedMentori);
+                        //// Encontre o índice do item selecionado na ComboBox.
+                        //int selectedIndex = comboBoxes[2].Items.IndexOf(selectedMentori);
 
-                        // Defina o SelectedIndex da ComboBox para o índice encontrado.
-                        if (selectedIndex != -1)
-                        {
-                            comboBoxes[2].SelectedIndex = selectedIndex;
-                        }
+                        //// Defina o SelectedIndex da ComboBox para o índice encontrado.
+                        //if (selectedIndex != -1)
+                        //{
+                        //    comboBoxes[2].SelectedIndex = selectedIndex;
+                        //}
 
                     }
                     //BindingList<PointF> novaLista = new BindingList<PointF>();

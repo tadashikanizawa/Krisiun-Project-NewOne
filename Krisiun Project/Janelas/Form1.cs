@@ -1175,7 +1175,7 @@ namespace Krisiun_Project
        
             if (men_frente_checkbox.Checked == true)
             {
-                mentori.TipoDeCutter = selectedMentori.Tool;
+                mentori.TipoDeCutter = selectedMentori;
                 mentori.ToolName = selectedMentori.Tool;
                 mentori.ToolNumber = selectedMentori.MenCutterToolNum;
                 mentori.Nome = selectedMentori.Tool;
@@ -1191,6 +1191,7 @@ namespace Krisiun_Project
                     ferramentas.ListTotal.Add(mentori);
                 }
                 if (ferramentas.ListFrente.Contains(mentori) == false) { ferramentas.ListFrente.Add(mentori); }
+                if(ferramentas.MentoriFrente.Contains(selecionado) == false) { ferramentas.MentoriFrente.Add(selecionado); }
                 dataGridView3.Refresh();
             }
             else
@@ -1198,6 +1199,7 @@ namespace Krisiun_Project
                 {
                     if (ferramentas.ListFrente.Contains(mentori) == true) { ferramentas.ListFrente.Remove(mentori); }
                     if (ferramentas.ListTotal.Contains(mentori) == true) { ferramentas.ListTotal.Remove(mentori); }
+                    if (ferramentas.MentoriFrente.Contains (selecionado) == true) { ferramentas.MentoriFrente.Remove(selecionado); }
                     dataGridView3.Refresh();
                 }
             }
@@ -1207,8 +1209,6 @@ namespace Krisiun_Project
                 {
                     drill.Mentori= mentori;
                     //drill.Mentori.MentoriCutter = selectedMentori;
-                    MessageBox.Show(drill.Mentori.TipoDeCutter.ToString());
-                    MessageBox.Show(mentori.TipoDeCutter.ToString());
 
                     drill.Mentori_F_Bool = men_frente_checkbox.Checked;
                     if (float.TryParse(men_frente_kei_tb.Text, out float menkei))
