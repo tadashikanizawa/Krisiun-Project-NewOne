@@ -234,7 +234,6 @@ namespace Krisiun_Project
         private void button1_Click(object sender, EventArgs e)
         {
             ferramentas.addtoolnumberK();
-            MessageBox.Show(ferramentas.ListFrente[1].ToolNumberK.ToString());
         }
         public void SavePictureBoxAsJPG(Panel pb, String strg)
         {
@@ -754,14 +753,17 @@ namespace Krisiun_Project
             Load_Combobox<Drills>(drill_combobox, null, "DrillTipo");
             Load_Textbox<Drills>(drill_z_tb, null, "Fukasa");
             Load_Textbox<Drills>(tool_tb, null, "ToolNumber");
-      
+
             Load_Combobox<Drills>(drill_combobox, null, "ToolName");
 
             Load_Combobox<Drills>(Resfri_Combobox, null, "Resfriamento");
             Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
             Load_TextboxString2<Drills>(drill_combobox, drill_kei_tb, null, "Nome");
             Load_TextboxString<Drills>(Num_pro_textbox, null, "Description");
+            if (men_frente_checkbox.Checked)
+            { 
             menfrenteCheck();
+            }
             panel_update();
 
         }
@@ -1170,10 +1172,10 @@ namespace Krisiun_Project
             var selecionado = GetSelectedObject();
             Mentori mentori = new Mentori(peca);
             TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
-            MessageBox.Show(selectedMentori.Diametro.ToString());
+       
             if (men_frente_checkbox.Checked == true)
             {
-                mentori.TipoDeCutter = selectedMentori;
+                mentori.TipoDeCutter = selectedMentori.Tool;
                 mentori.ToolName = selectedMentori.Tool;
                 mentori.ToolNumber = selectedMentori.MenCutterToolNum;
                 mentori.Nome = selectedMentori.Tool;
@@ -1203,7 +1205,10 @@ namespace Krisiun_Project
             {
                 if (selecionado is Drills drill)
                 {
-                    drill.Mentori = mentori;
+                    drill.Mentori= mentori;
+                    //drill.Mentori.MentoriCutter = selectedMentori;
+                    MessageBox.Show(drill.Mentori.TipoDeCutter.ToString());
+                    MessageBox.Show(mentori.TipoDeCutter.ToString());
 
                     drill.Mentori_F_Bool = men_frente_checkbox.Checked;
                     if (float.TryParse(men_frente_kei_tb.Text, out float menkei))

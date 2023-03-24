@@ -51,15 +51,27 @@ namespace Krisiun_Project.janela_principal
 
                 if (ferramentaSelecionada != null)
                 {
-                    textBoxs[4].Text = ferramentaSelecionada.Mentori.Diametro.ToString();
-                    textBoxs[5].Text = ferramentaSelecionada.Mentori.Profundidade.ToString();
+                    if(!(ferramentaSelecionada is Mentori))
+                    { 
+                    textBoxs[4].Text = ferramentaSelecionada.Mentori.MenKei.ToString();
+                    textBoxs[5].Text = ferramentaSelecionada.Mentori.Z.ToString();
                     textBoxs[3].Text = ferramentaSelecionada.Mentori.C.ToString();
                     textBoxs[6].Text = ferramentaSelecionada.Mentori.Dansa.ToString();
 
                     checkBoxes[3].Checked = ferramentaSelecionada.Mentori_F_Bool;
                     checkBoxes[4].Checked = ferramentaSelecionada.Mentori_B_Bool;
+                        TiposdeMentori selectedMentori = (TiposdeMentori)ferramentaSelecionada.Mentori.MentoriCutter;
 
-                    comboBoxes[2].SelectedItem = ferramentaSelecionada.Mentori.MentoriCutter.ToString();
+                        // Encontre o índice do item selecionado na ComboBox.
+                        int selectedIndex = comboBoxes[2].Items.IndexOf(selectedMentori);
+
+                        // Defina o SelectedIndex da ComboBox para o índice encontrado.
+                        if (selectedIndex != -1)
+                        {
+                            comboBoxes[2].SelectedIndex = selectedIndex;
+                        }
+
+                    }
                     //BindingList<PointF> novaLista = new BindingList<PointF>();
                     if (ferramentaSelecionada is Drills)
                     {
