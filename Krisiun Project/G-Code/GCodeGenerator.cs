@@ -371,7 +371,7 @@ namespace Krisiun_Project.G_Code
             bool xinv = peca.xinv;
             bool yinv = peca.yinv;
 
-
+            gCode.AppendLine("("+ferramenta.ToolName.ToString()+ "-Ø"+ferramenta.Kei +")");
             for (int i = 0; i < ferramenta.CoordenadasList.Count; i++)
             {// Multiplica a coordenada X por -1 se xinv for verdadeiro
 

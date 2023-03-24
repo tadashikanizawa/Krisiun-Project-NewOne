@@ -113,7 +113,7 @@ namespace Krisiun_Project.G_Code
                          "<th style=\"width: 30px;\">ツール番号</th>" +//3
                         "<th style=\"width: 50px;\">ツール</th>" + //4
                         "<th style=\"width: 50px;\">径</th>" + //5
-                        "<th style=\"width: 50px;\">加工案内</th>" + //6
+                        "<th style=\"width: 150px;\">加工案内</th>" + //6
                         "<th style =\"width: 50px;\">深さ</th>" + //7
 
                         "<th style =\"width: 150px;\">条件-" + peca.Material.Name.ToString() + "</th></tr>" //8
@@ -143,10 +143,10 @@ namespace Krisiun_Project.G_Code
                         tabelaHtml.Append("<td>"); // Início da célula da coluna 加工案内
                         if (objeto is Mentori)
                         {
-                            tabelaHtml.Append("<table style=\"border: 1px solid black;\">"); // Tabela para informações do objeto Mentori
+                            tabelaHtml.Append("<table style=\"border: none;\">"); // Tabela para informações do objeto Mentori
                             foreach (var item in ferramentas.MentoriFrente)
                             {
-                                tabelaHtml.Append("<tr><td style=\"border: 1px solid black; font-size: 8px;\">");
+                                tabelaHtml.Append("<tr><td style=\"border: none; font-size: 8px;\">");
                                 tabelaHtml.Append($"{"Ø" + item.Kei + "/(" + item.Mentori.MenKei + ") - C" + item.Mentori.C + "/ Z" + item.Mentori.Z + "(+" + item.Mentori.Dansa + ")"}</td></tr>");
                             }
                             tabelaHtml.Append("</table>"); // Fim da tabela para informações do objeto Mentori
