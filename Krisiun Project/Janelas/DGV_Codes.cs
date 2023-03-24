@@ -51,6 +51,15 @@ namespace Krisiun_Project.janela_principal
 
                 if (ferramentaSelecionada != null)
                 {
+                    textBoxs[4].Text = ferramentaSelecionada.Mentori.Diametro.ToString();
+                    textBoxs[5].Text = ferramentaSelecionada.Mentori.Profundidade.ToString();
+                    textBoxs[3].Text = ferramentaSelecionada.Mentori.C.ToString();
+                    textBoxs[6].Text = ferramentaSelecionada.Mentori.Dansa.ToString();
+
+                    checkBoxes[3].Checked = ferramentaSelecionada.Mentori_F_Bool;
+                    checkBoxes[4].Checked = ferramentaSelecionada.Mentori_B_Bool;
+
+                    comboBoxes[2].SelectedItem = ferramentaSelecionada.Mentori.MentoriCutter.ToString();
                     //BindingList<PointF> novaLista = new BindingList<PointF>();
                     if (ferramentaSelecionada is Drills)
                     {

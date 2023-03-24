@@ -172,7 +172,7 @@ namespace Krisiun_Project
         #endregion
 
         // Atribui o BindingSource à lista de grupos de coordenadas
-       
+        #region Load_as_coisas.
         private void LoadMentori()
         {
             List<TiposdeMentori> tiposdeMentoris = TiposdeMentori.LoadMentoriCuter();
@@ -195,7 +195,7 @@ namespace Krisiun_Project
             drill_combobox.ValueMember = "Name";
         }
         private void add_tb_naLista()
-        {
+        {   
             TextBoxes.Add(Num_pro_textbox); //[0]
             TextBoxes.Add(drill_kei_tb);    //[1]
             TextBoxes.Add(drill_z_tb); //[2]
@@ -203,6 +203,7 @@ namespace Krisiun_Project
             TextBoxes.Add(men_frente_kei_tb); //[4]
             TextBoxes.Add(men_frente_z_tb);//[5]
             TextBoxes.Add(men_frente_dan_tb);//[6]
+          
             TextBoxes.Add(tool_tb); //7
         
 
@@ -224,7 +225,7 @@ namespace Krisiun_Project
 
             ComboBoxList.Add(drill_combobox); //0
             ComboBoxList.Add(comboBoxCores);//1
-
+            ComboBoxList.Add(men_frente_tipo_combo); //2
         }
         #region Tamanho_Escala_Base
 
@@ -391,7 +392,7 @@ namespace Krisiun_Project
         }
 
 
-
+        #endregion
 
         #endregion
         #region Métodos de atualizar as budegas
