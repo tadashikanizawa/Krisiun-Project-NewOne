@@ -202,6 +202,7 @@ namespace Krisiun_Project.G_Code
             string tipo = null;
             string troca = "M06";
             string resfriamento = "M08";
+            int kaiten = 0;
             // numero da ferramenta
 
 
@@ -215,6 +216,7 @@ namespace Krisiun_Project.G_Code
                 kei = drill.Kei;
                 tipo = drill.ToolName;
                 resfriamento = drill.Resfriamento;
+                kaiten = drill.Kaiten;
             }
             else if (ferramenta is Tap tap)
             {
@@ -227,6 +229,7 @@ namespace Krisiun_Project.G_Code
                 kei = mentori.Kei;
                 tipo = mentori.ToolName.Replace("(","-").Replace(")","-");
                 resfriamento = "M08";
+                kaiten = mentori.Kaiten;
 
             }
 
@@ -269,6 +272,7 @@ namespace Krisiun_Project.G_Code
             cabeca.AppendLine("G17G90G00");
             cabeca.AppendLine("G71Z85.M53");
             cabeca.AppendLine("(INICIO)");
+            cabeca.AppendLine("S"+kaiten.ToString() + "M03");
             
             return cabeca;
 
@@ -295,6 +299,7 @@ namespace Krisiun_Project.G_Code
             if(tras == false) { xinv = false; yinv = false; }
             double radianos = graus * (Math.PI / 180);
             double raio = drill.Kei / 2;
+            
             if (drill.Sentan == true)
             {
                 senta = (float)(Math.Tan(radianos) * raio);
@@ -305,7 +310,6 @@ namespace Krisiun_Project.G_Code
             }
             if (fukasa > 0) { fukasa *= -1; }
             // Velocidade de rotação
-            gCodeForDrill.AppendLine($"S{spindleSpeed} M03");
             
             // Comando G81
             PointF primeiraCoordenada = drill.CoordenadasList[0];
@@ -368,7 +372,6 @@ namespace Krisiun_Project.G_Code
             bool yinv = peca.yinv;
 
 
-            gCode.AppendLine($"S{mentori.Kaiten}M3");
             for (int i = 0; i < ferramenta.CoordenadasList.Count; i++)
             {// Multiplica a coordenada X por -1 se xinv for verdadeiro
 

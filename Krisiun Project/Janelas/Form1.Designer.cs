@@ -202,7 +202,7 @@
             this.panel_inverso.Controls.Add(this.y_inv_checkbox);
             this.panel_inverso.Controls.Add(this.x_inv_checkbok);
             this.panel_inverso.Location = new System.Drawing.Point(1223, 25);
-            this.panel_inverso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_inverso.Margin = new System.Windows.Forms.Padding(2);
             this.panel_inverso.Name = "panel_inverso";
             this.panel_inverso.Size = new System.Drawing.Size(119, 27);
             this.panel_inverso.TabIndex = 22;
@@ -221,7 +221,7 @@
             // 
             this.y_inv_checkbox.AutoSize = true;
             this.y_inv_checkbox.Location = new System.Drawing.Point(81, 5);
-            this.y_inv_checkbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.y_inv_checkbox.Margin = new System.Windows.Forms.Padding(2);
             this.y_inv_checkbox.Name = "y_inv_checkbox";
             this.y_inv_checkbox.Size = new System.Drawing.Size(31, 16);
             this.y_inv_checkbox.TabIndex = 1;
@@ -235,7 +235,7 @@
             this.x_inv_checkbok.Checked = true;
             this.x_inv_checkbok.CheckState = System.Windows.Forms.CheckState.Checked;
             this.x_inv_checkbok.Location = new System.Drawing.Point(42, 5);
-            this.x_inv_checkbok.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.x_inv_checkbok.Margin = new System.Windows.Forms.Padding(2);
             this.x_inv_checkbok.Name = "x_inv_checkbok";
             this.x_inv_checkbok.Size = new System.Drawing.Size(31, 16);
             this.x_inv_checkbok.TabIndex = 0;
@@ -429,7 +429,7 @@
             // Add_Coor
             // 
             this.Add_Coor.Location = new System.Drawing.Point(355, 210);
-            this.Add_Coor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Add_Coor.Margin = new System.Windows.Forms.Padding(2);
             this.Add_Coor.Name = "Add_Coor";
             this.Add_Coor.Size = new System.Drawing.Size(19, 19);
             this.Add_Coor.TabIndex = 3;
@@ -460,7 +460,7 @@
             this.dgvCoordenadas.ColumnHeadersHeight = 34;
             this.dgvCoordenadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCoordenadas.Location = new System.Drawing.Point(660, 63);
-            this.dgvCoordenadas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvCoordenadas.Margin = new System.Windows.Forms.Padding(2);
             this.dgvCoordenadas.MultiSelect = false;
             this.dgvCoordenadas.Name = "dgvCoordenadas";
             this.dgvCoordenadas.RowHeadersVisible = false;
@@ -476,7 +476,7 @@
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(685, 229);
-            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(122, 33);
             this.button9.TabIndex = 90;
@@ -487,7 +487,7 @@
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(733, 270);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(74, 49);
             this.button7.TabIndex = 37;
@@ -498,7 +498,7 @@
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(685, 192);
-            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(123, 33);
             this.button8.TabIndex = 39;
@@ -552,7 +552,7 @@
             // 
             this.comboBoxCores.FormattingEnabled = true;
             this.comboBoxCores.Location = new System.Drawing.Point(109, 7);
-            this.comboBoxCores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxCores.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxCores.Name = "comboBoxCores";
             this.comboBoxCores.Size = new System.Drawing.Size(74, 20);
             this.comboBoxCores.TabIndex = 77;
@@ -572,7 +572,7 @@
             this.panel_men_tras.Controls.Add(this.men_tras_kei);
             this.panel_men_tras.Controls.Add(this.label19);
             this.panel_men_tras.Location = new System.Drawing.Point(125, 225);
-            this.panel_men_tras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_men_tras.Margin = new System.Windows.Forms.Padding(2);
             this.panel_men_tras.Name = "panel_men_tras";
             this.panel_men_tras.Size = new System.Drawing.Size(113, 120);
             this.panel_men_tras.TabIndex = 77;
@@ -681,7 +681,7 @@
             this.panel_men_frente.Controls.Add(this.men_frente_kei_tb);
             this.panel_men_frente.Controls.Add(this.label31);
             this.panel_men_frente.Location = new System.Drawing.Point(3, 225);
-            this.panel_men_frente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_men_frente.Margin = new System.Windows.Forms.Padding(2);
             this.panel_men_frente.Name = "panel_men_frente";
             this.panel_men_frente.Size = new System.Drawing.Size(113, 120);
             this.panel_men_frente.TabIndex = 2;
@@ -823,7 +823,7 @@
             "ドリル",
             "センタードリル"});
             this.drill_combobox.Location = new System.Drawing.Point(10, 26);
-            this.drill_combobox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.drill_combobox.Margin = new System.Windows.Forms.Padding(2);
             this.drill_combobox.Name = "drill_combobox";
             this.drill_combobox.Size = new System.Drawing.Size(113, 20);
             this.drill_combobox.TabIndex = 25;
@@ -1326,7 +1326,7 @@
             this.mentoriBBoolDataGridViewCheckBoxColumn});
             this.dataGridView3.DataSource = this.listTotalBindingSource;
             this.dataGridView3.Location = new System.Drawing.Point(5, 27);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.RowHeadersWidth = 62;
@@ -1565,7 +1565,7 @@
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(713, 655);
-            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(94, 26);
             this.button10.TabIndex = 92;
@@ -1664,7 +1664,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1171, 717);
+            this.ClientSize = new System.Drawing.Size(1552, 717);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button12);

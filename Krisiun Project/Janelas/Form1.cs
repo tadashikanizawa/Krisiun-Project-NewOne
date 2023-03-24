@@ -15,6 +15,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Reflection;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 using WindowsFormsApp1;
 using static Krisiun_Project.Pitch_principal;
@@ -759,7 +760,7 @@ namespace Krisiun_Project
             Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
             Load_TextboxString2<Drills>(drill_combobox, drill_kei_tb, null, "Nome");
             Load_TextboxString<Drills>(Num_pro_textbox, null, "Description");
-
+            menfrenteCheck();
             panel_update();
 
         }
@@ -1161,6 +1162,10 @@ namespace Krisiun_Project
 
         private void men_frente_checkbox_CheckedChanged(object sender, EventArgs e)
         {
+    
+        }
+        private void menfrenteCheck()
+        {
             var selecionado = GetSelectedObject();
             Mentori mentori = new Mentori(peca);
             TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
@@ -1173,52 +1178,54 @@ namespace Krisiun_Project
                 mentori.Nome = selectedMentori.Tool;
                 mentori.Kei = selectedMentori.Diametro;
                 mentori.Kaiten = selectedMentori.Kaiten;
-                mentori.Okuri  = selectedMentori.Okuri;
+                mentori.Okuri = selectedMentori.Okuri;
 
                 mentori.Index = 0;
                 mentori.Frente = true;
-           
-            if (ferramentas.ListTotal.Contains(mentori) == false)
+
+                if (ferramentas.ListTotal.Contains(mentori) == false)
                 {
                     ferramentas.ListTotal.Add(mentori);
                 }
                 if (ferramentas.ListFrente.Contains(mentori) == false) { ferramentas.ListFrente.Add(mentori); }
                 dataGridView3.Refresh();
             }
-            else {
+            else
+            {
                 {
-                if (ferramentas.ListFrente.Contains(mentori) == true) { ferramentas.ListFrente.Remove(mentori); }
-                if (ferramentas.ListTotal.Contains(mentori) == true) { ferramentas.ListTotal.Remove(mentori); }
-                dataGridView3.Refresh();
-                } }
+                    if (ferramentas.ListFrente.Contains(mentori) == true) { ferramentas.ListFrente.Remove(mentori); }
+                    if (ferramentas.ListTotal.Contains(mentori) == true) { ferramentas.ListTotal.Remove(mentori); }
+                    dataGridView3.Refresh();
+                }
+            }
             if (selecionado != null && selectedMentori != null)
+            {
+                if (selecionado is Drills drill)
                 {
-                    if (selecionado is Drills drill)
+                    drill.Mentori = mentori;
+
+                    drill.Mentori_F_Bool = men_frente_checkbox.Checked;
+                    if (float.TryParse(men_frente_kei_tb.Text, out float menkei))
                     {
-                        drill.Mentori = mentori;
-                        
-                        drill.Mentori_F_Bool = men_frente_checkbox.Checked;
-                    if(float.TryParse(men_frente_kei_tb.Text, out float menkei))
-                    { 
-                    drill.Mentori.MenKei = menkei;
+                        drill.Mentori.MenKei = menkei;
                     }
-                    if(float.TryParse(men_frente_tam_tb.Text, out float  tam))
+                    if (float.TryParse(men_frente_tam_tb.Text, out float tam))
                     {
                         drill.Mentori.C = tam;
                     }
-                    if(float.TryParse(men_frente_dan_tb.Text, out float dan))
+                    if (float.TryParse(men_frente_dan_tb.Text, out float dan))
                     {
                         drill.Mentori.Dansa = dan;
                     }
-                    if(float.TryParse(men_frente_z_tb.Text,out float z))
+                    if (float.TryParse(men_frente_z_tb.Text, out float z))
                     {
                         drill.Mentori.Z = z;
                     }
                     dataGridView3.Update();
 
-                    }
                 }
-           
+            }
+
         }
     }
 
