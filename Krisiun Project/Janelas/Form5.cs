@@ -179,6 +179,8 @@ namespace Krisiun_Project.Janelas
                 tejun.tejunlista(ferramentas.ListTras, ferramentas.MentoriTras, peca.ura, "裏加工", true);
 
             }
+            int contagem = ferramentas.MentoriTras.Count;
+            MessageBox.Show("Contagem:" + contagem.ToString());
 
         }
     }

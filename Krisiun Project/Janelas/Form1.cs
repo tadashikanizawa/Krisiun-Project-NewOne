@@ -1167,72 +1167,9 @@ namespace Krisiun_Project
         {
 
         }
-        private void menfrenteCheck()
-        {
-            var selecionado = GetSelectedObject();
-            Mentori mentori = new Mentori(peca);
-            TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
+     
 
-            if (men_frente_checkbox.Checked == true)
-            {
-                mentori.TipoDeCutter = selectedMentori;
-                mentori.ToolName = selectedMentori.Tool;
-                mentori.ToolNumber = selectedMentori.MenCutterToolNum;
-                mentori.Nome = selectedMentori.Tool;
-                mentori.Kei = selectedMentori.Diametro;
-                mentori.Kaiten = selectedMentori.Kaiten;
-                mentori.Okuri = selectedMentori.Okuri;
-
-                mentori.Index = 0;
-                mentori.Frente = true;
-
-                if (ferramentas.ListTotal.Contains(mentori) == false)
-                {
-                    ferramentas.ListTotal.Add(mentori);
-                }
-                if (ferramentas.ListFrente.Contains(mentori) == false) { ferramentas.ListFrente.Add(mentori); }
-                if (ferramentas.MentoriFrente.Contains(selecionado) == false) { ferramentas.MentoriFrente.Add(selecionado); }
-                dataGridView3.Refresh();
-            }
-            else
-            {
-                {
-                    if (ferramentas.ListFrente.Contains(mentori) == true) { ferramentas.ListFrente.Remove(mentori); }
-                    if (ferramentas.ListTotal.Contains(mentori) == true) { ferramentas.ListTotal.Remove(mentori); }
-                    if (ferramentas.MentoriFrente.Contains(selecionado) == true) { ferramentas.MentoriFrente.Remove(selecionado); }
-                    dataGridView3.Refresh();
-                }
-            }
-            if (selecionado != null && selectedMentori != null)
-            {
-                if (selecionado is Drills drill)
-                {
-                    drill.Mentori = mentori;
-                    //drill.Mentori.MentoriCutter = selectedMentori;
-
-                    drill.Mentori_F_Bool = men_frente_checkbox.Checked;
-                    if (float.TryParse(men_frente_kei_tb.Text, out float menkei))
-                    {
-                        drill.Mentori.MenKei = menkei;
-                    }
-                    if (float.TryParse(men_frente_tam_tb.Text, out float tam))
-                    {
-                        drill.Mentori.C = tam;
-                    }
-                    if (float.TryParse(men_frente_dan_tb.Text, out float dan))
-                    {
-                        drill.Mentori.Dansa = dan;
-                    }
-                    if (float.TryParse(men_frente_z_tb.Text, out float z))
-                    {
-                        drill.Mentori.Z = z;
-                    }
-                    dataGridView3.Update();
-
-                }
-            }
-
-        }
+        
         private void MentorConfigs()
         {
             var selecionado = GetSelectedObject();
@@ -1261,7 +1198,6 @@ namespace Krisiun_Project
             mentorib.Okuri = selectedMentoriB.Okuri;
             mentorib.Index = 1;
             mentorib.Tras = true;
-            MessageBox.Show("primeira etapa:" + mentorib.ToolName);
 
             selecionado.Mentori_F_Bool = men_frente_checkbox.Checked;
             selecionado.Mentori_B_Bool = men_tras_checkbox.Checked;
@@ -1300,7 +1236,6 @@ namespace Krisiun_Project
             }
             selecionado.Mentori = mentori;
             selecionado.MentoriB = mentorib;
-            MessageBox.Show("segunda etapa:" + selecionado.MentoriB.TipoDeCutter.Tool);
             //drill.Mentori.MentoriCutter = selectedMentori;
 
             if (float.TryParse(men_frente_kei_tb.Text, out float menkei))

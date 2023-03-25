@@ -101,7 +101,21 @@ namespace Krisiun_Project.G_Code
                 menormentori2 = z2DoMenorZ;
                 // menormentori = mentorilist.Min(x => x.Mentori.Z2);
             }
-            
+            float menormentoriB = 0;
+            float menormentori2B = 0;
+            if (mentorilist.Any())
+            {
+
+                Ferramentas objetoMenorZB = mentorilist.Aggregate((minItem, nextItem) =>
+                nextItem.Mentori.Z2 < minItem.MentoriB.Z2 ? nextItem : minItem);
+
+                float menorZB = objetoMenorZB.MentoriB.Z2;
+                float z2DoMenorZB = objetoMenorZB.MentoriB.Z;
+                menormentoriB = menorZB;
+                menormentori2B = z2DoMenorZB;
+                // menormentori = mentorilist.Min(x => x.Mentori.Z2);
+            }
+
             //  MessageBox.Show(imagem);
 
             int numpro = 1;
@@ -166,6 +180,16 @@ namespace Krisiun_Project.G_Code
                             }
                             tabelaHtml.Append("</table>"); // Fim da tabela para informações do objeto Mentori
                         }
+                        if (objeto is MentoriB)
+                        {
+                            tabelaHtml.Append("<table style=\"border: none;\">"); // Tabela para informações do objeto Mentori
+                            foreach (var item in mentorilist)
+                            {
+                                tabelaHtml.Append("<tr><td style=\"border: none; font-size: 8px;\">");
+                                tabelaHtml.Append($"{"Ø" + item.Kei + "/(" + item.MentoriB.MenKei + ") - C" + item.MentoriB.C + "/ Z" + item.MentoriB.Z + "(+" + item.MentoriB.Dansa + ")"}</td></tr>");
+                            }
+                            tabelaHtml.Append("</table>"); // Fim da tabela para informações do objeto Mentori
+                        }
                         else
                         {
                             tabelaHtml.Append($"{objeto.Description}");
@@ -177,7 +201,7 @@ namespace Krisiun_Project.G_Code
                         }
                         else if(objeto is Mentori )
                         {
-                            tabelaHtml.Append($"<td>{menormentori2 + "(" + menormentori + ")"}</td>");
+                            tabelaHtml.Append($"<td>{menormentori2B + "(" + menormentoriB + ")"}</td>");
                         }
                         else
                         {
