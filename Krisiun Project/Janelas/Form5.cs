@@ -52,7 +52,7 @@ namespace Krisiun_Project.Janelas
                     listBox1.DataSource = null;
                     listBox1.DataSource = ferramentas.ListFrente;
                     listBox1.SelectedIndex = newIndex;
-                    listBox1.DisplayMember = "Index" + "Nome";
+                    listBox1.DisplayMember = "Nome";
                     listBox1.ValueMember= "Index";
                     
                 }
@@ -72,7 +72,7 @@ namespace Krisiun_Project.Janelas
                     listBox2.DataSource = null;
                     listBox2.DataSource = ferramentas.ListTras;
                     listBox2.SelectedIndex = newIndex;
-                    listBox2.DisplayMember = "Index" + "Nome";
+                    listBox2.DisplayMember = "Nome";
                     listBox2.ValueMember = "Index";
 
                 }
@@ -168,15 +168,15 @@ namespace Krisiun_Project.Janelas
             if (ferramentas.ListFrente.Count !=0)
             { 
                 tejun.tejuncapa(peca.omote, "表加工", "Front.jpeg"); 
-                tejun.tejunlista(ferramentas.ListFrente, peca.omote, "表加工", false);
-                tejun.tejunlista(ferramentas.ListFrente, peca.omote, "表加工", true);
+                tejun.tejunlista(ferramentas.ListFrente, ferramentas.MentoriFrente, peca.omote, "表加工", false);
+                tejun.tejunlista(ferramentas.ListFrente, ferramentas.MentoriFrente, peca.omote, "表加工", true);
             }
 
             if (ferramentas.ListTras.Count != 0) 
             {
                 tejun.tejuncapa(peca.ura, "裏加工", "Back.jpeg");
-                tejun.tejunlista(ferramentas.ListTras, peca.ura, "裏加工",false);
-                tejun.tejunlista(ferramentas.ListTras, peca.ura, "裏加工", true);
+                tejun.tejunlista(ferramentas.ListTras, ferramentas.MentoriTras, peca.ura, "裏加工",false);
+                tejun.tejunlista(ferramentas.ListTras, ferramentas.MentoriTras, peca.ura, "裏加工", true);
 
             }
 
