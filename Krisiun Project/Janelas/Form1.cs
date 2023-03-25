@@ -176,14 +176,16 @@ namespace Krisiun_Project
         private void LoadMentori()
         {
             List<TiposdeMentori> tiposdeMentoris = TiposdeMentori.LoadMentoriCuter();
+            List<TiposdeMentori> tiposdeMentoris1 = TiposdeMentori.LoadMentoriCuter();
 
             men_frente_tipo_combo.DataSource = tiposdeMentoris;
             men_frente_tipo_combo.DisplayMember = "Tool";
             men_frente_tipo_combo.ValueMember = "Tool";
             men_frente_tipo_combo.SelectedIndex = 0;
-            men_tras_tipo_combo.DataSource = tiposdeMentoris;
+            men_tras_tipo_combo.DataSource = tiposdeMentoris1;
             men_tras_tipo_combo.DisplayMember = "Tool";
             men_tras_tipo_combo.ValueMember = "Tool";
+            men_tras_tipo_combo.SelectedIndex = 0;
         }
 
         private void LoadDrills()
@@ -226,6 +228,7 @@ namespace Krisiun_Project
             ComboBoxList.Add(drill_combobox); //0
             ComboBoxList.Add(comboBoxCores);//1
             ComboBoxList.Add(men_frente_tipo_combo); //2
+            ComboBoxList.Add(men_tras_tipo_combo); //3
         }
         #region Tamanho_Escala_Base
 
@@ -761,6 +764,7 @@ namespace Krisiun_Project
             Load_TextboxString2<Drills>(drill_combobox, drill_kei_tb, null, "Nome");
             Load_TextboxString<Drills>(Num_pro_textbox, null, "Description");
 
+            Load_Checkbox<Drills>(sentan_cb, null, "Sentan");
             //  menfrenteCheck();
             MentorConfigs();
             panel_update();
@@ -826,7 +830,6 @@ namespace Krisiun_Project
 
         private void sentan_cb_CheckedChanged(object sender, EventArgs e)
         {
-            Load_Checkbox<Drills>(sentan_cb, null, "Sentan");
         }
 
         public void drill_z_tb_Leave(object sender, EventArgs e)
@@ -1112,11 +1115,7 @@ namespace Krisiun_Project
         {
             form5.ShowDialog();
         }
-
-        private void Resfri_Combobox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        #region Sobre Mentori
         private void button11_Click(object sender, EventArgs e)
         {
             if (dataGridView3.CurrentRow != null)
@@ -1243,7 +1242,7 @@ namespace Krisiun_Project
             TiposdeMentori selectedMentoriB = men_tras_tipo_combo.SelectedItem as TiposdeMentori;
 
             mentori.TipoDeCutter = selectedMentori;
-            mentori.ToolName = selectedMentori.Tool + "表";
+            mentori.ToolName = selectedMentori.Tool;
             mentori.ToolNumber = selectedMentori.MenCutterToolNum;
             mentori.Nome = selectedMentori.Tool;
             mentori.Kei = selectedMentori.Diametro;
@@ -1253,8 +1252,8 @@ namespace Krisiun_Project
             mentori.Index = 0;
             mentori.Frente = true;
 
-            mentorib.TipoDeCutter = selectedMentoriB;
-            mentorib.ToolName = selectedMentoriB.Tool + "裏";
+            mentorib.TipodeCutterB = selectedMentoriB;
+            mentorib.ToolName = selectedMentoriB.Tool;
             mentorib.ToolNumber = selectedMentoriB.MenCutterToolNum;
             mentorib.Nome = selectedMentoriB.Tool;
             mentorib.Kei = selectedMentoriB.Diametro;
@@ -1322,28 +1321,28 @@ namespace Krisiun_Project
             //daqui pra tras é de tras
             if(float.TryParse(men_tras_kei.Text, out float s))
             {
-                selecionado.Mentori.MenKeiB = s;
+                selecionado.MentoriB.MenKeiB = s;
             }
             if(float.TryParse(men_tras_tam.Text, out float tam2))
             {
-                selecionado.Mentori.CB = tam2;
+                selecionado.MentoriB.CB = tam2;
             }
             if(float.TryParse(men_tras_dan.Text, out float dan2))
             {
-                selecionado.Mentori.DansaB = dan2;
+                selecionado.MentoriB.DansaB = dan2;
             }
             if(float.TryParse(men_tras_z.Text, out float z2))
             {
-                selecionado.Mentori.ZB = z2;
+                selecionado.MentoriB.ZB = z2;
             }
             dataGridView3.Update();
 
 
         }
-
+        #endregion
     }
 
 
-    
+
 }
 

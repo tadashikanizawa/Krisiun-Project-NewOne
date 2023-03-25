@@ -57,19 +57,29 @@ namespace Krisiun_Project.janela_principal
                     textBoxs[5].Text = ferramentaSelecionada.Mentori.Z.ToString();
                     textBoxs[3].Text = ferramentaSelecionada.Mentori.C.ToString();
                     textBoxs[6].Text = ferramentaSelecionada.Mentori.Dansa.ToString();
+                        textBoxs[9].Text = ferramentaSelecionada.MentoriB.MenKeiB.ToString();
+                        textBoxs[8].Text = ferramentaSelecionada.MentoriB.CB.ToString();
+                        textBoxs[10].Text = ferramentaSelecionada.MentoriB.ZB.ToString();
+                        textBoxs[11].Text = ferramentaSelecionada.MentoriB.DansaB.ToString();
 
                     checkBoxes[3].Checked = ferramentaSelecionada.Mentori_F_Bool;
                     checkBoxes[4].Checked = ferramentaSelecionada.Mentori_B_Bool;
-                        //TiposdeMentori selectedMentori = (TiposdeMentori)ferramentaSelecionada.Mentori.MentoriCutter;
+                        TiposdeMentori selectedMentori = (TiposdeMentori)ferramentaSelecionada.Mentori.TipoDeCutter;
+                        TiposdeMentori selectedMentoriB =(TiposdeMentori)ferramentaSelecionada.MentoriB.TipodeCutterB;
 
-                        //// Encontre o índice do item selecionado na ComboBox.
-                        //int selectedIndex = comboBoxes[2].Items.IndexOf(selectedMentori);
+                        // Encontre o índice do item selecionado na ComboBox.
+                        int selectedIndex = comboBoxes[2].Items.IndexOf(selectedMentori);
+                        int selectedIndexB = comboBoxes[3].Items.IndexOf(selectedMentoriB);
 
-                        //// Defina o SelectedIndex da ComboBox para o índice encontrado.
-                        //if (selectedIndex != -1)
-                        //{
-                        //    comboBoxes[2].SelectedIndex = selectedIndex;
-                        //}
+                        // Defina o SelectedIndex da ComboBox para o índice encontrado.
+                        if (selectedIndex != -1)
+                        {
+                            comboBoxes[2].SelectedIndex = selectedIndex;
+                        }
+                        if(selectedIndexB != -1)
+                        {
+                            comboBoxes[3].SelectedIndex = selectedIndexB;
+                        }
 
                     }
                     //BindingList<PointF> novaLista = new BindingList<PointF>();

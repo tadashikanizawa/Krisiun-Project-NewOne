@@ -53,7 +53,6 @@
             this.Add_Coor = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.listDrillsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.ferramentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvCoordenadas = new System.Windows.Forms.DataGridView();
             this.button9 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -99,41 +98,11 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.indexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.keiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fukasaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.frenteDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.trasDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.lado1DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.lado2DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.mentoriFBoolDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.mentoriBBoolDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.listFrenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel_yoko = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Delete2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.indexDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolNumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.keiDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fukasaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.frenteDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.trasDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.lado1DataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.lado2DataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.mentoriFBoolDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.mentoriBBoolDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.ToolName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -141,10 +110,6 @@
             this.kei = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fukasa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.frenteDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.trasDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.mentoriFBoolDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.mentoriBBoolDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.listTotalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -173,6 +138,42 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.indexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.keiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fukasaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.frenteDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.trasDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.lado1DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.lado2DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.mentoriFBoolDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.mentoriBBoolDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ferramentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.frenteDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.trasDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.mentoriFBoolDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.mentoriBBoolDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.indexDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolNumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.keiDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fukasaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.frenteDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.trasDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.lado1DataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.lado2DataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.mentoriFBoolDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.mentoriBBoolDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ferramentasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel_inverso.SuspendLayout();
             this.panel_lado.SuspendLayout();
@@ -180,7 +181,6 @@
             this.panel_Code.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listDrillsBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCoordenadas)).BeginInit();
             this.panel_ana.SuspendLayout();
             this.panel_men_tras.SuspendLayout();
@@ -192,6 +192,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listDrillsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -451,10 +452,6 @@
             this.listDrillsBindingSource1.DataMember = "ListDrills";
             this.listDrillsBindingSource1.DataSource = this.ferramentasBindingSource;
             // 
-            // ferramentasBindingSource
-            // 
-            this.ferramentasBindingSource.DataSource = typeof(Krisiun_Project.G_Code.Ferramentas);
-            // 
             // dgvCoordenadas
             // 
             this.dgvCoordenadas.ColumnHeadersHeight = 34;
@@ -536,7 +533,6 @@
             this.Resfri_Combobox.Name = "Resfri_Combobox";
             this.Resfri_Combobox.Size = new System.Drawing.Size(60, 20);
             this.Resfri_Combobox.TabIndex = 88;
-            this.Resfri_Combobox.SelectedIndexChanged += new System.EventHandler(this.Resfri_Combobox_SelectedIndexChanged);
             // 
             // button4
             // 
@@ -963,142 +959,6 @@
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 46;
             // 
-            // Tipo
-            // 
-            this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Tipo.DataPropertyName = "Tipo";
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.MinimumWidth = 8;
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            this.Tipo.Width = 52;
-            // 
-            // indexDataGridViewTextBoxColumn
-            // 
-            this.indexDataGridViewTextBoxColumn.DataPropertyName = "Index";
-            this.indexDataGridViewTextBoxColumn.HeaderText = "Index";
-            this.indexDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.indexDataGridViewTextBoxColumn.Name = "indexDataGridViewTextBoxColumn";
-            this.indexDataGridViewTextBoxColumn.ReadOnly = true;
-            this.indexDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tipoDataGridViewTextBoxColumn1
-            // 
-            this.tipoDataGridViewTextBoxColumn1.DataPropertyName = "Tipo";
-            this.tipoDataGridViewTextBoxColumn1.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.tipoDataGridViewTextBoxColumn1.Name = "tipoDataGridViewTextBoxColumn1";
-            this.tipoDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.tipoDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // toolNumberDataGridViewTextBoxColumn
-            // 
-            this.toolNumberDataGridViewTextBoxColumn.DataPropertyName = "ToolNumber";
-            this.toolNumberDataGridViewTextBoxColumn.HeaderText = "ToolNumber";
-            this.toolNumberDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.toolNumberDataGridViewTextBoxColumn.Name = "toolNumberDataGridViewTextBoxColumn";
-            this.toolNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.toolNumberDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // toolNameDataGridViewTextBoxColumn
-            // 
-            this.toolNameDataGridViewTextBoxColumn.DataPropertyName = "ToolName";
-            this.toolNameDataGridViewTextBoxColumn.HeaderText = "ToolName";
-            this.toolNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.toolNameDataGridViewTextBoxColumn.Name = "toolNameDataGridViewTextBoxColumn";
-            this.toolNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.toolNameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // keiDataGridViewTextBoxColumn
-            // 
-            this.keiDataGridViewTextBoxColumn.DataPropertyName = "Kei";
-            this.keiDataGridViewTextBoxColumn.HeaderText = "Kei";
-            this.keiDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.keiDataGridViewTextBoxColumn.Name = "keiDataGridViewTextBoxColumn";
-            this.keiDataGridViewTextBoxColumn.ReadOnly = true;
-            this.keiDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // fukasaDataGridViewTextBoxColumn
-            // 
-            this.fukasaDataGridViewTextBoxColumn.DataPropertyName = "Fukasa";
-            this.fukasaDataGridViewTextBoxColumn.HeaderText = "Fukasa";
-            this.fukasaDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.fukasaDataGridViewTextBoxColumn.Name = "fukasaDataGridViewTextBoxColumn";
-            this.fukasaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fukasaDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // frenteDataGridViewCheckBoxColumn
-            // 
-            this.frenteDataGridViewCheckBoxColumn.DataPropertyName = "Frente";
-            this.frenteDataGridViewCheckBoxColumn.HeaderText = "Frente";
-            this.frenteDataGridViewCheckBoxColumn.MinimumWidth = 8;
-            this.frenteDataGridViewCheckBoxColumn.Name = "frenteDataGridViewCheckBoxColumn";
-            this.frenteDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.frenteDataGridViewCheckBoxColumn.Width = 150;
-            // 
-            // trasDataGridViewCheckBoxColumn
-            // 
-            this.trasDataGridViewCheckBoxColumn.DataPropertyName = "Tras";
-            this.trasDataGridViewCheckBoxColumn.HeaderText = "Tras";
-            this.trasDataGridViewCheckBoxColumn.MinimumWidth = 8;
-            this.trasDataGridViewCheckBoxColumn.Name = "trasDataGridViewCheckBoxColumn";
-            this.trasDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.trasDataGridViewCheckBoxColumn.Width = 150;
-            // 
-            // lado1DataGridViewCheckBoxColumn
-            // 
-            this.lado1DataGridViewCheckBoxColumn.DataPropertyName = "Lado1";
-            this.lado1DataGridViewCheckBoxColumn.HeaderText = "Lado1";
-            this.lado1DataGridViewCheckBoxColumn.MinimumWidth = 8;
-            this.lado1DataGridViewCheckBoxColumn.Name = "lado1DataGridViewCheckBoxColumn";
-            this.lado1DataGridViewCheckBoxColumn.ReadOnly = true;
-            this.lado1DataGridViewCheckBoxColumn.Width = 150;
-            // 
-            // lado2DataGridViewCheckBoxColumn
-            // 
-            this.lado2DataGridViewCheckBoxColumn.DataPropertyName = "Lado2";
-            this.lado2DataGridViewCheckBoxColumn.HeaderText = "Lado2";
-            this.lado2DataGridViewCheckBoxColumn.MinimumWidth = 8;
-            this.lado2DataGridViewCheckBoxColumn.Name = "lado2DataGridViewCheckBoxColumn";
-            this.lado2DataGridViewCheckBoxColumn.ReadOnly = true;
-            this.lado2DataGridViewCheckBoxColumn.Width = 150;
-            // 
-            // mentoriFBoolDataGridViewCheckBoxColumn1
-            // 
-            this.mentoriFBoolDataGridViewCheckBoxColumn1.DataPropertyName = "Mentori_F_Bool";
-            this.mentoriFBoolDataGridViewCheckBoxColumn1.HeaderText = "Mentori_F_Bool";
-            this.mentoriFBoolDataGridViewCheckBoxColumn1.MinimumWidth = 8;
-            this.mentoriFBoolDataGridViewCheckBoxColumn1.Name = "mentoriFBoolDataGridViewCheckBoxColumn1";
-            this.mentoriFBoolDataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.mentoriFBoolDataGridViewCheckBoxColumn1.Width = 150;
-            // 
-            // mentoriBBoolDataGridViewCheckBoxColumn1
-            // 
-            this.mentoriBBoolDataGridViewCheckBoxColumn1.DataPropertyName = "Mentori_B_Bool";
-            this.mentoriBBoolDataGridViewCheckBoxColumn1.HeaderText = "Mentori_B_Bool";
-            this.mentoriBBoolDataGridViewCheckBoxColumn1.MinimumWidth = 8;
-            this.mentoriBBoolDataGridViewCheckBoxColumn1.Name = "mentoriBBoolDataGridViewCheckBoxColumn1";
-            this.mentoriBBoolDataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.mentoriBBoolDataGridViewCheckBoxColumn1.Width = 150;
-            // 
-            // colorDataGridViewTextBoxColumn
-            // 
-            this.colorDataGridViewTextBoxColumn.DataPropertyName = "Color";
-            this.colorDataGridViewTextBoxColumn.HeaderText = "Color";
-            this.colorDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.colorDataGridViewTextBoxColumn.Name = "colorDataGridViewTextBoxColumn";
-            this.colorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.colorDataGridViewTextBoxColumn.Width = 150;
-            // 
             // listFrenteBindingSource
             // 
             this.listFrenteBindingSource.DataMember = "ListFrente";
@@ -1160,16 +1020,6 @@
             this.Delete2.ReadOnly = true;
             this.Delete2.Width = 35;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Tipo";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Tipo";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 52;
-            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -1179,132 +1029,6 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 46;
-            // 
-            // indexDataGridViewTextBoxColumn1
-            // 
-            this.indexDataGridViewTextBoxColumn1.DataPropertyName = "Index";
-            this.indexDataGridViewTextBoxColumn1.HeaderText = "Index";
-            this.indexDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.indexDataGridViewTextBoxColumn1.Name = "indexDataGridViewTextBoxColumn1";
-            this.indexDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.indexDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // nomeDataGridViewTextBoxColumn1
-            // 
-            this.nomeDataGridViewTextBoxColumn1.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn1.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.nomeDataGridViewTextBoxColumn1.Name = "nomeDataGridViewTextBoxColumn1";
-            this.nomeDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // tipoDataGridViewTextBoxColumn2
-            // 
-            this.tipoDataGridViewTextBoxColumn2.DataPropertyName = "Tipo";
-            this.tipoDataGridViewTextBoxColumn2.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn2.MinimumWidth = 8;
-            this.tipoDataGridViewTextBoxColumn2.Name = "tipoDataGridViewTextBoxColumn2";
-            this.tipoDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.tipoDataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // toolNumberDataGridViewTextBoxColumn1
-            // 
-            this.toolNumberDataGridViewTextBoxColumn1.DataPropertyName = "ToolNumber";
-            this.toolNumberDataGridViewTextBoxColumn1.HeaderText = "ToolNumber";
-            this.toolNumberDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.toolNumberDataGridViewTextBoxColumn1.Name = "toolNumberDataGridViewTextBoxColumn1";
-            this.toolNumberDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.toolNumberDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // toolNameDataGridViewTextBoxColumn1
-            // 
-            this.toolNameDataGridViewTextBoxColumn1.DataPropertyName = "ToolName";
-            this.toolNameDataGridViewTextBoxColumn1.HeaderText = "ToolName";
-            this.toolNameDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.toolNameDataGridViewTextBoxColumn1.Name = "toolNameDataGridViewTextBoxColumn1";
-            this.toolNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.toolNameDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // keiDataGridViewTextBoxColumn1
-            // 
-            this.keiDataGridViewTextBoxColumn1.DataPropertyName = "Kei";
-            this.keiDataGridViewTextBoxColumn1.HeaderText = "Kei";
-            this.keiDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.keiDataGridViewTextBoxColumn1.Name = "keiDataGridViewTextBoxColumn1";
-            this.keiDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.keiDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // fukasaDataGridViewTextBoxColumn1
-            // 
-            this.fukasaDataGridViewTextBoxColumn1.DataPropertyName = "Fukasa";
-            this.fukasaDataGridViewTextBoxColumn1.HeaderText = "Fukasa";
-            this.fukasaDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.fukasaDataGridViewTextBoxColumn1.Name = "fukasaDataGridViewTextBoxColumn1";
-            this.fukasaDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.fukasaDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // frenteDataGridViewCheckBoxColumn2
-            // 
-            this.frenteDataGridViewCheckBoxColumn2.DataPropertyName = "Frente";
-            this.frenteDataGridViewCheckBoxColumn2.HeaderText = "Frente";
-            this.frenteDataGridViewCheckBoxColumn2.MinimumWidth = 8;
-            this.frenteDataGridViewCheckBoxColumn2.Name = "frenteDataGridViewCheckBoxColumn2";
-            this.frenteDataGridViewCheckBoxColumn2.ReadOnly = true;
-            this.frenteDataGridViewCheckBoxColumn2.Width = 150;
-            // 
-            // trasDataGridViewCheckBoxColumn2
-            // 
-            this.trasDataGridViewCheckBoxColumn2.DataPropertyName = "Tras";
-            this.trasDataGridViewCheckBoxColumn2.HeaderText = "Tras";
-            this.trasDataGridViewCheckBoxColumn2.MinimumWidth = 8;
-            this.trasDataGridViewCheckBoxColumn2.Name = "trasDataGridViewCheckBoxColumn2";
-            this.trasDataGridViewCheckBoxColumn2.ReadOnly = true;
-            this.trasDataGridViewCheckBoxColumn2.Width = 150;
-            // 
-            // lado1DataGridViewCheckBoxColumn1
-            // 
-            this.lado1DataGridViewCheckBoxColumn1.DataPropertyName = "Lado1";
-            this.lado1DataGridViewCheckBoxColumn1.HeaderText = "Lado1";
-            this.lado1DataGridViewCheckBoxColumn1.MinimumWidth = 8;
-            this.lado1DataGridViewCheckBoxColumn1.Name = "lado1DataGridViewCheckBoxColumn1";
-            this.lado1DataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.lado1DataGridViewCheckBoxColumn1.Width = 150;
-            // 
-            // lado2DataGridViewCheckBoxColumn1
-            // 
-            this.lado2DataGridViewCheckBoxColumn1.DataPropertyName = "Lado2";
-            this.lado2DataGridViewCheckBoxColumn1.HeaderText = "Lado2";
-            this.lado2DataGridViewCheckBoxColumn1.MinimumWidth = 8;
-            this.lado2DataGridViewCheckBoxColumn1.Name = "lado2DataGridViewCheckBoxColumn1";
-            this.lado2DataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.lado2DataGridViewCheckBoxColumn1.Width = 150;
-            // 
-            // mentoriFBoolDataGridViewCheckBoxColumn2
-            // 
-            this.mentoriFBoolDataGridViewCheckBoxColumn2.DataPropertyName = "Mentori_F_Bool";
-            this.mentoriFBoolDataGridViewCheckBoxColumn2.HeaderText = "Mentori_F_Bool";
-            this.mentoriFBoolDataGridViewCheckBoxColumn2.MinimumWidth = 8;
-            this.mentoriFBoolDataGridViewCheckBoxColumn2.Name = "mentoriFBoolDataGridViewCheckBoxColumn2";
-            this.mentoriFBoolDataGridViewCheckBoxColumn2.ReadOnly = true;
-            this.mentoriFBoolDataGridViewCheckBoxColumn2.Width = 150;
-            // 
-            // mentoriBBoolDataGridViewCheckBoxColumn2
-            // 
-            this.mentoriBBoolDataGridViewCheckBoxColumn2.DataPropertyName = "Mentori_B_Bool";
-            this.mentoriBBoolDataGridViewCheckBoxColumn2.HeaderText = "Mentori_B_Bool";
-            this.mentoriBBoolDataGridViewCheckBoxColumn2.MinimumWidth = 8;
-            this.mentoriBBoolDataGridViewCheckBoxColumn2.Name = "mentoriBBoolDataGridViewCheckBoxColumn2";
-            this.mentoriBBoolDataGridViewCheckBoxColumn2.ReadOnly = true;
-            this.mentoriBBoolDataGridViewCheckBoxColumn2.Width = 150;
-            // 
-            // colorDataGridViewTextBoxColumn1
-            // 
-            this.colorDataGridViewTextBoxColumn1.DataPropertyName = "Color";
-            this.colorDataGridViewTextBoxColumn1.HeaderText = "Color";
-            this.colorDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.colorDataGridViewTextBoxColumn1.Name = "colorDataGridViewTextBoxColumn1";
-            this.colorDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.colorDataGridViewTextBoxColumn1.Width = 150;
             // 
             // dataGridView3
             // 
@@ -1380,42 +1104,6 @@
             this.Description.MinimumWidth = 8;
             this.Description.Name = "Description";
             this.Description.Width = 150;
-            // 
-            // frenteDataGridViewCheckBoxColumn1
-            // 
-            this.frenteDataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.frenteDataGridViewCheckBoxColumn1.DataPropertyName = "Frente";
-            this.frenteDataGridViewCheckBoxColumn1.HeaderText = "表";
-            this.frenteDataGridViewCheckBoxColumn1.MinimumWidth = 8;
-            this.frenteDataGridViewCheckBoxColumn1.Name = "frenteDataGridViewCheckBoxColumn1";
-            this.frenteDataGridViewCheckBoxColumn1.Width = 23;
-            // 
-            // trasDataGridViewCheckBoxColumn1
-            // 
-            this.trasDataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.trasDataGridViewCheckBoxColumn1.DataPropertyName = "Tras";
-            this.trasDataGridViewCheckBoxColumn1.HeaderText = "裏";
-            this.trasDataGridViewCheckBoxColumn1.MinimumWidth = 8;
-            this.trasDataGridViewCheckBoxColumn1.Name = "trasDataGridViewCheckBoxColumn1";
-            this.trasDataGridViewCheckBoxColumn1.Width = 23;
-            // 
-            // mentoriFBoolDataGridViewCheckBoxColumn
-            // 
-            this.mentoriFBoolDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.mentoriFBoolDataGridViewCheckBoxColumn.DataPropertyName = "Mentori_F_Bool";
-            this.mentoriFBoolDataGridViewCheckBoxColumn.HeaderText = "面取り（表）";
-            this.mentoriFBoolDataGridViewCheckBoxColumn.MinimumWidth = 8;
-            this.mentoriFBoolDataGridViewCheckBoxColumn.Name = "mentoriFBoolDataGridViewCheckBoxColumn";
-            this.mentoriFBoolDataGridViewCheckBoxColumn.Width = 67;
-            // 
-            // mentoriBBoolDataGridViewCheckBoxColumn
-            // 
-            this.mentoriBBoolDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.mentoriBBoolDataGridViewCheckBoxColumn.DataPropertyName = "Mentori_B_Bool";
-            this.mentoriBBoolDataGridViewCheckBoxColumn.HeaderText = "面取り（裏）";
-            this.mentoriBBoolDataGridViewCheckBoxColumn.MinimumWidth = 8;
-            this.mentoriBBoolDataGridViewCheckBoxColumn.Name = "mentoriBBoolDataGridViewCheckBoxColumn";
-            this.mentoriBBoolDataGridViewCheckBoxColumn.Width = 67;
             // 
             // listTotalBindingSource
             // 
@@ -1654,6 +1342,327 @@
             this.dataGridViewTextBoxColumn18.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Tipo";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Tipo";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 52;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "Tipo";
+            this.dataGridViewTextBoxColumn19.HeaderText = "Tipo";
+            this.dataGridViewTextBoxColumn19.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.Width = 52;
+            // 
+            // Tipo
+            // 
+            this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Tipo.DataPropertyName = "Tipo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.MinimumWidth = 8;
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            this.Tipo.Width = 52;
+            // 
+            // indexDataGridViewTextBoxColumn
+            // 
+            this.indexDataGridViewTextBoxColumn.DataPropertyName = "Index";
+            this.indexDataGridViewTextBoxColumn.HeaderText = "Index";
+            this.indexDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.indexDataGridViewTextBoxColumn.Name = "indexDataGridViewTextBoxColumn";
+            this.indexDataGridViewTextBoxColumn.ReadOnly = true;
+            this.indexDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tipoDataGridViewTextBoxColumn1
+            // 
+            this.tipoDataGridViewTextBoxColumn1.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn1.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.tipoDataGridViewTextBoxColumn1.Name = "tipoDataGridViewTextBoxColumn1";
+            this.tipoDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.tipoDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // toolNumberDataGridViewTextBoxColumn
+            // 
+            this.toolNumberDataGridViewTextBoxColumn.DataPropertyName = "ToolNumber";
+            this.toolNumberDataGridViewTextBoxColumn.HeaderText = "ToolNumber";
+            this.toolNumberDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.toolNumberDataGridViewTextBoxColumn.Name = "toolNumberDataGridViewTextBoxColumn";
+            this.toolNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.toolNumberDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // toolNameDataGridViewTextBoxColumn
+            // 
+            this.toolNameDataGridViewTextBoxColumn.DataPropertyName = "ToolName";
+            this.toolNameDataGridViewTextBoxColumn.HeaderText = "ToolName";
+            this.toolNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.toolNameDataGridViewTextBoxColumn.Name = "toolNameDataGridViewTextBoxColumn";
+            this.toolNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.toolNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // keiDataGridViewTextBoxColumn
+            // 
+            this.keiDataGridViewTextBoxColumn.DataPropertyName = "Kei";
+            this.keiDataGridViewTextBoxColumn.HeaderText = "Kei";
+            this.keiDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.keiDataGridViewTextBoxColumn.Name = "keiDataGridViewTextBoxColumn";
+            this.keiDataGridViewTextBoxColumn.ReadOnly = true;
+            this.keiDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // fukasaDataGridViewTextBoxColumn
+            // 
+            this.fukasaDataGridViewTextBoxColumn.DataPropertyName = "Fukasa";
+            this.fukasaDataGridViewTextBoxColumn.HeaderText = "Fukasa";
+            this.fukasaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.fukasaDataGridViewTextBoxColumn.Name = "fukasaDataGridViewTextBoxColumn";
+            this.fukasaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fukasaDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // frenteDataGridViewCheckBoxColumn
+            // 
+            this.frenteDataGridViewCheckBoxColumn.DataPropertyName = "Frente";
+            this.frenteDataGridViewCheckBoxColumn.HeaderText = "Frente";
+            this.frenteDataGridViewCheckBoxColumn.MinimumWidth = 8;
+            this.frenteDataGridViewCheckBoxColumn.Name = "frenteDataGridViewCheckBoxColumn";
+            this.frenteDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.frenteDataGridViewCheckBoxColumn.Width = 150;
+            // 
+            // trasDataGridViewCheckBoxColumn
+            // 
+            this.trasDataGridViewCheckBoxColumn.DataPropertyName = "Tras";
+            this.trasDataGridViewCheckBoxColumn.HeaderText = "Tras";
+            this.trasDataGridViewCheckBoxColumn.MinimumWidth = 8;
+            this.trasDataGridViewCheckBoxColumn.Name = "trasDataGridViewCheckBoxColumn";
+            this.trasDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.trasDataGridViewCheckBoxColumn.Width = 150;
+            // 
+            // lado1DataGridViewCheckBoxColumn
+            // 
+            this.lado1DataGridViewCheckBoxColumn.DataPropertyName = "Lado1";
+            this.lado1DataGridViewCheckBoxColumn.HeaderText = "Lado1";
+            this.lado1DataGridViewCheckBoxColumn.MinimumWidth = 8;
+            this.lado1DataGridViewCheckBoxColumn.Name = "lado1DataGridViewCheckBoxColumn";
+            this.lado1DataGridViewCheckBoxColumn.ReadOnly = true;
+            this.lado1DataGridViewCheckBoxColumn.Width = 150;
+            // 
+            // lado2DataGridViewCheckBoxColumn
+            // 
+            this.lado2DataGridViewCheckBoxColumn.DataPropertyName = "Lado2";
+            this.lado2DataGridViewCheckBoxColumn.HeaderText = "Lado2";
+            this.lado2DataGridViewCheckBoxColumn.MinimumWidth = 8;
+            this.lado2DataGridViewCheckBoxColumn.Name = "lado2DataGridViewCheckBoxColumn";
+            this.lado2DataGridViewCheckBoxColumn.ReadOnly = true;
+            this.lado2DataGridViewCheckBoxColumn.Width = 150;
+            // 
+            // mentoriFBoolDataGridViewCheckBoxColumn1
+            // 
+            this.mentoriFBoolDataGridViewCheckBoxColumn1.DataPropertyName = "Mentori_F_Bool";
+            this.mentoriFBoolDataGridViewCheckBoxColumn1.HeaderText = "Mentori_F_Bool";
+            this.mentoriFBoolDataGridViewCheckBoxColumn1.MinimumWidth = 8;
+            this.mentoriFBoolDataGridViewCheckBoxColumn1.Name = "mentoriFBoolDataGridViewCheckBoxColumn1";
+            this.mentoriFBoolDataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.mentoriFBoolDataGridViewCheckBoxColumn1.Width = 150;
+            // 
+            // mentoriBBoolDataGridViewCheckBoxColumn1
+            // 
+            this.mentoriBBoolDataGridViewCheckBoxColumn1.DataPropertyName = "Mentori_B_Bool";
+            this.mentoriBBoolDataGridViewCheckBoxColumn1.HeaderText = "Mentori_B_Bool";
+            this.mentoriBBoolDataGridViewCheckBoxColumn1.MinimumWidth = 8;
+            this.mentoriBBoolDataGridViewCheckBoxColumn1.Name = "mentoriBBoolDataGridViewCheckBoxColumn1";
+            this.mentoriBBoolDataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.mentoriBBoolDataGridViewCheckBoxColumn1.Width = 150;
+            // 
+            // colorDataGridViewTextBoxColumn
+            // 
+            this.colorDataGridViewTextBoxColumn.DataPropertyName = "Color";
+            this.colorDataGridViewTextBoxColumn.HeaderText = "Color";
+            this.colorDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.colorDataGridViewTextBoxColumn.Name = "colorDataGridViewTextBoxColumn";
+            this.colorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colorDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // ferramentasBindingSource
+            // 
+            this.ferramentasBindingSource.DataSource = typeof(Krisiun_Project.G_Code.Ferramentas);
+            // 
+            // frenteDataGridViewCheckBoxColumn1
+            // 
+            this.frenteDataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.frenteDataGridViewCheckBoxColumn1.DataPropertyName = "Frente";
+            this.frenteDataGridViewCheckBoxColumn1.HeaderText = "表";
+            this.frenteDataGridViewCheckBoxColumn1.MinimumWidth = 8;
+            this.frenteDataGridViewCheckBoxColumn1.Name = "frenteDataGridViewCheckBoxColumn1";
+            this.frenteDataGridViewCheckBoxColumn1.Width = 23;
+            // 
+            // trasDataGridViewCheckBoxColumn1
+            // 
+            this.trasDataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.trasDataGridViewCheckBoxColumn1.DataPropertyName = "Tras";
+            this.trasDataGridViewCheckBoxColumn1.HeaderText = "裏";
+            this.trasDataGridViewCheckBoxColumn1.MinimumWidth = 8;
+            this.trasDataGridViewCheckBoxColumn1.Name = "trasDataGridViewCheckBoxColumn1";
+            this.trasDataGridViewCheckBoxColumn1.Width = 23;
+            // 
+            // mentoriFBoolDataGridViewCheckBoxColumn
+            // 
+            this.mentoriFBoolDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.mentoriFBoolDataGridViewCheckBoxColumn.DataPropertyName = "Mentori_F_Bool";
+            this.mentoriFBoolDataGridViewCheckBoxColumn.HeaderText = "面取り（表）";
+            this.mentoriFBoolDataGridViewCheckBoxColumn.MinimumWidth = 8;
+            this.mentoriFBoolDataGridViewCheckBoxColumn.Name = "mentoriFBoolDataGridViewCheckBoxColumn";
+            this.mentoriFBoolDataGridViewCheckBoxColumn.Width = 67;
+            // 
+            // mentoriBBoolDataGridViewCheckBoxColumn
+            // 
+            this.mentoriBBoolDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.mentoriBBoolDataGridViewCheckBoxColumn.DataPropertyName = "Mentori_B_Bool";
+            this.mentoriBBoolDataGridViewCheckBoxColumn.HeaderText = "面取り（裏）";
+            this.mentoriBBoolDataGridViewCheckBoxColumn.MinimumWidth = 8;
+            this.mentoriBBoolDataGridViewCheckBoxColumn.Name = "mentoriBBoolDataGridViewCheckBoxColumn";
+            this.mentoriBBoolDataGridViewCheckBoxColumn.Width = 67;
+            // 
+            // indexDataGridViewTextBoxColumn1
+            // 
+            this.indexDataGridViewTextBoxColumn1.DataPropertyName = "Index";
+            this.indexDataGridViewTextBoxColumn1.HeaderText = "Index";
+            this.indexDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.indexDataGridViewTextBoxColumn1.Name = "indexDataGridViewTextBoxColumn1";
+            this.indexDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.indexDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // nomeDataGridViewTextBoxColumn1
+            // 
+            this.nomeDataGridViewTextBoxColumn1.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn1.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.nomeDataGridViewTextBoxColumn1.Name = "nomeDataGridViewTextBoxColumn1";
+            this.nomeDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // tipoDataGridViewTextBoxColumn2
+            // 
+            this.tipoDataGridViewTextBoxColumn2.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn2.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.tipoDataGridViewTextBoxColumn2.Name = "tipoDataGridViewTextBoxColumn2";
+            this.tipoDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.tipoDataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // toolNumberDataGridViewTextBoxColumn1
+            // 
+            this.toolNumberDataGridViewTextBoxColumn1.DataPropertyName = "ToolNumber";
+            this.toolNumberDataGridViewTextBoxColumn1.HeaderText = "ToolNumber";
+            this.toolNumberDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.toolNumberDataGridViewTextBoxColumn1.Name = "toolNumberDataGridViewTextBoxColumn1";
+            this.toolNumberDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.toolNumberDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // toolNameDataGridViewTextBoxColumn1
+            // 
+            this.toolNameDataGridViewTextBoxColumn1.DataPropertyName = "ToolName";
+            this.toolNameDataGridViewTextBoxColumn1.HeaderText = "ToolName";
+            this.toolNameDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.toolNameDataGridViewTextBoxColumn1.Name = "toolNameDataGridViewTextBoxColumn1";
+            this.toolNameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.toolNameDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // keiDataGridViewTextBoxColumn1
+            // 
+            this.keiDataGridViewTextBoxColumn1.DataPropertyName = "Kei";
+            this.keiDataGridViewTextBoxColumn1.HeaderText = "Kei";
+            this.keiDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.keiDataGridViewTextBoxColumn1.Name = "keiDataGridViewTextBoxColumn1";
+            this.keiDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.keiDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // fukasaDataGridViewTextBoxColumn1
+            // 
+            this.fukasaDataGridViewTextBoxColumn1.DataPropertyName = "Fukasa";
+            this.fukasaDataGridViewTextBoxColumn1.HeaderText = "Fukasa";
+            this.fukasaDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.fukasaDataGridViewTextBoxColumn1.Name = "fukasaDataGridViewTextBoxColumn1";
+            this.fukasaDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.fukasaDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // frenteDataGridViewCheckBoxColumn2
+            // 
+            this.frenteDataGridViewCheckBoxColumn2.DataPropertyName = "Frente";
+            this.frenteDataGridViewCheckBoxColumn2.HeaderText = "Frente";
+            this.frenteDataGridViewCheckBoxColumn2.MinimumWidth = 8;
+            this.frenteDataGridViewCheckBoxColumn2.Name = "frenteDataGridViewCheckBoxColumn2";
+            this.frenteDataGridViewCheckBoxColumn2.ReadOnly = true;
+            this.frenteDataGridViewCheckBoxColumn2.Width = 150;
+            // 
+            // trasDataGridViewCheckBoxColumn2
+            // 
+            this.trasDataGridViewCheckBoxColumn2.DataPropertyName = "Tras";
+            this.trasDataGridViewCheckBoxColumn2.HeaderText = "Tras";
+            this.trasDataGridViewCheckBoxColumn2.MinimumWidth = 8;
+            this.trasDataGridViewCheckBoxColumn2.Name = "trasDataGridViewCheckBoxColumn2";
+            this.trasDataGridViewCheckBoxColumn2.ReadOnly = true;
+            this.trasDataGridViewCheckBoxColumn2.Width = 150;
+            // 
+            // lado1DataGridViewCheckBoxColumn1
+            // 
+            this.lado1DataGridViewCheckBoxColumn1.DataPropertyName = "Lado1";
+            this.lado1DataGridViewCheckBoxColumn1.HeaderText = "Lado1";
+            this.lado1DataGridViewCheckBoxColumn1.MinimumWidth = 8;
+            this.lado1DataGridViewCheckBoxColumn1.Name = "lado1DataGridViewCheckBoxColumn1";
+            this.lado1DataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.lado1DataGridViewCheckBoxColumn1.Width = 150;
+            // 
+            // lado2DataGridViewCheckBoxColumn1
+            // 
+            this.lado2DataGridViewCheckBoxColumn1.DataPropertyName = "Lado2";
+            this.lado2DataGridViewCheckBoxColumn1.HeaderText = "Lado2";
+            this.lado2DataGridViewCheckBoxColumn1.MinimumWidth = 8;
+            this.lado2DataGridViewCheckBoxColumn1.Name = "lado2DataGridViewCheckBoxColumn1";
+            this.lado2DataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.lado2DataGridViewCheckBoxColumn1.Width = 150;
+            // 
+            // mentoriFBoolDataGridViewCheckBoxColumn2
+            // 
+            this.mentoriFBoolDataGridViewCheckBoxColumn2.DataPropertyName = "Mentori_F_Bool";
+            this.mentoriFBoolDataGridViewCheckBoxColumn2.HeaderText = "Mentori_F_Bool";
+            this.mentoriFBoolDataGridViewCheckBoxColumn2.MinimumWidth = 8;
+            this.mentoriFBoolDataGridViewCheckBoxColumn2.Name = "mentoriFBoolDataGridViewCheckBoxColumn2";
+            this.mentoriFBoolDataGridViewCheckBoxColumn2.ReadOnly = true;
+            this.mentoriFBoolDataGridViewCheckBoxColumn2.Width = 150;
+            // 
+            // mentoriBBoolDataGridViewCheckBoxColumn2
+            // 
+            this.mentoriBBoolDataGridViewCheckBoxColumn2.DataPropertyName = "Mentori_B_Bool";
+            this.mentoriBBoolDataGridViewCheckBoxColumn2.HeaderText = "Mentori_B_Bool";
+            this.mentoriBBoolDataGridViewCheckBoxColumn2.MinimumWidth = 8;
+            this.mentoriBBoolDataGridViewCheckBoxColumn2.Name = "mentoriBBoolDataGridViewCheckBoxColumn2";
+            this.mentoriBBoolDataGridViewCheckBoxColumn2.ReadOnly = true;
+            this.mentoriBBoolDataGridViewCheckBoxColumn2.Width = 150;
+            // 
+            // colorDataGridViewTextBoxColumn1
+            // 
+            this.colorDataGridViewTextBoxColumn1.DataPropertyName = "Color";
+            this.colorDataGridViewTextBoxColumn1.HeaderText = "Color";
+            this.colorDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.colorDataGridViewTextBoxColumn1.Name = "colorDataGridViewTextBoxColumn1";
+            this.colorDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.colorDataGridViewTextBoxColumn1.Width = 150;
+            // 
             // ferramentasBindingSource1
             // 
             this.ferramentasBindingSource1.DataSource = typeof(Krisiun_Project.G_Code.Ferramentas);
@@ -1664,7 +1673,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1966, 854);
+            this.ClientSize = new System.Drawing.Size(2000, 854);
             this.Controls.Add(this.panel_yoko);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -1706,7 +1715,6 @@
             this.panel_Code.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listDrillsBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCoordenadas)).EndInit();
             this.panel_ana.ResumeLayout(false);
             this.panel_ana.PerformLayout();
@@ -1722,6 +1730,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listDrillsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1875,6 +1884,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
     }
 }
 

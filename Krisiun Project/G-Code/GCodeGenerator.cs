@@ -108,7 +108,7 @@ namespace Krisiun_Project.G_Code
                         {
                             if (ferramentas1.Mentori_B_Bool == true)
                             {
-                                if (ferramentas1.Mentori.TipoDeCutter == mentori.TipoDeCutter)
+                                if (ferramentas1.Mentori.TipodeCutterB == mentori.TipoDeCutter)
                                 {
 
                                     gCode56.Append(GcodeMentori(mentori, ferramentas1, omote, ura, false, false));
