@@ -367,7 +367,8 @@ namespace Krisiun_Project.G_Code
 
             float kei = diaburaco + C - z;
             float valorz = z + Dansa;
-
+            valorz *= -1;
+            ferramenta.Mentori.Z2 = valorz;
             bool xinv = peca.xinv;
             bool yinv = peca.yinv;
 

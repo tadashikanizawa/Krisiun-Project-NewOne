@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -78,7 +79,7 @@ namespace Krisiun_Project.G_Code
             }
 
         }
-        public void tejunlista(BindingList<Ferramentas> ferramentaslist, int num, string lado, bool kousoki)
+        public void tejunlista(BindingList<Ferramentas> ferramentaslist, BindingList<Ferramentas> mentorilist, int num, string lado, bool kousoki)
         {
             string nomeArquivo = "TejunLista.html";
             string pastadosoft = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
@@ -86,7 +87,21 @@ namespace Krisiun_Project.G_Code
             string hinmei = peca.hinmei;
             string zuban = peca.zuban;
             string subtitulo = num.ToString() + "-" + lado;
+            float menormentori = 0;
+            float menormentori2 = 0;
+            if (mentorilist.Any())
+            {
 
+                Ferramentas objetoMenorZ = mentorilist.Aggregate((minItem, nextItem) =>
+                nextItem.Mentori.Z2 < minItem.Mentori.Z2 ? nextItem : minItem);
+
+                float menorZ = objetoMenorZ.Mentori.Z2;
+                float z2DoMenorZ = objetoMenorZ.Mentori.Z;
+                menormentori = menorZ;
+                menormentori2 = z2DoMenorZ;
+                // menormentori = mentorilist.Min(x => x.Mentori.Z2);
+            }
+            
             //  MessageBox.Show(imagem);
 
             int numpro = 1;
@@ -144,7 +159,7 @@ namespace Krisiun_Project.G_Code
                         if (objeto is Mentori)
                         {
                             tabelaHtml.Append("<table style=\"border: none;\">"); // Tabela para informações do objeto Mentori
-                            foreach (var item in ferramentas.MentoriFrente)
+                            foreach (var item in mentorilist)
                             {
                                 tabelaHtml.Append("<tr><td style=\"border: none; font-size: 8px;\">");
                                 tabelaHtml.Append($"{"Ø" + item.Kei + "/(" + item.Mentori.MenKei + ") - C" + item.Mentori.C + "/ Z" + item.Mentori.Z + "(+" + item.Mentori.Dansa + ")"}</td></tr>");
@@ -159,6 +174,10 @@ namespace Krisiun_Project.G_Code
                         if (objeto is Drills drills)
                         {
                             tabelaHtml.Append($"<td>{drills.Fukasa + "(" + drills.Z + ")"}</td>"); //7
+                        }
+                        else if(objeto is Mentori )
+                        {
+                            tabelaHtml.Append($"<td>{menormentori2 + "(" + menormentori + ")"}</td>");
                         }
                         else
                         {

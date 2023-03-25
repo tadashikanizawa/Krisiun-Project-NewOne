@@ -155,6 +155,8 @@ namespace Krisiun_Project.Janelas
         {
             pastas.CriarPastas(peca.hinmei, peca.zuban);
             ferramentas.addtoolnumberK();
+            int contagem = ferramentas.MentoriFrente.Count;
+            MessageBox.Show("lista tem:" +contagem.ToString());
             if(ferramentas.ListFrente.Count > 0 ) { 
             form1.SavePictureBoxAsJPG(form1.paneld_f, "Front.jpeg");
             }
@@ -168,15 +170,15 @@ namespace Krisiun_Project.Janelas
             if (ferramentas.ListFrente.Count !=0)
             { 
                 tejun.tejuncapa(peca.omote, "表加工", "Front.jpeg"); 
-                tejun.tejunlista(ferramentas.ListFrente, peca.omote, "表加工", false);
-                tejun.tejunlista(ferramentas.ListFrente, peca.omote, "表加工", true);
+                tejun.tejunlista(ferramentas.ListFrente, ferramentas.MentoriFrente, peca.omote, "表加工", false);
+                tejun.tejunlista(ferramentas.ListFrente, ferramentas.MentoriFrente, peca.omote, "表加工", true);
             }
 
             if (ferramentas.ListTras.Count != 0) 
             {
                 tejun.tejuncapa(peca.ura, "裏加工", "Back.jpeg");
-                tejun.tejunlista(ferramentas.ListTras, peca.ura, "裏加工",false);
-                tejun.tejunlista(ferramentas.ListTras, peca.ura, "裏加工", true);
+                tejun.tejunlista(ferramentas.ListTras, ferramentas.MentoriTras, peca.ura, "裏加工",false);
+                tejun.tejunlista(ferramentas.ListTras, ferramentas.MentoriTras, peca.ura, "裏加工", true);
 
             }
 

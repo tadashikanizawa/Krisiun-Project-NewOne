@@ -904,6 +904,8 @@ namespace Krisiun_Project
             //  frente_checkBox.Checked = false;
             // tras_checkBox.Checked = false;
             sentan_cb.Checked = false;
+            men_frente_checkbox.Checked = false;
+            men_tras_checkbox.Checked = false;
             dataGridView1.ClearSelection();
             dataGridView2.ClearSelection();
               dataGridView3.Select();

@@ -16,6 +16,7 @@ namespace Krisiun_Project.G_Code
         public TiposdeMentori TipoDeCutter { get; set; }
         public Ferramentas Lugar { get; set; }
         public float Z { get; set; }    
+        public float Z2 { get; set; }
         public float MenKei { get; set; }  
         public float C { get; set; }
         public float Dansa { get; set; }
