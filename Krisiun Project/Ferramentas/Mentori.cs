@@ -83,6 +83,7 @@ namespace Krisiun_Project.G_Code
             double y2 = y + centerY + effectiveRadius * Math.Sin(totalAngleRadians);
 
             double hayaiokuri = centerY + toolRadius + 0.2;
+            hayaiokuri = Math.Round(hayaiokuri,3);
             string hayaiokuristring = hayaiokuri % 1 == 0 ? $"{hayaiokuri}." : $"{hayaiokuri}";
 
             x2 = Math.Round(x2 / 2,3);

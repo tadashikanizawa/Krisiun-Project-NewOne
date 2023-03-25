@@ -87,36 +87,28 @@ namespace Krisiun_Project.G_Code
             string hinmei = peca.hinmei;
             string zuban = peca.zuban;
             string subtitulo = num.ToString() + "-" + lado;
-            float menormentori = 0;
-            float menormentori2 = 0;
-            if (mentorilist.Any())
+         
+
+
+            // Agrupar mentorilist por TipoDeCutter
+            var groupedMentoriList = mentorilist.GroupBy(x => x.Mentori.TipoDeCutter);
+
+            // Dicionário para armazenar os menores valores e seus pares para cada TipoDeCutter
+            Dictionary<TiposdeMentori, Tuple<float, float>> minValuesByType = new Dictionary<TiposdeMentori, Tuple<float, float>>();
+
+            // Encontrar o menor valor de Z2 e o seu par (Z) para cada grupo
+            foreach (var group in groupedMentoriList)
             {
+                var minZ2Item = group.Aggregate((minItem, nextItem) => nextItem.Mentori.Z2 < minItem.Mentori.Z2 ? nextItem : minItem);
 
-                Ferramentas objetoMenorZ = mentorilist.Aggregate((minItem, nextItem) =>
-                nextItem.Mentori.Z2 < minItem.Mentori.Z2 ? nextItem : minItem);
+                float minZ2 = minZ2Item.Mentori.Z2;
+                float minZ = minZ2Item.Mentori.Z;
 
-                float menorZ = objetoMenorZ.Mentori.Z2;
-                float z2DoMenorZ = objetoMenorZ.Mentori.Z;
-                menormentori = menorZ;
-                menormentori2 = z2DoMenorZ;
-                // menormentori = mentorilist.Min(x => x.Mentori.Z2);
-            }
-            float menormentoriB = 0;
-            float menormentori2B = 0;
-            if (mentorilist.Any())
-            {
-
-                Ferramentas objetoMenorZB = mentorilist.Aggregate((minItem, nextItem) =>
-                nextItem.Mentori.Z2 < minItem.MentoriB.Z2 ? nextItem : minItem);
-
-                float menorZB = objetoMenorZB.MentoriB.Z2;
-                float z2DoMenorZB = objetoMenorZB.MentoriB.Z;
-                menormentoriB = menorZB;
-                menormentori2B = z2DoMenorZB;
-                // menormentori = mentorilist.Min(x => x.Mentori.Z2);
+                minValuesByType.Add(group.Key, Tuple.Create(minZ2, minZ));
             }
 
-            //  MessageBox.Show(imagem);
+
+        
 
             int numpro = 1;
             int kosuu = 0;
@@ -170,23 +162,28 @@ namespace Krisiun_Project.G_Code
                         tabelaHtml.Append($"<td>{objeto.ToolName}</td>");//4
                         tabelaHtml.Append($"<td>{"φ" + objeto.Kei}</td>");//5
                         tabelaHtml.Append("<td>"); // Início da célula da coluna 加工案内
-                        if (objeto is Mentori)
+                        if (objeto is Mentori mentori)
                         {
                             tabelaHtml.Append("<table style=\"border: none;\">"); // Tabela para informações do objeto Mentori
                             foreach (var item in mentorilist)
                             {
                                 tabelaHtml.Append("<tr><td style=\"border: none; font-size: 8px;\">");
+                                if(item.Mentori.TipoDeCutter == mentori.TipoDeCutter) { 
                                 tabelaHtml.Append($"{"Ø" + item.Kei + "/(" + item.Mentori.MenKei + ") - C" + item.Mentori.C + "/ Z" + item.Mentori.Z + "(+" + item.Mentori.Dansa + ")"}</td></tr>");
+                                }
                             }
                             tabelaHtml.Append("</table>"); // Fim da tabela para informações do objeto Mentori
                         }
-                        if (objeto is MentoriB)
+                        if (objeto is MentoriB mentorib)
                         {
                             tabelaHtml.Append("<table style=\"border: none;\">"); // Tabela para informações do objeto Mentori
                             foreach (var item in mentorilist)
                             {
                                 tabelaHtml.Append("<tr><td style=\"border: none; font-size: 8px;\">");
+                                if(item.MentoriB.TipoDeCutter == mentorib.TipoDeCutter)
+                                { 
                                 tabelaHtml.Append($"{"Ø" + item.Kei + "/(" + item.MentoriB.MenKei + ") - C" + item.MentoriB.C + "/ Z" + item.MentoriB.Z + "(+" + item.MentoriB.Dansa + ")"}</td></tr>");
+                                }
                             }
                             tabelaHtml.Append("</table>"); // Fim da tabela para informações do objeto Mentori
                         }
@@ -199,13 +196,17 @@ namespace Krisiun_Project.G_Code
                         {
                             tabelaHtml.Append($"<td>{drills.Fukasa + "(" + drills.Z + ")"}</td>"); //7
                         }
-                        else if(objeto is Mentori )
+                        else if(objeto is Mentori mentoric )
                         {
-                            tabelaHtml.Append($"<td>{menormentori2 + "(" + menormentori + ")"}</td>");
+                            var minValues = minValuesByType[mentoric.TipoDeCutter];
+                            tabelaHtml.Append($"<td>{minValues.Item2 + "(" + minValues.Item1 + ")"}</td>");
+
                         }
-                        else if (objeto is MentoriB)
+                        else if (objeto is MentoriB mentorid)
                         {
-                            tabelaHtml.Append($"<td>{menormentori2B + "(" + menormentoriB + ")"}</td>");
+                            var minValues = minValuesByType[mentorid.TipoDeCutter];
+                            tabelaHtml.Append($"<td>{minValues.Item2 + "(" + minValues.Item1 + ")"}</td>");
+
                         }
                         else
                         {
