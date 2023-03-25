@@ -1266,7 +1266,11 @@ namespace Krisiun_Project
 
             selecionado.Mentori_F_Bool = men_frente_checkbox.Checked;
             selecionado.Mentori_B_Bool = men_tras_checkbox.Checked;
-            if (men_frente_checkbox.Checked == true)
+            int ativoF = ferramentas.ListTotal.Count(x => x.Mentori_F_Bool);
+            bool BoolativoF = ativoF > 0;
+            int ativoB = ferramentas.ListTotal.Count(x => x.Mentori_B_Bool);
+            bool BoolativoB = ativoB > 0;
+            if (BoolativoF == true)
             {
                 if (ferramentas.ListTotal.Contains(mentori) == false){ferramentas.ListTotal.Add(mentori);}
                 if (ferramentas.ListFrente.Contains(mentori) == false) { ferramentas.ListFrente.Add(mentori); }
@@ -1281,7 +1285,7 @@ namespace Krisiun_Project
                 dataGridView3.Refresh();
             }
 
-            if (men_tras_checkbox.Checked == true)
+            if (BoolativoB == true)
             {
                 if (ferramentas.ListTotal.Contains(mentorib) == false) { ferramentas.ListTotal.Add(mentorib); }          
                 if(ferramentas.ListTras.Contains(mentorib) == false) { ferramentas.ListTras.Add(mentorib); }
