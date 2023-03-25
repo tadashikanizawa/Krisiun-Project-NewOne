@@ -14,23 +14,27 @@ namespace Krisiun_Project.G_Code
     {
 
         public TiposdeMentori TipoDeCutter { get; set; }
-        public Ferramentas Lugar { get; set; }
+        public TiposdeMentori TipodeCutterB { get; set; }
         public float Z { get; set; }    
+        public float ZB { get; set; }
         public float Z2 { get; set; }
-        public float MenKei { get; set; }  
+        public float Z2B { get; set; }
+        public float MenKei { get; set; }
+        public float MenKeiB { get; set; }
         public float C { get; set; }
+        public float CB { get; set; }
         public float Dansa { get; set; }
+        public float DansaB { get; set; }
         public float Diametro { get; set; }
+        public float DiamentroB { get; set; }
         public float Profundidade { get; set; }
+        public float ProfundidadeB { get; set; }
         public int Largura { get;set; }
+        public int LarguraB { get; set; }
 
-        public List<Ferramentas> MenFrente { get; set; }
-        public List<Ferramentas> MenTras { get;set; }
         
         public Mentori(Pitch_principal.Peca peca) : base(peca)
         {
-            MenFrente = new List<Ferramentas> { };
-            MenTras = new List<Ferramentas> { };
             this.peca = peca;
         }
         public override bool Equals(object obj)

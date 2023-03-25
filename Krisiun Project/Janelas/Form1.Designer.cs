@@ -1107,7 +1107,7 @@
             // panel_yoko
             // 
             this.panel_yoko.BackColor = System.Drawing.Color.White;
-            this.panel_yoko.Location = new System.Drawing.Point(818, 528);
+            this.panel_yoko.Location = new System.Drawing.Point(817, 756);
             this.panel_yoko.Name = "panel_yoko";
             this.panel_yoko.Size = new System.Drawing.Size(1000, 250);
             this.panel_yoko.TabIndex = 27;
@@ -1664,7 +1664,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1552, 717);
+            this.ClientSize = new System.Drawing.Size(1966, 854);
+            this.Controls.Add(this.panel_yoko);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button12);
@@ -1686,7 +1687,6 @@
             this.Controls.Add(this.panel_inverso);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.panel_yoko);
             this.Controls.Add(this.scale_tb);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);

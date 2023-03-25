@@ -9,7 +9,7 @@
         public bool Shikaku;
         public Bools()
         {
-            this.bool_lado = true;
+            this.bool_lado = false;
             this.Form2_Frente = true;
             this.Form3_Tras = false;
             this.Maru = false;

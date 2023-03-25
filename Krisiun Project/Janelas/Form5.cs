@@ -155,8 +155,6 @@ namespace Krisiun_Project.Janelas
         {
             pastas.CriarPastas(peca.hinmei, peca.zuban);
             ferramentas.addtoolnumberK();
-            int contagem = ferramentas.MentoriFrente.Count;
-            MessageBox.Show("lista tem:" +contagem.ToString());
             if(ferramentas.ListFrente.Count > 0 ) { 
             form1.SavePictureBoxAsJPG(form1.paneld_f, "Front.jpeg");
             }

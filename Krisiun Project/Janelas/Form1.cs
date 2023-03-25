@@ -61,20 +61,20 @@ namespace Krisiun_Project
         public BindingSource bindingSource3 = new BindingSource();
         public BindingSource bindingSource4 = new BindingSource();
 
-     
+
         public Form1()
         {
             InitializeComponent();
             this.bools = new Bools();
 
-            this.drillMaterialKey = new DrillMaterialKey(null,null);
+            this.drillMaterialKey = new DrillMaterialKey(null, null);
             this.coordenadas = new Coordenadas();
             this.meio = new Pitch(bools);
             this.d = new Zairyo.Desenho(bools);
             this.toolnum = new ToolNumber();
             this.peca = new Peca();
             this.ferramentas = new Ferramentas(peca);
-          
+
 
             this.Mydrills = new Drills(peca);
             this.bugs = new Bugs.Bugs_Txb();
@@ -94,7 +94,7 @@ namespace Krisiun_Project
             var nSB = NSBLoader.Load();
 
             bindingSource4.DataSource = null;
-          
+
             dgvCoordenadas.DataSource = bindingSource4;
 
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
@@ -106,11 +106,11 @@ namespace Krisiun_Project
             dataGridView2.DataSource = bindingSource1;
             bindingSource2.DataSource = ferramentas.ListTotal;
             dataGridView3.DataSource = bindingSource2;
-          
+
             gruposCoordenadasBindingSource.DataSource = gruposCoordenadas;
 
             // Atribui o BindingSource como DataSource da ListBox
-            
+
 
             // Atribui o BindingSource como DataSource da DataGridView
             dgvCoordenadas.DataSource = gruposCoordenadasBindingSource;
@@ -119,7 +119,7 @@ namespace Krisiun_Project
 
             add_tb_naLista();
             //addtb.CriarTextBoxesIniciais(panelXY);
-         
+
             form3.ShowDialog();
             panel_update();
             atualizarComboBoxCores();
@@ -127,11 +127,11 @@ namespace Krisiun_Project
             LoadDrills();
             LoadMentori();
             List<TiposdeMentori> ListadeMentoris1 = TiposdeMentori.LoadMentoriCuter();
-          //  bindingSource3.DataSource = tiposdeMentoris;
+            //  bindingSource3.DataSource = tiposdeMentoris;
             dataGridView4.DataSource = ListadeMentoris1;
             Mydrills.LoadKaitenValuesFromCsv();
             comboBoxCores.SelectedIndex = 8;
-            
+
 
         }
         public Color[] cores = new Color[] { Color.Black, Color.Cyan, Color.Red, Color.Blue, Color.Green, Color.Gray, Color.Pink, Color.Purple, Color.LightGray };
@@ -166,7 +166,7 @@ namespace Krisiun_Project
         public List<TextBox> TextBoxes = new List<TextBox>();
         public List<CheckBox> CheckBoxes = new List<CheckBox>();
         public List<Panel> PanelList = new List<Panel>();
-        public List<TextBox>xyboxs = new List<TextBox>();
+        public List<TextBox> xyboxs = new List<TextBox>();
         public List<ComboBox> ComboBoxList = new List<ComboBox>();
         private BindingSource gruposCoordenadasBindingSource = new BindingSource();
         #endregion
@@ -176,16 +176,16 @@ namespace Krisiun_Project
         private void LoadMentori()
         {
             List<TiposdeMentori> tiposdeMentoris = TiposdeMentori.LoadMentoriCuter();
-           
-            men_frente_tipo_combo.DataSource = tiposdeMentoris;        
-           men_frente_tipo_combo.DisplayMember = "Tool";
-           men_frente_tipo_combo.ValueMember = "Tool";
+
+            men_frente_tipo_combo.DataSource = tiposdeMentoris;
+            men_frente_tipo_combo.DisplayMember = "Tool";
+            men_frente_tipo_combo.ValueMember = "Tool";
             men_frente_tipo_combo.SelectedIndex = 0;
             men_tras_tipo_combo.DataSource = tiposdeMentoris;
             men_tras_tipo_combo.DisplayMember = "Tool";
             men_tras_tipo_combo.ValueMember = "Tool";
         }
-        
+
         private void LoadDrills()
         {
             List<TipoDeDrills> listaDeDrills = TipoDeDrills.LoadDrills();
@@ -195,7 +195,7 @@ namespace Krisiun_Project
             drill_combobox.ValueMember = "Name";
         }
         private void add_tb_naLista()
-        {   
+        {
             TextBoxes.Add(Num_pro_textbox); //[0]
             TextBoxes.Add(drill_kei_tb);    //[1]
             TextBoxes.Add(drill_z_tb); //[2]
@@ -203,9 +203,9 @@ namespace Krisiun_Project
             TextBoxes.Add(men_frente_kei_tb); //[4]
             TextBoxes.Add(men_frente_z_tb);//[5]
             TextBoxes.Add(men_frente_dan_tb);//[6]
-          
+
             TextBoxes.Add(tool_tb); //7
-        
+
 
             TextBoxes.Add(men_tras_tam); //8
             TextBoxes.Add(men_tras_kei); //9
@@ -229,7 +229,7 @@ namespace Krisiun_Project
         }
         #region Tamanho_Escala_Base
 
-     
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -249,7 +249,7 @@ namespace Krisiun_Project
         }
 
 
-   
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -282,7 +282,7 @@ namespace Krisiun_Project
             scale_tb.Text = escala.ToString();
             panel_update();
         }
-     
+
         #endregion
         #region Sobre_Paineis_de_Desenho
         private void y_inv_checkbox_CheckedChanged(object sender, EventArgs e)
@@ -379,15 +379,15 @@ namespace Krisiun_Project
         }
         #endregion
         #region Em relação aos Panels de config de Iteração
-    
+
         private DataGridViewCell selectedCell;
         private void Form1_Load(object sender, EventArgs e)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-         
+
 
             this.Size = new Size(2000, 1500);
-  
+
         }
 
 
@@ -444,21 +444,21 @@ namespace Krisiun_Project
             {
                 string valor1 = textBox1.Text;
                 string valor2 = valor1;
-                    T objetoSelecionado = lastSelectedDgv.CurrentRow.DataBoundItem as T;
-                    if (objetoSelecionado != null)
+                T objetoSelecionado = lastSelectedDgv.CurrentRow.DataBoundItem as T;
+                if (objetoSelecionado != null)
+                {
+                    PropertyInfo propertyInfo = typeof(T).GetProperty(nomePropriedade);
+                    if (propertyInfo != null)
                     {
-                        PropertyInfo propertyInfo = typeof(T).GetProperty(nomePropriedade);
-                        if (propertyInfo != null)
-                        {
-                            propertyInfo.SetValue(objetoSelecionado, Convert.ChangeType(valor2, propertyInfo.PropertyType));
-                            lastSelectedDgv.Refresh();
-                            dataGridView1.Refresh();
-                            dataGridView2.Refresh();
-                            dataGridView3.Refresh();
-                        }
+                        propertyInfo.SetValue(objetoSelecionado, Convert.ChangeType(valor2, propertyInfo.PropertyType));
+                        lastSelectedDgv.Refresh();
+                        dataGridView1.Refresh();
+                        dataGridView2.Refresh();
+                        dataGridView3.Refresh();
                     }
+                }
 
-                
+
             }
         }
         public int index = 0;
@@ -468,7 +468,7 @@ namespace Krisiun_Project
             {
                 string valor = textBox.Text;
                 string valor1 = textBox1.Text;
-                string valor2 = index.ToString() +"-" + valor + "φ" + valor1;
+                string valor2 = index.ToString() + "-" + valor + "φ" + valor1;
                 T objetoSelecionado = lastSelectedDgv.CurrentRow.DataBoundItem as T;
                 if (objetoSelecionado != null)
                 {
@@ -622,7 +622,7 @@ namespace Krisiun_Project
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-           // datagridcodes.RemoverFerramenta(dataGridView3, ferramentas.ListFrente, e);
+            // datagridcodes.RemoverFerramenta(dataGridView3, ferramentas.ListFrente, e);
         }
 
 
@@ -703,7 +703,7 @@ namespace Krisiun_Project
         private void tras_checkBox_CheckedChanged(object sender, EventArgs e)
         {
             if (tras_checkBox.Checked) { panel_men_tras.Visible = true; }
-            if (!tras_checkBox.Checked) { panel_men_tras.Visible=false; }
+            if (!tras_checkBox.Checked) { panel_men_tras.Visible = false; }
 
             if (lastSelectedDgv != null && lastSelectedDgv.CurrentRow != null)
             {
@@ -760,10 +760,9 @@ namespace Krisiun_Project
             Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
             Load_TextboxString2<Drills>(drill_combobox, drill_kei_tb, null, "Nome");
             Load_TextboxString<Drills>(Num_pro_textbox, null, "Description");
-            if (men_frente_checkbox.Checked)
-            { 
-            menfrenteCheck();
-            }
+
+            //  menfrenteCheck();
+            MentorConfigs();
             panel_update();
 
         }
@@ -832,7 +831,7 @@ namespace Krisiun_Project
 
         public void drill_z_tb_Leave(object sender, EventArgs e)
         {
-              
+
         }
         private void drill_z_tb_TextChanged(object sender, EventArgs e)
         {
@@ -908,13 +907,13 @@ namespace Krisiun_Project
             men_tras_checkbox.Checked = false;
             dataGridView1.ClearSelection();
             dataGridView2.ClearSelection();
-              dataGridView3.Select();
+            dataGridView3.Select();
             form2.ShowDialog();
             dataGridView3.Refresh();
 
-         
-         
-         if (dataGridView3.Rows.Count == 0) { return; }
+
+
+            if (dataGridView3.Rows.Count == 0) { return; }
             dataGridView3.CurrentCell = dataGridView3.Rows[dataGridView3.Rows.Count - 1].Cells[0];
             datagridcodes.AtualizarTextBoxEPainel(dataGridView3.CurrentRow.DataBoundItem as Ferramentas, TextBoxes, CheckBoxes, PanelList);
         }
@@ -925,7 +924,7 @@ namespace Krisiun_Project
 
 
 
-     
+
         int counter = 0;
 
         #endregion
@@ -938,7 +937,7 @@ namespace Krisiun_Project
             ExibirCoordenadas(drills);
         }
 
-    
+
         private void ExibirCoordenadas(Drills drills)
         {
             // cria uma string para armazenar as coordenadas
@@ -988,7 +987,7 @@ namespace Krisiun_Project
                     dgvCoordenadas.Refresh();
                 }
             }
-        
+
         }
 
         private void AtualizaDrills(Drills drill)
@@ -1045,7 +1044,7 @@ namespace Krisiun_Project
             }
             panel_update();
         }
-    
+
 
         private void dgvCoordenadas_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -1073,28 +1072,28 @@ namespace Krisiun_Project
 
         private void dgvCoordenadas_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
-            
-                // Obtém o índice da linha selecionada na DataGridView separada
-                int rowIndex = e.Row.Index;
 
-                // Obtém a BindingList<PointF> atual da DataGridView
-                var pointsList = dataGridView2.DataSource as BindingList<PointF>;
+            // Obtém o índice da linha selecionada na DataGridView separada
+            int rowIndex = e.Row.Index;
 
-                // Obtém o objeto selecionado na DataGridView principal
-                var selectedObject = dataGridView1.CurrentRow.DataBoundItem as Ferramentas;
+            // Obtém a BindingList<PointF> atual da DataGridView
+            var pointsList = dataGridView2.DataSource as BindingList<PointF>;
 
-                // Verifica se o objeto selecionado é uma instância de Drills ou Taps
-                if (selectedObject is Drills drills)
-                {
-                    // Remove o ponto selecionado da lista de pontos do objeto Drills
-                    drills.CoordenadasList.RemoveAt(rowIndex);
-                }
-                else if (selectedObject is Tap taps)
-                {
-                    // Remove o ponto selecionado da lista de pontos do objeto Taps
-                    taps.CoordenadasList.RemoveAt(rowIndex);
-                }
-            
+            // Obtém o objeto selecionado na DataGridView principal
+            var selectedObject = dataGridView1.CurrentRow.DataBoundItem as Ferramentas;
+
+            // Verifica se o objeto selecionado é uma instância de Drills ou Taps
+            if (selectedObject is Drills drills)
+            {
+                // Remove o ponto selecionado da lista de pontos do objeto Drills
+                drills.CoordenadasList.RemoveAt(rowIndex);
+            }
+            else if (selectedObject is Tap taps)
+            {
+                // Remove o ponto selecionado da lista de pontos do objeto Taps
+                taps.CoordenadasList.RemoveAt(rowIndex);
+            }
+
         }
 
         private void dgvCoordenadas_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1125,15 +1124,15 @@ namespace Krisiun_Project
                 int index = dataGridView3.CurrentRow.Index;
                 Ferramentas ferramentaSelecionada = ferramentas.ListTotal[index];
 
-                if(ferramentaSelecionada is Drills drill)
-                if (drill.CoordenadasList.Count == drill.numlado + 1)
-                {
-                    drill.numlado = 0;
-                }
-                else
-                {
-                    drill.numlado += 1;
-                }
+                if (ferramentaSelecionada is Drills drill)
+                    if (drill.CoordenadasList.Count == drill.numlado + 1)
+                    {
+                        drill.numlado = 0;
+                    }
+                    else
+                    {
+                        drill.numlado += 1;
+                    }
 
                 dataGridView3.Refresh();
                 panel_update();
@@ -1143,13 +1142,13 @@ namespace Krisiun_Project
         private void men_frente_z_tb_TextChanged(object sender, EventArgs e)
         {
             if (float.TryParse(men_frente_z_tb.Text, out float valor))
-            { 
+            {
                 if (valor > tamcutter)
                 {
-                    if(valor < 0) { valor *= -1; }
-                    MessageBox.Show("このカッターの刃長は"　+ tamcutter.ToString() + "ので。大丈夫でしょうか？");
+                    if (valor < 0) { valor *= -1; }
+                    MessageBox.Show("このカッターの刃長は" + tamcutter.ToString() + "ので。大丈夫でしょうか？");
                 }
-                
+
             }
         }
         public float tamcutter;
@@ -1167,14 +1166,14 @@ namespace Krisiun_Project
 
         private void men_frente_checkbox_CheckedChanged(object sender, EventArgs e)
         {
-    
+
         }
         private void menfrenteCheck()
         {
             var selecionado = GetSelectedObject();
             Mentori mentori = new Mentori(peca);
             TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
-       
+
             if (men_frente_checkbox.Checked == true)
             {
                 mentori.TipoDeCutter = selectedMentori;
@@ -1193,7 +1192,7 @@ namespace Krisiun_Project
                     ferramentas.ListTotal.Add(mentori);
                 }
                 if (ferramentas.ListFrente.Contains(mentori) == false) { ferramentas.ListFrente.Add(mentori); }
-                if(ferramentas.MentoriFrente.Contains(selecionado) == false) { ferramentas.MentoriFrente.Add(selecionado); }
+                if (ferramentas.MentoriFrente.Contains(selecionado) == false) { ferramentas.MentoriFrente.Add(selecionado); }
                 dataGridView3.Refresh();
             }
             else
@@ -1201,7 +1200,7 @@ namespace Krisiun_Project
                 {
                     if (ferramentas.ListFrente.Contains(mentori) == true) { ferramentas.ListFrente.Remove(mentori); }
                     if (ferramentas.ListTotal.Contains(mentori) == true) { ferramentas.ListTotal.Remove(mentori); }
-                    if (ferramentas.MentoriFrente.Contains (selecionado) == true) { ferramentas.MentoriFrente.Remove(selecionado); }
+                    if (ferramentas.MentoriFrente.Contains(selecionado) == true) { ferramentas.MentoriFrente.Remove(selecionado); }
                     dataGridView3.Refresh();
                 }
             }
@@ -1209,7 +1208,7 @@ namespace Krisiun_Project
             {
                 if (selecionado is Drills drill)
                 {
-                    drill.Mentori= mentori;
+                    drill.Mentori = mentori;
                     //drill.Mentori.MentoriCutter = selectedMentori;
 
                     drill.Mentori_F_Bool = men_frente_checkbox.Checked;
@@ -1235,6 +1234,112 @@ namespace Krisiun_Project
             }
 
         }
+        private void MentorConfigs()
+        {
+            var selecionado = GetSelectedObject();
+            Mentori mentori = new Mentori(peca);
+            Mentori mentorib = new Mentori(peca);
+            TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
+            TiposdeMentori selectedMentoriB = men_tras_tipo_combo.SelectedItem as TiposdeMentori;
+
+            mentori.TipoDeCutter = selectedMentori;
+            mentori.ToolName = selectedMentori.Tool + "表";
+            mentori.ToolNumber = selectedMentori.MenCutterToolNum;
+            mentori.Nome = selectedMentori.Tool;
+            mentori.Kei = selectedMentori.Diametro;
+            mentori.Kaiten = selectedMentori.Kaiten;
+            mentori.Okuri = selectedMentori.Okuri;
+
+            mentori.Index = 0;
+            mentori.Frente = true;
+
+            mentorib.TipoDeCutter = selectedMentoriB;
+            mentorib.ToolName = selectedMentoriB.Tool + "裏";
+            mentorib.ToolNumber = selectedMentoriB.MenCutterToolNum;
+            mentorib.Nome = selectedMentoriB.Tool;
+            mentorib.Kei = selectedMentoriB.Diametro;
+            mentorib.Kaiten = selectedMentoriB.Kaiten;
+            mentorib.Okuri = selectedMentoriB.Okuri;
+            mentorib.Index = 1;
+            mentorib.Tras = true;
+
+
+            selecionado.Mentori_F_Bool = men_frente_checkbox.Checked;
+            selecionado.Mentori_B_Bool = men_tras_checkbox.Checked;
+            if (men_frente_checkbox.Checked == true)
+            {
+                if (ferramentas.ListTotal.Contains(mentori) == false){ferramentas.ListTotal.Add(mentori);}
+                if (ferramentas.ListFrente.Contains(mentori) == false) { ferramentas.ListFrente.Add(mentori); }
+                if (ferramentas.MentoriFrente.Contains(selecionado) == false) { ferramentas.MentoriFrente.Add(selecionado); }
+                dataGridView3.Refresh();
+            }
+            else
+            {
+                if (ferramentas.ListFrente.Contains(mentori) == true) { ferramentas.ListFrente.Remove(mentori); }
+                if (ferramentas.ListTotal.Contains(mentori) == true) { ferramentas.ListTotal.Remove(mentori); }
+                if (ferramentas.MentoriFrente.Contains(selecionado) == true) { ferramentas.MentoriFrente.Remove(selecionado); }
+                dataGridView3.Refresh();
+            }
+
+            if (men_tras_checkbox.Checked == true)
+            {
+                if (ferramentas.ListTotal.Contains(mentorib) == false) { ferramentas.ListTotal.Add(mentorib); }          
+                if(ferramentas.ListTras.Contains(mentorib) == false) { ferramentas.ListTras.Add(mentorib); }
+                if(ferramentas.MentoriTras.Contains(selecionado) == false) { ferramentas.MentoriTras.Add(selecionado);}
+                dataGridView3.Refresh();
+            }
+            else
+            {
+                if (ferramentas.ListTotal.Contains(mentorib) == true) { ferramentas.ListTotal.Remove(mentorib); }
+                if (ferramentas.ListTras.Contains(mentorib) == true) { ferramentas.ListTras.Remove(mentorib); }
+                if (ferramentas.MentoriTras.Contains(selecionado) == true) { ferramentas.MentoriTras.Remove(selecionado); }
+                dataGridView3.Refresh();
+            }
+            selecionado.Mentori = mentori;
+            selecionado.MentoriB = mentorib;
+            //drill.Mentori.MentoriCutter = selectedMentori;
+
+            if (float.TryParse(men_frente_kei_tb.Text, out float menkei))
+            {
+                selecionado.Mentori.MenKei = menkei;
+            }
+            if (float.TryParse(men_frente_tam_tb.Text, out float tam))
+            {
+                selecionado.Mentori.C = tam;
+            }
+            if (float.TryParse(men_frente_dan_tb.Text, out float dan))
+            {
+                selecionado.Mentori.Dansa = dan;
+            }
+            if (float.TryParse(men_frente_z_tb.Text, out float z))
+            {
+                selecionado.Mentori.Z = z;
+            }
+            //daqui pra tras é de tras
+            if(float.TryParse(men_tras_kei.Text, out float s))
+            {
+                selecionado.Mentori.MenKeiB = s;
+            }
+            if(float.TryParse(men_tras_tam.Text, out float tam2))
+            {
+                selecionado.Mentori.CB = tam2;
+            }
+            if(float.TryParse(men_tras_dan.Text, out float dan2))
+            {
+                selecionado.Mentori.DansaB = dan2;
+            }
+            if(float.TryParse(men_tras_z.Text, out float z2))
+            {
+                selecionado.Mentori.ZB = z2;
+            }
+            dataGridView3.Update();
+
+
+        }
+
     }
 
+
+    
 }
+
