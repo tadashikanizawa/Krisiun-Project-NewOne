@@ -71,48 +71,10 @@ namespace Krisiun_Project.G_Code
                     gCode46F.Append(GenerateGCodeForDrill(drill,omote, ura, false, true));
                     gCode56F.Append(GenerateGCodeForDrill(drill,omote, ura, false, true));
                     gCodeokkF.Append(GenerateGCodeForDrill(drill,omote, ura, true, true));
-                   // gCode56.Append(GenerateGElipse(-26.752, 87.502,12,500,22,22));
                 }
                 else if (ferramenta is Tap tap)
                 {
                     // Adicione o GCode específico para o objeto Tap.
-                }
-                else if( ferramenta is Mentori mentori)
-                {
-                    gCode56.Append(inicio_osp(false, false, mentori, num, false));
-                    gCode46.Append(inicio_osp(true, false, mentori, num, false));
-                    gcodeokk.Append(inicio_osp(false, true, mentori, num, false));
-                    gCode56F.Append(inicio_osp(false, false, mentori, num, true));
-                    gCode46F.Append(inicio_osp(true, false, mentori, num, true));
-                    gCodeokkF.Append(inicio_osp(false, true, mentori, num, true));
-                    foreach (Ferramentas ferramentas1 in ferramentasList)
-                    {
-                        if(omote==true)
-                        {
-                            if (ferramentas1.Mentori_F_Bool == true)
-                            {
-                                if (ferramentas1.Mentori.TipoDeCutter == mentori.TipoDeCutter)
-                                {
-
-                                    gCode56.Append(GcodeMentori(mentori,ferramentas1,omote,ura,false,false));
-                                }
-
-                            }
-                        }
-                        if (ura == true)
-                        {
-                            if (ferramentas1.Mentori_B_Bool == true)
-                            {
-                                if (ferramentas1.Mentori.TipoDeCutter == mentori.TipoDeCutter)
-                                {
-
-                                    gCode56.Append(GcodeMentori(mentori, ferramentas1, omote, ura, false, false));
-                                }
-
-                            }
-                        }
-
-                    }
                 }
                 //else if (ferramenta is Endmill endmill)
                 //{
@@ -214,7 +176,6 @@ namespace Krisiun_Project.G_Code
             string tipo = null;
             string troca = "M06";
             string resfriamento = "M08";
-            int kaiten = 0;
             // numero da ferramenta
 
 
@@ -228,21 +189,10 @@ namespace Krisiun_Project.G_Code
                 kei = drill.Kei;
                 tipo = drill.ToolName;
                 resfriamento = drill.Resfriamento;
-                kaiten = drill.Kaiten;
             }
             else if (ferramenta is Tap tap)
             {
                 // Atribua as propriedades do objeto Tap.
-            }
-            else if (ferramenta is Mentori mentori)
-            {
-                toolnum = mentori.ToolNumber;
-                if (kousoki == true) { toolnum = mentori.ToolNumberK; troca = "M207"; }
-                kei = mentori.Kei;
-                tipo = mentori.ToolName.Replace("(","-").Replace(")","-");
-                resfriamento = "M08";
-                kaiten = mentori.Kaiten;
-
             }
 
             string numpro1 = numpro.ToString().PadLeft(2, '0');
@@ -253,7 +203,7 @@ namespace Krisiun_Project.G_Code
                 if (resfriamento == "M51") { resfriamento = "M58G04X3."; }
             }
             //tipo
-            if (Kanizawa == true)
+            if(Kanizawa == true)
             {
                 cabeca.AppendLine("/");
                 cabeca.AppendLine("ON" + numpro1);
@@ -264,11 +214,10 @@ namespace Krisiun_Project.G_Code
             {
                 cabeca.AppendLine("G90G#600");
             }
-            if (ferramenta is Drills || ferramenta is Mentori) 
+            if (ferramenta is Drills)
             {
                 cabeca.AppendLine("(N00" + numpro1 + "- T" + toolnum1 + " -" + tipo + "- φ" + kei1 + ")");
             }
-      
             cabeca.AppendLine("G0Z500.");
             cabeca.AppendLine("T" + toolnum1);
             cabeca.AppendLine(troca);
@@ -284,7 +233,6 @@ namespace Krisiun_Project.G_Code
             cabeca.AppendLine("G17G90G00");
             cabeca.AppendLine("G71Z85.M53");
             cabeca.AppendLine("(INICIO)");
-            cabeca.AppendLine("S"+kaiten.ToString() + "M03");
             
             return cabeca;
 
@@ -292,7 +240,8 @@ namespace Krisiun_Project.G_Code
         
         }
        
-      
+   
+        
         private StringBuilder GenerateGCodeForDrill(Drills drill, bool frente, bool tras, bool okk, bool Kanizawa)
         {
             StringBuilder gCodeForDrill = new StringBuilder();
@@ -311,7 +260,6 @@ namespace Krisiun_Project.G_Code
             if(tras == false) { xinv = false; yinv = false; }
             double radianos = graus * (Math.PI / 180);
             double raio = drill.Kei / 2;
-            
             if (drill.Sentan == true)
             {
                 senta = (float)(Math.Tan(radianos) * raio);
@@ -322,6 +270,7 @@ namespace Krisiun_Project.G_Code
             }
             if (fukasa > 0) { fukasa *= -1; }
             // Velocidade de rotação
+            gCodeForDrill.AppendLine($"S{spindleSpeed} M03");
             
             // Comando G81
             PointF primeiraCoordenada = drill.CoordenadasList[0];
@@ -358,87 +307,6 @@ namespace Krisiun_Project.G_Code
             return gCodeForDrill;
         }
 
-        public StringBuilder GcodeMentori(Mentori mentori, Ferramentas ferramenta, bool frente, bool tras, bool okk, bool Kanizawa)
-        {
-            StringBuilder gCode = new StringBuilder();
-            int kaiten = mentori.Kaiten;
-            int okuri = mentori.Okuri;
-            float z = ferramenta.Mentori.Z;
-            if (z < 0)
-            {
-                z = z * -1;
-            }
-            float ponta = mentori.Kei;
-            float diaburaco = ferramenta.Mentori.MenKei;
-            float C = ferramenta.Mentori.C * 2;
-            float Dansa = ferramenta.Mentori.Dansa;
-            if (Dansa < 0)
-            {
-                Dansa = Dansa * -1;
-            }
-
-            float kei = diaburaco + C - z;
-            float valorz = z + Dansa;
-            valorz *= -1;
-            ferramenta.Mentori.Z2 = valorz;
-            bool xinv = peca.xinv;
-            bool yinv = peca.yinv;
-
-            gCode.AppendLine("("+ferramenta.ToolName.ToString()+ "-Ø"+ferramenta.Kei +")");
-            for (int i = 0; i < ferramenta.CoordenadasList.Count; i++)
-            {// Multiplica a coordenada X por -1 se xinv for verdadeiro
-
-
-                PointF coordenada = ferramenta.CoordenadasList[i];
-                float xCoordValue = xinv ? -coordenada.X : coordenada.X;
-                float yCoordValue = yinv ? -coordenada.Y : coordenada.Y;
-                gCode.Append(Mentori.GenerateMentori(xCoordValue, yCoordValue, valorz, kei, ponta, okuri, 10));
-            }
-            gCode.AppendLine("G0Z500.");
-            return gCode;
-        }
-
-        public static string GenerateGElipse(double centerX, double centerY, double endMillDiameter, int feedRate, double ellipseWidth, double ellipseHeight)
-        {
-            string gCode = "";
-
-            int numArcs = 8;
-            double angleIncrement = 360.0 / numArcs;
-
-            double prevX = centerX - (ellipseWidth / 2) - (endMillDiameter / 2);
-            double prevY = centerY;
-
-            gCode += $"G90 G01 X{prevX} Y{prevY} Z-8.5 F{feedRate}" + Environment.NewLine;
-
-            for (int i = 1; i <= numArcs; i++)
-            {
-                double startAngle = (i - 1) * angleIncrement;
-                double endAngle = i * angleIncrement;
-
-                double startX = centerX + (ellipseWidth / 2) * Math.Cos(startAngle * Math.PI / 180);
-                double startY = centerY + (ellipseHeight / 2) * Math.Sin(startAngle * Math.PI / 180);
-
-                double endX = centerX + (ellipseWidth / 2) * Math.Cos(endAngle * Math.PI / 180);
-                double endY = centerY + (ellipseHeight / 2) * Math.Sin(endAngle * Math.PI / 180);
-
-                double angleOffset = Math.Atan2(endY - startY, endX - startX);
-                double offsetX = (endMillDiameter / 2) * Math.Cos(angleOffset);
-                double offsetY = (endMillDiameter / 2) * Math.Sin(angleOffset);
-
-                double arcCenterX = startX + offsetX;
-                double arcCenterY = startY + offsetY;
-
-                double iValue = arcCenterX - prevX;
-                double jValue = arcCenterY - prevY;
-
-                gCode += $"G03 X{endX} Y{endY} I{iValue} J{jValue} F{feedRate}" + Environment.NewLine;
-
-                prevX = endX;
-                prevY = endY;
-            }
-
-            return gCode;
-        }
 
         public  void SaveStringBuilderToFile(StringBuilder okuma56, StringBuilder okuma46, StringBuilder OKK76, StringBuilder okuma56f, StringBuilder okuma46f, StringBuilder okkf, string nome)
             {

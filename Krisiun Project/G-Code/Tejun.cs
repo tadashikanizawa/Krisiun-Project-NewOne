@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -79,7 +78,7 @@ namespace Krisiun_Project.G_Code
             }
 
         }
-        public void tejunlista(BindingList<Ferramentas> ferramentaslist, BindingList<Ferramentas> mentorilist, int num, string lado, bool kousoki)
+        public void tejunlista(BindingList<Ferramentas> ferramentaslist, int num, string lado, bool kousoki)
         {
             string nomeArquivo = "TejunLista.html";
             string pastadosoft = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
@@ -87,26 +86,12 @@ namespace Krisiun_Project.G_Code
             string hinmei = peca.hinmei;
             string zuban = peca.zuban;
             string subtitulo = num.ToString() + "-" + lado;
-            float menormentori = 0;
-            float menormentori2 = 0;
-            if (mentorilist.Any())
-            {
-
-                Ferramentas objetoMenorZ = mentorilist.Aggregate((minItem, nextItem) =>
-                nextItem.Mentori.Z2 < minItem.Mentori.Z2 ? nextItem : minItem);
-
-                float menorZ = objetoMenorZ.Mentori.Z2;
-                float z2DoMenorZ = objetoMenorZ.Mentori.Z;
-                menormentori = menorZ;
-                menormentori2 = z2DoMenorZ;
-                // menormentori = mentorilist.Min(x => x.Mentori.Z2);
-            }
             
             //  MessageBox.Show(imagem);
-
+ 
             int numpro = 1;
             int kosuu = 0;
-
+            
             if (File.Exists(caminhoCompleto))
             {
                 string html = File.ReadAllText(caminhoCompleto);
@@ -117,7 +102,7 @@ namespace Krisiun_Project.G_Code
 
                 string pasta = pastas.CaminhoRaiz;
                 string nomeArquivo1 = subtitulo + " - 手順書Pag2" + ".html";
-                if (kousoki == true) { nomeArquivo1 = subtitulo + " - 手順書Pag2" + " - 高速" + ".html"; }
+                if(kousoki == true)  { nomeArquivo1 = subtitulo + " - 手順書Pag2" + " - 高速" + ".html"; }
                 string caminhoCompleto1 = Path.Combine(pasta, nomeArquivo1);
                 if (!string.IsNullOrEmpty(html))
                 {   // Criar tabela HTML com base na lista de objetos
@@ -128,19 +113,17 @@ namespace Krisiun_Project.G_Code
                          "<th style=\"width: 30px;\">ツール番号</th>" +//3
                         "<th style=\"width: 50px;\">ツール</th>" + //4
                         "<th style=\"width: 50px;\">径</th>" + //5
-                        "<th style=\"width: 150px;\">加工案内</th>" + //6
+                        "<th style=\"width: 50px;\">加工案内</th>" + //6
                         "<th style =\"width: 50px;\">深さ</th>" + //7
 
                         "<th style =\"width: 150px;\">条件-" + peca.Material.Name.ToString() + "</th></tr>" //8
 
                         );
 
+
                     foreach (var objeto in ferramentaslist)
                     {
-                        if (objeto.CoordenadasList != null)
-                        {
-                            kosuu = objeto.CoordenadasList.Count();
-                        }
+                        kosuu = objeto.CoordenadasList.Count();
                         tabelaHtml.Append("<tr>");
                         tabelaHtml.Append($"<td>{numpro}</td>");//1
 
@@ -155,32 +138,12 @@ namespace Krisiun_Project.G_Code
                         }//3
                         tabelaHtml.Append($"<td>{objeto.ToolName}</td>");//4
                         tabelaHtml.Append($"<td>{"φ" + objeto.Kei}</td>");//5
-                        tabelaHtml.Append("<td>"); // Início da célula da coluna 加工案内
-                        if (objeto is Mentori)
-                        {
-                            tabelaHtml.Append("<table style=\"border: none;\">"); // Tabela para informações do objeto Mentori
-                            foreach (var item in mentorilist)
-                            {
-                                tabelaHtml.Append("<tr><td style=\"border: none; font-size: 8px;\">");
-                                tabelaHtml.Append($"{"Ø" + item.Kei + "/(" + item.Mentori.MenKei + ") - C" + item.Mentori.C + "/ Z" + item.Mentori.Z + "(+" + item.Mentori.Dansa + ")"}</td></tr>");
-                            }
-                            tabelaHtml.Append("</table>"); // Fim da tabela para informações do objeto Mentori
+                        tabelaHtml.Append($"<td>{objeto.Description}</td>");//6
+                        if(objeto is Drills drills)
+                        { 
+                        tabelaHtml.Append($"<td>{drills.Fukasa + "("+ drills.Z+")"}</td>"); //7
                         }
-                        else
-                        {
-                            tabelaHtml.Append($"{objeto.Description}");
-                        }
-                        tabelaHtml.Append("</td>"); // Fim da célula da coluna 加工案内
-                        if (objeto is Drills drills)
-                        {
-                            tabelaHtml.Append($"<td>{drills.Fukasa + "(" + drills.Z + ")"}</td>"); //7
-                        }
-                        else if(objeto is Mentori )
-                        {
-                            tabelaHtml.Append($"<td>{menormentori2 + "(" + menormentori + ")"}</td>");
-                        }
-                        else
-                        {
+                        else {
                             tabelaHtml.Append($"<td>{objeto.Fukasa}</td>");//7
                         }
                         tabelaHtml.Append("<td><table style=\"border: 1px solid black;\"><tr><td style=\"border: 1px solid black; font-size: 8px;\">");//8
@@ -194,7 +157,7 @@ namespace Krisiun_Project.G_Code
 
                     // Substituir marcador {TABELA} com a tabela HTML gerada
                     html = html.Replace("{TABELA}", tabelaHtml.ToString());
-
+                   
 
 
                     using (StreamWriter sw = File.CreateText(caminhoCompleto1))
@@ -205,35 +168,35 @@ namespace Krisiun_Project.G_Code
             }
         }
 
-        //public void teste()
-        //{
-        //    //string html = "<!DOCTYPE html>";
-        //    //html += "<html>";
-        //    //html += "<head>";
-        //    //html += "<meta charset=\"UTF-8\">";
-        //    //html += "<title>" + peca.hinmei + " - " + peca.zuban + "</title>";
-        //    //html += "<style type=\"text/css\">";
-        //    string html = "";
-        //    string nomeArquivo = "Untitled-5";
-        //    string pastadosoft = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
-        //    string caminhoCompleto = Path.Combine(pastadosoft, nomeArquivo);
+            //public void teste()
+            //{
+            //    //string html = "<!DOCTYPE html>";
+            //    //html += "<html>";
+            //    //html += "<head>";
+            //    //html += "<meta charset=\"UTF-8\">";
+            //    //html += "<title>" + peca.hinmei + " - " + peca.zuban + "</title>";
+            //    //html += "<style type=\"text/css\">";
+            //    string html = "";
+            //    string nomeArquivo = "Untitled-5";
+            //    string pastadosoft = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+            //    string caminhoCompleto = Path.Combine(pastadosoft, nomeArquivo);
 
-        //    if (File.Exists(caminhoCompleto))
-        //    {
-        //         html = File.ReadAllText(caminhoCompleto);
-        //        // Use a string html como desejar
-        //    }
-        //    string pasta = pastas.CaminhoRaiz; 
-        //    string nomeArquivo1 = "teste4.html";
+            //    if (File.Exists(caminhoCompleto))
+            //    {
+            //         html = File.ReadAllText(caminhoCompleto);
+            //        // Use a string html como desejar
+            //    }
+            //    string pasta = pastas.CaminhoRaiz; 
+            //    string nomeArquivo1 = "teste4.html";
 
-        //    string caminhoCompleto1 = Path.Combine(pasta, nomeArquivo1);
-        //    using (StreamWriter sw = File.CreateText(caminhoCompleto1))
-        //    {
-        //        sw.Write(html); // html é uma string contendo o conteúdo HTML que você quer salvar
-        //    }
+            //    string caminhoCompleto1 = Path.Combine(pasta, nomeArquivo1);
+            //    using (StreamWriter sw = File.CreateText(caminhoCompleto1))
+            //    {
+            //        sw.Write(html); // html é uma string contendo o conteúdo HTML que você quer salvar
+            //    }
 
-        //}
-    }
+            //}
+        }
 
 
 }
