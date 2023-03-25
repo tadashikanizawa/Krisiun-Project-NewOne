@@ -553,7 +553,6 @@ namespace Krisiun_Project
 
                         // Desenha o texto centralizado em relação à posição do ponto
                         g.DrawString(text, font, brush, x, y);
-                        
                     }
                 }
 
