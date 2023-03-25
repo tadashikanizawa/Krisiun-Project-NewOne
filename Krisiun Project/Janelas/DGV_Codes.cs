@@ -57,15 +57,15 @@ namespace Krisiun_Project.janela_principal
                     textBoxs[5].Text = ferramentaSelecionada.Mentori.Z.ToString();
                     textBoxs[3].Text = ferramentaSelecionada.Mentori.C.ToString();
                     textBoxs[6].Text = ferramentaSelecionada.Mentori.Dansa.ToString();
-                        textBoxs[9].Text = ferramentaSelecionada.MentoriB.MenKeiB.ToString();
-                        textBoxs[8].Text = ferramentaSelecionada.MentoriB.CB.ToString();
-                        textBoxs[10].Text = ferramentaSelecionada.MentoriB.ZB.ToString();
-                        textBoxs[11].Text = ferramentaSelecionada.MentoriB.DansaB.ToString();
+                        textBoxs[9].Text = ferramentaSelecionada.MentoriB.MenKei.ToString();
+                        textBoxs[8].Text = ferramentaSelecionada.MentoriB.C.ToString();
+                        textBoxs[10].Text = ferramentaSelecionada.MentoriB.Z.ToString();
+                        textBoxs[11].Text = ferramentaSelecionada.MentoriB.Dansa.ToString();
 
                     checkBoxes[3].Checked = ferramentaSelecionada.Mentori_F_Bool;
                     checkBoxes[4].Checked = ferramentaSelecionada.Mentori_B_Bool;
                         TiposdeMentori selectedMentori = (TiposdeMentori)ferramentaSelecionada.Mentori.TipoDeCutter;
-                        TiposdeMentori selectedMentoriB =(TiposdeMentori)ferramentaSelecionada.MentoriB.TipodeCutterB;
+                        TiposdeMentori selectedMentoriB =(TiposdeMentori)ferramentaSelecionada.MentoriB.TipoDeCutter;
 
                         // Encontre o índice do item selecionado na ComboBox.
                         int selectedIndex = comboBoxes[2].Items.IndexOf(selectedMentori);

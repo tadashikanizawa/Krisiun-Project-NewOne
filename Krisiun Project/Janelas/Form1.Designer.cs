@@ -1499,7 +1499,6 @@
             // 
             // ferramentasBindingSource
             // 
-            this.ferramentasBindingSource.DataSource = typeof(Krisiun_Project.G_Code.Ferramentas);
             // 
             // frenteDataGridViewCheckBoxColumn1
             // 
@@ -1665,8 +1664,6 @@
             // 
             // ferramentasBindingSource1
             // 
-            this.ferramentasBindingSource1.DataSource = typeof(Krisiun_Project.G_Code.Ferramentas);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1724,14 +1721,6 @@
             this.panel_men_frente.PerformLayout();
             this.panel_boringana.ResumeLayout(false);
             this.panel_boringana.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listDrillsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

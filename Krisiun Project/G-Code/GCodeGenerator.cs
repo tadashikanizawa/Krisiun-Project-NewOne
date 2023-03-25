@@ -85,9 +85,12 @@ namespace Krisiun_Project.G_Code
                     gCode56F.Append(inicio_osp(false, false, mentori, num, true));
                     gCode46F.Append(inicio_osp(true, false, mentori, num, true));
                     gCodeokkF.Append(inicio_osp(false, true, mentori, num, true));
+                    
                     foreach (Ferramentas ferramentas1 in ferramentasList)
                     {
-                        if(omote==true)
+                        MessageBox.Show("Terceira Etapa: Nome da ferramenta" + ferramentas1.MentoriB.TipoDeCutter.Tool + "Nome do Mentori" + mentori.TipoDeCutter.Tool);
+                        
+                        if (omote==true)
                         {
                             if (ferramentas1.Mentori_F_Bool == true)
                             {
@@ -108,7 +111,7 @@ namespace Krisiun_Project.G_Code
                         {
                             if (ferramentas1.Mentori_B_Bool == true)
                             {
-                                if (ferramentas1.Mentori.TipodeCutterB == mentori.TipoDeCutter)
+                                if (ferramentas1.MentoriB.TipoDeCutter == mentori.TipoDeCutter)
                                 {
 
                                     gCode56.Append(GcodeMentori(mentori, ferramentas1, omote, ura, false, false));

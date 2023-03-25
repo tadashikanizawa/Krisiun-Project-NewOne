@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace Krisiun_Project.G_Code
 {
-    public class Mentori : Ferramentas
+    public class MentoriB : Ferramentas
     {
 
         public TiposdeMentori TipoDeCutter { get; set; }
@@ -24,7 +24,7 @@ namespace Krisiun_Project.G_Code
         public int Largura { get;set; }
 
         
-        public Mentori(Pitch_principal.Peca peca) : base(peca)
+        public MentoriB(Pitch_principal.Peca peca) : base(peca)
         {
             this.peca = peca;
         }
@@ -35,7 +35,7 @@ namespace Krisiun_Project.G_Code
                 return false;
             }
 
-            Mentori other = (Mentori)obj;
+            MentoriB other = (MentoriB)obj;
             
             return ToolName == other.ToolName && TipoDeCutter.Equals(other.TipoDeCutter);
         }

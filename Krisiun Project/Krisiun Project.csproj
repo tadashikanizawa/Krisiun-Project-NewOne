@@ -89,6 +89,7 @@
     <Compile Include="Dados Aleatorios1\Material.cs" />
     <Compile Include="Desenhos\ColorItem.cs" />
     <Compile Include="Dados Aleatorios1\TiposdeMentori.cs" />
+    <Compile Include="Ferramentas\MentoriB .cs" />
     <Compile Include="Ferramentas\Mentori.cs" />
     <Compile Include="G-Code\GCodeGenerator.cs" />
     <Compile Include="G-Code\Pastas.cs" />
@@ -199,9 +200,6 @@
     <None Include="packages.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Properties\DataSources\Krisiun_Project.G_Code.Drills.datasource" />
-    <None Include="Properties\DataSources\Krisiun_Project.G_Code.Ferramentas.datasource" />
-    <None Include="Properties\DataSources\Krisiun_Project.G_Code.Tap.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

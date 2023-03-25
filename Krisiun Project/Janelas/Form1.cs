@@ -1237,7 +1237,7 @@ namespace Krisiun_Project
         {
             var selecionado = GetSelectedObject();
             Mentori mentori = new Mentori(peca);
-            Mentori mentorib = new Mentori(peca);
+            MentoriB mentorib = new MentoriB(peca);
             TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
             TiposdeMentori selectedMentoriB = men_tras_tipo_combo.SelectedItem as TiposdeMentori;
 
@@ -1252,7 +1252,7 @@ namespace Krisiun_Project
             mentori.Index = 0;
             mentori.Frente = true;
 
-            mentorib.TipodeCutterB = selectedMentoriB;
+            mentorib.TipoDeCutter = selectedMentoriB;
             mentorib.ToolName = selectedMentoriB.Tool;
             mentorib.ToolNumber = selectedMentoriB.MenCutterToolNum;
             mentorib.Nome = selectedMentoriB.Tool;
@@ -1261,7 +1261,7 @@ namespace Krisiun_Project
             mentorib.Okuri = selectedMentoriB.Okuri;
             mentorib.Index = 1;
             mentorib.Tras = true;
-
+            MessageBox.Show("primeira etapa:" + mentorib.ToolName);
 
             selecionado.Mentori_F_Bool = men_frente_checkbox.Checked;
             selecionado.Mentori_B_Bool = men_tras_checkbox.Checked;
@@ -1300,6 +1300,7 @@ namespace Krisiun_Project
             }
             selecionado.Mentori = mentori;
             selecionado.MentoriB = mentorib;
+            MessageBox.Show("segunda etapa:" + selecionado.MentoriB.TipoDeCutter.Tool);
             //drill.Mentori.MentoriCutter = selectedMentori;
 
             if (float.TryParse(men_frente_kei_tb.Text, out float menkei))
@@ -1321,19 +1322,19 @@ namespace Krisiun_Project
             //daqui pra tras é de tras
             if(float.TryParse(men_tras_kei.Text, out float s))
             {
-                selecionado.MentoriB.MenKeiB = s;
+                selecionado.MentoriB.MenKei = s;
             }
             if(float.TryParse(men_tras_tam.Text, out float tam2))
             {
-                selecionado.MentoriB.CB = tam2;
+                selecionado.MentoriB.C = tam2;
             }
             if(float.TryParse(men_tras_dan.Text, out float dan2))
             {
-                selecionado.MentoriB.DansaB = dan2;
+                selecionado.MentoriB.Dansa = dan2;
             }
             if(float.TryParse(men_tras_z.Text, out float z2))
             {
-                selecionado.MentoriB.ZB = z2;
+                selecionado.MentoriB.Z = z2;
             }
             dataGridView3.Update();
 
