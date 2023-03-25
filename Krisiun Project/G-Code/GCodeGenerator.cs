@@ -99,6 +99,18 @@ namespace Krisiun_Project.G_Code
 
                             }
                         }
+                        if (ura == true)
+                        {
+                            if (ferramentas1.Mentori_B_Bool == true)
+                            {
+                                if (ferramentas1.Mentori.TipoDeCutter == mentori.TipoDeCutter)
+                                {
+
+                                    gCode56.Append(GcodeMentori(mentori, ferramentas1, omote, ura, false, false));
+                                }
+
+                            }
+                        }
 
                     }
                 }
