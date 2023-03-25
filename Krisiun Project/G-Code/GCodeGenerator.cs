@@ -87,9 +87,7 @@ namespace Krisiun_Project.G_Code
                     gCodeokkF.Append(inicio_osp(false, true, mentori, num, true));
                     
                     foreach (Ferramentas ferramentas1 in ferramentasList)
-                    {
-                        MessageBox.Show("Terceira Etapa: Nome da ferramenta" + ferramentas1.MentoriB.TipoDeCutter.Tool + "Nome do Mentori" + mentori.TipoDeCutter.Tool);
-                        
+                    {   
                         if (omote==true)
                         {
                             if (ferramentas1.Mentori_F_Bool == true)
@@ -107,23 +105,7 @@ namespace Krisiun_Project.G_Code
 
                             }
                         }
-                        if (ura == true)
-                        {
-                            if (ferramentas1.Mentori_B_Bool == true)
-                            {
-                                if (ferramentas1.MentoriB.TipoDeCutter == mentori.TipoDeCutter)
-                                {
-
-                                    gCode56.Append(GcodeMentori(mentori, null, ferramentas1, omote, ura, false, false));
-                                    gCode46.Append(GcodeMentori(mentori, null, ferramentas1, omote, ura, false, false));
-                                    gcodeokk.Append(GcodeMentori(mentori, null, ferramentas1, omote, ura, true, true));
-                                    gCode56F.Append(GcodeMentori(mentori, null, ferramentas1, omote, ura, false, false));
-                                    gCode46F.Append(GcodeMentori(mentori, null, ferramentas1, omote, ura, true, true));
-                                    gCodeokkF.Append(GcodeMentori(mentori,null, ferramentas1, omote, ura, true, true));
-                                }
-
-                            }
-                        }
+                        
 
                     }
                 }
@@ -136,40 +118,21 @@ namespace Krisiun_Project.G_Code
                     gCode46F.Append(inicio_osp(true, false, mentorib, num, true));
                     gCodeokkF.Append(inicio_osp(false, true, mentorib, num, true));
 
-                    foreach (Ferramentas ferramentas1 in ferramentasList)
+                    foreach (Ferramentas ferramentas2 in ferramentasList)
                     {
-                        MessageBox.Show("Terceira Etapa: Nome da ferramenta" + ferramentas1.MentoriB.TipoDeCutter.Tool + "Nome do Mentori" + mentori.TipoDeCutter.Tool);
-
-                        if (omote == true)
-                        {
-                            if (ferramentas1.Mentori_F_Bool == true)
-                            {
-                                if (ferramentas1.Mentori.TipoDeCutter == mentori.TipoDeCutter)
-                                {
-
-                                    gCode56.Append(GcodeMentori(null, mentori, ferramentas1, omote, ura, false, false));
-                                    gCode46.Append(GcodeMentori(null, mentori, ferramentas1, omote, ura, false, false));
-                                    gcodeokk.Append(GcodeMentori(null, mentori, ferramentas1, omote, ura, true, false));
-                                    gCode56F.Append(GcodeMentori(null, mentori, ferramentas1, omote, ura, false, true));
-                                    gCode46F.Append(GcodeMentori(null, mentori, ferramentas1, omote, ura, false, true));
-                                    gCodeokkF.Append(GcodeMentori(null, mentori, ferramentas1, omote, ura, true, true));
-                                }
-
-                            }
-                        }
                         if (ura == true)
                         {
-                            if (ferramentas1.Mentori_B_Bool == true)
+                            if (ferramentas2.Mentori_B_Bool == true)
                             {
-                                if (ferramentas1.MentoriB.TipoDeCutter == mentori.TipoDeCutter)
+                                if (ferramentas2.MentoriB.TipoDeCutter == mentorib.TipoDeCutter)
                                 {
 
-                                    gCode56.Append(GcodeMentori(null, mentori, ferramentas1, omote, ura, false, false));
-                                    gCode46.Append(GcodeMentori(null, mentori, ferramentas1, omote, ura, false, false));
-                                    gcodeokk.Append(GcodeMentori(null, mentori, ferramentas1, omote, ura, true, false));
-                                    gCode56F.Append(GcodeMentori(null, mentori, ferramentas1, omote, ura, false, true));
-                                    gCode46F.Append(GcodeMentori(null, mentori, ferramentas1, omote, ura, false, true));
-                                    gCodeokkF.Append(GcodeMentori(null, mentori, ferramentas1, omote, ura, true, true));
+                                    gCode56.Append(GcodeMentori(null, mentorib, ferramentas2, omote, ura, false, false));
+                                    gCode46.Append(GcodeMentori(null, mentorib, ferramentas2, omote, ura, false, false));
+                                    gcodeokk.Append(GcodeMentori(null, mentorib, ferramentas2, omote, ura, true, false));
+                                    gCode56F.Append(GcodeMentori(null, mentorib, ferramentas2, omote, ura, false, true));
+                                    gCode46F.Append(GcodeMentori(null, mentorib, ferramentas2, omote, ura, false, true));
+                                    gCodeokkF.Append(GcodeMentori(null, mentorib, ferramentas2, omote, ura, true, true));
                                 }
 
                             }
