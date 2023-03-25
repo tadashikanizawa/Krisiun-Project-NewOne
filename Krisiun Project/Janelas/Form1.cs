@@ -1203,35 +1203,43 @@ namespace Krisiun_Project
             selecionado.Mentori_B_Bool = men_tras_checkbox.Checked;
             int ativoF = ferramentas.ListTotal.Count(x => x.Mentori_F_Bool);
             bool BoolativoF = ativoF > 0;
+            int ativo1F = ferramentas.ListFrente.Count(x => x.Mentori_F_Bool);
+            bool Boolativo1F = ativo1F > 0;
             int ativoB = ferramentas.ListTotal.Count(x => x.Mentori_B_Bool);
             bool BoolativoB = ativoB > 0;
+            int ativo1B = ferramentas.ListTras.Count(x => x.Mentori_B_Bool);
+            bool Boolativo1B = ativo1B > 0;
+
+
+
+
             if (BoolativoF == true)
             {
-                if (ferramentas.ListTotal.Contains(mentori) == false){ferramentas.ListTotal.Add(mentori);}
+                if (ferramentas.ListTotal.Contains(mentori) == false) { ferramentas.ListTotal.Add(mentori); }
                 if (ferramentas.ListFrente.Contains(mentori) == false) { ferramentas.ListFrente.Add(mentori); }
-                if (ferramentas.MentoriFrente.Contains(selecionado) == false) { ferramentas.MentoriFrente.Add(selecionado); }
+               // if (ferramentas.MentoriFrente.Contains(selecionado) == false) { ferramentas.MentoriFrente.Add(selecionado); }
                 dataGridView3.Refresh();
             }
             else
             {
                 if (ferramentas.ListFrente.Contains(mentori) == true) { ferramentas.ListFrente.Remove(mentori); }
                 if (ferramentas.ListTotal.Contains(mentori) == true) { ferramentas.ListTotal.Remove(mentori); }
-                if (ferramentas.MentoriFrente.Contains(selecionado) == true) { ferramentas.MentoriFrente.Remove(selecionado); }
+               // if (ferramentas.MentoriFrente.Contains(selecionado) == true) { ferramentas.MentoriFrente.Remove(selecionado); }
                 dataGridView3.Refresh();
             }
 
             if (BoolativoB == true)
             {
-                if (ferramentas.ListTotal.Contains(mentorib) == false) { ferramentas.ListTotal.Add(mentorib); }          
-                if(ferramentas.ListTras.Contains(mentorib) == false) { ferramentas.ListTras.Add(mentorib); }
-                if(ferramentas.MentoriTras.Contains(selecionado) == false) { ferramentas.MentoriTras.Add(selecionado);}
+                if (ferramentas.ListTotal.Contains(mentorib) == false) { ferramentas.ListTotal.Add(mentorib); }
+                if (ferramentas.ListTras.Contains(mentorib) == false) { ferramentas.ListTras.Add(mentorib); }
+              //  if (ferramentas.MentoriTras.Contains(selecionado) == false) { ferramentas.MentoriTras.Add(selecionado); }
                 dataGridView3.Refresh();
             }
             else
             {
                 if (ferramentas.ListTotal.Contains(mentorib) == true) { ferramentas.ListTotal.Remove(mentorib); }
                 if (ferramentas.ListTras.Contains(mentorib) == true) { ferramentas.ListTras.Remove(mentorib); }
-                if (ferramentas.MentoriTras.Contains(selecionado) == true) { ferramentas.MentoriTras.Remove(selecionado); }
+                //if (ferramentas.MentoriTras.Contains(selecionado) == true) { ferramentas.MentoriTras.Remove(selecionado); }
                 dataGridView3.Refresh();
             }
             selecionado.Mentori = mentori;
@@ -1273,7 +1281,24 @@ namespace Krisiun_Project
             }
             dataGridView3.Update();
 
-
+            foreach(Ferramentas item in ferramentas.ListFrente)
+            {
+                if(item.Mentori_F_Bool == true)
+                {
+                    if(ferramentas.MentoriFrente.Contains(item) == false)
+                    {
+                        ferramentas.MentoriFrente.Add(item);
+                    }
+                }
+            }
+            foreach(Ferramentas item in ferramentas.ListTras)
+                if(item.Mentori_B_Bool == true)
+                {
+                    if(ferramentas.MentoriTras.Contains(item) == false)
+                    {
+                        ferramentas.MentoriTras.Add(item);
+                    }
+                }
         }
         #endregion
     }

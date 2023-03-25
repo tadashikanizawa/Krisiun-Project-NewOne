@@ -159,8 +159,8 @@ namespace Krisiun_Project.G_Code
             gCode46F.Append(final());
             gCode56F.Append(final());
             string nome = "herbocinetica";
-            if (omote == true) { nome += "frente.txt"; }
-            if (ura == true) { nome += "tras.txt"; }
+            if (omote == true) { nome += "frente.MIN"; }
+            if (ura == true) { nome += "tras.MIN"; }
             SaveStringBuilderToFile(gCode56, gCode46, gcodeokk,gCode56F,gCode46F,gCodeokkF, nome);
             return gCode56.ToString();
         }

@@ -201,6 +201,10 @@ namespace Krisiun_Project.G_Code
                         }
                         else if(objeto is Mentori )
                         {
+                            tabelaHtml.Append($"<td>{menormentori2 + "(" + menormentori + ")"}</td>");
+                        }
+                        else if (objeto is MentoriB)
+                        {
                             tabelaHtml.Append($"<td>{menormentori2B + "(" + menormentoriB + ")"}</td>");
                         }
                         else
