@@ -1167,9 +1167,9 @@ namespace Krisiun_Project
         {
 
         }
-     
 
-        
+
+
         private void MentorConfigs()
         {
             var selecionado = GetSelectedObject();
@@ -1217,14 +1217,14 @@ namespace Krisiun_Project
             {
                 if (ferramentas.ListTotal.Contains(mentori) == false) { ferramentas.ListTotal.Add(mentori); }
                 if (ferramentas.ListFrente.Contains(mentori) == false) { ferramentas.ListFrente.Add(mentori); }
-               // if (ferramentas.MentoriFrente.Contains(selecionado) == false) { ferramentas.MentoriFrente.Add(selecionado); }
+                // if (ferramentas.MentoriFrente.Contains(selecionado) == false) { ferramentas.MentoriFrente.Add(selecionado); }
                 dataGridView3.Refresh();
             }
             else
             {
                 if (ferramentas.ListFrente.Contains(mentori) == true) { ferramentas.ListFrente.Remove(mentori); }
                 if (ferramentas.ListTotal.Contains(mentori) == true) { ferramentas.ListTotal.Remove(mentori); }
-               // if (ferramentas.MentoriFrente.Contains(selecionado) == true) { ferramentas.MentoriFrente.Remove(selecionado); }
+                // if (ferramentas.MentoriFrente.Contains(selecionado) == true) { ferramentas.MentoriFrente.Remove(selecionado); }
                 dataGridView3.Refresh();
             }
 
@@ -1232,7 +1232,7 @@ namespace Krisiun_Project
             {
                 if (ferramentas.ListTotal.Contains(mentorib) == false) { ferramentas.ListTotal.Add(mentorib); }
                 if (ferramentas.ListTras.Contains(mentorib) == false) { ferramentas.ListTras.Add(mentorib); }
-              //  if (ferramentas.MentoriTras.Contains(selecionado) == false) { ferramentas.MentoriTras.Add(selecionado); }
+                //  if (ferramentas.MentoriTras.Contains(selecionado) == false) { ferramentas.MentoriTras.Add(selecionado); }
                 dataGridView3.Refresh();
             }
             else
@@ -1263,42 +1263,54 @@ namespace Krisiun_Project
                 selecionado.Mentori.Z = z;
             }
             //daqui pra tras é de tras
-            if(float.TryParse(men_tras_kei.Text, out float s))
+            if (float.TryParse(men_tras_kei.Text, out float s))
             {
                 selecionado.MentoriB.MenKei = s;
             }
-            if(float.TryParse(men_tras_tam.Text, out float tam2))
+            if (float.TryParse(men_tras_tam.Text, out float tam2))
             {
                 selecionado.MentoriB.C = tam2;
             }
-            if(float.TryParse(men_tras_dan.Text, out float dan2))
+            if (float.TryParse(men_tras_dan.Text, out float dan2))
             {
                 selecionado.MentoriB.Dansa = dan2;
             }
-            if(float.TryParse(men_tras_z.Text, out float z2))
+            if (float.TryParse(men_tras_z.Text, out float z2))
             {
                 selecionado.MentoriB.Z = z2;
             }
             dataGridView3.Update();
 
-            foreach(Ferramentas item in ferramentas.ListFrente)
+            foreach (Ferramentas item in ferramentas.ListFrente)
             {
-                if(item.Mentori_F_Bool == true)
+                if (item.Mentori_F_Bool == true)
                 {
-                    if(ferramentas.MentoriFrente.Contains(item) == false)
+                    if (ferramentas.MentoriFrente.Contains(item) == false)
                     {
                         ferramentas.MentoriFrente.Add(item);
                     }
                 }
             }
-            foreach(Ferramentas item in ferramentas.ListTras)
-                if(item.Mentori_B_Bool == true)
+            foreach (Ferramentas item in ferramentas.ListTras)
+            {
+                if (item.Mentori_B_Bool == true)
                 {
-                    if(ferramentas.MentoriTras.Contains(item) == false)
+                    if (ferramentas.MentoriTras.Contains(item) == false)
                     {
                         ferramentas.MentoriTras.Add(item);
                     }
-                }
+                }   
+            }
+            foreach (Ferramentas item in ferramentas.MentoriFrente)
+            {
+                if(item.Mentori_F_Bool != true)
+                { ferramentas.MentoriFrente.Remove(item);  }
+            }
+            foreach (Ferramentas item in ferramentas.MentoriTras)
+            {
+                if(item.Mentori_B_Bool != true)
+                { ferramentas.MentoriTras.Remove(item);  }
+            }
         }
         #endregion
     }
