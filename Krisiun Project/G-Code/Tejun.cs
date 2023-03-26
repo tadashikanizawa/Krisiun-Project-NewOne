@@ -234,34 +234,7 @@ namespace Krisiun_Project.G_Code
             }
         }
 
-        //public void teste()
-        //{
-        //    //string html = "<!DOCTYPE html>";
-        //    //html += "<html>";
-        //    //html += "<head>";
-        //    //html += "<meta charset=\"UTF-8\">";
-        //    //html += "<title>" + peca.hinmei + " - " + peca.zuban + "</title>";
-        //    //html += "<style type=\"text/css\">";
-        //    string html = "";
-        //    string nomeArquivo = "Untitled-5";
-        //    string pastadosoft = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
-        //    string caminhoCompleto = Path.Combine(pastadosoft, nomeArquivo);
-
-        //    if (File.Exists(caminhoCompleto))
-        //    {
-        //         html = File.ReadAllText(caminhoCompleto);
-        //        // Use a string html como desejar
-        //    }
-        //    string pasta = pastas.CaminhoRaiz; 
-        //    string nomeArquivo1 = "teste4.html";
-
-        //    string caminhoCompleto1 = Path.Combine(pasta, nomeArquivo1);
-        //    using (StreamWriter sw = File.CreateText(caminhoCompleto1))
-        //    {
-        //        sw.Write(html); // html é uma string contendo o conteúdo HTML que você quer salvar
-        //    }
-
-        //}
+  
     }
 
 

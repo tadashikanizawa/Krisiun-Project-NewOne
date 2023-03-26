@@ -166,13 +166,7 @@ namespace Krisiun_Project
 
                 g.DrawRectangle(pen1, basex - ret_x, y2, retangulo.Width, retangulo.Height);
                 g.DrawString(b, font, brush, basex - ret_x + 2, y2 + 2); //B de cima.
-                string debugx = "X" + basex.ToString();
-                string debugy = "Y" + basey.ToString();
-                string wololo = "TESTE: " + t.x;
-
-                g.DrawString(debugx, font, brush, 10, 30);
-                g.DrawString(debugy, font, brush, 10, 40);
-                g.DrawString(wololo, font, brush, 10, 50);
+              
 
 
 
@@ -252,12 +246,7 @@ namespace Krisiun_Project
                 PointF ponto7 = new PointF(x1 + linhaextra, y1 - valor_de_y2_alt); // canto inferior direito (y pra baixo)
 
 
-                g.DrawString("X1: " + x1.ToString(), font, brush, 10, 60);
-                g.DrawString("X2: " + x2.ToString(), font, brush, 10, 70);
-                g.DrawString("Y1: " + y1.ToString(), font, brush, 10, 80);
-                g.DrawString("Y2: " + y2.ToString(), font, brush, 10, 90);
-                g.DrawString("tamanhox:" + valor_de_x1_cum.ToString(), font, brush, 10, 100);
-                g.DrawString("tamanholarg:" + valor_de_x1_alt.ToString(), font, brush, 10, 110);
+         
                 if (xxx == false)
                 {
                     g.DrawString(valor_de_x1, font, brush, ponto4);
