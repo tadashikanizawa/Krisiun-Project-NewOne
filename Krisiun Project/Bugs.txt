@@ -1,0 +1,1 @@
+﻿- Textbox do kei mentori (frente e verso) copiam o kei do Drill no momento que o kei é selecionado. 

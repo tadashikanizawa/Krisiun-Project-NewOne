@@ -257,6 +257,9 @@
     <Content Include="Cabeca.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Bugs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Diario.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
