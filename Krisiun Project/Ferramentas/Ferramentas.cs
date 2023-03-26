@@ -194,7 +194,6 @@ namespace Krisiun_Project.G_Code
         
             
                 prog.Numeros++;
-                MessageBox.Show("essa bosta não funciona:" + tool.CoordenadasList.Count.ToString());
 
             }
 

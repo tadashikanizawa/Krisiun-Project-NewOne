@@ -1,4 +1,5 @@
 ﻿using Krisiun_Project.Dados_aleatorios;
+using Krisiun_Project.Dados_Aleatorios1;
 using Krisiun_Project.Desenhos;
 using Krisiun_Project.G_Code;
 using Krisiun_Project.janela_principal;
@@ -60,7 +61,7 @@ namespace Krisiun_Project
         public BindingSource bindingSource2 = new BindingSource();
         public BindingSource bindingSource3 = new BindingSource();
         public BindingSource bindingSource4 = new BindingSource();
-
+        public List<Kougu> ListadeKougu;
 
         public Form1()
         {
@@ -91,7 +92,7 @@ namespace Krisiun_Project
             this.form3 = new Form3(peca, this, meio, shin, bugs, bools);
             this.form5 = new Form5(ferramentas, peca, this, pastas, gCodeGenerator);
             this.nsb = new NSB();
-            var nSB = NSBLoader.Load();
+        
 
             bindingSource4.DataSource = null;
 
@@ -126,6 +127,8 @@ namespace Krisiun_Project
             addcore();
             LoadDrills();
             LoadMentori();
+           // LoadKouguList();
+           ListadeKougu = Kougu.LoadKouguList();
             List<TiposdeMentori> ListadeMentoris1 = TiposdeMentori.LoadMentoriCuter();
             //  bindingSource3.DataSource = tiposdeMentoris;
             dataGridView4.DataSource = ListadeMentoris1;
@@ -196,6 +199,11 @@ namespace Krisiun_Project
             drill_combobox.DisplayMember = "Name";
             drill_combobox.ValueMember = "Name";
         }
+        public void LoadKouguList()
+        {
+            List<Kougu> listadeKoubu = Kougu.LoadKouguList();
+
+        }
         private void add_tb_naLista()
         {
             TextBoxes.Add(Num_pro_textbox); //[0]
@@ -251,7 +259,7 @@ namespace Krisiun_Project
             bitmap.Save(Path.Combine(dir, ar), System.Drawing.Imaging.ImageFormat.Jpeg);
         }
 
-
+     
 
 
         private void button2_Click(object sender, EventArgs e)
@@ -786,43 +794,19 @@ namespace Krisiun_Project
         {
             men_frente_kei_tb.Text = drill_kei_tb.Text;
             men_tras_kei.Text = drill_kei_tb.Text;
-            string filePath = "";
-            string file = "kougu.csv";
-            filePath = AppDomain.CurrentDomain.BaseDirectory;
-            bool valueFound = false;
 
-
-            // obtém o valor selecionado na ComboBox
-            string selectedValue = drill_kei_tb.Text;
-
-            // abre o arquivo CSV novamente
-            using (StreamReader reader = new StreamReader(Path.Combine(filePath, file)))
-            {
-                while (!reader.EndOfStream)
-                {
-                    string line = reader.ReadLine();
-                    string[] values = line.Split(',');
-
-                    // verifica se o valor da primeira coluna é igual ao valor selecionado na ComboBox
-                    if (values[0] == selectedValue)
-                    {
-                        tool_tb.Text = values[2];
-
-                        drill_combobox.Text = values[1];
-                        valueFound = true;
-                        // atribui o valor da segunda coluna à TextBox
-                        break; // para o loop
-                    }
-                }
-                if (!valueFound)
-                {
-                    tool_tb.Text = toolnum.contador();
-                }
-
-
-                // Aqui você pode acessar o objeto drills e suas propriedades
-
+            float kei = 0;
+            float.TryParse(drill_kei_tb.Text, out kei);
+            Kougu numero = ListadeKougu.Find(x => x.DrillKei == kei);
+            if(numero != null)
+            { 
+            tool_tb.Text = numero.DrillNumber.ToString();
             }
+            else
+            {
+                tool_tb.Text = toolnum.contador();
+            }
+
 
         }
 
@@ -1110,13 +1094,6 @@ namespace Krisiun_Project
             form3.ShowDialog();
         }
         #endregion
-
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            form5.ShowDialog();
-        }
-
         #region Sobre Mentori
         private void button11_Click(object sender, EventArgs e)
         {
@@ -1153,6 +1130,7 @@ namespace Krisiun_Project
             }
         }
         public float tamcutter;
+        public float tamcutter2;
         private void men_frente_tipo_combo_SelectedIndexChanged(object sender, EventArgs e)
         {
             TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
@@ -1164,6 +1142,7 @@ namespace Krisiun_Project
                 tamcutter = selectedMentori.Profundidade;
             }
         }
+
 
         private void men_frente_checkbox_CheckedChanged(object sender, EventArgs e)
         {
@@ -1301,20 +1280,41 @@ namespace Krisiun_Project
                     {
                         ferramentas.MentoriTras.Add(item);
                     }
-                }   
+                }
             }
             foreach (Ferramentas item in ferramentas.MentoriFrente)
             {
-                if(item.Mentori_F_Bool != true)
-                { ferramentas.MentoriFrente.Remove(item);  }
+                if (item.Mentori_F_Bool != true)
+                { ferramentas.MentoriFrente.Remove(item); }
             }
             foreach (Ferramentas item in ferramentas.MentoriTras)
             {
-                if(item.Mentori_B_Bool != true)
-                { ferramentas.MentoriTras.Remove(item);  }
+                if (item.Mentori_B_Bool != true)
+                { ferramentas.MentoriTras.Remove(item); }
+            }
+
+        }
+        private void men_tras_tipo_combo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TiposdeMentori selectedMentori = men_tras_tipo_combo.SelectedItem as TiposdeMentori;
+
+            // Verificar se o objeto selecionado não é nulo
+            if (selectedMentori != null)
+            {
+                // Atualize a TextBox com o valor da propriedade
+                tamcutter2 = selectedMentori.Profundidade;
             }
         }
         #endregion
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            form5.ShowDialog();
+        }
+
+  
+
+
     }
 
 

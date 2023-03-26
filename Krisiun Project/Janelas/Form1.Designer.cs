@@ -97,9 +97,13 @@
             this.label26 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.listFrenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel_yoko = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Delete2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.nomeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.ToolName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -141,10 +145,6 @@
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ferramentasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.Delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.nomeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_inverso.SuspendLayout();
             this.panel_lado.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -581,6 +581,7 @@
             this.men_tras_tipo_combo.Size = new System.Drawing.Size(96, 20);
             this.men_tras_tipo_combo.TabIndex = 68;
             this.men_tras_tipo_combo.Text = "VC-2C(φ10)";
+            this.men_tras_tipo_combo.SelectedIndexChanged += new System.EventHandler(this.men_tras_tipo_combo_SelectedIndexChanged);
             // 
             // men_tras_dan
             // 
@@ -894,6 +895,25 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
+            // Delete1
+            // 
+            this.Delete1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delete1.HeaderText = "削除";
+            this.Delete1.MinimumWidth = 8;
+            this.Delete1.Name = "Delete1";
+            this.Delete1.ReadOnly = true;
+            this.Delete1.Text = "削除";
+            this.Delete1.Width = 35;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 150;
+            // 
             // listFrenteBindingSource
             // 
             this.listFrenteBindingSource.DataMember = "ListFrente";
@@ -930,6 +950,24 @@
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
+            // 
+            // Delete2
+            // 
+            this.Delete2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Delete2.HeaderText = "削除";
+            this.Delete2.MinimumWidth = 8;
+            this.Delete2.Name = "Delete2";
+            this.Delete2.ReadOnly = true;
+            this.Delete2.Width = 35;
+            // 
+            // nomeDataGridViewTextBoxColumn1
+            // 
+            this.nomeDataGridViewTextBoxColumn1.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn1.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.nomeDataGridViewTextBoxColumn1.Name = "nomeDataGridViewTextBoxColumn1";
+            this.nomeDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn1.Width = 150;
             // 
             // dataGridView3
             // 
@@ -1287,50 +1325,13 @@
             this.dataGridViewTextBoxColumn19.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             // 
-            // Delete1
-            // 
-            this.Delete1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Delete1.HeaderText = "削除";
-            this.Delete1.MinimumWidth = 8;
-            this.Delete1.Name = "Delete1";
-            this.Delete1.ReadOnly = true;
-            this.Delete1.Text = "削除";
-            this.Delete1.Width = 35;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // Delete2
-            // 
-            this.Delete2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Delete2.HeaderText = "削除";
-            this.Delete2.MinimumWidth = 8;
-            this.Delete2.Name = "Delete2";
-            this.Delete2.ReadOnly = true;
-            this.Delete2.Width = 35;
-            // 
-            // nomeDataGridViewTextBoxColumn1
-            // 
-            this.nomeDataGridViewTextBoxColumn1.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn1.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.nomeDataGridViewTextBoxColumn1.Name = "nomeDataGridViewTextBoxColumn1";
-            this.nomeDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn1.Width = 150;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(2017, 854);
+            this.ClientSize = new System.Drawing.Size(2034, 854);
             this.Controls.Add(this.panel_yoko);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
