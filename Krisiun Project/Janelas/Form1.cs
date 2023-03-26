@@ -103,10 +103,13 @@ namespace Krisiun_Project
             //tamanhopainel(panel_XY);
             bindingSource.DataSource = ferramentas.ListFrente;
             dataGridView1.DataSource = bindingSource;
+
             bindingSource1.DataSource = ferramentas.ListTras;
             dataGridView2.DataSource = bindingSource1;
+
             bindingSource2.DataSource = ferramentas.ListTotal;
             dataGridView3.DataSource = bindingSource2;
+
 
             gruposCoordenadasBindingSource.DataSource = gruposCoordenadas;
 
@@ -244,7 +247,8 @@ namespace Krisiun_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ferramentas.addtoolnumberK();
+            NSBForm formnsb = new NSBForm();
+            formnsb.Show();
         }
         public void SavePictureBoxAsJPG(Panel pb, String strg)
         {
@@ -908,6 +912,8 @@ namespace Krisiun_Project
 
         private void button6_Click(object sender, EventArgs e)
         {
+            KouguForm kouguForm = new KouguForm();
+            kouguForm.ShowDialog();
         }
 
 
@@ -1310,9 +1316,11 @@ namespace Krisiun_Project
             form5.ShowDialog();
         }
 
-  
-
-
+        private void button13_Click(object sender, EventArgs e)
+        {
+            MaterialForm materialForm = new MaterialForm();
+            materialForm.ShowDialog();
+        }
     }
 
 

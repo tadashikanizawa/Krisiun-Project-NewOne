@@ -46,7 +46,7 @@ namespace Krisiun_Project.Dados_Aleatorios1
             using (StreamReader reader = new StreamReader(filePath))
             {
                 // Pule o cabeçalho, se houver
-                // reader.ReadLine();
+                 reader.ReadLine();
 
                 string line;
                 while ((line = reader.ReadLine()) != null)

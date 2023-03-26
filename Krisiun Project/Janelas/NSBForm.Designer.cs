@@ -1,6 +1,6 @@
 ﻿namespace Krisiun_Project.Janelas
 {
-    partial class MentoriForm
+    partial class NSBForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,33 +36,33 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(57, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(668, 298);
+            this.dataGridView1.Size = new System.Drawing.Size(305, 329);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(524, 357);
+            this.button1.Location = new System.Drawing.Point(183, 356);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(201, 70);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
+            this.button1.Size = new System.Drawing.Size(134, 67);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // MentoriForm
+            // NSBForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1055, 450);
+            this.ClientSize = new System.Drawing.Size(332, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "MentoriForm";
-            this.Text = "MentoriForm";
-            this.Load += new System.EventHandler(this.MentoriForm_Load);
+            this.Name = "NSBForm";
+            this.Text = "NSBForm";
+            this.Load += new System.EventHandler(this.NSBForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

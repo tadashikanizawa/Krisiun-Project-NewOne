@@ -52,7 +52,6 @@
             this.panel_Code = new System.Windows.Forms.Panel();
             this.Add_Coor = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.listDrillsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.ferramentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvCoordenadas = new System.Windows.Forms.DataGridView();
             this.button9 = new System.Windows.Forms.Button();
@@ -99,11 +98,18 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listFrenteBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.ferramentasBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.listFrenteBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.listFrenteBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.listFrenteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ferramentasBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.listFrenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel_yoko = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Delete2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.nomeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listTrasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.ToolName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -115,6 +121,7 @@
             this.trasDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.mentoriFBoolDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.mentoriBBoolDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.listTotalBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.listTotalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -132,7 +139,6 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtY = new System.Windows.Forms.TextBox();
             this.txtX = new System.Windows.Forms.TextBox();
-            this.listDrillsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button10 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -145,12 +151,13 @@
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ferramentasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.listFrenteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.button13 = new System.Windows.Forms.Button();
             this.panel_inverso.SuspendLayout();
             this.panel_lado.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_Code.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listDrillsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCoordenadas)).BeginInit();
             this.panel_ana.SuspendLayout();
@@ -158,12 +165,20 @@
             this.panel_men_frente.SuspendLayout();
             this.panel_boringana.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listTrasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listDrillsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_inverso
@@ -314,11 +329,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(131, 811);
+            this.button1.Location = new System.Drawing.Point(23, 675);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(114, 49);
             this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
+            this.button1.Text = "NSBリスト管理";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -416,11 +431,6 @@
             this.dataGridView4.RowTemplate.Height = 21;
             this.dataGridView4.Size = new System.Drawing.Size(674, 172);
             this.dataGridView4.TabIndex = 36;
-            // 
-            // listDrillsBindingSource1
-            // 
-            this.listDrillsBindingSource1.DataMember = "ListDrills";
-            this.listDrillsBindingSource1.DataSource = this.ferramentasBindingSource;
             // 
             // dgvCoordenadas
             // 
@@ -881,7 +891,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Delete1,
             this.nomeDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.listFrenteBindingSource;
+            this.dataGridView1.DataSource = this.listFrenteBindingSource5;
             this.dataGridView1.Location = new System.Drawing.Point(15, 380);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -889,7 +899,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(122, 162);
+            this.dataGridView1.Size = new System.Drawing.Size(177, 162);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -909,10 +919,36 @@
             // 
             this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
             this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
             this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // listFrenteBindingSource5
+            // 
+            this.listFrenteBindingSource5.DataMember = "ListFrente";
+            this.listFrenteBindingSource5.DataSource = this.ferramentasBindingSource3;
+            // 
+            // ferramentasBindingSource3
+            // 
+            this.ferramentasBindingSource3.DataSource = typeof(Krisiun_Project.G_Code.Ferramentas);
+            // 
+            // listFrenteBindingSource4
+            // 
+            this.listFrenteBindingSource4.DataMember = "ListFrente";
+            this.listFrenteBindingSource4.DataSource = this.listFrenteBindingSource3;
+            // 
+            // listFrenteBindingSource3
+            // 
+            this.listFrenteBindingSource3.DataMember = "ListFrente";
+            this.listFrenteBindingSource3.DataSource = this.listFrenteBindingSource1;
+            // 
+            // listFrenteBindingSource1
+            // 
+            this.listFrenteBindingSource1.DataMember = "ListFrente";
+            this.listFrenteBindingSource1.DataSource = this.ferramentasBindingSource2;
+            // 
+            // ferramentasBindingSource2
+            // 
+            this.ferramentasBindingSource2.DataSource = typeof(Krisiun_Project.G_Code.Ferramentas);
             // 
             // listFrenteBindingSource
             // 
@@ -937,15 +973,15 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Delete2,
-            this.nomeDataGridViewTextBoxColumn1});
-            this.dataGridView2.DataSource = this.ferramentasBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(185, 380);
+            this.nomeDataGridViewTextBoxColumn2});
+            this.dataGridView2.DataSource = this.listTrasBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(241, 380);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 21;
-            this.dataGridView2.Size = new System.Drawing.Size(118, 162);
+            this.dataGridView2.Size = new System.Drawing.Size(158, 162);
             this.dataGridView2.TabIndex = 28;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
@@ -960,14 +996,17 @@
             this.Delete2.ReadOnly = true;
             this.Delete2.Width = 35;
             // 
-            // nomeDataGridViewTextBoxColumn1
+            // nomeDataGridViewTextBoxColumn2
             // 
-            this.nomeDataGridViewTextBoxColumn1.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn1.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.nomeDataGridViewTextBoxColumn1.Name = "nomeDataGridViewTextBoxColumn1";
-            this.nomeDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn1.Width = 150;
+            this.nomeDataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn2.Name = "nomeDataGridViewTextBoxColumn2";
+            this.nomeDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // listTrasBindingSource
+            // 
+            this.listTrasBindingSource.DataMember = "ListTras";
+            this.listTrasBindingSource.DataSource = this.ferramentasBindingSource2;
             // 
             // dataGridView3
             // 
@@ -987,7 +1026,7 @@
             this.trasDataGridViewCheckBoxColumn1,
             this.mentoriFBoolDataGridViewCheckBoxColumn,
             this.mentoriBBoolDataGridViewCheckBoxColumn});
-            this.dataGridView3.DataSource = this.listTotalBindingSource;
+            this.dataGridView3.DataSource = this.listTotalBindingSource1;
             this.dataGridView3.Location = new System.Drawing.Point(5, 27);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView3.Name = "dataGridView3";
@@ -1080,6 +1119,11 @@
             this.mentoriBBoolDataGridViewCheckBoxColumn.Name = "mentoriBBoolDataGridViewCheckBoxColumn";
             this.mentoriBBoolDataGridViewCheckBoxColumn.Width = 67;
             // 
+            // listTotalBindingSource1
+            // 
+            this.listTotalBindingSource1.DataMember = "ListTotal";
+            this.listTotalBindingSource1.DataSource = this.ferramentasBindingSource2;
+            // 
             // listTotalBindingSource
             // 
             this.listTotalBindingSource.DataMember = "ListTotal";
@@ -1109,9 +1153,9 @@
             // 
             this.button6.Location = new System.Drawing.Point(22, 784);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(103, 49);
+            this.button6.Size = new System.Drawing.Size(115, 49);
             this.button6.TabIndex = 34;
-            this.button6.Text = "メイン";
+            this.button6.Text = "固定工具管理";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -1325,13 +1369,29 @@
             this.dataGridViewTextBoxColumn19.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             // 
+            // listFrenteBindingSource2
+            // 
+            this.listFrenteBindingSource2.DataMember = "ListFrente";
+            this.listFrenteBindingSource2.DataSource = this.listFrenteBindingSource1;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(23, 620);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(114, 49);
+            this.button13.TabIndex = 97;
+            this.button13.Text = "材料リスト管理";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(2034, 854);
+            this.ClientSize = new System.Drawing.Size(2102, 854);
+            this.Controls.Add(this.button13);
             this.Controls.Add(this.panel_yoko);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -1372,7 +1432,6 @@
             this.panel1.PerformLayout();
             this.panel_Code.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listDrillsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCoordenadas)).EndInit();
             this.panel_ana.ResumeLayout(false);
@@ -1383,13 +1442,7 @@
             this.panel_men_frente.PerformLayout();
             this.panel_boringana.ResumeLayout(false);
             this.panel_boringana.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listDrillsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).EndInit();
+     
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1449,7 +1502,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.BindingSource ferramentasBindingSource1;
-        private System.Windows.Forms.BindingSource listDrillsBindingSource;
         private System.Windows.Forms.Panel panel_men_frente;
         private System.Windows.Forms.Panel panel_men_tras;
         private System.Windows.Forms.TextBox men_tras_z;
@@ -1473,7 +1525,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn toolCumpDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource listDrillsBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
@@ -1509,10 +1560,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource ferramentasBindingSource2;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.BindingSource listTrasBindingSource;
+        private System.Windows.Forms.BindingSource listFrenteBindingSource1;
+        private System.Windows.Forms.BindingSource listTotalBindingSource1;
+        private System.Windows.Forms.BindingSource listFrenteBindingSource4;
+        private System.Windows.Forms.BindingSource listFrenteBindingSource3;
+        private System.Windows.Forms.BindingSource listFrenteBindingSource2;
+        private System.Windows.Forms.BindingSource listFrenteBindingSource5;
+        private System.Windows.Forms.BindingSource ferramentasBindingSource3;
         private System.Windows.Forms.DataGridViewButtonColumn Delete1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Button button13;
     }
 }
 

@@ -162,11 +162,29 @@
     <Compile Include="Janelas\Form6.Designer.cs">
       <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Janelas\KouguForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Janelas\KouguForm.Designer.cs">
+      <DependentUpon>KouguForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Janelas\MaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Janelas\MaterialForm.Designer.cs">
+      <DependentUpon>MaterialForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Janelas\MentoriForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Janelas\MentoriForm.Designer.cs">
       <DependentUpon>MentoriForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Janelas\NSBForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Janelas\NSBForm.Designer.cs">
+      <DependentUpon>NSBForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Numeros\Bools.cs" />
     <Compile Include="Numeros\Listas.cs" />
@@ -207,8 +225,17 @@
     <EmbeddedResource Include="Janelas\Form6.resx">
       <DependentUpon>Form6.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Janelas\KouguForm.resx">
+      <DependentUpon>KouguForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Janelas\MaterialForm.resx">
+      <DependentUpon>MaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Janelas\MentoriForm.resx">
       <DependentUpon>MentoriForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Janelas\NSBForm.resx">
+      <DependentUpon>NSBForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -240,6 +267,7 @@
     <None Include="packages.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Properties\DataSources\Krisiun_Project.G_Code.Ferramentas.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
