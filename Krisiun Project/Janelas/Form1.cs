@@ -919,10 +919,8 @@ namespace Krisiun_Project
         #region Coordenadas
         private void button7_Click(object sender, EventArgs e)
         {
-            int rowIndex = dataGridView3.SelectedCells[0].RowIndex;
-            Drills drills = dataGridView3.Rows[rowIndex].DataBoundItem as Drills;
-
-            ExibirCoordenadas(drills);
+            MentoriForm mentoriForm = new MentoriForm();
+            mentoriForm.ShowDialog();
         }
 
 

@@ -59,7 +59,7 @@ namespace Krisiun_Project
             using (StreamReader reader = new StreamReader(filePath))
             {
                 // Pule o cabeçalho, se houver
-                // reader.ReadLine();
+                reader.ReadLine();
 
                 string line;
                 while ((line = reader.ReadLine()) != null)

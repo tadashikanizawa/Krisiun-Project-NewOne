@@ -453,12 +453,12 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(733, 270);
+            this.button7.Location = new System.Drawing.Point(23, 729);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(74, 49);
+            this.button7.Size = new System.Drawing.Size(114, 49);
             this.button7.TabIndex = 37;
-            this.button7.Text = "button7";
+            this.button7.Text = "面取りリスト管理";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -1373,6 +1373,7 @@
             this.panel_Code.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listDrillsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCoordenadas)).EndInit();
             this.panel_ana.ResumeLayout(false);
             this.panel_ana.PerformLayout();
