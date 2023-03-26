@@ -127,7 +127,94 @@ namespace Krisiun_Project.G_Code
 
         #region adicionador velho
     
-        public void addferramenta1(Tipo_de_Corte tipo_De_Corte, DataGridView dgvCoordenadas)
+        public void addferramenta1(Tipo_de_Corte tipo_De_Corte, DataGridView dgvCoordenadas, bool useAngleDgv, DataGridView dgvAngulos, TextBox tbRaio, TextBox tbPontoCentral)
+        {
+
+            if (tipo_De_Corte == Tipo_de_Corte.ボーリング孔)
+            { //tool.Nome = tipo_De_Corte.ToString() + "φ" + tool.kei.ToString(); }
+                Drills tool = new Drills(peca);
+                tool.Index = prog.Numeros;
+                tool.Tipo = tipo_De_Corte;
+                tool.Kei = 1;
+                tool.Color = Color.LightGray;
+                tool.Description = "É nóis";
+                ListDrills.Add(tool);
+                tool.CoordenadasList = new List<PointF>();
+                if (useAngleDgv)
+                {
+                    float raio;
+                    PointF pontoCentral;
+
+                    if (float.TryParse(tbRaio.Text, out raio) && TryParsePointF(tbPontoCentral.Text, out pontoCentral))
+
+                    {
+                        foreach (DataGridViewRow row in dgvAngulos.Rows)
+                        {
+                            float angulo;
+                            if (row.Cells[0].Value != null && float.TryParse(row.Cells[0].Value.ToString(), out angulo))
+                            {
+                                float radianos = (float)(Math.PI / 180.0) * angulo;
+                                float x = pontoCentral.X + raio * (float)Math.Cos(radianos);
+                                float y = pontoCentral.Y + raio * (float)Math.Sin(radianos);
+                                PointF coordenadas = new PointF(x, y);
+                                tool.CoordenadasList.Add(coordenadas);
+                            }
+                        }
+                    }
+                }
+
+                // Preenche a lista de coordenadas do objeto com os valores das células do DataGridView
+                foreach (DataGridViewRow row in dgvCoordenadas.Rows)
+                {
+                    float x, y;
+                    if (row.Cells[0].Value != null && row.Cells[1].Value != null && float.TryParse(row.Cells[0].Value.ToString(), out x) && float.TryParse(row.Cells[1].Value.ToString(), out y))
+                    {
+                        PointF coordenadas = new PointF(x, y);
+                        tool.CoordenadasList.Add(coordenadas);
+                    }
+                }
+
+
+                ListTotal.Add(tool);
+                // Verifica se a nova ferramenta deve ser adicionada à lista ListFrente
+                if (tool.Frente && !ListFrente.Contains(tool))
+                {
+                    ListFrente.Add(tool);
+                }
+                // Verifica se a nova ferramenta deve ser adicionada à lista ListTras
+                if (tool.Tras && !ListTras.Contains(tool))
+                {
+                    ListTras.Add(tool);
+                }
+        
+            
+                prog.Numeros++;
+
+            }
+
+        }
+        private bool TryParsePointF(string input, out PointF point)
+        {
+            point = new PointF();
+            var parts = input.Split(',');
+
+            if (parts.Length != 2)
+            {
+                return false;
+            }
+
+            float x, y;
+
+            if (float.TryParse(parts[0], out x) && float.TryParse(parts[1], out y))
+            {
+                point = new PointF(x, y);
+                return true;
+            }
+
+            return false;
+        }
+
+        public void addferramenta2(Tipo_de_Corte tipo_De_Corte, DataGridView dgvCoordenadas)
         {
 
             if (tipo_De_Corte == Tipo_de_Corte.ボーリング孔)
@@ -164,14 +251,13 @@ namespace Krisiun_Project.G_Code
                 {
                     ListTras.Add(tool);
                 }
-        
-            
+
+
                 prog.Numeros++;
 
             }
 
         }
-
         #endregion
 
 
