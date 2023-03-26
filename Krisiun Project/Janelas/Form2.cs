@@ -28,12 +28,23 @@ namespace Krisiun_Project.janela_principal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.Rows.Count == 1)
-            {
-                MessageBox.Show("Nenhuma ferramenta foi adicionada");
-                return;
+            if(!angulo)
+            { 
+                 if(dataGridView1.Rows.Count == 1)
+                  {
+                      MessageBox.Show("Nenhuma ferramenta foi adicionada");
+                      return;
+                   }
             }
-            tools.addferramenta1((Tipo_de_Corte)comboBox1.SelectedItem, dataGridView1);
+            if(angulo)
+            {
+                if(dataGridView2.Rows.Count == 1 && textBox1.Text == null)
+                {
+                    MessageBox.Show("Nenhuma ferramenta foi adicionada");
+                    return;
+                }
+            }
+            tools.addferramenta1((Tipo_de_Corte)comboBox1.SelectedItem, dataGridView1, angulo, dataGridView2, textBox1, textBox2, textBox3);
 
             this.Close();
 
@@ -57,5 +68,22 @@ namespace Krisiun_Project.janela_principal
         {
             dataGridView1.Rows.Clear();
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            panel1.BringToFront();
+            if(radioButton1.Checked ) { angulo = false; }
+            else { angulo = true; }
+
+        }
+        public bool angulo = false;
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            panel2.BringToFront();
+       if(radioButton2.Checked ) { angulo = true; }
+            else { angulo = false; }
+        }
+        
     }
 }

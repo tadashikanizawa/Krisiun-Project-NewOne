@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Linq;
 using System;
+using Krisiun_Project.Numeros;
 
 namespace Krisiun_Project.G_Code
 {
@@ -127,7 +128,7 @@ namespace Krisiun_Project.G_Code
 
         #region adicionador velho
     
-        public void addferramenta1(Tipo_de_Corte tipo_De_Corte, DataGridView dgvCoordenadas, bool useAngleDgv, DataGridView dgvAngulos, TextBox tbRaio, TextBox tbPontoCentral)
+        public void addferramenta1(Tipo_de_Corte tipo_De_Corte, DataGridView dgvCoordenadas, bool useAngleDgv, DataGridView dgvAngulos, TextBox tbRaio, TextBox tbPontoCentral, TextBox tbPontoCentralY)
         {
 
             if (tipo_De_Corte == Tipo_de_Corte.ボーリング孔)
@@ -144,8 +145,10 @@ namespace Krisiun_Project.G_Code
                 {
                     float raio;
                     PointF pontoCentral;
+                    float pontoCentralX;
+                    float pontoCentralY;
 
-                    if (float.TryParse(tbRaio.Text, out raio) && TryParsePointF(tbPontoCentral.Text, out pontoCentral))
+                    if (float.TryParse(tbRaio.Text, out raio) && float.TryParse(tbPontoCentral.Text, out pontoCentralX) && float.TryParse(tbPontoCentralY.Text, out pontoCentralY))
 
                     {
                         foreach (DataGridViewRow row in dgvAngulos.Rows)
@@ -154,15 +157,15 @@ namespace Krisiun_Project.G_Code
                             if (row.Cells[0].Value != null && float.TryParse(row.Cells[0].Value.ToString(), out angulo))
                             {
                                 float radianos = (float)(Math.PI / 180.0) * angulo;
-                                float x = pontoCentral.X + raio * (float)Math.Cos(radianos);
-                                float y = pontoCentral.Y + raio * (float)Math.Sin(radianos);
+                                float x = pontoCentralX + raio * (float)Math.Cos(radianos);
+                                float y = pontoCentralY + raio * (float)Math.Sin(radianos);
                                 PointF coordenadas = new PointF(x, y);
                                 tool.CoordenadasList.Add(coordenadas);
                             }
                         }
                     }
                 }
-
+                else { 
                 // Preenche a lista de coordenadas do objeto com os valores das células do DataGridView
                 foreach (DataGridViewRow row in dgvCoordenadas.Rows)
                 {
@@ -174,7 +177,7 @@ namespace Krisiun_Project.G_Code
                     }
                 }
 
-
+                }
                 ListTotal.Add(tool);
                 // Verifica se a nova ferramenta deve ser adicionada à lista ListFrente
                 if (tool.Frente && !ListFrente.Contains(tool))
@@ -189,8 +192,10 @@ namespace Krisiun_Project.G_Code
         
             
                 prog.Numeros++;
+                MessageBox.Show("essa bosta não funciona:" + tool.CoordenadasList.Count.ToString());
 
             }
+
 
         }
         private bool TryParsePointF(string input, out PointF point)
