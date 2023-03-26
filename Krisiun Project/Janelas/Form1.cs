@@ -785,6 +785,7 @@ namespace Krisiun_Project
         private void drill_kei_tb_TextChanged(object sender, EventArgs e)
         {
             men_frente_kei_tb.Text = drill_kei_tb.Text;
+            men_tras_kei.Text = drill_kei_tb.Text;
             string filePath = "";
             string file = "kougu.csv";
             filePath = AppDomain.CurrentDomain.BaseDirectory;
@@ -1115,6 +1116,7 @@ namespace Krisiun_Project
         {
             form5.ShowDialog();
         }
+
         #region Sobre Mentori
         private void button11_Click(object sender, EventArgs e)
         {

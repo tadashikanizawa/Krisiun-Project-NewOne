@@ -438,7 +438,6 @@ namespace Krisiun_Project.G_Code
         {
             StringBuilder gCode = new StringBuilder();
             int kaiten = mentori.Kaiten;
-            MessageBox.Show("Ultima etapa:" +kaiten.ToString());
             int okuri = mentori.Okuri;
             float z = ferramenta.Mentori.Z;
             if (z < 0)

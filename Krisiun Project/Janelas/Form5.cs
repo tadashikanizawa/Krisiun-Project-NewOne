@@ -180,7 +180,6 @@ namespace Krisiun_Project.Janelas
 
             }
             int contagem = ferramentas.MentoriTras.Count;
-            MessageBox.Show("Contagem:" + contagem.ToString());
 
         }
     }
