@@ -1372,7 +1372,6 @@
             this.panel_Code.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listDrillsBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCoordenadas)).EndInit();
             this.panel_ana.ResumeLayout(false);
             this.panel_ana.PerformLayout();

@@ -53,33 +53,46 @@ namespace Krisiun_Project.janela_principal
                 {
                     if(!(ferramentaSelecionada is Mentori))
                     { 
-                    textBoxs[4].Text = ferramentaSelecionada.Mentori.MenKei.ToString();
-                    textBoxs[5].Text = ferramentaSelecionada.Mentori.Z.ToString();
-                    textBoxs[3].Text = ferramentaSelecionada.Mentori.C.ToString();
-                    textBoxs[6].Text = ferramentaSelecionada.Mentori.Dansa.ToString();
-                        textBoxs[9].Text = ferramentaSelecionada.MentoriB.MenKei.ToString();
-                        textBoxs[8].Text = ferramentaSelecionada.MentoriB.C.ToString();
-                        textBoxs[10].Text = ferramentaSelecionada.MentoriB.Z.ToString();
-                        textBoxs[11].Text = ferramentaSelecionada.MentoriB.Dansa.ToString();
+                        if(ferramentaSelecionada.Mentori != null)
+                        { 
+                          if(ferramentaSelecionada.Mentori.MenKei != null){ textBoxs[4].Text = ferramentaSelecionada.Mentori.MenKei.ToString();}
+                            if(ferramentaSelecionada.Mentori.Z != null){ textBoxs[5].Text = ferramentaSelecionada.Mentori.Z.ToString();}
+                            if(ferramentaSelecionada.Mentori.C != null){ textBoxs[3].Text = ferramentaSelecionada.Mentori.C.ToString();}
 
-                    checkBoxes[3].Checked = ferramentaSelecionada.Mentori_F_Bool;
+                            if(ferramentaSelecionada.Mentori.Dansa != null){textBoxs[6].Text = ferramentaSelecionada.Mentori.Dansa.ToString();}
+
+                            TiposdeMentori selectedMentori = (TiposdeMentori)ferramentaSelecionada.Mentori.TipoDeCutter;
+
+
+                            int selectedIndex = comboBoxes[2].Items.IndexOf(selectedMentori);
+                            if (selectedIndex != -1)
+                            {
+                                comboBoxes[2].SelectedIndex = selectedIndex;
+                            }
+                        }
+                        if(ferramentaSelecionada.MentoriB != null)
+                        { 
+                            if (ferramentaSelecionada.MentoriB.MenKei != null) { textBoxs[9].Text = ferramentaSelecionada.MentoriB.MenKei.ToString();}   
+                            if(ferramentaSelecionada.MentoriB.Z != null) { textBoxs[10].Text = ferramentaSelecionada.MentoriB.Z.ToString();}
+                            if(ferramentaSelecionada.MentoriB.C != null) { textBoxs[8].Text = ferramentaSelecionada.MentoriB.C.ToString();}
+                            if(ferramentaSelecionada.MentoriB.Dansa != null) { textBoxs[11].Text = ferramentaSelecionada.MentoriB.Dansa.ToString();}
+
+                            TiposdeMentori selectedMentoriB = (TiposdeMentori)ferramentaSelecionada.MentoriB.TipoDeCutter;
+                            int selectedIndexB = comboBoxes[3].Items.IndexOf(selectedMentoriB);
+
+                            // Defina o SelectedIndex da ComboBox para o índice encontrado.
+
+                            if (selectedIndexB != -1)
+                            {
+                                comboBoxes[3].SelectedIndex = selectedIndexB;
+                            }
+                        }
+
+                        checkBoxes[3].Checked = ferramentaSelecionada.Mentori_F_Bool;
                     checkBoxes[4].Checked = ferramentaSelecionada.Mentori_B_Bool;
-                        TiposdeMentori selectedMentori = (TiposdeMentori)ferramentaSelecionada.Mentori.TipoDeCutter;
-                        TiposdeMentori selectedMentoriB =(TiposdeMentori)ferramentaSelecionada.MentoriB.TipoDeCutter;
 
                         // Encontre o índice do item selecionado na ComboBox.
-                        int selectedIndex = comboBoxes[2].Items.IndexOf(selectedMentori);
-                        int selectedIndexB = comboBoxes[3].Items.IndexOf(selectedMentoriB);
-
-                        // Defina o SelectedIndex da ComboBox para o índice encontrado.
-                        if (selectedIndex != -1)
-                        {
-                            comboBoxes[2].SelectedIndex = selectedIndex;
-                        }
-                        if(selectedIndexB != -1)
-                        {
-                            comboBoxes[3].SelectedIndex = selectedIndexB;
-                        }
+                     
 
                     }
                     //BindingList<PointF> novaLista = new BindingList<PointF>();
