@@ -67,6 +67,10 @@ namespace Krisiun_Project.janela_principal
         private void button2_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
+            dataGridView2.Rows.Clear();
+            textBox1.Text = "0";
+            textBox2.Text = "0";   
+            textBox3.Text = "0";
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

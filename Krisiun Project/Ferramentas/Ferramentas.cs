@@ -159,6 +159,8 @@ namespace Krisiun_Project.G_Code
                                 float radianos = (float)(Math.PI / 180.0) * angulo;
                                 float x = pontoCentralX + raio * (float)Math.Cos(radianos);
                                 float y = pontoCentralY + raio * (float)Math.Sin(radianos);
+                                x = (float)Math.Round(x, 3);
+                                y = (float)Math.Round(y, 3);
                                 PointF coordenadas = new PointF(x, y);
                                 tool.CoordenadasList.Add(coordenadas);
                             }
