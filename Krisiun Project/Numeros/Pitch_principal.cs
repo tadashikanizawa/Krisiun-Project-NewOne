@@ -1,6 +1,7 @@
 ﻿using Krisiun_Project.Dados_Aleatorios1;
 using Krisiun_Project.Numeros;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Krisiun_Project
@@ -152,7 +153,7 @@ namespace Krisiun_Project
                 this.ura = 2;
                 xinv = true;
             }
-
+         
             public void UpdateSize(float x, float y, float z)
             {
 

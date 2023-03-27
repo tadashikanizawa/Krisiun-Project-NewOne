@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web.Configuration;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.Text.RegularExpressions;
 
 namespace Krisiun_Project.G_Code
 {
@@ -158,10 +159,13 @@ namespace Krisiun_Project.G_Code
             gCode56.Append(final());
             gCode46F.Append(final());
             gCode56F.Append(final());
-            string nome = "herbocinetica";
-            if (omote == true) { nome += "frente.MIN"; }
-            if (ura == true) { nome += "tras.MIN"; }
-            SaveStringBuilderToFile(gCode56, gCode46, gcodeokk,gCode56F,gCode46F,gCodeokkF, nome);
+            string nome = peca.zuban;
+            string resultado = LimitarStringA14Caracteres(nome);
+           // MessageBox.Show(resultado);
+
+            if (omote == true) { resultado += "-" + peca.omote.ToString() + ".MIN"; }
+            if (ura == true) { resultado += "-" + peca.ura.ToString() + ".MIN"; }
+            SaveStringBuilderToFile(gCode56, gCode46, gcodeokk,gCode56F,gCode46F,gCodeokkF, resultado);
             return gCode56.ToString();
         }
         public StringBuilder comecodoprograma(bool omote, bool ura, bool okk, bool Kanizawa, Ferramentas ferramentas)
@@ -561,6 +565,26 @@ namespace Krisiun_Project.G_Code
             final.AppendLine("M133");
             final.AppendLine("RTS");
             return final;
+        }
+        public static string LimitarStringA14Caracteres(string input)
+        {
+            if (input.Length <= 14)
+            {
+                return input;
+            }
+
+            // Remover todos os zeros
+            string semZeros = input.Replace("0", "");
+
+            if (semZeros.Length <= 14)
+            {
+                return semZeros;
+            }
+
+            // Remover dígitos do início até chegar a 14 caracteres
+            string output = Regex.Replace(semZeros, @"\d+", m => m.Value.Substring(0, Math.Max(0, m.Value.Length - (semZeros.Length - 14))));
+
+            return output;
         }
     }
 }
