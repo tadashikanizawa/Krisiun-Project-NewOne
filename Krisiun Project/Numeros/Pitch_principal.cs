@@ -133,6 +133,7 @@ namespace Krisiun_Project
             public float basex;
             public float basey;
             public string zuban;
+            public string Zubanabreviado;
             public string hinmei;
             public int omote;
             public int ura;
@@ -151,6 +152,7 @@ namespace Krisiun_Project
                 this.basey = 50;
                 this.omote = 1;
                 this.ura = 2;
+                this.Zubanabreviado = "Zuban Abreviado!";
                 xinv = true;
             }
          

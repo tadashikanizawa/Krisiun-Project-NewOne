@@ -118,6 +118,7 @@
   <ItemGroup>
     <Compile Include="Dados Aleatorios1\Kougu.cs" />
     <Compile Include="Dados Aleatorios1\Material.cs" />
+    <Compile Include="Dados Aleatorios1\TiposdeTap.cs" />
     <Compile Include="Desenhos\ColorItem.cs" />
     <Compile Include="Dados Aleatorios1\TiposdeMentori.cs" />
     <Compile Include="Ferramentas\MentoriB .cs" />

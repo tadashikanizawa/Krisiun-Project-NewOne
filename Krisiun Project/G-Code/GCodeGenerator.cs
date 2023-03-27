@@ -161,8 +161,7 @@ namespace Krisiun_Project.G_Code
             gCode56F.Append(final());
             string nome = peca.zuban;
             string resultado = LimitarStringA14Caracteres(nome);
-           // MessageBox.Show(resultado);
-
+            peca.Zubanabreviado = resultado;
             if (omote == true) { resultado += "-" + peca.omote.ToString() + ".MIN"; }
             if (ura == true) { resultado += "-" + peca.ura.ToString() + ".MIN"; }
             SaveStringBuilderToFile(gCode56, gCode46, gcodeokk,gCode56F,gCode46F,gCodeokkF, resultado);
@@ -574,17 +573,29 @@ namespace Krisiun_Project.G_Code
             }
 
             // Remover todos os zeros
-            string semZeros = input.Replace("0", "");
+            string semZeros = input.Replace("0", "0");
 
             if (semZeros.Length <= 14)
             {
                 return semZeros;
             }
 
-            // Remover dígitos do início até chegar a 14 caracteres
-            string output = Regex.Replace(semZeros, @"\d+", m => m.Value.Substring(0, Math.Max(0, m.Value.Length - (semZeros.Length - 14))));
+            // Encontrar todos os grupos de dígitos
+            MatchCollection digitGroups = Regex.Matches(semZeros, @"\d+");
 
-            return output;
+            // Remover dígitos do início, preservando os últimos 3 dígitos de cada grupo
+            foreach (Match group in digitGroups)
+            {
+                int extraLength = semZeros.Length - 14;
+                if (extraLength > 0 && group.Value.Length > 3)
+                {
+                    int removeCount = Math.Min(extraLength, group.Value.Length - 3);
+                    semZeros = semZeros.Remove(group.Index, removeCount);
+                }
+            }
+
+            return semZeros;
         }
+    
     }
 }

@@ -929,7 +929,7 @@
             // 
             // ferramentasBindingSource3
             // 
-            this.ferramentasBindingSource3.DataSource = typeof(Krisiun_Project.G_Code.Ferramentas);
+  
             // 
             // listFrenteBindingSource4
             // 
@@ -948,7 +948,7 @@
             // 
             // ferramentasBindingSource2
             // 
-            this.ferramentasBindingSource2.DataSource = typeof(Krisiun_Project.G_Code.Ferramentas);
+       
             // 
             // listFrenteBindingSource
             // 
