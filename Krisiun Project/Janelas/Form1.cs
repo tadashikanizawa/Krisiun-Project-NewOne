@@ -130,6 +130,7 @@ namespace Krisiun_Project
             addcore();
             LoadDrills();
             LoadMentori();
+            TiposdeTap.CriarListas();
            // LoadKouguList();
            ListadeKougu = Kougu.LoadKouguList();
             List<TiposdeMentori> ListadeMentoris1 = TiposdeMentori.LoadMentoriCuter();
@@ -137,7 +138,6 @@ namespace Krisiun_Project
             dataGridView4.DataSource = ListadeMentoris1;
             Mydrills.LoadKaitenValuesFromCsv();
             comboBoxCores.SelectedIndex = 8;
-
 
         }
         public Color[] cores = new Color[] { Color.Black, Color.Cyan, Color.Red, Color.Blue, Color.Green, Color.Gray, Color.Pink, Color.Purple, Color.LightGray };
@@ -794,8 +794,10 @@ namespace Krisiun_Project
             Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
             panel_update();
         }
+        public bool atualizarportextbox = false;
         private void drill_kei_tb_TextChanged(object sender, EventArgs e)
-        {
+        {   
+            if (atualizarportextbox) { return; }
             men_frente_kei_tb.Text = drill_kei_tb.Text;
             men_tras_kei.Text = drill_kei_tb.Text;
 
@@ -1320,6 +1322,12 @@ namespace Krisiun_Project
         {
             MaterialForm materialForm = new MaterialForm();
             materialForm.ShowDialog();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            TapMMForm tapMMForm = new TapMMForm();
+            tapMMForm.ShowDialog();
         }
     }
 

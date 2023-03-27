@@ -153,6 +153,7 @@
             this.ferramentasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.listFrenteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.panel_inverso.SuspendLayout();
             this.panel_lado.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -927,10 +928,6 @@
             this.listFrenteBindingSource5.DataMember = "ListFrente";
             this.listFrenteBindingSource5.DataSource = this.ferramentasBindingSource3;
             // 
-            // ferramentasBindingSource3
-            // 
-  
-            // 
             // listFrenteBindingSource4
             // 
             this.listFrenteBindingSource4.DataMember = "ListFrente";
@@ -945,10 +942,6 @@
             // 
             this.listFrenteBindingSource1.DataMember = "ListFrente";
             this.listFrenteBindingSource1.DataSource = this.ferramentasBindingSource2;
-            // 
-            // ferramentasBindingSource2
-            // 
-       
             // 
             // listFrenteBindingSource
             // 
@@ -1384,6 +1377,16 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(23, 565);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(114, 49);
+            this.button14.TabIndex = 98;
+            this.button14.Text = "材料リスト管理";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1391,6 +1394,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(2102, 854);
+            this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.panel_yoko);
             this.Controls.Add(this.label2);
@@ -1575,6 +1579,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn Delete1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
     }
 }
 

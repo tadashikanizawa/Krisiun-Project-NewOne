@@ -187,6 +187,12 @@
     <Compile Include="Janelas\NSBForm.Designer.cs">
       <DependentUpon>NSBForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Janelas\TapMMForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Janelas\TapMMForm.Designer.cs">
+      <DependentUpon>TapMMForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Numeros\Bools.cs" />
     <Compile Include="Numeros\Listas.cs" />
     <Compile Include="Tests.cs" />
@@ -237,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Janelas\NSBForm.resx">
       <DependentUpon>NSBForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Janelas\TapMMForm.resx">
+      <DependentUpon>TapMMForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

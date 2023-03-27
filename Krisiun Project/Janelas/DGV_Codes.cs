@@ -51,7 +51,8 @@ namespace Krisiun_Project.janela_principal
 
                 if (ferramentaSelecionada != null)
                 {
-                    if(!(ferramentaSelecionada is Mentori))
+                    form1.atualizarportextbox = true;
+                    if (!(ferramentaSelecionada is Mentori))
                     { 
                         if(ferramentaSelecionada.Mentori != null)
                         { 
@@ -99,7 +100,7 @@ namespace Krisiun_Project.janela_principal
                     if (ferramentaSelecionada is Drills)
                     {
                         Drills drillSelecionado = ferramentaSelecionada as Drills;
-                      
+                        
                             textBoxs[7].Text = drillSelecionado.ToolNumber.ToString(); //7
                             textBoxs[1].Text = drillSelecionado.Kei.ToString(); //1
                             textBoxs[2].Text = drillSelecionado.Fukasa.ToString(); //2
@@ -143,7 +144,7 @@ namespace Krisiun_Project.janela_principal
                         Tap tapSelecionado = ferramentaSelecionada as Tap;
                         // carrega valores para endmills
                     }
-
+                    form1.atualizarportextbox = false;
                     // adicione outros casos para outros tipos específicos de ferramentas
                 }
             }
