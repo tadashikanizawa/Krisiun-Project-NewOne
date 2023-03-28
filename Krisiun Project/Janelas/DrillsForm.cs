@@ -37,9 +37,21 @@ namespace Krisiun_Project.Janelas
         private void button1_Click(object sender, EventArgs e)
         {
             Drills drills = new Drills(peca);
-            drills.Mentori_F_Bool = lado_UserControl1.Mentori_F_Bool;
+            drills.Frente = lado_UserControl1.Bool_Frente;
+            drills.Tras = lado_UserControl1.Bool_Tras;
             ferramentas.ListTotal.Add(drills);
-            
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                float x, y;
+                if (row.Cells[0].Value != null && row.Cells[1].Value != null && float.TryParse(row.Cells[0].Value.ToString(), out x) && float.TryParse(row.Cells[1].Value.ToString(), out y))
+                {
+                    PointF coordenadas = new PointF(x, y);
+                    drills.CoordenadasList.Add(coordenadas);
+                }
+            }
+
+
         }
     }
 }
