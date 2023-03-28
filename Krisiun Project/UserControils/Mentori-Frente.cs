@@ -14,9 +14,7 @@ namespace Krisiun_Project.UserControils
 {
     public partial class Mentori_Frente : UserControl
     {
-        public delegate void ChangeVisibilityHandler(bool visible);
-        public event ChangeVisibilityHandler OnChangeVisibility;
-
+      
         public Mentori_Frente()
         {
             InitializeComponent();
@@ -32,11 +30,11 @@ namespace Krisiun_Project.UserControils
             get{ return men_frente_kei_tb.Text; }
             set { men_frente_kei_tb.Text = value; }
         }
-        private void Mudarvisibilidade(bool visible)
-        {
-            OnChangeVisibility?.Invoke(visible); // ou false, dependendo do que você deseja
-        }
 
+        public void alterar (bool visible)
+        {
+            this.Visible = visible;
+        }
         private void men_frente_tipo_combo_SelectedIndexChanged(object sender, EventArgs e)
         {
             TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
