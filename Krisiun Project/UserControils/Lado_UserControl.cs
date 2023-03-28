@@ -40,10 +40,15 @@ namespace Krisiun_Project.UserControils
         {
 
         }
-        public bool Mentori_F_Bool
+        public bool Bool_Frente
         {
             get { return frente_checkBox.Checked; }
             set { frente_checkBox.Checked = value; }
+        }
+        public bool Bool_Tras
+        {
+            get { return tras_checkBox.Checked; }
+            set { tras_checkBox.Checked = value; }
         }
     }
 }
