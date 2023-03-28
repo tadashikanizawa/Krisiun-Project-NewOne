@@ -73,6 +73,12 @@
             this.label43 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.panel_lado = new System.Windows.Forms.Panel();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.tras_checkBox = new System.Windows.Forms.CheckBox();
+            this.frente_checkBox = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.comboBoxCores = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -135,12 +141,6 @@
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.frente_checkBox = new System.Windows.Forms.CheckBox();
-            this.tras_checkBox = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.panel_lado = new System.Windows.Forms.Panel();
             this.button17 = new System.Windows.Forms.Button();
             this.panel_inverso.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -151,6 +151,7 @@
             this.panel_ana.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tap_avan_panel.SuspendLayout();
+            this.panel_lado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource3)).BeginInit();
@@ -166,7 +167,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource2)).BeginInit();
-            this.panel_lado.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_inverso
@@ -625,6 +625,71 @@
             this.button5.Text = "ADD";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // panel_lado
+            // 
+            this.panel_lado.Controls.Add(this.checkBox2);
+            this.panel_lado.Controls.Add(this.checkBox1);
+            this.panel_lado.Controls.Add(this.tras_checkBox);
+            this.panel_lado.Controls.Add(this.frente_checkBox);
+            this.panel_lado.Controls.Add(this.label3);
+            this.panel_lado.Location = new System.Drawing.Point(175, 32);
+            this.panel_lado.Name = "panel_lado";
+            this.panel_lado.Size = new System.Drawing.Size(64, 137);
+            this.panel_lado.TabIndex = 23;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(13, 108);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(42, 16);
+            this.checkBox2.TabIndex = 3;
+            this.checkBox2.Text = "横2";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.Visible = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(13, 81);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(42, 16);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.Text = "横1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
+            // 
+            // tras_checkBox
+            // 
+            this.tras_checkBox.AutoSize = true;
+            this.tras_checkBox.Location = new System.Drawing.Point(13, 54);
+            this.tras_checkBox.Name = "tras_checkBox";
+            this.tras_checkBox.Size = new System.Drawing.Size(36, 16);
+            this.tras_checkBox.TabIndex = 1;
+            this.tras_checkBox.Text = "裏";
+            this.tras_checkBox.UseVisualStyleBackColor = true;
+            this.tras_checkBox.CheckedChanged += new System.EventHandler(this.tras_checkBox_CheckedChanged);
+            // 
+            // frente_checkBox
+            // 
+            this.frente_checkBox.AutoSize = true;
+            this.frente_checkBox.Location = new System.Drawing.Point(13, 27);
+            this.frente_checkBox.Name = "frente_checkBox";
+            this.frente_checkBox.Size = new System.Drawing.Size(36, 16);
+            this.frente_checkBox.TabIndex = 0;
+            this.frente_checkBox.Text = "表";
+            this.frente_checkBox.UseVisualStyleBackColor = true;
+            this.frente_checkBox.CheckedChanged += new System.EventHandler(this.frente_checkBox_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 12);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "面";
             // 
             // comboBoxCores
             // 
@@ -1158,71 +1223,6 @@
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 12);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "面";
-            // 
-            // frente_checkBox
-            // 
-            this.frente_checkBox.AutoSize = true;
-            this.frente_checkBox.Location = new System.Drawing.Point(13, 27);
-            this.frente_checkBox.Name = "frente_checkBox";
-            this.frente_checkBox.Size = new System.Drawing.Size(36, 16);
-            this.frente_checkBox.TabIndex = 0;
-            this.frente_checkBox.Text = "表";
-            this.frente_checkBox.UseVisualStyleBackColor = true;
-            this.frente_checkBox.CheckedChanged += new System.EventHandler(this.frente_checkBox_CheckedChanged);
-            // 
-            // tras_checkBox
-            // 
-            this.tras_checkBox.AutoSize = true;
-            this.tras_checkBox.Location = new System.Drawing.Point(13, 54);
-            this.tras_checkBox.Name = "tras_checkBox";
-            this.tras_checkBox.Size = new System.Drawing.Size(36, 16);
-            this.tras_checkBox.TabIndex = 1;
-            this.tras_checkBox.Text = "裏";
-            this.tras_checkBox.UseVisualStyleBackColor = true;
-            this.tras_checkBox.CheckedChanged += new System.EventHandler(this.tras_checkBox_CheckedChanged);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(13, 81);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(42, 16);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "横1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.Visible = false;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(13, 108);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(42, 16);
-            this.checkBox2.TabIndex = 3;
-            this.checkBox2.Text = "横2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.Visible = false;
-            // 
-            // panel_lado
-            // 
-            this.panel_lado.Controls.Add(this.checkBox2);
-            this.panel_lado.Controls.Add(this.checkBox1);
-            this.panel_lado.Controls.Add(this.tras_checkBox);
-            this.panel_lado.Controls.Add(this.frente_checkBox);
-            this.panel_lado.Controls.Add(this.label3);
-            this.panel_lado.Location = new System.Drawing.Point(175, 32);
-            this.panel_lado.Name = "panel_lado";
-            this.panel_lado.Size = new System.Drawing.Size(64, 137);
-            this.panel_lado.TabIndex = 23;
-            // 
             // button17
             // 
             this.button17.Location = new System.Drawing.Point(737, 441);
@@ -1291,7 +1291,6 @@
             this.panel4.PerformLayout();
             this.tap_avan_panel.ResumeLayout(false);
             this.tap_avan_panel.PerformLayout();
-        
             this.panel_lado.ResumeLayout(false);
             this.panel_lado.PerformLayout();
             this.ResumeLayout(false);
@@ -1321,7 +1320,6 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.BindingSource listTotalBindingSource;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
@@ -1415,6 +1413,7 @@
         private System.Windows.Forms.CheckBox frente_checkBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button17;
+        public System.Windows.Forms.DataGridView dataGridView3;
     }
 }
 

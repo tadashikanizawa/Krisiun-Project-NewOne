@@ -782,6 +782,13 @@ namespace Krisiun_Project
             dataGridView3.Refresh();
         }
 
+        public  void DGV_Update()
+        {
+            dataGridView1.Refresh();
+            dataGridView2.Refresh();
+            dataGridView3.Refresh();
+
+        }
         private void button5_Click(object sender, EventArgs e)
         {
             //  frente_checkBox.Checked = false;
@@ -1046,7 +1053,7 @@ namespace Krisiun_Project
 
         private void button17_Click(object sender, EventArgs e)
         {
-            DrillsForm drillsFOrm = new DrillsForm();
+            DrillsForm drillsFOrm = new DrillsForm(this, ferramentas);
             drillsFOrm.ShowDialog();
         }
     }
