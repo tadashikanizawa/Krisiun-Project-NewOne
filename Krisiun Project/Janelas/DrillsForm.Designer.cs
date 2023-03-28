@@ -35,6 +35,7 @@
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mentori_Tras1 = new Krisiun_Project.UserControils.Mentori_Tras();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             // lado_UserControl1
             // 
             this.lado_UserControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lado_UserControl1.Location = new System.Drawing.Point(180, 37);
+            this.lado_UserControl1.Location = new System.Drawing.Point(383, 27);
             this.lado_UserControl1.Name = "lado_UserControl1";
             this.lado_UserControl1.Size = new System.Drawing.Size(67, 150);
             this.lado_UserControl1.TabIndex = 2;
@@ -96,12 +97,22 @@
             this.mentori_Tras1.Size = new System.Drawing.Size(132, 116);
             this.mentori_Tras1.TabIndex = 5;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(433, 330);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(134, 84);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // DrillsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.mentori_Tras1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.mentori_Frente1);
@@ -123,5 +134,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn X;
         private System.Windows.Forms.DataGridViewTextBoxColumn Y;
         private UserControils.Mentori_Tras mentori_Tras1;
+        private System.Windows.Forms.Button button1;
     }
 }

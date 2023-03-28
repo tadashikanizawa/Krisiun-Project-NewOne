@@ -15,8 +15,7 @@ namespace Krisiun_Project.UserControils
 {
     public partial class Drill_UserControl : UserControl
     {
-        public Mentori_Frente mentorifrente;
-        public Mentori_Tras mentoritras;
+      
         public Pitch_principal.Peca peca;
         public Drill_UserControl()
         {
@@ -37,8 +36,7 @@ namespace Krisiun_Project.UserControils
         {
 
             if (atualizarportextbox) { return; }
-            mentorifrente.Kei = drill_kei_tb.Text;
-            mentoritras.Kei = drill_kei_tb.Text;
+               
 
             float kei = 0;
             float.TryParse(drill_kei_tb.Text, out kei);
