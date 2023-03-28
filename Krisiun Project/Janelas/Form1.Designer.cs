@@ -33,12 +33,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.y_inv_checkbox = new System.Windows.Forms.CheckBox();
             this.x_inv_checkbok = new System.Windows.Forms.CheckBox();
-            this.panel_lado = new System.Windows.Forms.Panel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.tras_checkBox = new System.Windows.Forms.CheckBox();
-            this.frente_checkBox = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.scale_tb = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -58,7 +52,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel_ana = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.tap_avan_panel = new System.Windows.Forms.Panel();
@@ -79,28 +72,8 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.panel_boringana = new System.Windows.Forms.Panel();
-            this.label29 = new System.Windows.Forms.Label();
-            this.Resfri_Combobox = new System.Windows.Forms.ComboBox();
-            this.drill_combobox = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.Num_pro_textbox = new System.Windows.Forms.TextBox();
-            this.drill_z_tb = new System.Windows.Forms.TextBox();
-            this.sentan_cb = new System.Windows.Forms.CheckBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.drill_kei_tb = new System.Windows.Forms.TextBox();
-            this.tool_tb = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.comboBoxCores = new System.Windows.Forms.ComboBox();
-            this.panel_men_tras = new System.Windows.Forms.Panel();
-            this.men_tras_tipo_combo = new System.Windows.Forms.ComboBox();
-            this.men_tras_dan = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.men_tras_tam = new System.Windows.Forms.TextBox();
-            this.men_tras_kei = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -162,9 +135,14 @@
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
-            this.mentori_Frente1 = new Krisiun_Project.UserControils.Mentori_Frente();
+            this.label3 = new System.Windows.Forms.Label();
+            this.frente_checkBox = new System.Windows.Forms.CheckBox();
+            this.tras_checkBox = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.panel_lado = new System.Windows.Forms.Panel();
+            this.button17 = new System.Windows.Forms.Button();
             this.panel_inverso.SuspendLayout();
-            this.panel_lado.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_Code.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -173,8 +151,6 @@
             this.panel_ana.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tap_avan_panel.SuspendLayout();
-            this.panel_boringana.SuspendLayout();
-            this.panel_men_tras.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource3)).BeginInit();
@@ -190,6 +166,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource2)).BeginInit();
+            this.panel_lado.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_inverso
@@ -239,71 +216,6 @@
             this.x_inv_checkbok.Text = "X";
             this.x_inv_checkbok.UseVisualStyleBackColor = true;
             this.x_inv_checkbok.CheckedChanged += new System.EventHandler(this.x_inv_checkbok_CheckedChanged);
-            // 
-            // panel_lado
-            // 
-            this.panel_lado.Controls.Add(this.checkBox2);
-            this.panel_lado.Controls.Add(this.checkBox1);
-            this.panel_lado.Controls.Add(this.tras_checkBox);
-            this.panel_lado.Controls.Add(this.frente_checkBox);
-            this.panel_lado.Controls.Add(this.label3);
-            this.panel_lado.Location = new System.Drawing.Point(175, 32);
-            this.panel_lado.Name = "panel_lado";
-            this.panel_lado.Size = new System.Drawing.Size(64, 137);
-            this.panel_lado.TabIndex = 23;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(13, 108);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(42, 16);
-            this.checkBox2.TabIndex = 3;
-            this.checkBox2.Text = "横2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.Visible = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(13, 81);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(42, 16);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "横1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.Visible = false;
-            // 
-            // tras_checkBox
-            // 
-            this.tras_checkBox.AutoSize = true;
-            this.tras_checkBox.Location = new System.Drawing.Point(13, 54);
-            this.tras_checkBox.Name = "tras_checkBox";
-            this.tras_checkBox.Size = new System.Drawing.Size(36, 16);
-            this.tras_checkBox.TabIndex = 1;
-            this.tras_checkBox.Text = "裏";
-            this.tras_checkBox.UseVisualStyleBackColor = true;
-            this.tras_checkBox.CheckedChanged += new System.EventHandler(this.tras_checkBox_CheckedChanged);
-            // 
-            // frente_checkBox
-            // 
-            this.frente_checkBox.AutoSize = true;
-            this.frente_checkBox.Location = new System.Drawing.Point(13, 27);
-            this.frente_checkBox.Name = "frente_checkBox";
-            this.frente_checkBox.Size = new System.Drawing.Size(36, 16);
-            this.frente_checkBox.TabIndex = 0;
-            this.frente_checkBox.Text = "表";
-            this.frente_checkBox.UseVisualStyleBackColor = true;
-            this.frente_checkBox.CheckedChanged += new System.EventHandler(this.frente_checkBox_CheckedChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 12);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "面";
             // 
             // scale_tb
             // 
@@ -496,27 +408,14 @@
             // 
             // panel_ana
             // 
-            this.panel_ana.Controls.Add(this.label4);
             this.panel_ana.Controls.Add(this.panel4);
             this.panel_ana.Controls.Add(this.button4);
-            this.panel_ana.Controls.Add(this.panel_boringana);
             this.panel_ana.Controls.Add(this.button5);
             this.panel_ana.Controls.Add(this.panel_lado);
             this.panel_ana.Location = new System.Drawing.Point(415, 31);
             this.panel_ana.Name = "panel_ana";
             this.panel_ana.Size = new System.Drawing.Size(242, 747);
             this.panel_ana.TabIndex = 19;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(82, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 24);
-            this.label4.TabIndex = 86;
-            this.label4.Text = "孔開け";
             // 
             // panel4
             // 
@@ -716,137 +615,6 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // panel_boringana
-            // 
-            this.panel_boringana.Controls.Add(this.label29);
-            this.panel_boringana.Controls.Add(this.Resfri_Combobox);
-            this.panel_boringana.Controls.Add(this.drill_combobox);
-            this.panel_boringana.Controls.Add(this.label25);
-            this.panel_boringana.Controls.Add(this.Num_pro_textbox);
-            this.panel_boringana.Controls.Add(this.drill_z_tb);
-            this.panel_boringana.Controls.Add(this.sentan_cb);
-            this.panel_boringana.Controls.Add(this.label24);
-            this.panel_boringana.Controls.Add(this.drill_kei_tb);
-            this.panel_boringana.Controls.Add(this.tool_tb);
-            this.panel_boringana.Controls.Add(this.label26);
-            this.panel_boringana.Location = new System.Drawing.Point(3, 32);
-            this.panel_boringana.Name = "panel_boringana";
-            this.panel_boringana.Size = new System.Drawing.Size(168, 140);
-            this.panel_boringana.TabIndex = 0;
-            this.panel_boringana.Visible = false;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(8, 13);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(27, 12);
-            this.label29.TabIndex = 65;
-            this.label29.Text = "TIpo";
-            // 
-            // Resfri_Combobox
-            // 
-            this.Resfri_Combobox.FormattingEnabled = true;
-            this.Resfri_Combobox.Items.AddRange(new object[] {
-            "M08",
-            "M12",
-            "M51",
-            "M339"});
-            this.Resfri_Combobox.Location = new System.Drawing.Point(6, 106);
-            this.Resfri_Combobox.Name = "Resfri_Combobox";
-            this.Resfri_Combobox.Size = new System.Drawing.Size(60, 20);
-            this.Resfri_Combobox.TabIndex = 88;
-            // 
-            // drill_combobox
-            // 
-            this.drill_combobox.FormattingEnabled = true;
-            this.drill_combobox.Items.AddRange(new object[] {
-            "ソリッドドリル",
-            "カムドリル",
-            "アクアフラット",
-            "イスカルドリル",
-            "NK",
-            "ドリル",
-            "センタードリル"});
-            this.drill_combobox.Location = new System.Drawing.Point(10, 26);
-            this.drill_combobox.Margin = new System.Windows.Forms.Padding(2);
-            this.drill_combobox.Name = "drill_combobox";
-            this.drill_combobox.Size = new System.Drawing.Size(113, 20);
-            this.drill_combobox.TabIndex = 25;
-            this.drill_combobox.SelectedIndexChanged += new System.EventHandler(this.drill_combobox_SelectedIndexChanged);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(17, 80);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(12, 12);
-            this.label25.TabIndex = 84;
-            this.label25.Text = "Z";
-            // 
-            // Num_pro_textbox
-            // 
-            this.Num_pro_textbox.Location = new System.Drawing.Point(79, 106);
-            this.Num_pro_textbox.Name = "Num_pro_textbox";
-            this.Num_pro_textbox.Size = new System.Drawing.Size(80, 19);
-            this.Num_pro_textbox.TabIndex = 2;
-            this.Num_pro_textbox.Leave += new System.EventHandler(this.Num_pro_textbox_Leave);
-            // 
-            // drill_z_tb
-            // 
-            this.drill_z_tb.Location = new System.Drawing.Point(28, 76);
-            this.drill_z_tb.Name = "drill_z_tb";
-            this.drill_z_tb.Size = new System.Drawing.Size(36, 19);
-            this.drill_z_tb.TabIndex = 83;
-            this.drill_z_tb.Text = "0";
-            this.drill_z_tb.TextChanged += new System.EventHandler(this.drill_z_tb_TextChanged);
-            // 
-            // sentan_cb
-            // 
-            this.sentan_cb.AutoSize = true;
-            this.sentan_cb.Location = new System.Drawing.Point(70, 80);
-            this.sentan_cb.Name = "sentan_cb";
-            this.sentan_cb.Size = new System.Drawing.Size(62, 16);
-            this.sentan_cb.TabIndex = 87;
-            this.sentan_cb.Text = "(+)先端";
-            this.sentan_cb.UseVisualStyleBackColor = true;
-            this.sentan_cb.CheckedChanged += new System.EventHandler(this.sentan_cb_CheckedChanged);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(9, 54);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(17, 12);
-            this.label24.TabIndex = 82;
-            this.label24.Text = "φ";
-            // 
-            // drill_kei_tb
-            // 
-            this.drill_kei_tb.Location = new System.Drawing.Point(28, 51);
-            this.drill_kei_tb.Name = "drill_kei_tb";
-            this.drill_kei_tb.Size = new System.Drawing.Size(36, 19);
-            this.drill_kei_tb.TabIndex = 81;
-            this.drill_kei_tb.Text = "1";
-            this.drill_kei_tb.TextChanged += new System.EventHandler(this.drill_kei_tb_TextChanged);
-            // 
-            // tool_tb
-            // 
-            this.tool_tb.Location = new System.Drawing.Point(83, 51);
-            this.tool_tb.Name = "tool_tb";
-            this.tool_tb.Size = new System.Drawing.Size(36, 19);
-            this.tool_tb.TabIndex = 85;
-            this.tool_tb.Text = "01";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(69, 53);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(12, 12);
-            this.label26.TabIndex = 86;
-            this.label26.Text = "T";
-            // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -867,72 +635,6 @@
             this.comboBoxCores.Size = new System.Drawing.Size(74, 20);
             this.comboBoxCores.TabIndex = 77;
             this.comboBoxCores.SelectedIndexChanged += new System.EventHandler(this.comboBoxCores_SelectedIndexChanged);
-            // 
-            // panel_men_tras
-            // 
-            this.panel_men_tras.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_men_tras.Controls.Add(this.men_tras_tipo_combo);
-            this.panel_men_tras.Controls.Add(this.men_tras_dan);
-            this.panel_men_tras.Controls.Add(this.label17);
-            this.panel_men_tras.Controls.Add(this.label18);
-            this.panel_men_tras.Controls.Add(this.men_tras_tam);
-            this.panel_men_tras.Controls.Add(this.men_tras_kei);
-            this.panel_men_tras.Controls.Add(this.label19);
-            this.panel_men_tras.Location = new System.Drawing.Point(677, 162);
-            this.panel_men_tras.Margin = new System.Windows.Forms.Padding(2);
-            this.panel_men_tras.Name = "panel_men_tras";
-            this.panel_men_tras.Size = new System.Drawing.Size(113, 120);
-            this.panel_men_tras.TabIndex = 77;
-            this.panel_men_tras.Visible = false;
-            // 
-            // men_tras_tipo_combo
-            // 
-            this.men_tras_tipo_combo.Location = new System.Drawing.Point(0, 0);
-            this.men_tras_tipo_combo.Name = "men_tras_tipo_combo";
-            this.men_tras_tipo_combo.Size = new System.Drawing.Size(121, 20);
-            this.men_tras_tipo_combo.TabIndex = 77;
-            // 
-            // men_tras_dan
-            // 
-            this.men_tras_dan.Location = new System.Drawing.Point(0, 0);
-            this.men_tras_dan.Name = "men_tras_dan";
-            this.men_tras_dan.Size = new System.Drawing.Size(100, 19);
-            this.men_tras_dan.TabIndex = 78;
-            // 
-            // label17
-            // 
-            this.label17.Location = new System.Drawing.Point(0, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(100, 23);
-            this.label17.TabIndex = 79;
-            // 
-            // label18
-            // 
-            this.label18.Location = new System.Drawing.Point(0, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(100, 23);
-            this.label18.TabIndex = 80;
-            // 
-            // men_tras_tam
-            // 
-            this.men_tras_tam.Location = new System.Drawing.Point(0, 0);
-            this.men_tras_tam.Name = "men_tras_tam";
-            this.men_tras_tam.Size = new System.Drawing.Size(100, 19);
-            this.men_tras_tam.TabIndex = 81;
-            // 
-            // men_tras_kei
-            // 
-            this.men_tras_kei.Location = new System.Drawing.Point(0, 0);
-            this.men_tras_kei.Name = "men_tras_kei";
-            this.men_tras_kei.Size = new System.Drawing.Size(100, 19);
-            this.men_tras_kei.TabIndex = 82;
-            // 
-            // label19
-            // 
-            this.label19.Location = new System.Drawing.Point(0, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(100, 23);
-            this.label19.TabIndex = 83;
             // 
             // dataGridView1
             // 
@@ -1441,13 +1143,10 @@
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(674, 287);
+            this.button15.Location = new System.Drawing.Point(0, 0);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(116, 29);
-            this.button15.TabIndex = 80;
-            this.button15.Text = "ADD";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.button15.Size = new System.Drawing.Size(75, 23);
+            this.button15.TabIndex = 101;
             // 
             // button16
             // 
@@ -1459,13 +1158,80 @@
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
-            // mentori_Frente1
+            // label3
             // 
-            this.mentori_Frente1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.mentori_Frente1.Location = new System.Drawing.Point(663, 40);
-            this.mentori_Frente1.Name = "mentori_Frente1";
-            this.mentori_Frente1.Size = new System.Drawing.Size(138, 115);
-            this.mentori_Frente1.TabIndex = 100;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 12);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "面";
+            // 
+            // frente_checkBox
+            // 
+            this.frente_checkBox.AutoSize = true;
+            this.frente_checkBox.Location = new System.Drawing.Point(13, 27);
+            this.frente_checkBox.Name = "frente_checkBox";
+            this.frente_checkBox.Size = new System.Drawing.Size(36, 16);
+            this.frente_checkBox.TabIndex = 0;
+            this.frente_checkBox.Text = "表";
+            this.frente_checkBox.UseVisualStyleBackColor = true;
+            this.frente_checkBox.CheckedChanged += new System.EventHandler(this.frente_checkBox_CheckedChanged);
+            // 
+            // tras_checkBox
+            // 
+            this.tras_checkBox.AutoSize = true;
+            this.tras_checkBox.Location = new System.Drawing.Point(13, 54);
+            this.tras_checkBox.Name = "tras_checkBox";
+            this.tras_checkBox.Size = new System.Drawing.Size(36, 16);
+            this.tras_checkBox.TabIndex = 1;
+            this.tras_checkBox.Text = "裏";
+            this.tras_checkBox.UseVisualStyleBackColor = true;
+            this.tras_checkBox.CheckedChanged += new System.EventHandler(this.tras_checkBox_CheckedChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(13, 81);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(42, 16);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.Text = "横1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(13, 108);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(42, 16);
+            this.checkBox2.TabIndex = 3;
+            this.checkBox2.Text = "横2";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.Visible = false;
+            // 
+            // panel_lado
+            // 
+            this.panel_lado.Controls.Add(this.checkBox2);
+            this.panel_lado.Controls.Add(this.checkBox1);
+            this.panel_lado.Controls.Add(this.tras_checkBox);
+            this.panel_lado.Controls.Add(this.frente_checkBox);
+            this.panel_lado.Controls.Add(this.label3);
+            this.panel_lado.Location = new System.Drawing.Point(175, 32);
+            this.panel_lado.Name = "panel_lado";
+            this.panel_lado.Size = new System.Drawing.Size(64, 137);
+            this.panel_lado.TabIndex = 23;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(737, 441);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(72, 26);
+            this.button17.TabIndex = 102;
+            this.button17.Text = "孔開け";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // Form1
             // 
@@ -1474,12 +1240,11 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(2119, 854);
-            this.Controls.Add(this.mentori_Frente1);
+            this.Controls.Add(this.button17);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button15);
-            this.Controls.Add(this.panel_men_tras);
             this.Controls.Add(this.panel_yoko);
             this.Controls.Add(this.comboBoxCores);
             this.Controls.Add(this.label2);
@@ -1515,8 +1280,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel_inverso.ResumeLayout(false);
             this.panel_inverso.PerformLayout();
-            this.panel_lado.ResumeLayout(false);
-            this.panel_lado.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel_Code.ResumeLayout(false);
@@ -1524,37 +1287,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCoordenadas)).EndInit();
             this.panel_ana.ResumeLayout(false);
-            this.panel_ana.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.tap_avan_panel.ResumeLayout(false);
             this.tap_avan_panel.PerformLayout();
-            this.panel_boringana.ResumeLayout(false);
-            this.panel_boringana.PerformLayout();
-            this.panel_men_tras.ResumeLayout(false);
-            this.panel_men_tras.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listTrasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource2)).EndInit();
+        
+            this.panel_lado.ResumeLayout(false);
+            this.panel_lado.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton frente_rd;
         private System.Windows.Forms.RadioButton tras_rd;
         private System.Windows.Forms.Panel panel1;
@@ -1568,43 +1313,19 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox y_inv_checkbox;
         private System.Windows.Forms.CheckBox x_inv_checkbok;
-        private System.Windows.Forms.Panel panel_lado;
-        private System.Windows.Forms.CheckBox frente_checkBox;
-        private System.Windows.Forms.CheckBox tras_checkBox;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Panel panel_ana;
-        private System.Windows.Forms.CheckBox sentan_cb;
-        private System.Windows.Forms.TextBox tool_tb;
-        private System.Windows.Forms.Label label26;
-        public System.Windows.Forms.TextBox drill_kei_tb;
-        private System.Windows.Forms.Label label24;
-        public System.Windows.Forms.TextBox drill_z_tb;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.ComboBox drill_combobox;
         public System.Windows.Forms.Panel paneld_f;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel_yoko;
-        private System.Windows.Forms.Panel panel_boringana;
-        public System.Windows.Forms.TextBox Num_pro_textbox;
         private System.Windows.Forms.BindingSource ferramentasBindingSource;
         private System.Windows.Forms.ColorDialog colorDialog1;
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.BindingSource listTotalBindingSource;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.BindingSource ferramentasBindingSource1;
-        private System.Windows.Forms.Panel panel_men_tras;
-        private System.Windows.Forms.ComboBox men_tras_tipo_combo;
-        private System.Windows.Forms.TextBox men_tras_dan;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox men_tras_tam;
-        public System.Windows.Forms.TextBox men_tras_kei;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button6;
         public System.Windows.Forms.CheckBox lado_checkbox;
         private System.Windows.Forms.DataGridView dataGridView4;
@@ -1635,7 +1356,6 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         public System.Windows.Forms.Panel panel_b;
-        private System.Windows.Forms.ComboBox Resfri_Combobox;
         private System.Windows.Forms.DataGridViewTextBoxColumn ToolName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ToolNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn kei;
@@ -1687,9 +1407,14 @@
         public System.Windows.Forms.TextBox tap_z_tb;
         private System.Windows.Forms.Label label39;
         public System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button16;
-        private UserControils.Mentori_Frente mentori_Frente1;
+        private System.Windows.Forms.Panel panel_lado;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox tras_checkBox;
+        private System.Windows.Forms.CheckBox frente_checkBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button17;
     }
 }
 

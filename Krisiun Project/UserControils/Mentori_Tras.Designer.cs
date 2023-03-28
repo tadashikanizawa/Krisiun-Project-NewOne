@@ -47,6 +47,7 @@
             this.men_tras_z.Size = new System.Drawing.Size(36, 19);
             this.men_tras_z.TabIndex = 85;
             this.men_tras_z.Text = "-1.5";
+            this.men_tras_z.TextChanged += new System.EventHandler(this.men_tras_z_TextChanged);
             // 
             // men_tras_checkbox
             // 

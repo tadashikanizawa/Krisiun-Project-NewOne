@@ -17,11 +17,16 @@ namespace Krisiun_Project.Dados_Aleatorios1
         public float DrillKei { get; set; }
         public string DrillName { get; set; }
         public int DrillNumber { get; set; }
+        public static List<Kougu> ListadeKougu { get; set; } = new List<Kougu>();
         public Kougu(float drillkei, string drillname, int drillnumber)
         {
             DrillKei = drillkei;
             DrillName = drillname;
             DrillNumber = drillnumber;
+        }
+        public static void KouguListLoad()
+        {
+            ListadeKougu = LoadKouguList();
         }
         public static List<Kougu> LoadKouguList()
         {
