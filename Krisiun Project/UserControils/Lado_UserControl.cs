@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace Krisiun_Project.UserControils
@@ -26,5 +27,6 @@ namespace Krisiun_Project.UserControils
             if(frente_checkBox.Checked) {  }
             else { mentorifrente.Visible = false; }
         }
+
     }
 }

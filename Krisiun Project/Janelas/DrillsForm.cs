@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI;
 using System.Windows.Forms;
 
 namespace Krisiun_Project.Janelas
@@ -18,10 +19,14 @@ namespace Krisiun_Project.Janelas
         public DrillsForm()
         {
             InitializeComponent();
-            mentorifrente.Visible = false;
+
+            Mentori_Frente.OnChangeVisibility += UserControl1_OnChangeVisibility;
         }
 
-
+        private void UserControl1_OnChangeVisibility(bool visible)
+        {
+            Mentori_Frente visible;
+        }
         private void lado_UserControl1_Load(object sender, EventArgs e)
         {
 
