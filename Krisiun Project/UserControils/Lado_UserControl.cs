@@ -14,19 +14,26 @@ namespace Krisiun_Project.UserControils
 {
     public partial class Lado_UserControl : UserControl
     {
-        public Mentori_Frente mentorifrente;
-        public Mentori_Tras mentoritras;
-        public DrillsForm drillsform;
+        public delegate void AlterarPropriedadesEventHandler(bool visible);
+
+        // Declarando um evento usando o delegado
+        public event AlterarPropriedadesEventHandler OnAlterarPropriedades;
+     
         public Lado_UserControl()
         {
             InitializeComponent();
+            
         }
 
         private void frente_checkBox_CheckedChanged(object sender, EventArgs e)
         {
-            if(frente_checkBox.Checked) {  }
-            else { mentorifrente.Visible = false; }
+        Mudarvisibilidade(frente_checkBox.Checked);
         }
-
+     
+        private void Mudarvisibilidade(bool visible)
+        {
+                OnAlterarPropriedades?.Invoke(visible);
+            
+        }
     }
 }

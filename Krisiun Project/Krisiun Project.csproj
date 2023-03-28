@@ -227,6 +227,7 @@
     <Compile Include="Janelas\Program.cs" />
     <Compile Include="Janelas\textbox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControils\Class1.cs" />
     <Compile Include="UserControils\Drill_UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -14,19 +14,24 @@ namespace Krisiun_Project.Janelas
 {
     public partial class DrillsForm : Form
     {
-        public Lado_UserControl lado;
-        public Mentori_Frente mentorifrente;
+        Lado_UserControl lado;
+        Mentori_Frente mentorifrente;
+        //public bool MentoriFrenteVisible
+        //{
+        //    get { return mentorifrente.Visible; }
+        //    set { mentorifrente.Visible = value; }
+        //}
+        
         public DrillsForm()
         {
             InitializeComponent();
+     
+            mentori_Frente1.Visible = false;
+            lado_UserControl1.OnAlterarPropriedades += mentori_Frente1.alterar;
 
-            Mentori_Frente.OnChangeVisibility += UserControl1_OnChangeVisibility;
         }
 
-        private void UserControl1_OnChangeVisibility(bool visible)
-        {
-            Mentori_Frente visible;
-        }
+        public bool mentorifrentevisible;
         private void lado_UserControl1_Load(object sender, EventArgs e)
         {
 
