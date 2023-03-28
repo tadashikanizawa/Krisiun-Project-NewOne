@@ -35,5 +35,15 @@ namespace Krisiun_Project.UserControils
                 OnAlterarPropriedades?.Invoke(visible);
             
         }
+
+        private void Lado_UserControl_Load(object sender, EventArgs e)
+        {
+
+        }
+        public bool Mentori_F_Bool
+        {
+            get { return frente_checkBox.Checked; }
+            set { frente_checkBox.Checked = value; }
+        }
     }
 }

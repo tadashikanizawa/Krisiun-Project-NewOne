@@ -51,6 +51,7 @@
             // 
             this.lado_UserControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lado_UserControl1.Location = new System.Drawing.Point(383, 27);
+            this.lado_UserControl1.Mentori_F_Bool = false;
             this.lado_UserControl1.Name = "lado_UserControl1";
             this.lado_UserControl1.Size = new System.Drawing.Size(67, 150);
             this.lado_UserControl1.TabIndex = 2;
@@ -99,12 +100,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(433, 330);
+            this.button1.Location = new System.Drawing.Point(439, 324);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 84);
             this.button1.TabIndex = 6;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DrillsForm
             // 

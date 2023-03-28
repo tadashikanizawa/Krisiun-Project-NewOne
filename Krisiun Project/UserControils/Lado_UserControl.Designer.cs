@@ -99,6 +99,7 @@
             this.Controls.Add(this.label3);
             this.Name = "Lado_UserControl";
             this.Size = new System.Drawing.Size(67, 140);
+            this.Load += new System.EventHandler(this.Lado_UserControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
