@@ -51,7 +51,7 @@ namespace Krisiun_Project.janela_principal
 
                 if (ferramentaSelecionada != null)
                 {
-                    form1.atualizarportextbox = true;
+                   
                     if (!(ferramentaSelecionada is Mentori))
                     { 
                         if(ferramentaSelecionada.Mentori != null)
@@ -144,7 +144,6 @@ namespace Krisiun_Project.janela_principal
                         Tap tapSelecionado = ferramentaSelecionada as Tap;
                         // carrega valores para endmills
                     }
-                    form1.atualizarportextbox = false;
                     // adicione outros casos para outros tipos específicos de ferramentas
                 }
             }

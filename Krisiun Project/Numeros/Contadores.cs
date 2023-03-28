@@ -3,11 +3,12 @@
     internal class ToolNumber
     {
 
-        public int toolnumber;
-        public ToolNumber() { this.toolnumber = 01; }
-        public string contador()
+        public static int Toolnumber = 0;
+        public ToolNumber() { }
+        public static string contador()
         {
-            string n = toolnumber.ToString().PadLeft(2, '0');
+            string n = Toolnumber.ToString().PadLeft(2, '0');
+            Toolnumber++;
             return n;
         }
     }

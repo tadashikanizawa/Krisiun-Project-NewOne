@@ -118,6 +118,7 @@
   <ItemGroup>
     <Compile Include="Dados Aleatorios1\Kougu.cs" />
     <Compile Include="Dados Aleatorios1\Material.cs" />
+    <Compile Include="Dados Aleatorios1\TiposdeDrill.cs" />
     <Compile Include="Dados Aleatorios1\TiposdeTap.cs" />
     <Compile Include="Desenhos\ColorItem.cs" />
     <Compile Include="Dados Aleatorios1\TiposdeMentori.cs" />
@@ -132,6 +133,12 @@
     <Compile Include="Ferramentas\Drills.cs" />
     <Compile Include="Dados Aleatorios1\NSB.cs" />
     <Compile Include="G-Code\Tejun.cs" />
+    <Compile Include="Janelas\AdicionarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Janelas\AdicionarForm.Designer.cs">
+      <DependentUpon>AdicionarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Janelas\DGV_Codes.cs" />
     <Compile Include="Janelas\DrillsForm.cs">
       <SubType>Form</SubType>
@@ -226,6 +233,12 @@
     <Compile Include="UserControils\Drill_UserControl.Designer.cs">
       <DependentUpon>Drill_UserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControils\Lado_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControils\Lado_UserControl.Designer.cs">
+      <DependentUpon>Lado_UserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControils\Mentori-Frente.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -238,6 +251,9 @@
     <Compile Include="UserControils\Mentori_Tras.Designer.cs">
       <DependentUpon>Mentori_Tras.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Janelas\AdicionarForm.resx">
+      <DependentUpon>AdicionarForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Janelas\DrillsForm.resx">
       <DependentUpon>DrillsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +301,9 @@
     </Compile>
     <EmbeddedResource Include="UserControils\Drill_UserControl.resx">
       <DependentUpon>Drill_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControils\Lado_UserControl.resx">
+      <DependentUpon>Lado_UserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControils\Mentori-Frente.resx">
       <DependentUpon>Mentori-Frente.cs</DependentUpon>

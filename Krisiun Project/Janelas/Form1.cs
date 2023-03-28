@@ -130,18 +130,10 @@ namespace Krisiun_Project
             panel_update();
             atualizarComboBoxCores();
             addcore();
-            LoadDrills();
+            TipoDeDrills.LoadListdeDrills();
             TiposdeMentori.TipoMentoriLoad();
-     
-       
-
             TiposdeTap.CriarListas();
-           MessageBox.Show(TiposdeMentori.ListadeMentoriCutterF.Count.ToString());  
-            // LoadKouguList();
-           ListadeKougu = Kougu.LoadKouguList();
-            
-            //  bindingSource3.DataSource = tiposdeMentoris;
-
+            Kougu.LoadKouguList();
             Mydrills.LoadKaitenValuesFromCsv();
             comboBoxCores.SelectedIndex = 8;
 
@@ -185,64 +177,41 @@ namespace Krisiun_Project
 
         // Atribui o BindingSource à lista de grupos de coordenadas
         #region Load_as_coisas.
-        private void LoadMentori()
-        {
-            List<TiposdeMentori> tiposdeMentoris = TiposdeMentori.LoadMentoriCuter();
-            List<TiposdeMentori> tiposdeMentoris1 = TiposdeMentori.LoadMentoriCuter();
 
-           
-            men_tras_tipo_combo.DataSource = tiposdeMentoris1;
-            men_tras_tipo_combo.DisplayMember = "Tool";
-            men_tras_tipo_combo.ValueMember = "Tool";
-            men_tras_tipo_combo.SelectedIndex = 0;
-        }
-
-        private void LoadDrills()
-        {
-            List<TipoDeDrills> listaDeDrills = TipoDeDrills.LoadDrills();
-
-            drill_combobox.DataSource = listaDeDrills;
-            drill_combobox.DisplayMember = "Name";
-            drill_combobox.ValueMember = "Name";
-        }
-        public void LoadKouguList()
-        {
-            List<Kougu> listadeKoubu = Kougu.LoadKouguList();
-
-        }
+    
+  
         private void add_tb_naLista()
         {
-            TextBoxes.Add(Num_pro_textbox); //[0]
-            TextBoxes.Add(drill_kei_tb);    //[1]
-            TextBoxes.Add(drill_z_tb); //[2]
-            TextBoxes.Add(men_frente_tam_tb); //[3]
-            TextBoxes.Add(men_frente_kei_tb); //[4]
-            TextBoxes.Add(men_frente_z_tb);//[5]
-            TextBoxes.Add(men_frente_dan_tb);//[6]
+            //TextBoxes.Add(Num_pro_textbox); //[0]
+            //TextBoxes.Add(drill_kei_tb);    //[1]
+            //TextBoxes.Add(drill_z_tb); //[2]
+            //TextBoxes.Add(men_frente_tam_tb); //[3]
+            //TextBoxes.Add(men_frente_kei_tb); //[4]
+            //TextBoxes.Add(men_frente_z_tb);//[5]
+            //TextBoxes.Add(men_frente_dan_tb);//[6]
 
-            TextBoxes.Add(tool_tb); //7
-
-
-            TextBoxes.Add(men_tras_tam); //8
-            TextBoxes.Add(men_tras_kei); //9
-            TextBoxes.Add(men_tras_z); //10
-            TextBoxes.Add(men_tras_dan);//11
+            //TextBoxes.Add(tool_tb); //7
 
 
-
-            CheckBoxes.Add(frente_checkBox); //[0]
-            CheckBoxes.Add(tras_checkBox); //[1]
-            CheckBoxes.Add(sentan_cb); //[2]
-            CheckBoxes.Add(men_frente_checkbox); //[3]
-            CheckBoxes.Add(men_tras_checkbox); //[4]
+            //TextBoxes.Add(men_tras_tam); //8
+            //TextBoxes.Add(men_tras_kei); //9
+            //TextBoxes.Add(men_tras_z); //10
+            //TextBoxes.Add(men_tras_dan);//11
 
 
-            PanelList.Add(panel_boringana); //[0]
 
-            ComboBoxList.Add(drill_combobox); //0
+            //CheckBoxes.Add(frente_checkBox); //[0]
+            //CheckBoxes.Add(tras_checkBox); //[1]
+            //CheckBoxes.Add(sentan_cb); //[2]
+            //CheckBoxes.Add(men_frente_checkbox); //[3]
+            //CheckBoxes.Add(men_tras_checkbox); //[4]
+
+
+            //PanelList.Add(panel_boringana); //[0]
+
+            //ComboBoxList.Add(drill_combobox); //0
             ComboBoxList.Add(comboBoxCores);//1
        
-            ComboBoxList.Add(men_tras_tipo_combo); //3
         }
         #region Tamanho_Escala_Base
 
@@ -671,90 +640,90 @@ namespace Krisiun_Project
         #region Sobre as Checkboxs frente/tras
         private void frente_checkBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (frente_checkBox.Checked) { panel_men_frente.Visible = true; }
-            if (!frente_checkBox.Checked) { panel_men_frente.Visible = false; }
+            //if (frente_checkBox.Checked) { panel_men_frente.Visible = true; }
+            //if (!frente_checkBox.Checked) { panel_men_frente.Visible = false; }
 
-            if (lastSelectedDgv != null && lastSelectedDgv.CurrentRow != null)
-            {
-                Ferramentas ferramentaSelecionada = lastSelectedDgv.CurrentRow.DataBoundItem as Ferramentas;
-                if (ferramentaSelecionada != null)
-                {
+            //if (lastSelectedDgv != null && lastSelectedDgv.CurrentRow != null)
+            //{
+            //    Ferramentas ferramentaSelecionada = lastSelectedDgv.CurrentRow.DataBoundItem as Ferramentas;
+            //    if (ferramentaSelecionada != null)
+            //    {
 
-                    //
-                    //                   if (tras_checkBox.Checked != bools.Form3_Tras) { return; }
-                    if (!ferramentas.ListFrente.Contains(ferramentaSelecionada))
-                    {
-                        if (frente_checkBox.Checked)
-                        {
-                            ferramentas.ListFrente.Add(ferramentaSelecionada);
-                            ferramentaSelecionada.Frente = frente_checkBox.Checked;
-                        }
-                    }
-                    if (frente_checkBox.Checked == false)
-                    {
+            //        //
+            //        //                   if (tras_checkBox.Checked != bools.Form3_Tras) { return; }
+            //        if (!ferramentas.ListFrente.Contains(ferramentaSelecionada))
+            //        {
+            //            if (frente_checkBox.Checked)
+            //            {
+            //                ferramentas.ListFrente.Add(ferramentaSelecionada);
+            //                ferramentaSelecionada.Frente = frente_checkBox.Checked;
+            //            }
+            //        }
+            //        if (frente_checkBox.Checked == false)
+            //        {
 
-                        // Remova o objeto da lista
-                        ferramentas.ListFrente.Remove(ferramentaSelecionada);
-                        ferramentaSelecionada.Frente = false;
-                        // Atualize a exibição da DGV
-                        dataGridView2.Refresh();
+            //            // Remova o objeto da lista
+            //            ferramentas.ListFrente.Remove(ferramentaSelecionada);
+            //            ferramentaSelecionada.Frente = false;
+            //            // Atualize a exibição da DGV
+            //            dataGridView2.Refresh();
 
 
 
-                    }
-                    if (ferramentas.ListTras.Contains(ferramentaSelecionada))
-                    {
-                        return;
-                    }
+            //        }
+            //        if (ferramentas.ListTras.Contains(ferramentaSelecionada))
+            //        {
+            //            return;
+            //        }
 
-                    dataGridView2.Refresh();
-                    dataGridView3.Refresh();
-                    dataGridView1.Refresh();
-                    lastSelectedDgv.Refresh();
-                }
-            }
-            dataGridView2.Refresh();
-            dataGridView3.Refresh();
-            dataGridView1.Refresh();
+            //        dataGridView2.Refresh();
+            //        dataGridView3.Refresh();
+            //        dataGridView1.Refresh();
+            //        lastSelectedDgv.Refresh();
+            //    }
+            //}
+            //dataGridView2.Refresh();
+            //dataGridView3.Refresh();
+            //dataGridView1.Refresh();
 
         }
         private void tras_checkBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (tras_checkBox.Checked) { panel_men_tras.Visible = true; }
-            if (!tras_checkBox.Checked) { panel_men_tras.Visible = false; }
+            //if (tras_checkBox.Checked) { panel_men_tras.Visible = true; }
+            //if (!tras_checkBox.Checked) { panel_men_tras.Visible = false; }
 
-            if (lastSelectedDgv != null && lastSelectedDgv.CurrentRow != null)
-            {
-                Ferramentas ferramentaSelecionada = lastSelectedDgv.CurrentRow.DataBoundItem as Ferramentas;
-                if (ferramentaSelecionada != null)
-                {
-
-
-                    // Remova o objeto da lista
-                    ferramentas.ListTras.Remove(ferramentaSelecionada);
-                    ferramentaSelecionada.Tras = false;
-                    // Atualize a exibição da DGV
-                    dataGridView2.Refresh();
-                    dataGridView3.Refresh();
-                    dataGridView1.Refresh();
+            //if (lastSelectedDgv != null && lastSelectedDgv.CurrentRow != null)
+            //{
+            //    Ferramentas ferramentaSelecionada = lastSelectedDgv.CurrentRow.DataBoundItem as Ferramentas;
+            //    if (ferramentaSelecionada != null)
+            //    {
 
 
+            //        // Remova o objeto da lista
+            //        ferramentas.ListTras.Remove(ferramentaSelecionada);
+            //        ferramentaSelecionada.Tras = false;
+            //        // Atualize a exibição da DGV
+            //        dataGridView2.Refresh();
+            //        dataGridView3.Refresh();
+            //        dataGridView1.Refresh();
 
-                    if (!ferramentas.ListTras.Contains(ferramentaSelecionada))
-                    {
-                        if (tras_checkBox.Checked) { ferramentas.ListTras.Add(ferramentaSelecionada); }
 
-                        ferramentaSelecionada.Tras = tras_checkBox.Checked;
-                    }
-                    lastSelectedDgv.Refresh();
 
-                    dataGridView2.Refresh();
-                    dataGridView3.Refresh();
-                }
-            }
-            dataGridView2.Refresh();
-            dataGridView3.Refresh();
-            dataGridView1.Refresh();
+            //        if (!ferramentas.ListTras.Contains(ferramentaSelecionada))
+            //        {
+            //            if (tras_checkBox.Checked) { ferramentas.ListTras.Add(ferramentaSelecionada); }
+
+            //            ferramentaSelecionada.Tras = tras_checkBox.Checked;
+            //        }
+            //        lastSelectedDgv.Refresh();
+
+            //        dataGridView2.Refresh();
+            //        dataGridView3.Refresh();
+            //    }
+            //}
+            //dataGridView2.Refresh();
+            //dataGridView3.Refresh();
+            //dataGridView1.Refresh();
 
         }
         private void x_inv_checkbok_CheckedChanged(object sender, EventArgs e)
@@ -766,117 +735,35 @@ namespace Krisiun_Project
         #region Botões e Textboxs do Solid Drill
         private void button4_Click(object sender, EventArgs e)
         {
-            Load_ComboboxDrillType<Drills>(drill_combobox, null);
-            Load_Textbox<Drills>(drill_kei_tb, null, "Kei");
-            Load_Combobox<Drills>(drill_combobox, null, "DrillTipo");
-            Load_Textbox<Drills>(drill_z_tb, null, "Fukasa");
-            Load_Textbox<Drills>(tool_tb, null, "ToolNumber");
+            //Load_ComboboxDrillType<Drills>(drill_combobox, null);
+            //Load_Textbox<Drills>(drill_kei_tb, null, "Kei");
+            //Load_Combobox<Drills>(drill_combobox, null, "DrillTipo");
+            //Load_Textbox<Drills>(drill_z_tb, null, "Fukasa");
+            //Load_Textbox<Drills>(tool_tb, null, "ToolNumber");
 
-            Load_Combobox<Drills>(drill_combobox, null, "ToolName");
+            //Load_Combobox<Drills>(drill_combobox, null, "ToolName");
 
-            Load_Combobox<Drills>(Resfri_Combobox, null, "Resfriamento");
-            Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
-            Load_TextboxString2<Drills>(drill_combobox, drill_kei_tb, null, "Nome");
-            Load_TextboxString<Drills>(Num_pro_textbox, null, "Description");
+            //Load_Combobox<Drills>(Resfri_Combobox, null, "Resfriamento");
+            //Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
+            //Load_TextboxString2<Drills>(drill_combobox, drill_kei_tb, null, "Nome");
+            //Load_TextboxString<Drills>(Num_pro_textbox, null, "Description");
 
-            Load_Checkbox<Drills>(sentan_cb, null, "Sentan");
+            //Load_Checkbox<Drills>(sentan_cb, null, "Sentan");
             //  menfrenteCheck();
-            MentorConfigs();
+        
             panel_update();
 
         }
-        private void drill_combobox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (drill_combobox.SelectedIndex <= 2) { Resfri_Combobox.SelectedIndex = 2; }
-            else { Resfri_Combobox.SelectedIndex = 0; }
-
-
-        }
+    
         private void comboBoxCores_SelectedIndexChanged(object sender, EventArgs e)
         {
             Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
             panel_update();
         }
-        public bool atualizarportextbox = false;
-        private void drill_kei_tb_TextChanged(object sender, EventArgs e)
-        {   
-            if (atualizarportextbox) { return; }
-            mentorifrente.Kei = drill_kei_tb.Text;
-            men_tras_kei.Text = drill_kei_tb.Text;
-
-            float kei = 0;
-            float.TryParse(drill_kei_tb.Text, out kei);
-            Kougu numero = ListadeKougu.Find(x => x.DrillKei == kei);
-            if(numero != null)
-            { 
-            tool_tb.Text = numero.DrillNumber.ToString();
-            }
-            else
-            {
-                tool_tb.Text = toolnum.contador();
-            }
+      
 
 
-        }
-
-
-
-
-        private void sentan_cb_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
-        public void drill_z_tb_Leave(object sender, EventArgs e)
-        {
-
-        }
-        private void drill_z_tb_TextChanged(object sender, EventArgs e)
-        {
-            float atsumi = peca.z;
-            string valor = drill_z_tb.Text.ToString().Replace("-", "");
-            float z;
-            float kei;
-
-            var nsb = NSBLoader.Load();
-            if (float.TryParse(drill_kei_tb.Text, out kei))
-            {
-                if (float.TryParse(valor, out z))
-                {
-                    if (drill_combobox.SelectedIndex == 0)
-                    {
-                        NSB x = nsb.Find(n => n.Dia == kei);
-                        if (x != null)
-                        {
-                            if (x.Hachou < z)
-                            {
-                                DialogResult result = MessageBox.Show("Moldinoソリッドドリル5Dの刃長は" + x.Hachou.ToString() + "mm.\n\nもっと長いドリルを追加するか？", "確認", MessageBoxButtons.YesNo);
-
-                                if (result == DialogResult.Yes)
-                                {
-                                    MessageBox.Show("teste-Drill");
-                                }
-                            }
-                        }
-                    }
-                    if (drill_combobox.SelectedIndex == 1)
-                    {
-                        kei *= 5.15f;
-                        if (kei < z)
-                        {
-                            DialogResult result = MessageBox.Show("イスカルドリル5Dの長さは" + kei.ToString() + "mm.\n\nもっと長いドリルを追加するか？", "確認", MessageBoxButtons.YesNo);
-
-                            if (result == DialogResult.Yes)
-                            {
-                                MessageBox.Show("teste-Cam");
-                            }
-                        }
-                    }
-
-
-                }
-            }
-
-        }
+     
         #endregion
         #region Resto
         private void Num_pro_textbox_Leave(object sender, EventArgs e)
@@ -899,14 +786,15 @@ namespace Krisiun_Project
         {
             //  frente_checkBox.Checked = false;
             // tras_checkBox.Checked = false;
-            sentan_cb.Checked = false;
-            men_tras_checkbox.Checked = false;
+            //sentan_cb.Checked = false;
+            //men_tras_checkbox.Checked = false;
             dataGridView1.ClearSelection();
             dataGridView2.ClearSelection();
             dataGridView3.Select();
-            form2.ShowDialog();
+            //form2.ShowDialog();
             dataGridView3.Refresh();
-
+            AdicionarForm adicionarForm = new AdicionarForm();
+            adicionarForm.ShowDialog();
 
 
             if (dataGridView3.Rows.Count == 0) { return; }
@@ -1131,150 +1019,7 @@ namespace Krisiun_Project
 
 
 
-        private void MentorConfigs()
-        {
-            var selecionado = GetSelectedObject();
-            Mentori mentori = new Mentori(peca);
-            MentoriB mentorib = new MentoriB(peca);
-            TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
-            TiposdeMentori selectedMentoriB = men_tras_tipo_combo.SelectedItem as TiposdeMentori;
-
-            mentori.TipoDeCutter = selectedMentori;
-            mentori.ToolName = selectedMentori.Tool;
-            mentori.ToolNumber = selectedMentori.MenCutterToolNum;
-            mentori.Nome = selectedMentori.Tool;
-            mentori.Kei = selectedMentori.Diametro;
-            mentori.Kaiten = selectedMentori.Kaiten;
-            mentori.Okuri = selectedMentori.Okuri;
-
-            mentori.Index = 0;
-            mentori.Frente = true;
-
-            mentorib.TipoDeCutter = selectedMentoriB;
-            mentorib.ToolName = selectedMentoriB.Tool;
-            mentorib.ToolNumber = selectedMentoriB.MenCutterToolNum;
-            mentorib.Nome = selectedMentoriB.Tool;
-            mentorib.Kei = selectedMentoriB.Diametro;
-            mentorib.Kaiten = selectedMentoriB.Kaiten;
-            mentorib.Okuri = selectedMentoriB.Okuri;
-            mentorib.Index = 1;
-            mentorib.Tras = true;
-
-            selecionado.Mentori_F_Bool = men_frente_checkbox.Checked;
-            selecionado.Mentori_B_Bool = men_tras_checkbox.Checked;
-            int ativoF = ferramentas.ListTotal.Count(x => x.Mentori_F_Bool);
-            bool BoolativoF = ativoF > 0;
-            int ativo1F = ferramentas.ListFrente.Count(x => x.Mentori_F_Bool);
-            bool Boolativo1F = ativo1F > 0;
-            int ativoB = ferramentas.ListTotal.Count(x => x.Mentori_B_Bool);
-            bool BoolativoB = ativoB > 0;
-            int ativo1B = ferramentas.ListTras.Count(x => x.Mentori_B_Bool);
-            bool Boolativo1B = ativo1B > 0;
-
-
-
-
-            if (BoolativoF == true)
-            {
-                if (ferramentas.ListTotal.Contains(mentori) == false) { ferramentas.ListTotal.Add(mentori); }
-                if (ferramentas.ListFrente.Contains(mentori) == false) { ferramentas.ListFrente.Add(mentori); }
-                // if (ferramentas.MentoriFrente.Contains(selecionado) == false) { ferramentas.MentoriFrente.Add(selecionado); }
-                dataGridView3.Refresh();
-            }
-            else
-            {
-                if (ferramentas.ListFrente.Contains(mentori) == true) { ferramentas.ListFrente.Remove(mentori); }
-                if (ferramentas.ListTotal.Contains(mentori) == true) { ferramentas.ListTotal.Remove(mentori); }
-                // if (ferramentas.MentoriFrente.Contains(selecionado) == true) { ferramentas.MentoriFrente.Remove(selecionado); }
-                dataGridView3.Refresh();
-            }
-
-            if (BoolativoB == true)
-            {
-                if (ferramentas.ListTotal.Contains(mentorib) == false) { ferramentas.ListTotal.Add(mentorib); }
-                if (ferramentas.ListTras.Contains(mentorib) == false) { ferramentas.ListTras.Add(mentorib); }
-                //  if (ferramentas.MentoriTras.Contains(selecionado) == false) { ferramentas.MentoriTras.Add(selecionado); }
-                dataGridView3.Refresh();
-            }
-            else
-            {
-                if (ferramentas.ListTotal.Contains(mentorib) == true) { ferramentas.ListTotal.Remove(mentorib); }
-                if (ferramentas.ListTras.Contains(mentorib) == true) { ferramentas.ListTras.Remove(mentorib); }
-                //if (ferramentas.MentoriTras.Contains(selecionado) == true) { ferramentas.MentoriTras.Remove(selecionado); }
-                dataGridView3.Refresh();
-            }
-            selecionado.Mentori = mentori;
-            selecionado.MentoriB = mentorib;
-            //drill.Mentori.MentoriCutter = selectedMentori;
-
-            if (float.TryParse(men_frente_kei_tb.Text, out float menkei))
-            {
-                selecionado.Mentori.MenKei = menkei;
-            }
-            if (float.TryParse(men_frente_tam_tb.Text, out float tam))
-            {
-                selecionado.Mentori.C = tam;
-            }
-            if (float.TryParse(men_frente_dan_tb.Text, out float dan))
-            {
-                selecionado.Mentori.Dansa = dan;
-            }
-            if (float.TryParse(men_frente_z_tb.Text, out float z))
-            {
-                selecionado.Mentori.Z = z;
-            }
-            //daqui pra tras é de tras
-            if (float.TryParse(men_tras_kei.Text, out float s))
-            {
-                selecionado.MentoriB.MenKei = s;
-            }
-            if (float.TryParse(men_tras_tam.Text, out float tam2))
-            {
-                selecionado.MentoriB.C = tam2;
-            }
-            if (float.TryParse(men_tras_dan.Text, out float dan2))
-            {
-                selecionado.MentoriB.Dansa = dan2;
-            }
-            if (float.TryParse(men_tras_z.Text, out float z2))
-            {
-                selecionado.MentoriB.Z = z2;
-            }
-            dataGridView3.Update();
-
-            foreach (Ferramentas item in ferramentas.ListFrente)
-            {
-                if (item.Mentori_F_Bool == true)
-                {
-                    if (ferramentas.MentoriFrente.Contains(item) == false)
-                    {
-                        ferramentas.MentoriFrente.Add(item);
-                    }
-                }
-            }
-            foreach (Ferramentas item in ferramentas.ListTras)
-            {
-                if (item.Mentori_B_Bool == true)
-                {
-                    if (ferramentas.MentoriTras.Contains(item) == false)
-                    {
-                        ferramentas.MentoriTras.Add(item);
-                    }
-                }
-            }
-            foreach (Ferramentas item in ferramentas.MentoriFrente)
-            {
-                if (item.Mentori_F_Bool != true)
-                { ferramentas.MentoriFrente.Remove(item); }
-            }
-            foreach (Ferramentas item in ferramentas.MentoriTras)
-            {
-                if (item.Mentori_B_Bool != true)
-                { ferramentas.MentoriTras.Remove(item); }
-            }
-
-        }
-     
+       
         #endregion
 
         private void button12_Click(object sender, EventArgs e)
@@ -1296,11 +1041,14 @@ namespace Krisiun_Project
 
         private void button16_Click(object sender, EventArgs e)
         {
+        
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
             DrillsForm drillsFOrm = new DrillsForm();
             drillsFOrm.ShowDialog();
         }
-
-       
     }
 
 
