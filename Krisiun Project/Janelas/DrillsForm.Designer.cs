@@ -31,6 +31,11 @@
             this.drill_UserControl1 = new Krisiun_Project.UserControils.Drill_UserControl();
             this.lado_UserControl1 = new Krisiun_Project.UserControils.Lado_UserControl();
             this.mentori_Frente1 = new Krisiun_Project.UserControils.Mentori_Frente();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mentori_Tras1 = new Krisiun_Project.UserControils.Mentori_Tras();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // drill_UserControl1
@@ -44,7 +49,7 @@
             // lado_UserControl1
             // 
             this.lado_UserControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lado_UserControl1.Location = new System.Drawing.Point(349, 73);
+            this.lado_UserControl1.Location = new System.Drawing.Point(180, 37);
             this.lado_UserControl1.Name = "lado_UserControl1";
             this.lado_UserControl1.Size = new System.Drawing.Size(67, 150);
             this.lado_UserControl1.TabIndex = 2;
@@ -54,10 +59,42 @@
             // 
             this.mentori_Frente1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.mentori_Frente1.Kei = "1";
-            this.mentori_Frente1.Location = new System.Drawing.Point(193, 44);
+            this.mentori_Frente1.Location = new System.Drawing.Point(15, 219);
             this.mentori_Frente1.Name = "mentori_Frente1";
             this.mentori_Frente1.Size = new System.Drawing.Size(138, 115);
             this.mentori_Frente1.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.X,
+            this.Y});
+            this.dataGridView1.Location = new System.Drawing.Point(472, 27);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 21;
+            this.dataGridView1.Size = new System.Drawing.Size(203, 150);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // X
+            // 
+            this.X.HeaderText = "X";
+            this.X.Name = "X";
+            // 
+            // Y
+            // 
+            this.Y.HeaderText = "Y";
+            this.Y.Name = "Y";
+            // 
+            // mentori_Tras1
+            // 
+            this.mentori_Tras1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.mentori_Tras1.Kei = "3.3";
+            this.mentori_Tras1.Location = new System.Drawing.Point(159, 219);
+            this.mentori_Tras1.Name = "mentori_Tras1";
+            this.mentori_Tras1.Size = new System.Drawing.Size(132, 116);
+            this.mentori_Tras1.TabIndex = 5;
             // 
             // DrillsForm
             // 
@@ -65,11 +102,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.mentori_Tras1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.mentori_Frente1);
             this.Controls.Add(this.lado_UserControl1);
             this.Controls.Add(this.drill_UserControl1);
             this.Name = "DrillsForm";
             this.Text = "DrillsFOrm";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -79,5 +119,9 @@
         private UserControils.Drill_UserControl drill_UserControl1;
         private UserControils.Lado_UserControl lado_UserControl1;
         private UserControils.Mentori_Frente mentori_Frente1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn X;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Y;
+        private UserControils.Mentori_Tras mentori_Tras1;
     }
 }
