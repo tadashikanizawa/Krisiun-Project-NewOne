@@ -5,6 +5,7 @@ using Krisiun_Project.G_Code;
 using Krisiun_Project.janela_principal;
 using Krisiun_Project.Janelas;
 using Krisiun_Project.Numeros;
+using Krisiun_Project.UserControils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,6 +55,7 @@ namespace Krisiun_Project
         private NSB nsb;
         private ColorItem coloritem;
         private Pastas pastas;
+        private Mentori_Frente mentorifrente;
         //private  NSBLoader nSB;
         // private NSBLoader nsbs;
         public BindingSource bindingSource = new BindingSource();
@@ -129,13 +131,17 @@ namespace Krisiun_Project
             atualizarComboBoxCores();
             addcore();
             LoadDrills();
-            LoadMentori();
+            TiposdeMentori.TipoMentoriLoad();
+     
+       
+
             TiposdeTap.CriarListas();
-           // LoadKouguList();
+           MessageBox.Show(TiposdeMentori.ListadeMentoriCutterF.Count.ToString());  
+            // LoadKouguList();
            ListadeKougu = Kougu.LoadKouguList();
-            List<TiposdeMentori> ListadeMentoris1 = TiposdeMentori.LoadMentoriCuter();
+            
             //  bindingSource3.DataSource = tiposdeMentoris;
-            dataGridView4.DataSource = ListadeMentoris1;
+
             Mydrills.LoadKaitenValuesFromCsv();
             comboBoxCores.SelectedIndex = 8;
 
@@ -184,10 +190,7 @@ namespace Krisiun_Project
             List<TiposdeMentori> tiposdeMentoris = TiposdeMentori.LoadMentoriCuter();
             List<TiposdeMentori> tiposdeMentoris1 = TiposdeMentori.LoadMentoriCuter();
 
-            men_frente_tipo_combo.DataSource = tiposdeMentoris;
-            men_frente_tipo_combo.DisplayMember = "Tool";
-            men_frente_tipo_combo.ValueMember = "Tool";
-            men_frente_tipo_combo.SelectedIndex = 0;
+           
             men_tras_tipo_combo.DataSource = tiposdeMentoris1;
             men_tras_tipo_combo.DisplayMember = "Tool";
             men_tras_tipo_combo.ValueMember = "Tool";
@@ -238,7 +241,7 @@ namespace Krisiun_Project
 
             ComboBoxList.Add(drill_combobox); //0
             ComboBoxList.Add(comboBoxCores);//1
-            ComboBoxList.Add(men_frente_tipo_combo); //2
+       
             ComboBoxList.Add(men_tras_tipo_combo); //3
         }
         #region Tamanho_Escala_Base
@@ -798,7 +801,7 @@ namespace Krisiun_Project
         private void drill_kei_tb_TextChanged(object sender, EventArgs e)
         {   
             if (atualizarportextbox) { return; }
-            men_frente_kei_tb.Text = drill_kei_tb.Text;
+            mentorifrente.Kei = drill_kei_tb.Text;
             men_tras_kei.Text = drill_kei_tb.Text;
 
             float kei = 0;
@@ -897,7 +900,6 @@ namespace Krisiun_Project
             //  frente_checkBox.Checked = false;
             // tras_checkBox.Checked = false;
             sentan_cb.Checked = false;
-            men_frente_checkbox.Checked = false;
             men_tras_checkbox.Checked = false;
             dataGridView1.ClearSelection();
             dataGridView2.ClearSelection();
@@ -1123,37 +1125,9 @@ namespace Krisiun_Project
             }
         }
 
-        private void men_frente_z_tb_TextChanged(object sender, EventArgs e)
-        {
-            if (float.TryParse(men_frente_z_tb.Text, out float valor))
-            {
-                if (valor > tamcutter)
-                {
-                    if (valor < 0) { valor *= -1; }
-                    MessageBox.Show("このカッターの刃長は" + tamcutter.ToString() + "ので。大丈夫でしょうか？");
-                }
-
-            }
-        }
-        public float tamcutter;
+   
         public float tamcutter2;
-        private void men_frente_tipo_combo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;
-
-            // Verificar se o objeto selecionado não é nulo
-            if (selectedMentori != null)
-            {
-                // Atualize a TextBox com o valor da propriedade
-                tamcutter = selectedMentori.Profundidade;
-            }
-        }
-
-
-        private void men_frente_checkbox_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+    
 
 
 
@@ -1300,17 +1274,7 @@ namespace Krisiun_Project
             }
 
         }
-        private void men_tras_tipo_combo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TiposdeMentori selectedMentori = men_tras_tipo_combo.SelectedItem as TiposdeMentori;
-
-            // Verificar se o objeto selecionado não é nulo
-            if (selectedMentori != null)
-            {
-                // Atualize a TextBox com o valor da propriedade
-                tamcutter2 = selectedMentori.Profundidade;
-            }
-        }
+     
         #endregion
 
         private void button12_Click(object sender, EventArgs e)
@@ -1329,6 +1293,14 @@ namespace Krisiun_Project
             TapMMForm tapMMForm = new TapMMForm();
             tapMMForm.ShowDialog();
         }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            DrillsForm drillsFOrm = new DrillsForm();
+            drillsFOrm.ShowDialog();
+        }
+
+       
     }
 
 

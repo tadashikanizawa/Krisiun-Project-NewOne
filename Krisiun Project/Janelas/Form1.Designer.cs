@@ -58,36 +58,33 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel_ana = new System.Windows.Forms.Panel();
-            this.Resfri_Combobox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.tap_avan_panel = new System.Windows.Forms.Panel();
+            this.tap_k_tb = new System.Windows.Forms.TextBox();
+            this.tap_pitch_tb = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.tap_q_tb = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.tap_kaiten_tb = new System.Windows.Forms.TextBox();
+            this.tap_inch_rb = new System.Windows.Forms.RadioButton();
+            this.tap_mm_rb = new System.Windows.Forms.RadioButton();
+            this.tap_tool_tb = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.tap_tool_combobox = new System.Windows.Forms.ComboBox();
+            this.tap_z_tb = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.comboBoxCores = new System.Windows.Forms.ComboBox();
-            this.panel_men_tras = new System.Windows.Forms.Panel();
-            this.men_tras_z = new System.Windows.Forms.TextBox();
-            this.men_tras_checkbox = new System.Windows.Forms.CheckBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.men_tras_tipo_combo = new System.Windows.Forms.ComboBox();
-            this.men_tras_dan = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.men_tras_tam = new System.Windows.Forms.TextBox();
-            this.men_tras_kei = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.panel_men_frente = new System.Windows.Forms.Panel();
-            this.men_frente_z_tb = new System.Windows.Forms.TextBox();
-            this.men_frente_checkbox = new System.Windows.Forms.CheckBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.men_frente_tipo_combo = new System.Windows.Forms.ComboBox();
-            this.men_frente_dan_tb = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.men_frente_tam_tb = new System.Windows.Forms.TextBox();
-            this.men_frente_kei_tb = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.Num_pro_textbox = new System.Windows.Forms.TextBox();
             this.panel_boringana = new System.Windows.Forms.Panel();
             this.label29 = new System.Windows.Forms.Label();
+            this.Resfri_Combobox = new System.Windows.Forms.ComboBox();
             this.drill_combobox = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
+            this.Num_pro_textbox = new System.Windows.Forms.TextBox();
             this.drill_z_tb = new System.Windows.Forms.TextBox();
             this.sentan_cb = new System.Windows.Forms.CheckBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -95,6 +92,15 @@
             this.tool_tb = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.comboBoxCores = new System.Windows.Forms.ComboBox();
+            this.panel_men_tras = new System.Windows.Forms.Panel();
+            this.men_tras_tipo_combo = new System.Windows.Forms.ComboBox();
+            this.men_tras_dan = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.men_tras_tam = new System.Windows.Forms.TextBox();
+            this.men_tras_kei = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -154,6 +160,9 @@
             this.listFrenteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.mentori_Frente1 = new Krisiun_Project.UserControils.Mentori_Frente();
             this.panel_inverso.SuspendLayout();
             this.panel_lado.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -162,9 +171,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCoordenadas)).BeginInit();
             this.panel_ana.SuspendLayout();
-            this.panel_men_tras.SuspendLayout();
-            this.panel_men_frente.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.tap_avan_panel.SuspendLayout();
             this.panel_boringana.SuspendLayout();
+            this.panel_men_tras.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource3)).BeginInit();
@@ -237,7 +247,7 @@
             this.panel_lado.Controls.Add(this.tras_checkBox);
             this.panel_lado.Controls.Add(this.frente_checkBox);
             this.panel_lado.Controls.Add(this.label3);
-            this.panel_lado.Location = new System.Drawing.Point(141, 32);
+            this.panel_lado.Location = new System.Drawing.Point(175, 32);
             this.panel_lado.Name = "panel_lado";
             this.panel_lado.Size = new System.Drawing.Size(64, 137);
             this.panel_lado.TabIndex = 23;
@@ -437,7 +447,7 @@
             // 
             this.dgvCoordenadas.ColumnHeadersHeight = 34;
             this.dgvCoordenadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvCoordenadas.Location = new System.Drawing.Point(660, 63);
+            this.dgvCoordenadas.Location = new System.Drawing.Point(662, 662);
             this.dgvCoordenadas.Margin = new System.Windows.Forms.Padding(2);
             this.dgvCoordenadas.MultiSelect = false;
             this.dgvCoordenadas.Name = "dgvCoordenadas";
@@ -453,7 +463,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(685, 229);
+            this.button9.Location = new System.Drawing.Point(687, 828);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(122, 33);
@@ -475,7 +485,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(685, 192);
+            this.button8.Location = new System.Drawing.Point(687, 791);
             this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(123, 33);
@@ -486,38 +496,219 @@
             // 
             // panel_ana
             // 
-            this.panel_ana.Controls.Add(this.Resfri_Combobox);
+            this.panel_ana.Controls.Add(this.label4);
+            this.panel_ana.Controls.Add(this.panel4);
             this.panel_ana.Controls.Add(this.button4);
-            this.panel_ana.Controls.Add(this.comboBoxCores);
-            this.panel_ana.Controls.Add(this.panel_men_tras);
-            this.panel_ana.Controls.Add(this.panel_men_frente);
-            this.panel_ana.Controls.Add(this.Num_pro_textbox);
-            this.panel_ana.Controls.Add(this.panel_lado);
             this.panel_ana.Controls.Add(this.panel_boringana);
-            this.panel_ana.Controls.Add(this.tool_tb);
-            this.panel_ana.Controls.Add(this.label26);
             this.panel_ana.Controls.Add(this.button5);
+            this.panel_ana.Controls.Add(this.panel_lado);
             this.panel_ana.Location = new System.Drawing.Point(415, 31);
             this.panel_ana.Name = "panel_ana";
-            this.panel_ana.Size = new System.Drawing.Size(242, 472);
+            this.panel_ana.Size = new System.Drawing.Size(242, 747);
             this.panel_ana.TabIndex = 19;
             // 
-            // Resfri_Combobox
+            // label4
             // 
-            this.Resfri_Combobox.FormattingEnabled = true;
-            this.Resfri_Combobox.Items.AddRange(new object[] {
-            "M08",
-            "M12",
-            "M51",
-            "M339"});
-            this.Resfri_Combobox.Location = new System.Drawing.Point(9, 178);
-            this.Resfri_Combobox.Name = "Resfri_Combobox";
-            this.Resfri_Combobox.Size = new System.Drawing.Size(60, 20);
-            this.Resfri_Combobox.TabIndex = 88;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(82, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 24);
+            this.label4.TabIndex = 86;
+            this.label4.Text = "孔開け";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.checkBox3);
+            this.panel4.Controls.Add(this.tap_avan_panel);
+            this.panel4.Controls.Add(this.tap_inch_rb);
+            this.panel4.Controls.Add(this.tap_mm_rb);
+            this.panel4.Controls.Add(this.tap_tool_tb);
+            this.panel4.Controls.Add(this.label40);
+            this.panel4.Controls.Add(this.tap_tool_combobox);
+            this.panel4.Controls.Add(this.tap_z_tb);
+            this.panel4.Controls.Add(this.label39);
+            this.panel4.Controls.Add(this.label43);
+            this.panel4.Location = new System.Drawing.Point(3, 178);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(236, 235);
+            this.panel4.TabIndex = 99;
+            this.panel4.Visible = false;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(70, 111);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(72, 16);
+            this.checkBox3.TabIndex = 85;
+            this.checkBox3.Text = "詳細設定";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // tap_avan_panel
+            // 
+            this.tap_avan_panel.Controls.Add(this.tap_k_tb);
+            this.tap_avan_panel.Controls.Add(this.tap_pitch_tb);
+            this.tap_avan_panel.Controls.Add(this.label46);
+            this.tap_avan_panel.Controls.Add(this.label44);
+            this.tap_avan_panel.Controls.Add(this.tap_q_tb);
+            this.tap_avan_panel.Controls.Add(this.label41);
+            this.tap_avan_panel.Controls.Add(this.label45);
+            this.tap_avan_panel.Controls.Add(this.tap_kaiten_tb);
+            this.tap_avan_panel.Location = new System.Drawing.Point(32, 133);
+            this.tap_avan_panel.Name = "tap_avan_panel";
+            this.tap_avan_panel.Size = new System.Drawing.Size(152, 69);
+            this.tap_avan_panel.TabIndex = 83;
+            this.tap_avan_panel.Visible = false;
+            // 
+            // tap_k_tb
+            // 
+            this.tap_k_tb.Location = new System.Drawing.Point(102, 43);
+            this.tap_k_tb.Name = "tap_k_tb";
+            this.tap_k_tb.Size = new System.Drawing.Size(36, 19);
+            this.tap_k_tb.TabIndex = 89;
+            this.tap_k_tb.Text = "3.3";
+            // 
+            // tap_pitch_tb
+            // 
+            this.tap_pitch_tb.Location = new System.Drawing.Point(41, 18);
+            this.tap_pitch_tb.Name = "tap_pitch_tb";
+            this.tap_pitch_tb.Size = new System.Drawing.Size(36, 19);
+            this.tap_pitch_tb.TabIndex = 77;
+            this.tap_pitch_tb.Text = "3.3";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(83, 46);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(12, 12);
+            this.label46.TabIndex = 90;
+            this.label46.Text = "K";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(6, 25);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(33, 12);
+            this.label44.TabIndex = 78;
+            this.label44.Text = "ピーチ";
+            // 
+            // tap_q_tb
+            // 
+            this.tap_q_tb.Location = new System.Drawing.Point(102, 18);
+            this.tap_q_tb.Name = "tap_q_tb";
+            this.tap_q_tb.Size = new System.Drawing.Size(36, 19);
+            this.tap_q_tb.TabIndex = 87;
+            this.tap_q_tb.Text = "3.3";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(6, 50);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(29, 12);
+            this.label41.TabIndex = 86;
+            this.label41.Text = "回転";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(83, 21);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(13, 12);
+            this.label45.TabIndex = 88;
+            this.label45.Text = "Q";
+            // 
+            // tap_kaiten_tb
+            // 
+            this.tap_kaiten_tb.Location = new System.Drawing.Point(41, 43);
+            this.tap_kaiten_tb.Name = "tap_kaiten_tb";
+            this.tap_kaiten_tb.Size = new System.Drawing.Size(36, 19);
+            this.tap_kaiten_tb.TabIndex = 85;
+            this.tap_kaiten_tb.Text = "3.3";
+            // 
+            // tap_inch_rb
+            // 
+            this.tap_inch_rb.AutoSize = true;
+            this.tap_inch_rb.Location = new System.Drawing.Point(17, 64);
+            this.tap_inch_rb.Name = "tap_inch_rb";
+            this.tap_inch_rb.Size = new System.Drawing.Size(58, 16);
+            this.tap_inch_rb.TabIndex = 84;
+            this.tap_inch_rb.Text = "(インチ)";
+            this.tap_inch_rb.UseVisualStyleBackColor = true;
+            // 
+            // tap_mm_rb
+            // 
+            this.tap_mm_rb.AutoSize = true;
+            this.tap_mm_rb.Checked = true;
+            this.tap_mm_rb.Location = new System.Drawing.Point(17, 47);
+            this.tap_mm_rb.Name = "tap_mm_rb";
+            this.tap_mm_rb.Size = new System.Drawing.Size(49, 16);
+            this.tap_mm_rb.TabIndex = 83;
+            this.tap_mm_rb.TabStop = true;
+            this.tap_mm_rb.Text = "(mm)";
+            this.tap_mm_rb.UseVisualStyleBackColor = true;
+            // 
+            // tap_tool_tb
+            // 
+            this.tap_tool_tb.Location = new System.Drawing.Point(70, 86);
+            this.tap_tool_tb.Name = "tap_tool_tb";
+            this.tap_tool_tb.Size = new System.Drawing.Size(36, 19);
+            this.tap_tool_tb.TabIndex = 82;
+            this.tap_tool_tb.Text = "01";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(50, 93);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(12, 12);
+            this.label40.TabIndex = 83;
+            this.label40.Text = "T";
+            // 
+            // tap_tool_combobox
+            // 
+            this.tap_tool_combobox.FormattingEnabled = true;
+            this.tap_tool_combobox.Location = new System.Drawing.Point(88, 53);
+            this.tap_tool_combobox.Name = "tap_tool_combobox";
+            this.tap_tool_combobox.Size = new System.Drawing.Size(126, 20);
+            this.tap_tool_combobox.TabIndex = 80;
+            this.tap_tool_combobox.Text = "タップ";
+            // 
+            // tap_z_tb
+            // 
+            this.tap_z_tb.Location = new System.Drawing.Point(133, 86);
+            this.tap_z_tb.Name = "tap_z_tb";
+            this.tap_z_tb.Size = new System.Drawing.Size(36, 19);
+            this.tap_z_tb.TabIndex = 80;
+            this.tap_z_tb.Text = "-10";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label39.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label39.Location = new System.Drawing.Point(84, 11);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(62, 24);
+            this.label39.TabIndex = 80;
+            this.label39.Text = "タップ";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(113, 93);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(12, 12);
+            this.label43.TabIndex = 81;
+            this.label43.Text = "Z";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(88, 353);
+            this.button4.Location = new System.Drawing.Point(120, 448);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 61);
             this.button4.TabIndex = 87;
@@ -525,258 +716,22 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // comboBoxCores
-            // 
-            this.comboBoxCores.FormattingEnabled = true;
-            this.comboBoxCores.Location = new System.Drawing.Point(109, 7);
-            this.comboBoxCores.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxCores.Name = "comboBoxCores";
-            this.comboBoxCores.Size = new System.Drawing.Size(74, 20);
-            this.comboBoxCores.TabIndex = 77;
-            this.comboBoxCores.SelectedIndexChanged += new System.EventHandler(this.comboBoxCores_SelectedIndexChanged);
-            // 
-            // panel_men_tras
-            // 
-            this.panel_men_tras.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_men_tras.Controls.Add(this.men_tras_z);
-            this.panel_men_tras.Controls.Add(this.men_tras_checkbox);
-            this.panel_men_tras.Controls.Add(this.label16);
-            this.panel_men_tras.Controls.Add(this.men_tras_tipo_combo);
-            this.panel_men_tras.Controls.Add(this.men_tras_dan);
-            this.panel_men_tras.Controls.Add(this.label17);
-            this.panel_men_tras.Controls.Add(this.label18);
-            this.panel_men_tras.Controls.Add(this.men_tras_tam);
-            this.panel_men_tras.Controls.Add(this.men_tras_kei);
-            this.panel_men_tras.Controls.Add(this.label19);
-            this.panel_men_tras.Location = new System.Drawing.Point(125, 225);
-            this.panel_men_tras.Margin = new System.Windows.Forms.Padding(2);
-            this.panel_men_tras.Name = "panel_men_tras";
-            this.panel_men_tras.Size = new System.Drawing.Size(113, 120);
-            this.panel_men_tras.TabIndex = 77;
-            this.panel_men_tras.Visible = false;
-            // 
-            // men_tras_z
-            // 
-            this.men_tras_z.Location = new System.Drawing.Point(16, 83);
-            this.men_tras_z.Name = "men_tras_z";
-            this.men_tras_z.Size = new System.Drawing.Size(36, 19);
-            this.men_tras_z.TabIndex = 75;
-            this.men_tras_z.Text = "-1.5";
-            // 
-            // men_tras_checkbox
-            // 
-            this.men_tras_checkbox.AutoSize = true;
-            this.men_tras_checkbox.Location = new System.Drawing.Point(11, 15);
-            this.men_tras_checkbox.Name = "men_tras_checkbox";
-            this.men_tras_checkbox.Size = new System.Drawing.Size(76, 16);
-            this.men_tras_checkbox.TabIndex = 68;
-            this.men_tras_checkbox.Text = "面取り(裏)";
-            this.men_tras_checkbox.UseVisualStyleBackColor = true;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(1, 85);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(12, 12);
-            this.label16.TabIndex = 76;
-            this.label16.Text = "Z";
-            // 
-            // men_tras_tipo_combo
-            // 
-            this.men_tras_tipo_combo.FormattingEnabled = true;
-            this.men_tras_tipo_combo.Items.AddRange(new object[] {
-            "VC-2C(φ10)"});
-            this.men_tras_tipo_combo.Location = new System.Drawing.Point(8, 35);
-            this.men_tras_tipo_combo.Name = "men_tras_tipo_combo";
-            this.men_tras_tipo_combo.Size = new System.Drawing.Size(96, 20);
-            this.men_tras_tipo_combo.TabIndex = 68;
-            this.men_tras_tipo_combo.Text = "VC-2C(φ10)";
-            this.men_tras_tipo_combo.SelectedIndexChanged += new System.EventHandler(this.men_tras_tipo_combo_SelectedIndexChanged);
-            // 
-            // men_tras_dan
-            // 
-            this.men_tras_dan.Location = new System.Drawing.Point(68, 83);
-            this.men_tras_dan.Name = "men_tras_dan";
-            this.men_tras_dan.Size = new System.Drawing.Size(36, 19);
-            this.men_tras_dan.TabIndex = 73;
-            this.men_tras_dan.Text = "0";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(52, 85);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(18, 12);
-            this.label17.TabIndex = 74;
-            this.label17.Text = "Z+";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(-2, 66);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(17, 12);
-            this.label18.TabIndex = 70;
-            this.label18.Text = "φ";
-            // 
-            // men_tras_tam
-            // 
-            this.men_tras_tam.Location = new System.Drawing.Point(68, 59);
-            this.men_tras_tam.Name = "men_tras_tam";
-            this.men_tras_tam.Size = new System.Drawing.Size(36, 19);
-            this.men_tras_tam.TabIndex = 71;
-            this.men_tras_tam.Text = "0.3";
-            // 
-            // men_tras_kei
-            // 
-            this.men_tras_kei.Location = new System.Drawing.Point(16, 57);
-            this.men_tras_kei.Name = "men_tras_kei";
-            this.men_tras_kei.Size = new System.Drawing.Size(36, 19);
-            this.men_tras_kei.TabIndex = 69;
-            this.men_tras_kei.Text = "3.3";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(32, 61);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(13, 12);
-            this.label19.TabIndex = 72;
-            this.label19.Text = "C";
-            // 
-            // panel_men_frente
-            // 
-            this.panel_men_frente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_men_frente.Controls.Add(this.men_frente_z_tb);
-            this.panel_men_frente.Controls.Add(this.men_frente_checkbox);
-            this.panel_men_frente.Controls.Add(this.label35);
-            this.panel_men_frente.Controls.Add(this.men_frente_tipo_combo);
-            this.panel_men_frente.Controls.Add(this.men_frente_dan_tb);
-            this.panel_men_frente.Controls.Add(this.label32);
-            this.panel_men_frente.Controls.Add(this.label30);
-            this.panel_men_frente.Controls.Add(this.men_frente_tam_tb);
-            this.panel_men_frente.Controls.Add(this.men_frente_kei_tb);
-            this.panel_men_frente.Controls.Add(this.label31);
-            this.panel_men_frente.Location = new System.Drawing.Point(3, 225);
-            this.panel_men_frente.Margin = new System.Windows.Forms.Padding(2);
-            this.panel_men_frente.Name = "panel_men_frente";
-            this.panel_men_frente.Size = new System.Drawing.Size(113, 120);
-            this.panel_men_frente.TabIndex = 2;
-            this.panel_men_frente.Visible = false;
-            // 
-            // men_frente_z_tb
-            // 
-            this.men_frente_z_tb.Location = new System.Drawing.Point(16, 83);
-            this.men_frente_z_tb.Name = "men_frente_z_tb";
-            this.men_frente_z_tb.Size = new System.Drawing.Size(36, 19);
-            this.men_frente_z_tb.TabIndex = 75;
-            this.men_frente_z_tb.Text = "-1.5";
-            this.men_frente_z_tb.TextChanged += new System.EventHandler(this.men_frente_z_tb_TextChanged);
-            // 
-            // men_frente_checkbox
-            // 
-            this.men_frente_checkbox.AutoSize = true;
-            this.men_frente_checkbox.Location = new System.Drawing.Point(11, 15);
-            this.men_frente_checkbox.Name = "men_frente_checkbox";
-            this.men_frente_checkbox.Size = new System.Drawing.Size(76, 16);
-            this.men_frente_checkbox.TabIndex = 68;
-            this.men_frente_checkbox.Text = "面取り(表)";
-            this.men_frente_checkbox.UseVisualStyleBackColor = true;
-            this.men_frente_checkbox.CheckedChanged += new System.EventHandler(this.men_frente_checkbox_CheckedChanged);
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(1, 85);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(12, 12);
-            this.label35.TabIndex = 76;
-            this.label35.Text = "Z";
-            // 
-            // men_frente_tipo_combo
-            // 
-            this.men_frente_tipo_combo.FormattingEnabled = true;
-            this.men_frente_tipo_combo.Items.AddRange(new object[] {
-            "VC-2C(φ10)"});
-            this.men_frente_tipo_combo.Location = new System.Drawing.Point(8, 35);
-            this.men_frente_tipo_combo.Name = "men_frente_tipo_combo";
-            this.men_frente_tipo_combo.Size = new System.Drawing.Size(96, 20);
-            this.men_frente_tipo_combo.TabIndex = 68;
-            this.men_frente_tipo_combo.Text = "VC-2C(φ10)";
-            this.men_frente_tipo_combo.SelectedIndexChanged += new System.EventHandler(this.men_frente_tipo_combo_SelectedIndexChanged);
-            // 
-            // men_frente_dan_tb
-            // 
-            this.men_frente_dan_tb.Location = new System.Drawing.Point(68, 83);
-            this.men_frente_dan_tb.Name = "men_frente_dan_tb";
-            this.men_frente_dan_tb.Size = new System.Drawing.Size(36, 19);
-            this.men_frente_dan_tb.TabIndex = 73;
-            this.men_frente_dan_tb.Text = "0";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(52, 85);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(18, 12);
-            this.label32.TabIndex = 74;
-            this.label32.Text = "Z+";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(-2, 66);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(17, 12);
-            this.label30.TabIndex = 70;
-            this.label30.Text = "φ";
-            // 
-            // men_frente_tam_tb
-            // 
-            this.men_frente_tam_tb.Location = new System.Drawing.Point(68, 59);
-            this.men_frente_tam_tb.Name = "men_frente_tam_tb";
-            this.men_frente_tam_tb.Size = new System.Drawing.Size(36, 19);
-            this.men_frente_tam_tb.TabIndex = 71;
-            this.men_frente_tam_tb.Text = "0.3";
-            // 
-            // men_frente_kei_tb
-            // 
-            this.men_frente_kei_tb.Location = new System.Drawing.Point(16, 59);
-            this.men_frente_kei_tb.Name = "men_frente_kei_tb";
-            this.men_frente_kei_tb.Size = new System.Drawing.Size(36, 19);
-            this.men_frente_kei_tb.TabIndex = 69;
-            this.men_frente_kei_tb.Text = "3.3";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(52, 62);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(13, 12);
-            this.label31.TabIndex = 72;
-            this.label31.Text = "C";
-            // 
-            // Num_pro_textbox
-            // 
-            this.Num_pro_textbox.Location = new System.Drawing.Point(71, 178);
-            this.Num_pro_textbox.Name = "Num_pro_textbox";
-            this.Num_pro_textbox.Size = new System.Drawing.Size(80, 19);
-            this.Num_pro_textbox.TabIndex = 2;
-            this.Num_pro_textbox.Leave += new System.EventHandler(this.Num_pro_textbox_Leave);
-            // 
             // panel_boringana
             // 
             this.panel_boringana.Controls.Add(this.label29);
+            this.panel_boringana.Controls.Add(this.Resfri_Combobox);
             this.panel_boringana.Controls.Add(this.drill_combobox);
             this.panel_boringana.Controls.Add(this.label25);
+            this.panel_boringana.Controls.Add(this.Num_pro_textbox);
             this.panel_boringana.Controls.Add(this.drill_z_tb);
             this.panel_boringana.Controls.Add(this.sentan_cb);
             this.panel_boringana.Controls.Add(this.label24);
             this.panel_boringana.Controls.Add(this.drill_kei_tb);
+            this.panel_boringana.Controls.Add(this.tool_tb);
+            this.panel_boringana.Controls.Add(this.label26);
             this.panel_boringana.Location = new System.Drawing.Point(3, 32);
             this.panel_boringana.Name = "panel_boringana";
-            this.panel_boringana.Size = new System.Drawing.Size(138, 140);
+            this.panel_boringana.Size = new System.Drawing.Size(168, 140);
             this.panel_boringana.TabIndex = 0;
             this.panel_boringana.Visible = false;
             // 
@@ -788,6 +743,19 @@
             this.label29.Size = new System.Drawing.Size(27, 12);
             this.label29.TabIndex = 65;
             this.label29.Text = "TIpo";
+            // 
+            // Resfri_Combobox
+            // 
+            this.Resfri_Combobox.FormattingEnabled = true;
+            this.Resfri_Combobox.Items.AddRange(new object[] {
+            "M08",
+            "M12",
+            "M51",
+            "M339"});
+            this.Resfri_Combobox.Location = new System.Drawing.Point(6, 106);
+            this.Resfri_Combobox.Name = "Resfri_Combobox";
+            this.Resfri_Combobox.Size = new System.Drawing.Size(60, 20);
+            this.Resfri_Combobox.TabIndex = 88;
             // 
             // drill_combobox
             // 
@@ -815,6 +783,14 @@
             this.label25.Size = new System.Drawing.Size(12, 12);
             this.label25.TabIndex = 84;
             this.label25.Text = "Z";
+            // 
+            // Num_pro_textbox
+            // 
+            this.Num_pro_textbox.Location = new System.Drawing.Point(79, 106);
+            this.Num_pro_textbox.Name = "Num_pro_textbox";
+            this.Num_pro_textbox.Size = new System.Drawing.Size(80, 19);
+            this.Num_pro_textbox.TabIndex = 2;
+            this.Num_pro_textbox.Leave += new System.EventHandler(this.Num_pro_textbox_Leave);
             // 
             // drill_z_tb
             // 
@@ -856,7 +832,7 @@
             // 
             // tool_tb
             // 
-            this.tool_tb.Location = new System.Drawing.Point(22, 7);
+            this.tool_tb.Location = new System.Drawing.Point(83, 51);
             this.tool_tb.Name = "tool_tb";
             this.tool_tb.Size = new System.Drawing.Size(36, 19);
             this.tool_tb.TabIndex = 85;
@@ -865,7 +841,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(8, 9);
+            this.label26.Location = new System.Drawing.Point(69, 53);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(12, 12);
             this.label26.TabIndex = 86;
@@ -874,13 +850,89 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button5.Location = new System.Drawing.Point(3, 351);
+            this.button5.Location = new System.Drawing.Point(35, 446);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(78, 65);
             this.button5.TabIndex = 26;
             this.button5.Text = "ADD";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // comboBoxCores
+            // 
+            this.comboBoxCores.FormattingEnabled = true;
+            this.comboBoxCores.Location = new System.Drawing.Point(739, 339);
+            this.comboBoxCores.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxCores.Name = "comboBoxCores";
+            this.comboBoxCores.Size = new System.Drawing.Size(74, 20);
+            this.comboBoxCores.TabIndex = 77;
+            this.comboBoxCores.SelectedIndexChanged += new System.EventHandler(this.comboBoxCores_SelectedIndexChanged);
+            // 
+            // panel_men_tras
+            // 
+            this.panel_men_tras.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_men_tras.Controls.Add(this.men_tras_tipo_combo);
+            this.panel_men_tras.Controls.Add(this.men_tras_dan);
+            this.panel_men_tras.Controls.Add(this.label17);
+            this.panel_men_tras.Controls.Add(this.label18);
+            this.panel_men_tras.Controls.Add(this.men_tras_tam);
+            this.panel_men_tras.Controls.Add(this.men_tras_kei);
+            this.panel_men_tras.Controls.Add(this.label19);
+            this.panel_men_tras.Location = new System.Drawing.Point(677, 162);
+            this.panel_men_tras.Margin = new System.Windows.Forms.Padding(2);
+            this.panel_men_tras.Name = "panel_men_tras";
+            this.panel_men_tras.Size = new System.Drawing.Size(113, 120);
+            this.panel_men_tras.TabIndex = 77;
+            this.panel_men_tras.Visible = false;
+            // 
+            // men_tras_tipo_combo
+            // 
+            this.men_tras_tipo_combo.Location = new System.Drawing.Point(0, 0);
+            this.men_tras_tipo_combo.Name = "men_tras_tipo_combo";
+            this.men_tras_tipo_combo.Size = new System.Drawing.Size(121, 20);
+            this.men_tras_tipo_combo.TabIndex = 77;
+            // 
+            // men_tras_dan
+            // 
+            this.men_tras_dan.Location = new System.Drawing.Point(0, 0);
+            this.men_tras_dan.Name = "men_tras_dan";
+            this.men_tras_dan.Size = new System.Drawing.Size(100, 19);
+            this.men_tras_dan.TabIndex = 78;
+            // 
+            // label17
+            // 
+            this.label17.Location = new System.Drawing.Point(0, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(100, 23);
+            this.label17.TabIndex = 79;
+            // 
+            // label18
+            // 
+            this.label18.Location = new System.Drawing.Point(0, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(100, 23);
+            this.label18.TabIndex = 80;
+            // 
+            // men_tras_tam
+            // 
+            this.men_tras_tam.Location = new System.Drawing.Point(0, 0);
+            this.men_tras_tam.Name = "men_tras_tam";
+            this.men_tras_tam.Size = new System.Drawing.Size(100, 19);
+            this.men_tras_tam.TabIndex = 81;
+            // 
+            // men_tras_kei
+            // 
+            this.men_tras_kei.Location = new System.Drawing.Point(0, 0);
+            this.men_tras_kei.Name = "men_tras_kei";
+            this.men_tras_kei.Size = new System.Drawing.Size(100, 19);
+            this.men_tras_kei.TabIndex = 82;
+            // 
+            // label19
+            // 
+            this.label19.Location = new System.Drawing.Point(0, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(100, 23);
+            this.label19.TabIndex = 83;
             // 
             // dataGridView1
             // 
@@ -1248,7 +1300,7 @@
             // 
             // txtY
             // 
-            this.txtY.Location = new System.Drawing.Point(749, 169);
+            this.txtY.Location = new System.Drawing.Point(751, 768);
             this.txtY.Name = "txtY";
             this.txtY.Size = new System.Drawing.Size(59, 19);
             this.txtY.TabIndex = 63;
@@ -1256,7 +1308,7 @@
             // 
             // txtX
             // 
-            this.txtX.Location = new System.Drawing.Point(671, 169);
+            this.txtX.Location = new System.Drawing.Point(673, 768);
             this.txtX.Name = "txtX";
             this.txtX.Size = new System.Drawing.Size(59, 19);
             this.txtX.TabIndex = 62;
@@ -1264,7 +1316,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(713, 655);
+            this.button10.Location = new System.Drawing.Point(708, 876);
             this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(94, 26);
@@ -1302,7 +1354,7 @@
             // button12
             // 
             this.button12.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button12.Location = new System.Drawing.Point(700, 685);
+            this.button12.Location = new System.Drawing.Point(695, 906);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(112, 93);
             this.button12.TabIndex = 94;
@@ -1321,7 +1373,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(658, 172);
+            this.label1.Location = new System.Drawing.Point(656, 771);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(12, 12);
@@ -1331,7 +1383,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(735, 174);
+            this.label2.Location = new System.Drawing.Point(737, 773);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(12, 12);
@@ -1383,9 +1435,37 @@
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(114, 49);
             this.button14.TabIndex = 98;
-            this.button14.Text = "材料リスト管理";
+            this.button14.Text = "Tap List";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(674, 287);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(116, 29);
+            this.button15.TabIndex = 80;
+            this.button15.Text = "ADD";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(143, 565);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(114, 49);
+            this.button16.TabIndex = 99;
+            this.button16.Text = "Tap List";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // mentori_Frente1
+            // 
+            this.mentori_Frente1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.mentori_Frente1.Location = new System.Drawing.Point(663, 40);
+            this.mentori_Frente1.Name = "mentori_Frente1";
+            this.mentori_Frente1.Size = new System.Drawing.Size(138, 115);
+            this.mentori_Frente1.TabIndex = 100;
             // 
             // Form1
             // 
@@ -1393,10 +1473,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(2102, 854);
+            this.ClientSize = new System.Drawing.Size(2119, 854);
+            this.Controls.Add(this.mentori_Frente1);
+            this.Controls.Add(this.button16);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
+            this.Controls.Add(this.button15);
+            this.Controls.Add(this.panel_men_tras);
             this.Controls.Add(this.panel_yoko);
+            this.Controls.Add(this.comboBoxCores);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button12);
@@ -1440,13 +1525,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCoordenadas)).EndInit();
             this.panel_ana.ResumeLayout(false);
             this.panel_ana.PerformLayout();
-            this.panel_men_tras.ResumeLayout(false);
-            this.panel_men_tras.PerformLayout();
-            this.panel_men_frente.ResumeLayout(false);
-            this.panel_men_frente.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.tap_avan_panel.ResumeLayout(false);
+            this.tap_avan_panel.PerformLayout();
             this.panel_boringana.ResumeLayout(false);
             this.panel_boringana.PerformLayout();
-     
+            this.panel_men_tras.ResumeLayout(false);
+            this.panel_men_tras.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listTrasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1481,16 +1582,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.ComboBox drill_combobox;
-        private System.Windows.Forms.TextBox men_frente_z_tb;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.ComboBox men_frente_tipo_combo;
-        private System.Windows.Forms.TextBox men_frente_dan_tb;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox men_frente_tam_tb;
-        private System.Windows.Forms.Label label31;
-        public System.Windows.Forms.TextBox men_frente_kei_tb;
-        public System.Windows.Forms.CheckBox men_frente_checkbox;
-        private System.Windows.Forms.Label label30;
         public System.Windows.Forms.Panel paneld_f;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel_yoko;
@@ -1506,11 +1597,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.BindingSource ferramentasBindingSource1;
-        private System.Windows.Forms.Panel panel_men_frente;
         private System.Windows.Forms.Panel panel_men_tras;
-        private System.Windows.Forms.TextBox men_tras_z;
-        public System.Windows.Forms.CheckBox men_tras_checkbox;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox men_tras_tipo_combo;
         private System.Windows.Forms.TextBox men_tras_dan;
         private System.Windows.Forms.Label label17;
@@ -1580,6 +1667,29 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Panel tap_avan_panel;
+        public System.Windows.Forms.TextBox tap_k_tb;
+        public System.Windows.Forms.TextBox tap_pitch_tb;
+        public System.Windows.Forms.Label label46;
+        public System.Windows.Forms.Label label44;
+        public System.Windows.Forms.TextBox tap_q_tb;
+        public System.Windows.Forms.Label label41;
+        public System.Windows.Forms.Label label45;
+        public System.Windows.Forms.TextBox tap_kaiten_tb;
+        public System.Windows.Forms.Button button15;
+        public System.Windows.Forms.RadioButton tap_inch_rb;
+        public System.Windows.Forms.RadioButton tap_mm_rb;
+        public System.Windows.Forms.TextBox tap_tool_tb;
+        public System.Windows.Forms.Label label40;
+        public System.Windows.Forms.ComboBox tap_tool_combobox;
+        public System.Windows.Forms.TextBox tap_z_tb;
+        private System.Windows.Forms.Label label39;
+        public System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button16;
+        private UserControils.Mentori_Frente mentori_Frente1;
     }
 }
 
