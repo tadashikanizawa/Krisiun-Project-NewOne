@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +22,8 @@ namespace Krisiun_Project
         public int Largura { get; set; }
         public float TsukidashiMax { get; set; }
         public int MenCutterToolNum { get; set; }
-
+        public static List<TiposdeMentori> ListadeMentoriCutterF { get; set; } = new List<TiposdeMentori>();
+        public static List<TiposdeMentori> ListadeMentoriCutterB { get; set; } = new List<TiposdeMentori>();
 
         public TiposdeMentori(string tool, float diametro, float profundidade, int kaiten, int okuri, string kataban, int largura, float tsukidashiMax, int menCutterToolNum)
         {
@@ -43,6 +46,12 @@ namespace Krisiun_Project
 
             TiposdeMentori other = (TiposdeMentori)obj;
             return Tool.Equals(other.Tool);
+        }
+
+        public static void TipoMentoriLoad()
+        {
+            ListadeMentoriCutterF = LoadMentoriCuter();
+            ListadeMentoriCutterB = LoadMentoriCuter();
         }
 
         public override int GetHashCode()
