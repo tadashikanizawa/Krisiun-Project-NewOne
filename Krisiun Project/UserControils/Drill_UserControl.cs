@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,6 +24,39 @@ namespace Krisiun_Project.UserControils
             drill_combobox.DataSource = TipoDeDrills.ListaDeTiposdeDrills;
             drill_combobox.DisplayMember = "Name";
             drill_combobox.ValueMember = "Name";
+            this.peca = peca;
+        }
+        public TipoDeDrills DrillTipo
+        {
+            get { return (TipoDeDrills)drill_combobox.SelectedItem; }
+            set { drill_combobox.SelectedItem = value; }
+        }
+        public string DrillNumber
+        {
+            get { return tool_tb.Text; }
+            set { tool_tb.Text = value; }
+        }
+        public string DrillKei
+        {
+            get { return drill_kei_tb.Text; }
+            set { drill_kei_tb.Text = value; }
+        }
+        public string DrillZ
+        {
+            get { return drill_z_tb.Text; }
+            set { drill_z_tb.Text = value; }
+        }
+        public bool Sentan
+        {
+            get { return sentan_check.Checked; }
+            set { sentan_check.Checked = value; }
+        }
+
+     
+        public string DrillKakouAnnai
+        {
+            get { return Kakou_Annai_tb.Text; }
+            set { Kakou_Annai_tb.Text = value; }
         }
 
         private void drill_combobox_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,14 +94,13 @@ namespace Krisiun_Project.UserControils
             float z;
             float kei;
 
-            var nsb = NSBLoader.Load();
             if (float.TryParse(drill_kei_tb.Text, out kei))
             {
                 if (float.TryParse(valor, out z))
                 {
                     if (drill_combobox.SelectedIndex == 0)
                     {
-                        NSB x = nsb.Find(n => n.Dia == kei);
+                        NSB x = NSB.NSBs.Find(n => n.Dia == kei);
                         if (x != null)
                         {
                             if (x.Hachou < z)
@@ -100,5 +133,11 @@ namespace Krisiun_Project.UserControils
             }
 
         }
+
+        private void Drill_UserControl_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -22,6 +22,16 @@ namespace Krisiun_Project.Dados_aleatorios
         //[Name("Zenchou")]
         public int Zenchou { get; set; }
 
+
+        public static List<NSB> NSBs { get; set; } = new List<NSB>();
+
+
+        public static void NSBLoad()
+        {
+            NSBs = NSBLoader.Load();
+        }
+
+
     }
     internal static class NSBLoader
     {

@@ -32,9 +32,9 @@
             this.Resfri_Combobox = new System.Windows.Forms.ComboBox();
             this.drill_combobox = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.Num_pro_textbox = new System.Windows.Forms.TextBox();
+            this.Kakou_Annai_tb = new System.Windows.Forms.TextBox();
             this.drill_z_tb = new System.Windows.Forms.TextBox();
-            this.sentan_cb = new System.Windows.Forms.CheckBox();
+            this.sentan_check = new System.Windows.Forms.CheckBox();
             this.label24 = new System.Windows.Forms.Label();
             this.drill_kei_tb = new System.Windows.Forms.TextBox();
             this.tool_tb = new System.Windows.Forms.TextBox();
@@ -91,12 +91,12 @@
             this.label25.TabIndex = 84;
             this.label25.Text = "Z";
             // 
-            // Num_pro_textbox
+            // Kakou_Annai_tb
             // 
-            this.Num_pro_textbox.Location = new System.Drawing.Point(15, 144);
-            this.Num_pro_textbox.Name = "Num_pro_textbox";
-            this.Num_pro_textbox.Size = new System.Drawing.Size(112, 19);
-            this.Num_pro_textbox.TabIndex = 2;
+            this.Kakou_Annai_tb.Location = new System.Drawing.Point(15, 144);
+            this.Kakou_Annai_tb.Name = "Kakou_Annai_tb";
+            this.Kakou_Annai_tb.Size = new System.Drawing.Size(112, 19);
+            this.Kakou_Annai_tb.TabIndex = 2;
             // 
             // drill_z_tb
             // 
@@ -107,15 +107,15 @@
             this.drill_z_tb.Text = "0";
             this.drill_z_tb.TextChanged += new System.EventHandler(this.drill_z_tb_TextChanged);
             // 
-            // sentan_cb
+            // sentan_check
             // 
-            this.sentan_cb.AutoSize = true;
-            this.sentan_cb.Location = new System.Drawing.Point(50, 75);
-            this.sentan_cb.Name = "sentan_cb";
-            this.sentan_cb.Size = new System.Drawing.Size(62, 16);
-            this.sentan_cb.TabIndex = 87;
-            this.sentan_cb.Text = "(+)先端";
-            this.sentan_cb.UseVisualStyleBackColor = true;
+            this.sentan_check.AutoSize = true;
+            this.sentan_check.Location = new System.Drawing.Point(50, 75);
+            this.sentan_check.Name = "sentan_check";
+            this.sentan_check.Size = new System.Drawing.Size(62, 16);
+            this.sentan_check.TabIndex = 87;
+            this.sentan_check.Text = "(+)先端";
+            this.sentan_check.UseVisualStyleBackColor = true;
             // 
             // label24
             // 
@@ -173,13 +173,14 @@
             this.Controls.Add(this.label26);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.tool_tb);
-            this.Controls.Add(this.Num_pro_textbox);
+            this.Controls.Add(this.Kakou_Annai_tb);
             this.Controls.Add(this.drill_kei_tb);
             this.Controls.Add(this.drill_z_tb);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.sentan_cb);
+            this.Controls.Add(this.sentan_check);
             this.Name = "Drill_UserControl";
             this.Size = new System.Drawing.Size(141, 186);
+            this.Load += new System.EventHandler(this.Drill_UserControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,9 +192,9 @@
         private System.Windows.Forms.ComboBox Resfri_Combobox;
         private System.Windows.Forms.ComboBox drill_combobox;
         private System.Windows.Forms.Label label25;
-        public System.Windows.Forms.TextBox Num_pro_textbox;
+        public System.Windows.Forms.TextBox Kakou_Annai_tb;
         public System.Windows.Forms.TextBox drill_z_tb;
-        private System.Windows.Forms.CheckBox sentan_cb;
+        private System.Windows.Forms.CheckBox sentan_check;
         private System.Windows.Forms.Label label24;
         public System.Windows.Forms.TextBox drill_kei_tb;
         private System.Windows.Forms.TextBox tool_tb;
