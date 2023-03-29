@@ -38,6 +38,8 @@ namespace Krisiun_Project.G_Code
             int tool;
             Drills drills = new Drills(peca);
             drills.Index = Programas.Index();
+            drills.Nome = drills.Index.ToString() + "-"+ drill.drill_combobox.Text;
+
             drills.TipoDrill = (TipoDeDrills)drill.drill_combobox.SelectedItem;
             if (float.TryParse(drill.drill_kei_tb.Text, out kei))
             {
