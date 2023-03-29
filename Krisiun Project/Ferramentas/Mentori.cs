@@ -119,8 +119,11 @@ namespace Krisiun_Project.G_Code
             ferramenta.Mentori_F_Bool = frente.men_frente_checkbox.Checked;
             ferramenta.Mentori_B_Bool = tras.men_tras_checkbox.Checked;
 
-            ferramenta.Mentori.TipoDeCutter = (TiposdeMentori)frente.men_frente_tipo_combo.SelectedItem;
-            ferramenta.MentoriB.TipoDeCutter = (TiposdeMentori)tras.men_tras_tipo_combo.SelectedItem;
+            TiposdeMentori selectedMentori = frente.men_frente_tipo_combo.SelectedItem as TiposdeMentori;
+            TiposdeMentori selectedMentoriB = tras.men_tras_tipo_combo.SelectedItem as TiposdeMentori;
+
+            ferramenta.Mentori.TipoDeCutter = selectedMentori;
+            ferramenta.MentoriB.TipoDeCutter = selectedMentoriB;
 
             if(float.TryParse(frente.men_frente_kei_tb.Text, out keif)) { ferramenta.Mentori.MenKei = keif; }
             if(float.TryParse(tras.men_tras_kei.Text, out keib)) { ferramenta.MentoriB.MenKei = keib; }
