@@ -35,8 +35,9 @@ namespace Krisiun_Project.G_Code
         {
             float kei;
             float fukasa;
+            int tool;
             Drills drills = new Drills(peca);
-
+            drills.Index = Programas.Index();
             drills.TipoDrill = (TipoDeDrills)drill.drill_combobox.SelectedItem;
             if (float.TryParse(drill.drill_kei_tb.Text, out kei))
             {
@@ -48,8 +49,8 @@ namespace Krisiun_Project.G_Code
             }
             drills.Sentan = drill.sentan_check.Checked;
             drills.Description = drill.Kakou_Annai_tb.Text;
-
-
+            drills.Resfriamento = drill.Resfri_Combobox.Text;
+            if (int.TryParse(drill.tool_tb.Text, out tool)) { drills.ToolNumber = tool; }
 
             drills.Frente = lado.Bool_Frente;
             drills.Tras = lado.Bool_Tras;

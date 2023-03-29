@@ -20,8 +20,14 @@
 
     public class Programas
     {
-        public int Numeros;
-        public Programas() { this.Numeros = 1; }
+        public static int Numeros = 1;
+        public Programas() { }
+        public static int Index()
+        {
+            int n = Numeros;
+            Numeros++;
+            return n;
+        }
 
 
     }
