@@ -105,7 +105,7 @@ namespace Krisiun_Project.G_Code
         }
 
 
-        public static void CriarMentori(Ferramentas ferramenta, Mentori_Frente frente, Mentori_Tras tras)
+        public static void CriarMentori(Ferramentas ferramenta, Pitch_principal.Peca peca, Mentori_Frente frente, Mentori_Tras tras)
         {
             float keif;
             float keib;
@@ -115,6 +115,8 @@ namespace Krisiun_Project.G_Code
             float cb;
             float dansaf;
             float dansab;
+            Mentori mentori = new Mentori(peca);
+            MentoriB mentorib = new MentoriB(peca);
 
             ferramenta.Mentori_F_Bool = frente.men_frente_checkbox.Checked;
             ferramenta.Mentori_B_Bool = tras.men_tras_checkbox.Checked;
@@ -122,20 +124,23 @@ namespace Krisiun_Project.G_Code
             TiposdeMentori selectedMentori = frente.men_frente_tipo_combo.SelectedItem as TiposdeMentori;
             TiposdeMentori selectedMentoriB = tras.men_tras_tipo_combo.SelectedItem as TiposdeMentori;
 
-            ferramenta.Mentori.TipoDeCutter = selectedMentori;
-            ferramenta.MentoriB.TipoDeCutter = selectedMentoriB;
+            mentori.TipoDeCutter = selectedMentori;
+            mentorib.TipoDeCutter = selectedMentoriB;
 
-            if(float.TryParse(frente.men_frente_kei_tb.Text, out keif)) { ferramenta.Mentori.MenKei = keif; }
-            if(float.TryParse(tras.men_tras_kei.Text, out keib)) { ferramenta.MentoriB.MenKei = keib; }
+            if(float.TryParse(frente.men_frente_kei_tb.Text, out keif)) { mentori.MenKei = keif; }
+            if(float.TryParse(tras.men_tras_kei.Text, out keib)) { mentorib.MenKei = keib; }
 
-            if(float.TryParse(frente.men_frente_z_tb.Text, out zf)) { ferramenta.Mentori.Z = zf; }
-            if(float.TryParse(tras.men_tras_z.Text, out zb)) { ferramenta.MentoriB.Z = zb; }
+            if(float.TryParse(frente.men_frente_z_tb.Text, out zf)) { mentori.Z = zf; }
+            if(float.TryParse(tras.men_tras_z.Text, out zb)) { mentorib.Z = zb; }
 
-            if(float.TryParse(frente.men_frente_tam_tb.Text,out cf)) { ferramenta.Mentori.C = cf; }
-            if(float.TryParse(tras.men_tras_tam.Text, out cb)) { ferramenta.MentoriB.C = cb; }
+            if(float.TryParse(frente.men_frente_tam_tb.Text,out cf)) { mentori.C = cf; }
+            if(float.TryParse(tras.men_tras_tam.Text, out cb)) { mentorib.C = cb; }
 
-            if(float.TryParse(frente.men_frente_dan_tb.Text,out dansaf)) { ferramenta.Mentori.Dansa = dansaf; }
-            if(float.TryParse(tras.men_tras_dan.Text,out dansab)) { ferramenta.MentoriB.Dansa = dansab; }
+            if(float.TryParse(frente.men_frente_dan_tb.Text,out dansaf)) { mentori.Dansa = dansaf; }
+            if(float.TryParse(tras.men_tras_dan.Text,out dansab)) { mentorib.Dansa = dansab; }
+
+            ferramenta.Mentori = mentori;
+            ferramenta.MentoriB = mentorib;
         }
 
     }

@@ -139,7 +139,7 @@ namespace Krisiun_Project
             public int ura;
             public bool xinv;
             public bool yinv;
-            public Material Material;
+            public  Material Material;
 
             public Peca()
             {

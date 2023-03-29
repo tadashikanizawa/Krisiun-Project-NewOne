@@ -55,7 +55,7 @@ namespace Krisiun_Project.G_Code
             drills.Tras = lado.Bool_Tras;
 
             Ferramentas.DGVtoCoordenadasList(drills, xy_dgv, pcd_dgv, xyradiobutton, pcdradiobutton, PCDRaio, pontoinicialX, pontoinicialY);
-            Mentori.CriarMentori(drills, MentoriF, MentoriT);
+            Mentori.CriarMentori(drills, peca, MentoriF, MentoriT);
 
             ferramentas.ListTotal.Add(drills);
             if(drills.Frente)
