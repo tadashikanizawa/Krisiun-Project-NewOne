@@ -607,7 +607,10 @@
             // 
             // button4
             // 
-      
+            this.button4.Location = new System.Drawing.Point(0, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 100;
             // 
             // button5
             // 
@@ -655,10 +658,18 @@
             this.checkBox1.Visible = false;
             // 
             // tras_checkBox
-   
+            // 
+            this.tras_checkBox.Location = new System.Drawing.Point(0, 0);
+            this.tras_checkBox.Name = "tras_checkBox";
+            this.tras_checkBox.Size = new System.Drawing.Size(104, 24);
+            this.tras_checkBox.TabIndex = 4;
             // 
             // frente_checkBox
-
+            // 
+            this.frente_checkBox.Location = new System.Drawing.Point(0, 0);
+            this.frente_checkBox.Name = "frente_checkBox";
+            this.frente_checkBox.Size = new System.Drawing.Size(104, 24);
+            this.frente_checkBox.TabIndex = 5;
             // 
             // label3
             // 
@@ -828,6 +839,7 @@
             this.dataGridView3.TabIndex = 29;
             this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            this.dataGridView3.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentDoubleClick);
             this.dataGridView3.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
             // 
             // ToolName
@@ -1217,7 +1229,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(2119, 854);
+            this.ClientSize = new System.Drawing.Size(2136, 854);
             this.Controls.Add(this.button17);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button14);
@@ -1271,6 +1283,7 @@
             this.tap_avan_panel.PerformLayout();
             this.panel_lado.ResumeLayout(false);
             this.panel_lado.PerformLayout();
+        
             this.ResumeLayout(false);
             this.PerformLayout();
 

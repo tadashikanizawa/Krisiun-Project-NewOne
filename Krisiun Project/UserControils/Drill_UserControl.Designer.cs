@@ -187,18 +187,17 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.ComboBox Resfri_Combobox;
-        private System.Windows.Forms.ComboBox drill_combobox;
-        private System.Windows.Forms.Label label25;
         public System.Windows.Forms.TextBox Kakou_Annai_tb;
         public System.Windows.Forms.TextBox drill_z_tb;
-        private System.Windows.Forms.CheckBox sentan_check;
-        private System.Windows.Forms.Label label24;
         public System.Windows.Forms.TextBox drill_kei_tb;
-        private System.Windows.Forms.TextBox tool_tb;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label29;
+        public System.Windows.Forms.ComboBox Resfri_Combobox;
+        public System.Windows.Forms.ComboBox drill_combobox;
+        public System.Windows.Forms.Label label25;
+        public System.Windows.Forms.CheckBox sentan_check;
+        public System.Windows.Forms.Label label24;
+        public System.Windows.Forms.TextBox tool_tb;
+        public System.Windows.Forms.Label label26;
+        public System.Windows.Forms.Label label1;
     }
 }

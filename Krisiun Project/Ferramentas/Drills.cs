@@ -8,6 +8,7 @@ using Krisiun_Project.Dados_Aleatorios1;
 using System.Globalization;
 using System.IO;
 using static Krisiun_Project.Pitch_principal;
+using Krisiun_Project.UserControils;
 
 namespace Krisiun_Project.G_Code
 {
@@ -29,7 +30,40 @@ namespace Krisiun_Project.G_Code
         
   
         }
-  
+        
+        public  void CriarDrills(Ferramentas ferramentas, Drill_UserControl drill, Lado_UserControl lado, Mentori_Frente MentoriF, Mentori_Tras MentoriT, DataGridView xy_dgv, DataGridView pcd_dgv, RadioButton xyradiobutton, RadioButton pcdradiobutton, TextBox PCDRaio, TextBox pontoinicialX, TextBox pontoinicialY)
+        {
+            float kei;
+            float fukasa;
+            Drills drills = new Drills(peca);
+
+            drills.TipoDrill = (TipoDeDrills)drill.drill_combobox.SelectedItem;
+            if (float.TryParse(drill.drill_kei_tb.Text, out kei))
+            {
+                drills.Kei = kei;
+            }
+            if (float.TryParse(drill.drill_z_tb.Text, out fukasa))
+            {
+                drills.Fukasa = fukasa;
+            }
+            drills.Sentan = drill.sentan_check.Checked;
+            drills.Description = drill.Kakou_Annai_tb.Text;
+
+
+
+            drills.Frente = lado.Bool_Frente;
+            drills.Tras = lado.Bool_Tras;
+
+            Ferramentas.DGVtoCoordenadasList(drills, xy_dgv, pcd_dgv, xyradiobutton, pcdradiobutton, PCDRaio, pontoinicialX, pontoinicialY);
+            Mentori.CriarMentori(drills, MentoriF, MentoriT);
+
+            ferramentas.ListTotal.Add(drills);
+            if(drills.Frente)
+            {
+                ferramentas.ListFrente.Add(drills);
+            }
+            if(drills.Tras) { ferramentas.ListTras.Add(drills);}
+        }
 
         protected override void UpdateKaitenAndOkuri()
         {

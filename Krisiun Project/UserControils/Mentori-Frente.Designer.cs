@@ -156,16 +156,15 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox men_frente_z_tb;
         public System.Windows.Forms.CheckBox men_frente_checkbox;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.ComboBox men_frente_tipo_combo;
-        private System.Windows.Forms.TextBox men_frente_dan_tb;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox men_frente_tam_tb;
         public System.Windows.Forms.TextBox men_frente_kei_tb;
-        private System.Windows.Forms.Label label31;
+        public System.Windows.Forms.TextBox men_frente_z_tb;
+        public System.Windows.Forms.Label label35;
+        public System.Windows.Forms.ComboBox men_frente_tipo_combo;
+        public System.Windows.Forms.TextBox men_frente_dan_tb;
+        public System.Windows.Forms.Label label32;
+        public System.Windows.Forms.Label label30;
+        public System.Windows.Forms.TextBox men_frente_tam_tb;
+        public System.Windows.Forms.Label label31;
     }
 }
