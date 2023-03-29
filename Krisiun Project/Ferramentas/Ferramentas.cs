@@ -162,7 +162,7 @@ namespace Krisiun_Project.G_Code
             if (tipo_De_Corte == Tipo_de_Corte.ボーリング孔)
             { //tool.Nome = tipo_De_Corte.ToString() + "φ" + tool.kei.ToString(); }
                 Drills tool = new Drills(peca);
-                tool.Index = prog.Numeros;
+            //    tool.Index = prog.Numeros;
                 tool.Tipo = tipo_De_Corte;
                 tool.Kei = 1;
                 tool.Color = Color.LightGray;
@@ -221,7 +221,7 @@ namespace Krisiun_Project.G_Code
                 }
         
             
-                prog.Numeros++;
+                //prog.Numeros++;
 
             }
 
@@ -254,7 +254,7 @@ namespace Krisiun_Project.G_Code
             if (tipo_De_Corte == Tipo_de_Corte.ボーリング孔)
             { //tool.Nome = tipo_De_Corte.ToString() + "φ" + tool.kei.ToString(); }
                 Drills tool = new Drills(peca);
-                tool.Index = prog.Numeros;
+             //   tool.Index = prog.Numeros;
                 tool.Tipo = tipo_De_Corte;
                 tool.Kei = 1;
                 tool.Color = Color.LightGray;
@@ -287,7 +287,7 @@ namespace Krisiun_Project.G_Code
                 }
 
 
-                prog.Numeros++;
+                //prog.Numeros++;
 
             }
 
