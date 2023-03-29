@@ -26,6 +26,10 @@ namespace Krisiun_Project.UserControils
             set { men_tras_kei.Text = value; }
         }
 
+        public void alterar(bool visible)
+        {
+            this.Visible = visible;
+        }
         private void Mentori_Tras_Load(object sender, EventArgs e)
         {
 

@@ -25,6 +25,7 @@ namespace Krisiun_Project.Janelas
             this.ferramentas = ferramentas;
             mentori_Frente1.Visible = false;
             lado_UserControl1.OnAlterarPropriedades += mentori_Frente1.alterar;
+            lado_UserControl1.OnAlterarPropriedades1 += mentori_Tras1.alterar;
 
         }
 
