@@ -635,13 +635,17 @@ namespace Krisiun_Project
             dataGridView1.ClearSelection();
             dataGridView2.ClearSelection();
 
+           
+
+        }
+        private void dataGridView3_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             Ferramentas ferramentaSelecionada = ObterFerramentaSelecionada();
             AbrirFormEdicao(ferramentaSelecionada);
-
         }
         #endregion
         #region Sobre as Checkboxs frente/tras
-   
+
         private void x_inv_checkbok_CheckedChanged(object sender, EventArgs e)
         {
             peca.xinv = x_inv_checkbok.Checked;
@@ -934,7 +938,7 @@ namespace Krisiun_Project
 
         private void button17_Click(object sender, EventArgs e)
         {
-            DrillsForm drillsFOrm = new DrillsForm(this, ferramentas, peca);
+            DrillsForm drillsFOrm = new DrillsForm(this, ferramentas, peca, Mydrills);
             drillsFOrm.ShowDialog();
         }
 
@@ -944,7 +948,7 @@ namespace Krisiun_Project
             {
                 if (ferramenta is Drills)
                 {
-                    DrillsForm drillsFOrm = new DrillsForm(this, ferramentas, peca);
+                    DrillsForm drillsFOrm = new DrillsForm(this, ferramentas, peca, Mydrills);
                     drillsFOrm.ShowDialog();
                 }
                 // Adicione condições para outras classes derivadas de Ferramenta, se houver.
@@ -959,7 +963,7 @@ namespace Krisiun_Project
             return null;
         }
 
-
+     
     }
 
 

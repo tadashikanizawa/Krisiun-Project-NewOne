@@ -155,16 +155,15 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox men_tras_z;
         public System.Windows.Forms.CheckBox men_tras_checkbox;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox men_tras_tipo_combo;
-        private System.Windows.Forms.TextBox men_tras_dan;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox men_tras_tam;
         public System.Windows.Forms.TextBox men_tras_kei;
-        private System.Windows.Forms.Label label19;
+        public System.Windows.Forms.TextBox men_tras_z;
+        public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.ComboBox men_tras_tipo_combo;
+        public System.Windows.Forms.TextBox men_tras_dan;
+        public System.Windows.Forms.Label label17;
+        public System.Windows.Forms.Label label18;
+        public System.Windows.Forms.TextBox men_tras_tam;
+        public System.Windows.Forms.Label label19;
     }
 }

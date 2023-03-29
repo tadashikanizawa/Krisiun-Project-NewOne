@@ -1,4 +1,5 @@
-﻿using Krisiun_Project.G_Code;
+﻿using Krisiun_Project.Dados_Aleatorios1;
+using Krisiun_Project.G_Code;
 using Krisiun_Project.UserControils;
 using System;
 using System.Collections.Generic;
@@ -18,12 +19,14 @@ namespace Krisiun_Project.Janelas
         private Pitch_principal.Peca peca;
         private Form1 form1;
         private Ferramentas ferramentas;
-        public DrillsForm(Form1 form1, Ferramentas ferramentas, Pitch_principal.Peca peca)
+        private Drills drills;
+        public DrillsForm(Form1 form1, Ferramentas ferramentas, Pitch_principal.Peca peca, Drills drills)
         {
             InitializeComponent();
             this.form1 = form1;
             this.ferramentas = ferramentas;
             this.peca = peca;
+            this.drills = drills;
 
             mentori_Frente1.Visible = false;
             lado_UserControl1.OnAlterarPropriedades += mentori_Frente1.alterar;
@@ -53,49 +56,7 @@ namespace Krisiun_Project.Janelas
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Drills drills = new Drills(peca);
-            drills.Frente = lado_UserControl1.Bool_Frente;
-            drills.Tras = lado_UserControl1.Bool_Tras;
-            ferramentas.ListTotal.Add(drills);
-
-            if(radioButton1.Checked == true)
-            { 
-              foreach (DataGridViewRow row in dataGridView1.Rows)
-              {
-                 float x, y;
-                   if (row.Cells[0].Value != null && row.Cells[1].Value != null && float.TryParse(row.Cells[0].Value.ToString(), out x) && float.TryParse(row.Cells[1].Value.ToString(), out y))
-                    {
-                        PointF coordenadas = new PointF(x, y);
-                        drills.CoordenadasList.Add(coordenadas);
-                     }
-                  }
-            }
-            if(radioButton2.Checked == true)
-            {
-                float raio;
-                PointF pontoCentral;
-                float pontoCentralX;
-                float pontoCentralY;
-
-                if (float.TryParse(textBox1.Text, out raio) && float.TryParse(textBox2.Text, out pontoCentralX) && float.TryParse(textBox3.Text, out pontoCentralY))
-
-                {
-                    foreach (DataGridViewRow row in dataGridView2.Rows)
-                    {
-                        float angulo;
-                        if (row.Cells[0].Value != null && float.TryParse(row.Cells[0].Value.ToString(), out angulo))
-                        {
-                            float radianos = (float)(Math.PI / 180.0) * angulo;
-                            float x = pontoCentralX + raio * (float)Math.Cos(radianos);
-                            float y = pontoCentralY + raio * (float)Math.Sin(radianos);
-                            x = (float)Math.Round(x, 3);
-                            y = (float)Math.Round(y, 3);
-                            PointF coordenadas = new PointF(x, y);
-                            drills.CoordenadasList.Add(coordenadas);
-                        }
-                    }
-                }
-            }
+            drills.CriarDrills(ferramentas,drill_UserControl1,lado_UserControl1,mentori_Frente1,mentori_Tras1,dataGridView1,dataGridView2, radioButton1, radioButton2, textBox1, textBox2, textBox3);   
             form1.panel_update();
             this.Close();
 

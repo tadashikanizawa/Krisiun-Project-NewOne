@@ -108,26 +108,54 @@ namespace Krisiun_Project.G_Code
             }
             }
         }
-
-        public void AddCoordenadas(int index, Coordenadas coordenadas)
+        
+        public static void DGVtoCoordenadasList(Ferramentas ferramenta, DataGridView xy_dgv, DataGridView pcd_dgv, RadioButton xyradiobutton, RadioButton pcdradiobutton, TextBox PCDRaio, TextBox pontoinicialX, TextBox pontoinicialY)
         {
-            this.coordenadas[index] = coordenadas;
-        }
 
-        public void RemoveCoordenadas(int index)
-        {
-            this.coordenadas.Remove(index);
-        }
+            if (xyradiobutton.Checked == true)
+            {
+                foreach (DataGridViewRow row in xy_dgv.Rows)
+                {
+                    float x, y;
+                    if (row.Cells[0].Value != null && row.Cells[1].Value != null && float.TryParse(row.Cells[0].Value.ToString(), out x) && float.TryParse(row.Cells[1].Value.ToString(), out y))
+                    {
+                        PointF coordenadas = new PointF(x, y);
+                        ferramenta.CoordenadasList.Add(coordenadas);
+                    }
+                }
+            }
+            if (pcdradiobutton.Checked == true)
+            {
+                float raio;
+                PointF pontoCentral;
+                float pontoCentralX;
+                float pontoCentralY;
 
-        public Coordenadas GetCoordenadas(int index)
-        {
-            return this.coordenadas[index];
-        }
+                if (float.TryParse(PCDRaio.Text, out raio) && float.TryParse(pontoinicialX.Text, out pontoCentralX) && float.TryParse(pontoinicialY.Text, out pontoCentralY))
 
+                {
+                    foreach (DataGridViewRow row in pcd_dgv.Rows)
+                    {
+                        float angulo;
+                        if (row.Cells[0].Value != null && float.TryParse(row.Cells[0].Value.ToString(), out angulo))
+                        {
+                            float radianos = (float)(Math.PI / 180.0) * angulo;
+                            float x = pontoCentralX + raio * (float)Math.Cos(radianos);
+                            float y = pontoCentralY + raio * (float)Math.Sin(radianos);
+                            x = (float)Math.Round(x, 3);
+                            y = (float)Math.Round(y, 3);
+                            PointF coordenadas = new PointF(x, y);
+                            ferramenta.CoordenadasList.Add(coordenadas);
+                        }
+                    }
+                }
+            }
+
+        }
 
 
         #region adicionador velho
-    
+
         public void addferramenta1(Tipo_de_Corte tipo_De_Corte, DataGridView dgvCoordenadas, bool useAngleDgv, DataGridView dgvAngulos, TextBox tbRaio, TextBox tbPontoCentral, TextBox tbPontoCentralY)
         {
 
