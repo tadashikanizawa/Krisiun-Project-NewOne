@@ -607,13 +607,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(120, 448);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 61);
-            this.button4.TabIndex = 87;
-            this.button4.Text = "アップデート";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+      
             // 
             // button5
             // 
@@ -661,26 +655,10 @@
             this.checkBox1.Visible = false;
             // 
             // tras_checkBox
-            // 
-            this.tras_checkBox.AutoSize = true;
-            this.tras_checkBox.Location = new System.Drawing.Point(13, 54);
-            this.tras_checkBox.Name = "tras_checkBox";
-            this.tras_checkBox.Size = new System.Drawing.Size(36, 16);
-            this.tras_checkBox.TabIndex = 1;
-            this.tras_checkBox.Text = "裏";
-            this.tras_checkBox.UseVisualStyleBackColor = true;
-            this.tras_checkBox.CheckedChanged += new System.EventHandler(this.tras_checkBox_CheckedChanged);
+   
             // 
             // frente_checkBox
-            // 
-            this.frente_checkBox.AutoSize = true;
-            this.frente_checkBox.Location = new System.Drawing.Point(13, 27);
-            this.frente_checkBox.Name = "frente_checkBox";
-            this.frente_checkBox.Size = new System.Drawing.Size(36, 16);
-            this.frente_checkBox.TabIndex = 0;
-            this.frente_checkBox.Text = "表";
-            this.frente_checkBox.UseVisualStyleBackColor = true;
-            this.frente_checkBox.CheckedChanged += new System.EventHandler(this.frente_checkBox_CheckedChanged);
+
             // 
             // label3
             // 

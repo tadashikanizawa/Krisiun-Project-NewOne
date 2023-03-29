@@ -24,7 +24,7 @@ namespace Krisiun_Project.Dados_Aleatorios1
             DrillName = drillname;
             DrillNumber = drillnumber;
         }
-        public static void KouguListLoad()
+        public static void CarregarListadeKougu()
         {
             ListadeKougu = LoadKouguList();
         }

@@ -50,7 +50,7 @@ namespace Krisiun_Project
         private Form3 form3;
         private Form5 form5;
         private GCodeGenerator gCodeGenerator;
-        private Grupos grupos;
+
         private Zairyo.Desenho d;
         private NSB nsb;
         private ColorItem coloritem;
@@ -87,7 +87,6 @@ namespace Krisiun_Project
             this.pastas = new Pastas();
             this.taps = new Tap(peca);
             this.form2 = new Form2(this, ferramentas, bools);
-            this.grupos = new Grupos();
 
             this.gCodeGenerator = new GCodeGenerator(ferramentas, pastas, peca);
             this.datagridcodes = new DGV_Codes(this, peca);
@@ -133,7 +132,8 @@ namespace Krisiun_Project
             TipoDeDrills.LoadListdeDrills();
             TiposdeMentori.TipoMentoriLoad();
             TiposdeTap.CriarListas();
-            Kougu.LoadKouguList();
+            Kougu.CarregarListadeKougu();
+            NSB.NSBLoad();
             Mydrills.LoadKaitenValuesFromCsv();
             comboBoxCores.SelectedIndex = 8;
 
@@ -603,7 +603,7 @@ namespace Krisiun_Project
         }
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            datagridcodes.SelecionarFerramenta4(dataGridView3, e, ComboBoxList, TextBoxes, CheckBoxes, PanelList, dgvCoordenadas);
+    //        datagridcodes.SelecionarFerramenta4(dataGridView3, e, ComboBoxList, TextBoxes, CheckBoxes, PanelList, dgvCoordenadas);
             //datagridcodes.AtualizarTextBoxEPainel()
         }
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -635,97 +635,13 @@ namespace Krisiun_Project
             dataGridView1.ClearSelection();
             dataGridView2.ClearSelection();
 
+            Ferramentas ferramentaSelecionada = ObterFerramentaSelecionada();
+            AbrirFormEdicao(ferramentaSelecionada);
+
         }
         #endregion
         #region Sobre as Checkboxs frente/tras
-        private void frente_checkBox_CheckedChanged(object sender, EventArgs e)
-        {
-            //if (frente_checkBox.Checked) { panel_men_frente.Visible = true; }
-            //if (!frente_checkBox.Checked) { panel_men_frente.Visible = false; }
-
-            //if (lastSelectedDgv != null && lastSelectedDgv.CurrentRow != null)
-            //{
-            //    Ferramentas ferramentaSelecionada = lastSelectedDgv.CurrentRow.DataBoundItem as Ferramentas;
-            //    if (ferramentaSelecionada != null)
-            //    {
-
-            //        //
-            //        //                   if (tras_checkBox.Checked != bools.Form3_Tras) { return; }
-            //        if (!ferramentas.ListFrente.Contains(ferramentaSelecionada))
-            //        {
-            //            if (frente_checkBox.Checked)
-            //            {
-            //                ferramentas.ListFrente.Add(ferramentaSelecionada);
-            //                ferramentaSelecionada.Frente = frente_checkBox.Checked;
-            //            }
-            //        }
-            //        if (frente_checkBox.Checked == false)
-            //        {
-
-            //            // Remova o objeto da lista
-            //            ferramentas.ListFrente.Remove(ferramentaSelecionada);
-            //            ferramentaSelecionada.Frente = false;
-            //            // Atualize a exibição da DGV
-            //            dataGridView2.Refresh();
-
-
-
-            //        }
-            //        if (ferramentas.ListTras.Contains(ferramentaSelecionada))
-            //        {
-            //            return;
-            //        }
-
-            //        dataGridView2.Refresh();
-            //        dataGridView3.Refresh();
-            //        dataGridView1.Refresh();
-            //        lastSelectedDgv.Refresh();
-            //    }
-            //}
-            //dataGridView2.Refresh();
-            //dataGridView3.Refresh();
-            //dataGridView1.Refresh();
-
-        }
-        private void tras_checkBox_CheckedChanged(object sender, EventArgs e)
-        {
-            //if (tras_checkBox.Checked) { panel_men_tras.Visible = true; }
-            //if (!tras_checkBox.Checked) { panel_men_tras.Visible = false; }
-
-            //if (lastSelectedDgv != null && lastSelectedDgv.CurrentRow != null)
-            //{
-            //    Ferramentas ferramentaSelecionada = lastSelectedDgv.CurrentRow.DataBoundItem as Ferramentas;
-            //    if (ferramentaSelecionada != null)
-            //    {
-
-
-            //        // Remova o objeto da lista
-            //        ferramentas.ListTras.Remove(ferramentaSelecionada);
-            //        ferramentaSelecionada.Tras = false;
-            //        // Atualize a exibição da DGV
-            //        dataGridView2.Refresh();
-            //        dataGridView3.Refresh();
-            //        dataGridView1.Refresh();
-
-
-
-            //        if (!ferramentas.ListTras.Contains(ferramentaSelecionada))
-            //        {
-            //            if (tras_checkBox.Checked) { ferramentas.ListTras.Add(ferramentaSelecionada); }
-
-            //            ferramentaSelecionada.Tras = tras_checkBox.Checked;
-            //        }
-            //        lastSelectedDgv.Refresh();
-
-            //        dataGridView2.Refresh();
-            //        dataGridView3.Refresh();
-            //    }
-            //}
-            //dataGridView2.Refresh();
-            //dataGridView3.Refresh();
-            //dataGridView1.Refresh();
-
-        }
+   
         private void x_inv_checkbok_CheckedChanged(object sender, EventArgs e)
         {
             peca.xinv = x_inv_checkbok.Checked;
@@ -733,27 +649,7 @@ namespace Krisiun_Project
         }
         #endregion
         #region Botões e Textboxs do Solid Drill
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //Load_ComboboxDrillType<Drills>(drill_combobox, null);
-            //Load_Textbox<Drills>(drill_kei_tb, null, "Kei");
-            //Load_Combobox<Drills>(drill_combobox, null, "DrillTipo");
-            //Load_Textbox<Drills>(drill_z_tb, null, "Fukasa");
-            //Load_Textbox<Drills>(tool_tb, null, "ToolNumber");
-
-            //Load_Combobox<Drills>(drill_combobox, null, "ToolName");
-
-            //Load_Combobox<Drills>(Resfri_Combobox, null, "Resfriamento");
-            //Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
-            //Load_TextboxString2<Drills>(drill_combobox, drill_kei_tb, null, "Nome");
-            //Load_TextboxString<Drills>(Num_pro_textbox, null, "Description");
-
-            //Load_Checkbox<Drills>(sentan_cb, null, "Sentan");
-            //  menfrenteCheck();
-        
-            panel_update();
-
-        }
+  
     
         private void comboBoxCores_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -766,22 +662,7 @@ namespace Krisiun_Project
      
         #endregion
         #region Resto
-        private void Num_pro_textbox_Leave(object sender, EventArgs e)
-        {
-            if (lastSelectedDgv != null)
-            {
-                Ferramentas ferramentaSelecionada = lastSelectedDgv.CurrentRow.DataBoundItem as Ferramentas;
-                if (ferramentaSelecionada != null)
-                {
-                    //ferramentaSelecionada.Nome = Num_pro_textbox.Text;
-                    lastSelectedDgv.Refresh();
-                }
-            }
-            dataGridView1.Refresh();
-            dataGridView2.Refresh();
-            dataGridView3.Refresh();
-        }
-
+     
         public  void DGV_Update()
         {
             dataGridView1.Refresh();
@@ -1053,9 +934,32 @@ namespace Krisiun_Project
 
         private void button17_Click(object sender, EventArgs e)
         {
-            DrillsForm drillsFOrm = new DrillsForm(this, ferramentas);
+            DrillsForm drillsFOrm = new DrillsForm(this, ferramentas, peca);
             drillsFOrm.ShowDialog();
         }
+
+        private void AbrirFormEdicao(Ferramentas ferramenta)
+        {
+            if (ferramenta != null)
+            {
+                if (ferramenta is Drills)
+                {
+                    DrillsForm drillsFOrm = new DrillsForm(this, ferramentas, peca);
+                    drillsFOrm.ShowDialog();
+                }
+                // Adicione condições para outras classes derivadas de Ferramenta, se houver.
+            }
+        }
+        private Ferramentas ObterFerramentaSelecionada()
+        {
+            if (dataGridView3.CurrentRow != null)
+            {
+                return dataGridView3.CurrentRow.DataBoundItem as Ferramentas;
+            }
+            return null;
+        }
+
+
     }
 
 

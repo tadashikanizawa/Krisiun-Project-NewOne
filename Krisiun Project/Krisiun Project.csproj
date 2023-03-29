@@ -129,7 +129,6 @@
     <Compile Include="Ferramentas\Tap.cs" />
     <Compile Include="Ferramentas\Coordenadas.cs" />
     <Compile Include="Ferramentas\Ferramentas.cs" />
-    <Compile Include="G-Code\Grupos.cs" />
     <Compile Include="Ferramentas\Drills.cs" />
     <Compile Include="Dados Aleatorios1\NSB.cs" />
     <Compile Include="G-Code\Tejun.cs" />
