@@ -39,7 +39,7 @@ namespace Krisiun_Project.G_Code
             Drills drills = new Drills(peca);
             drills.Index = Programas.Index();
             drills.Nome = drills.Index.ToString() + "-"+ drill.drill_combobox.Text;
-
+            drills.ToolName = drill.drill_combobox.Text;
             drills.TipoDrill = (TipoDeDrills)drill.drill_combobox.SelectedItem;
             if (float.TryParse(drill.drill_kei_tb.Text, out kei))
             {
@@ -56,6 +56,7 @@ namespace Krisiun_Project.G_Code
 
             drills.Frente = lado.Bool_Frente;
             drills.Tras = lado.Bool_Tras;
+            drills.numlado = 0;
 
             Ferramentas.DGVtoCoordenadasList(drills, xy_dgv, pcd_dgv, xyradiobutton, pcdradiobutton, PCDRaio, pontoinicialX, pontoinicialY);
             Mentori.CriarMentori(drills, peca, MentoriF, MentoriT);
