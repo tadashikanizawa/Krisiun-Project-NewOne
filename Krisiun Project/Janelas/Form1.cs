@@ -193,6 +193,12 @@ namespace Krisiun_Project
 
         #endregion
         #region Sobre_Paineis_de_Desenho
+
+        private void x_inv_checkbok_CheckedChanged(object sender, EventArgs e)
+        {
+            peca.xinv = x_inv_checkbok.Checked;
+            panel_update();
+        }
         private void y_inv_checkbox_CheckedChanged(object sender, EventArgs e)
         {
             peca.yinv = y_inv_checkbox.Checked;
@@ -515,11 +521,6 @@ namespace Krisiun_Project
         #endregion
         #region Sobre as Checkboxs frente/tras
 
-        private void x_inv_checkbok_CheckedChanged(object sender, EventArgs e)
-        {
-            peca.xinv = x_inv_checkbok.Checked;
-            panel_update();
-        }
         #endregion
         #region Botões e Textboxs do Solid Drill
   
