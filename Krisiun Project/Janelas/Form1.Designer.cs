@@ -40,7 +40,6 @@
             this.frente_rd = new System.Windows.Forms.RadioButton();
             this.tras_rd = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.code_rd = new System.Windows.Forms.RadioButton();
             this.paneld_f = new System.Windows.Forms.Panel();
             this.panel_b = new System.Windows.Forms.Panel();
             this.Add_Coor = new System.Windows.Forms.Button();
@@ -78,7 +77,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
-            this.lado_checkbox = new System.Windows.Forms.CheckBox();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,7 +87,6 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button10 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button12 = new System.Windows.Forms.Button();
@@ -130,7 +127,7 @@
             this.panel_inverso.Controls.Add(this.label9);
             this.panel_inverso.Controls.Add(this.y_inv_checkbox);
             this.panel_inverso.Controls.Add(this.x_inv_checkbok);
-            this.panel_inverso.Location = new System.Drawing.Point(551, 12);
+            this.panel_inverso.Location = new System.Drawing.Point(351, 11);
             this.panel_inverso.Margin = new System.Windows.Forms.Padding(2);
             this.panel_inverso.Name = "panel_inverso";
             this.panel_inverso.Size = new System.Drawing.Size(119, 27);
@@ -174,7 +171,7 @@
             // 
             // scale_tb
             // 
-            this.scale_tb.Location = new System.Drawing.Point(734, 15);
+            this.scale_tb.Location = new System.Drawing.Point(475, 16);
             this.scale_tb.Name = "scale_tb";
             this.scale_tb.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.scale_tb.Size = new System.Drawing.Size(43, 19);
@@ -207,7 +204,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1149, 684);
+            this.button1.Location = new System.Drawing.Point(1377, 826);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 49);
             this.button1.TabIndex = 6;
@@ -242,25 +239,12 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.code_rd);
             this.panel1.Controls.Add(this.tras_rd);
             this.panel1.Controls.Add(this.frente_rd);
             this.panel1.Location = new System.Drawing.Point(231, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(186, 20);
+            this.panel1.Size = new System.Drawing.Size(115, 20);
             this.panel1.TabIndex = 5;
-            // 
-            // code_rd
-            // 
-            this.code_rd.AutoSize = true;
-            this.code_rd.Location = new System.Drawing.Point(121, 1);
-            this.code_rd.Name = "code_rd";
-            this.code_rd.Size = new System.Drawing.Size(49, 16);
-            this.code_rd.TabIndex = 5;
-            this.code_rd.TabStop = true;
-            this.code_rd.Text = "Code";
-            this.code_rd.UseVisualStyleBackColor = true;
-            this.code_rd.CheckedChanged += new System.EventHandler(this.code_rd_CheckedChanged);
             // 
             // paneld_f
             // 
@@ -302,7 +286,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(1149, 738);
+            this.button7.Location = new System.Drawing.Point(1377, 880);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(114, 49);
@@ -566,27 +550,13 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(1148, 793);
+            this.button6.Location = new System.Drawing.Point(1376, 935);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(115, 49);
             this.button6.TabIndex = 34;
             this.button6.Text = "固定工具管理";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // lado_checkbox
-            // 
-            this.lado_checkbox.AutoSize = true;
-            this.lado_checkbox.Checked = true;
-            this.lado_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.lado_checkbox.Location = new System.Drawing.Point(439, 18);
-            this.lado_checkbox.Name = "lado_checkbox";
-            this.lado_checkbox.Size = new System.Drawing.Size(36, 16);
-            this.lado_checkbox.TabIndex = 35;
-            this.lado_checkbox.Text = "横";
-            this.lado_checkbox.UseVisualStyleBackColor = true;
-            this.lado_checkbox.Visible = false;
-            this.lado_checkbox.CheckedChanged += new System.EventHandler(this.lado_checkbox_CheckedChanged);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -668,17 +638,6 @@
             this.dataGridViewTextBoxColumn13.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(708, 876);
-            this.button10.Margin = new System.Windows.Forms.Padding(2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(94, 26);
-            this.button10.TabIndex = 92;
-            this.button10.Text = "品物のメニュー";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -698,9 +657,9 @@
             // button12
             // 
             this.button12.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button12.Location = new System.Drawing.Point(695, 906);
+            this.button12.Location = new System.Drawing.Point(1148, 573);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(112, 93);
+            this.button12.Size = new System.Drawing.Size(223, 228);
             this.button12.TabIndex = 94;
             this.button12.Text = "ファイナル";
             this.button12.UseVisualStyleBackColor = true;
@@ -745,7 +704,7 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(1149, 629);
+            this.button13.Location = new System.Drawing.Point(1377, 771);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(114, 49);
             this.button13.TabIndex = 97;
@@ -755,7 +714,7 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(1149, 574);
+            this.button14.Location = new System.Drawing.Point(1377, 716);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(114, 49);
             this.button14.TabIndex = 98;
@@ -790,17 +749,14 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1567, 854);
+            this.Controls.Add(this.button12);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button17);
             this.Controls.Add(this.button13);
-            this.Controls.Add(this.panel_yoko);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button12);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.lado_checkbox);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.dataGridView1);
@@ -813,6 +769,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.paneld_f);
             this.Controls.Add(this.panel_b);
+            this.Controls.Add(this.panel_yoko);
             this.Name = "Form1";
             this.Text = "Krisiun Project";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -820,23 +777,7 @@
             this.panel_inverso.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listTrasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource2)).EndInit();
+           
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -846,7 +787,6 @@
         private System.Windows.Forms.RadioButton frente_rd;
         private System.Windows.Forms.RadioButton tras_rd;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton code_rd;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox scale_tb;
@@ -866,7 +806,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.BindingSource ferramentasBindingSource1;
         private System.Windows.Forms.Button button6;
-        public System.Windows.Forms.CheckBox lado_checkbox;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Button Add_Coor;
         private System.Windows.Forms.Button button7;
@@ -882,7 +821,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.Button button12;
