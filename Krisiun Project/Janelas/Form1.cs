@@ -134,6 +134,7 @@ namespace Krisiun_Project
             TiposdeTap.CriarListas();
             Kougu.CarregarListadeKougu();
             NSB.NSBLoad();
+            ColorList.AddColor();
             Mydrills.LoadKaitenValuesFromCsv();
             comboBoxCores.SelectedIndex = 8;
 
@@ -149,6 +150,7 @@ namespace Krisiun_Project
 
         }
         Color corAtual = Color.Black;
+
         private void selecionarCor(object sender, EventArgs e)
         {
             ColorItem itemCor = (ColorItem)comboBoxCores.SelectedItem;

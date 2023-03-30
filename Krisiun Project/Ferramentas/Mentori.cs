@@ -1,6 +1,7 @@
 ﻿using Krisiun_Project.UserControils;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -105,7 +106,7 @@ namespace Krisiun_Project.G_Code
         }
 
 
-        public static void CriarMentori(Ferramentas ferramenta, Pitch_principal.Peca peca, Mentori_Frente frente, Mentori_Tras tras)
+        public static void CriarMentori(BindingList<Ferramentas> listatotal, BindingList<Ferramentas> ListFrente, BindingList<Ferramentas>listtras, Ferramentas ferramenta, Pitch_principal.Peca peca, Mentori_Frente frente, Mentori_Tras tras)
         {
             float keif;
             float keib;
@@ -141,6 +142,18 @@ namespace Krisiun_Project.G_Code
 
             ferramenta.Mentori = mentori;
             ferramenta.MentoriB = mentorib;
+            if(ferramenta.Mentori_F_Bool)
+            {
+                listatotal.Add(ferramenta);
+                ListFrente.Add(ferramenta);
+            }
+            if(ferramenta.Mentori_B_Bool)
+            {
+                listatotal.Add(ferramenta);
+                listtras.Add(ferramenta);
+            }
+
+     
         }
 
     }

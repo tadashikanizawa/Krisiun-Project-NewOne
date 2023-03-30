@@ -116,6 +116,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dados Aleatorios1\ColorList.cs" />
     <Compile Include="Dados Aleatorios1\Kougu.cs" />
     <Compile Include="Dados Aleatorios1\Material.cs" />
     <Compile Include="Dados Aleatorios1\TiposdeDrill.cs" />
@@ -227,6 +228,12 @@
     <Compile Include="Janelas\textbox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControils\Class1.cs" />
+    <Compile Include="UserControils\Colors_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControils\Colors_UserControl.Designer.cs">
+      <DependentUpon>Colors_UserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControils\Drill_UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -299,6 +306,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControils\Colors_UserControl.resx">
+      <DependentUpon>Colors_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControils\Drill_UserControl.resx">
       <DependentUpon>Drill_UserControl.cs</DependentUpon>
     </EmbeddedResource>
