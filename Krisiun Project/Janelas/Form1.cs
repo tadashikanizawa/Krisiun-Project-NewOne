@@ -251,7 +251,6 @@ namespace Krisiun_Project
             {
                 paneld_f.Refresh();
                 paneld_f.BringToFront();
-                if (lado_checkbox.Checked) { panel_yoko.BringToFront(); }
 
             }
         }
@@ -262,16 +261,10 @@ namespace Krisiun_Project
             {
                 panel_b.Refresh();
                 panel_b.BringToFront();
-                if (lado_checkbox.Checked) { panel_yoko.BringToFront(); }
 
             }
         }
 
-        private void code_rd_CheckedChanged(object sender, EventArgs e)
-        {
-
-            panel_Code.BringToFront();
-        }
         public void panel_update()
         {
             paneld_f.Invalidate();
@@ -280,9 +273,7 @@ namespace Krisiun_Project
         }
         private void lado_checkbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (lado_checkbox.Checked) { bools.bool_lado = true; panel_yoko.Visible = true; }
-            else { bools.bool_lado = false; panel_yoko.Visible = false; }
-            panel_yoko.BringToFront();
+            
             panel_update();
         }
         #endregion
