@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Krisiun_Project.Dados_Aleatorios1;
 using Krisiun_Project.Desenhos;
+using Krisiun_Project.G_Code;
 
 namespace Krisiun_Project.UserControils
 {
@@ -19,6 +20,10 @@ namespace Krisiun_Project.UserControils
             InitializeComponent();
             comboBox1.DataSource = ColorList.ListadeCores;
 
+        }
+        public void LoadColor(Ferramentas ferramenta)
+        {
+            comboBox1.SelectedItem = ferramenta.Color;
         }
         Color corAtual = Color.Black;
         private void selecionarCor(object sender, EventArgs e)

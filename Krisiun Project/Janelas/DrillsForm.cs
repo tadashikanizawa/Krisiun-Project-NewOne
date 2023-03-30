@@ -36,6 +36,7 @@ namespace Krisiun_Project.Janelas
                     drill_UserControl1.LoadData(drill);
                     drill_UserControl1.Atsumi = peca.z;
                     }
+                colors_UserControl1.LoadColor(ferramenta);
             }
 
             mentori_Frente1.Visible = false;
