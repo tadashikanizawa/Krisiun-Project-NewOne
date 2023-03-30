@@ -97,7 +97,7 @@ namespace Krisiun_Project
 
             bindingSource4.DataSource = null;
 
-            dgvCoordenadas.DataSource = bindingSource4;
+            
 
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             //addtb.CriarTextBoxesIniciais(panel_XY);
@@ -112,23 +112,9 @@ namespace Krisiun_Project
             dataGridView3.DataSource = bindingSource2;
 
 
-            gruposCoordenadasBindingSource.DataSource = gruposCoordenadas;
-
-            // Atribui o BindingSource como DataSource da ListBox
-
-
-            // Atribui o BindingSource como DataSource da DataGridView
-            dgvCoordenadas.DataSource = gruposCoordenadasBindingSource;
-            dgvCoordenadas.DataMember = "Coordenadas";
-
-
-            add_tb_naLista();
-            //addtb.CriarTextBoxesIniciais(panelXY);
 
             form3.ShowDialog();
             panel_update();
-            atualizarComboBoxCores();
-            addcore();
             TipoDeDrills.LoadListdeDrills();
             TiposdeMentori.TipoMentoriLoad();
             TiposdeTap.CriarListas();
@@ -136,45 +122,10 @@ namespace Krisiun_Project
             NSB.NSBLoad();
             ColorList.AddColor();
             Mydrills.LoadKaitenValuesFromCsv();
-            comboBoxCores.SelectedIndex = 8;
+    
 
         }
-        public Color[] cores = new Color[] { Color.Black, Color.Cyan, Color.Red, Color.Blue, Color.Green, Color.Gray, Color.Pink, Color.Purple, Color.LightGray };
-        public void addcore()
-        {
-            foreach (Color cor in cores)
-            {
-                ColorItem itemCor = new ColorItem(cor, cor.Name);
-                comboBoxCores.Items.Add(itemCor);
-            }
-
-        }
-        Color corAtual = Color.Black;
-
-        private void selecionarCor(object sender, EventArgs e)
-        {
-            ColorItem itemCor = (ColorItem)comboBoxCores.SelectedItem;
-            corAtual = itemCor.Color; // Definindo a cor atual para a cor selecionada
-        }
-        private void atualizarComboBoxCores()
-        {
-            foreach (ColorItem itemCor in comboBoxCores.Items)
-            {
-                if (itemCor.Color.Equals(corAtual))
-                {
-                    comboBoxCores.SelectedItem = itemCor;
-                    break;
-                }
-            }
-        }
-        public BindingList<CoordenadasGrupo> gruposCoordenadas = new BindingList<CoordenadasGrupo>();
-        public BindingSource coordenadasBindingSource = new BindingSource();
-        public List<TextBox> TextBoxes = new List<TextBox>();
-        public List<CheckBox> CheckBoxes = new List<CheckBox>();
-        public List<Panel> PanelList = new List<Panel>();
-        public List<TextBox> xyboxs = new List<TextBox>();
-        public List<ComboBox> ComboBoxList = new List<ComboBox>();
-        private BindingSource gruposCoordenadasBindingSource = new BindingSource();
+ 
         #endregion
 
         // Atribui o BindingSource à lista de grupos de coordenadas
@@ -182,39 +133,7 @@ namespace Krisiun_Project
 
     
   
-        private void add_tb_naLista()
-        {
-            //TextBoxes.Add(Num_pro_textbox); //[0]
-            //TextBoxes.Add(drill_kei_tb);    //[1]
-            //TextBoxes.Add(drill_z_tb); //[2]
-            //TextBoxes.Add(men_frente_tam_tb); //[3]
-            //TextBoxes.Add(men_frente_kei_tb); //[4]
-            //TextBoxes.Add(men_frente_z_tb);//[5]
-            //TextBoxes.Add(men_frente_dan_tb);//[6]
-
-            //TextBoxes.Add(tool_tb); //7
-
-
-            //TextBoxes.Add(men_tras_tam); //8
-            //TextBoxes.Add(men_tras_kei); //9
-            //TextBoxes.Add(men_tras_z); //10
-            //TextBoxes.Add(men_tras_dan);//11
-
-
-
-            //CheckBoxes.Add(frente_checkBox); //[0]
-            //CheckBoxes.Add(tras_checkBox); //[1]
-            //CheckBoxes.Add(sentan_cb); //[2]
-            //CheckBoxes.Add(men_frente_checkbox); //[3]
-            //CheckBoxes.Add(men_tras_checkbox); //[4]
-
-
-            //PanelList.Add(panel_boringana); //[0]
-
-            //ComboBoxList.Add(drill_combobox); //0
-            ComboBoxList.Add(comboBoxCores);//1
-       
-        }
+      
         #region Tamanho_Escala_Base
 
 
@@ -586,50 +505,7 @@ namespace Krisiun_Project
             return null;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            datagridcodes.RemoverFerramenta(dataGridView1, ferramentas.ListFrente, e);
-        }
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            datagridcodes.RemoverFerramenta(dataGridView2, ferramentas.ListTras, e);
-        }
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            datagridcodes.SelecionarFerramenta4(dataGridView1, e, ComboBoxList, TextBoxes, CheckBoxes, PanelList, dgvCoordenadas);
-
-        }
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            datagridcodes.SelecionarFerramenta4(dataGridView2, e, ComboBoxList, TextBoxes, CheckBoxes, PanelList, dgvCoordenadas);
-        }
-        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-    //        datagridcodes.SelecionarFerramenta4(dataGridView3, e, ComboBoxList, TextBoxes, CheckBoxes, PanelList, dgvCoordenadas);
-            //datagridcodes.AtualizarTextBoxEPainel()
-        }
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            // datagridcodes.RemoverFerramenta(dataGridView3, ferramentas.ListFrente, e);
-        }
-
-
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-
-        {
-            lastSelectedDgv = dataGridView1;
-            dataGridView2.ClearSelection();
-            dataGridView3.ClearSelection();
-        }
-        private void dataGridView2_SelectionChanged(object sender, EventArgs e)
-        {
-
-            lastSelectedDgv = dataGridView2;
-            dataGridView1.ClearSelection();
-            dataGridView3.ClearSelection();
-
-        }
+   
         private void dataGridView3_SelectionChanged(object sender, EventArgs e)
         {
 
@@ -657,14 +533,7 @@ namespace Krisiun_Project
         #region Botões e Textboxs do Solid Drill
   
     
-        private void comboBoxCores_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Load_ComboboxColor<Drills>(comboBoxCores, null, "Color");
-            panel_update();
-        }
-      
-
-
+  
      
         #endregion
         #region Resto
@@ -693,7 +562,6 @@ namespace Krisiun_Project
 
             if (dataGridView3.Rows.Count == 0) { return; }
             dataGridView3.CurrentCell = dataGridView3.Rows[dataGridView3.Rows.Count - 1].Cells[0];
-            datagridcodes.AtualizarTextBoxEPainel(dataGridView3.CurrentRow.DataBoundItem as Ferramentas, TextBoxes, CheckBoxes, PanelList);
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -716,170 +584,7 @@ namespace Krisiun_Project
         }
 
 
-        private void ExibirCoordenadas(Drills drills)
-        {
-            // cria uma string para armazenar as coordenadas
-            string coordenadasStr = "";
-
-            // percorre a lista de coordenadas do objeto de perfuração e adiciona as coordenadas à string
-            foreach (PointF coordenadas in drills.CoordenadasList)
-            {
-                coordenadasStr += "(" + coordenadas.X + ", " + coordenadas.Y + ")\n";
-            }
-
-            // exibe as coordenadas em uma MessageBox
-            MessageBox.Show(coordenadasStr, "Coordenadas de Perfuração");
-        }
-
-        private void btnSalvarCoordenadas_Click(object sender, EventArgs e)
-        {
-            // Verifica se a célula selecionada é válida
-            if (selectedCell != null && selectedCell.RowIndex >= 0 && selectedCell.ColumnIndex >= 0)
-            {
-                // Obtém o índice da linha selecionada na DataGridView separada
-                int rowIndex = selectedCell.RowIndex;
-
-                // Obtém a BindingList<PointF> atual da DataGridView
-                var pointsList = dgvCoordenadas.DataSource as BindingList<PointF>;
-
-                // Obtém o objeto selecionado na DataGridView principal
-                var selectedObject = dataGridView3.CurrentRow.DataBoundItem as Ferramentas;
-
-                // Verifica se o objeto selecionado é uma instância de Drills ou Taps
-                if (selectedObject is Drills drills)
-                {
-                    // Remove o ponto selecionado da lista de pontos do objeto Drills
-                    drills.CoordenadasList.RemoveAt(rowIndex);
-
-                    // Atualiza a BindingList<PointF> e a DataGridView separada com a lista atualizada
-                    pointsList.ResetBindings();
-                    dgvCoordenadas.Refresh();
-                }
-                else if (selectedObject is Tap taps)
-                {
-                    // Remove o ponto selecionado da lista de pontos do objeto Taps
-                    taps.CoordenadasList.RemoveAt(rowIndex);
-
-                    // Atualiza a BindingList<PointF> e a DataGridView separada com a lista atualizada
-                    pointsList.ResetBindings();
-                    dgvCoordenadas.Refresh();
-                }
-            }
-
-        }
-
-        private void AtualizaDrills(Drills drill)
-        {
-            int index = ferramentas.ListTotal.IndexOf(drill);
-            ferramentas.ListTotal.RemoveAt(index);
-            ferramentas.ListTotal.Insert(index, drill);
-            ferramentas.ListDrills.RemoveAt(index);
-            ferramentas.ListDrills.Insert(index, drill);
-        }
-
-        private void dgvCoordenadas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void panel_Code_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private void button8_Click(object sender, EventArgs e)
-        {
-            // Obtém as coordenadas inseridas pelo usuário
-            if (float.TryParse(txtX.Text, out float x) && float.TryParse(txtY.Text, out float y))
-            {
-                // Obtém o objeto selecionado na DataGridView principal
-                var selectedObject = dataGridView3.CurrentRow.DataBoundItem as Ferramentas;
-
-                // Verifica se o objeto selecionado é uma instância de Drills ou Taps
-                if (selectedObject is Drills drills)
-                {
-                    // Adiciona o novo ponto à lista de pontos do objeto Drills
-                    drills.CoordenadasList.Add(new PointF(x, y));
-
-                    // Obtém a BindingList<PointF> atual da DataGridView separada
-                    var pointsList = dgvCoordenadas.DataSource as BindingList<PointF>;
-
-                    // Atualiza a BindingList<PointF> e a DataGridView separada com a lista atualizada
-                    pointsList.ResetBindings();
-                    dgvCoordenadas.Refresh();
-                }
-                else if (selectedObject is Tap taps)
-                {
-                    // Adiciona o novo ponto à lista de pontos do objeto Taps
-                    taps.CoordenadasList.Add(new PointF(x, y));
-
-                    // Obtém a BindingList<PointF> atual da DataGridView separada
-                    var pointsList = dataGridView2.DataSource as BindingList<PointF>;
-
-                    // Atualiza a BindingList<PointF> e a DataGridView separada com a lista atualizada
-                    pointsList.ResetBindings();
-                    dataGridView2.Refresh();
-                }
-            }
-            panel_update();
-        }
-
-
-        private void dgvCoordenadas_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                // Obtém a BindingList<PointF> atual da DataGridView
-                var pointsList = dgvCoordenadas.DataSource as BindingList<PointF>;
-
-                // Obtém o objeto selecionado na DataGridView principal
-                var selectedObject = dataGridView3.CurrentRow.DataBoundItem as Ferramentas;
-
-                // Verifica se o objeto selecionado é uma instância de Drills ou Taps
-                if (selectedObject is Drills drills)
-                {
-                    // Atualiza a lista de pontos do objeto Drills com a lista atualizada na BindingList
-                    drills.CoordenadasList = pointsList.ToList();
-                }
-                else if (selectedObject is Tap taps)
-                {
-                    // Atualiza a lista de pontos do objeto Taps com a lista atualizada na BindingList
-                    taps.CoordenadasList = pointsList.ToList();
-                }
-            }
-        }
-
-        private void dgvCoordenadas_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
-        {
-
-            // Obtém o índice da linha selecionada na DataGridView separada
-            int rowIndex = e.Row.Index;
-
-            // Obtém a BindingList<PointF> atual da DataGridView
-            var pointsList = dataGridView2.DataSource as BindingList<PointF>;
-
-            // Obtém o objeto selecionado na DataGridView principal
-            var selectedObject = dataGridView1.CurrentRow.DataBoundItem as Ferramentas;
-
-            // Verifica se o objeto selecionado é uma instância de Drills ou Taps
-            if (selectedObject is Drills drills)
-            {
-                // Remove o ponto selecionado da lista de pontos do objeto Drills
-                drills.CoordenadasList.RemoveAt(rowIndex);
-            }
-            else if (selectedObject is Tap taps)
-            {
-                // Remove o ponto selecionado da lista de pontos do objeto Taps
-                taps.CoordenadasList.RemoveAt(rowIndex);
-            }
-
-        }
-
-        private void dgvCoordenadas_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            selectedCell = dgvCoordenadas.Rows[e.RowIndex].Cells[e.ColumnIndex];
-        }
-
-        private void button10_Click(object sender, EventArgs e)
+           private void button10_Click(object sender, EventArgs e)
         {
             form3.ShowDialog();
         }
@@ -933,10 +638,7 @@ namespace Krisiun_Project
             tapMMForm.ShowDialog();
         }
 
-        private void button16_Click(object sender, EventArgs e)
-        {
-        
-        }
+    
 
         private void button17_Click(object sender, EventArgs e)
         {
@@ -965,7 +667,10 @@ namespace Krisiun_Project
             return null;
         }
 
-     
+        private void button4_Click(object sender, EventArgs e)
+        {
+            form3.ShowDialog();
+        }
     }
 
 

@@ -43,43 +43,10 @@
             this.code_rd = new System.Windows.Forms.RadioButton();
             this.paneld_f = new System.Windows.Forms.Panel();
             this.panel_b = new System.Windows.Forms.Panel();
-            this.panel_Code = new System.Windows.Forms.Panel();
             this.Add_Coor = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.ferramentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dgvCoordenadas = new System.Windows.Forms.DataGridView();
-            this.button9 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.panel_ana = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.tap_avan_panel = new System.Windows.Forms.Panel();
-            this.tap_k_tb = new System.Windows.Forms.TextBox();
-            this.tap_pitch_tb = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.tap_q_tb = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.tap_kaiten_tb = new System.Windows.Forms.TextBox();
-            this.tap_inch_rb = new System.Windows.Forms.RadioButton();
-            this.tap_mm_rb = new System.Windows.Forms.RadioButton();
-            this.tap_tool_tb = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.tap_tool_combobox = new System.Windows.Forms.ComboBox();
-            this.tap_z_tb = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.panel_lado = new System.Windows.Forms.Panel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.tras_checkBox = new System.Windows.Forms.CheckBox();
-            this.frente_checkBox = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxCores = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -122,16 +89,11 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtY = new System.Windows.Forms.TextBox();
-            this.txtX = new System.Windows.Forms.TextBox();
             this.button10 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -139,19 +101,12 @@
             this.listFrenteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel_inverso.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel_Code.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCoordenadas)).BeginInit();
-            this.panel_ana.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.tap_avan_panel.SuspendLayout();
-            this.panel_lado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource3)).BeginInit();
@@ -175,7 +130,7 @@
             this.panel_inverso.Controls.Add(this.label9);
             this.panel_inverso.Controls.Add(this.y_inv_checkbox);
             this.panel_inverso.Controls.Add(this.x_inv_checkbok);
-            this.panel_inverso.Location = new System.Drawing.Point(1223, 25);
+            this.panel_inverso.Location = new System.Drawing.Point(551, 12);
             this.panel_inverso.Margin = new System.Windows.Forms.Padding(2);
             this.panel_inverso.Name = "panel_inverso";
             this.panel_inverso.Size = new System.Drawing.Size(119, 27);
@@ -219,7 +174,7 @@
             // 
             // scale_tb
             // 
-            this.scale_tb.Location = new System.Drawing.Point(1406, 28);
+            this.scale_tb.Location = new System.Drawing.Point(734, 15);
             this.scale_tb.Name = "scale_tb";
             this.scale_tb.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.scale_tb.Size = new System.Drawing.Size(43, 19);
@@ -231,7 +186,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("MS UI Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button3.Location = new System.Drawing.Point(818, 27);
+            this.button3.Location = new System.Drawing.Point(146, 14);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(37, 26);
             this.button3.TabIndex = 21;
@@ -242,7 +197,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("MS UI Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(860, 27);
+            this.button2.Location = new System.Drawing.Point(188, 14);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(37, 26);
             this.button2.TabIndex = 19;
@@ -252,7 +207,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(23, 675);
+            this.button1.Location = new System.Drawing.Point(1149, 684);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 49);
             this.button1.TabIndex = 6;
@@ -290,7 +245,7 @@
             this.panel1.Controls.Add(this.code_rd);
             this.panel1.Controls.Add(this.tras_rd);
             this.panel1.Controls.Add(this.frente_rd);
-            this.panel1.Location = new System.Drawing.Point(903, 28);
+            this.panel1.Location = new System.Drawing.Point(231, 15);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(186, 20);
             this.panel1.TabIndex = 5;
@@ -310,7 +265,7 @@
             // paneld_f
             // 
             this.paneld_f.BackColor = System.Drawing.Color.White;
-            this.paneld_f.Location = new System.Drawing.Point(818, 60);
+            this.paneld_f.Location = new System.Drawing.Point(120, 50);
             this.paneld_f.Name = "paneld_f";
             this.paneld_f.Size = new System.Drawing.Size(1000, 697);
             this.paneld_f.TabIndex = 6;
@@ -319,21 +274,11 @@
             // panel_b
             // 
             this.panel_b.BackColor = System.Drawing.Color.White;
-            this.panel_b.Location = new System.Drawing.Point(818, 60);
+            this.panel_b.Location = new System.Drawing.Point(120, 50);
             this.panel_b.Name = "panel_b";
             this.panel_b.Size = new System.Drawing.Size(1000, 700);
             this.panel_b.TabIndex = 7;
             this.panel_b.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_b_Paint);
-            // 
-            // panel_Code
-            // 
-            this.panel_Code.Controls.Add(this.Add_Coor);
-            this.panel_Code.Controls.Add(this.dataGridView4);
-            this.panel_Code.Location = new System.Drawing.Point(818, 60);
-            this.panel_Code.Name = "panel_Code";
-            this.panel_Code.Size = new System.Drawing.Size(1000, 700);
-            this.panel_Code.TabIndex = 8;
-            this.panel_Code.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Code_Paint);
             // 
             // Add_Coor
             // 
@@ -355,38 +300,9 @@
             this.dataGridView4.Size = new System.Drawing.Size(674, 172);
             this.dataGridView4.TabIndex = 36;
             // 
-            // dgvCoordenadas
-            // 
-            this.dgvCoordenadas.ColumnHeadersHeight = 34;
-            this.dgvCoordenadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvCoordenadas.Location = new System.Drawing.Point(662, 662);
-            this.dgvCoordenadas.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvCoordenadas.MultiSelect = false;
-            this.dgvCoordenadas.Name = "dgvCoordenadas";
-            this.dgvCoordenadas.RowHeadersVisible = false;
-            this.dgvCoordenadas.RowHeadersWidth = 62;
-            this.dgvCoordenadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvCoordenadas.Size = new System.Drawing.Size(151, 100);
-            this.dgvCoordenadas.TabIndex = 91;
-            this.dgvCoordenadas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCoordenadas_CellClick);
-            this.dgvCoordenadas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCoordenadas_CellContentClick);
-            this.dgvCoordenadas.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCoordenadas_CellValueChanged);
-            this.dgvCoordenadas.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvCoordenadas_UserDeletingRow);
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(687, 828);
-            this.button9.Margin = new System.Windows.Forms.Padding(2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(122, 33);
-            this.button9.TabIndex = 90;
-            this.button9.Text = "削除";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.btnSalvarCoordenadas_Click);
-            // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(23, 729);
+            this.button7.Location = new System.Drawing.Point(1149, 738);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(114, 49);
@@ -394,301 +310,6 @@
             this.button7.Text = "面取りリスト管理";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(687, 791);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(123, 33);
-            this.button8.TabIndex = 39;
-            this.button8.Text = "Add";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // panel_ana
-            // 
-            this.panel_ana.Controls.Add(this.panel4);
-            this.panel_ana.Controls.Add(this.button4);
-            this.panel_ana.Controls.Add(this.button5);
-            this.panel_ana.Controls.Add(this.panel_lado);
-            this.panel_ana.Location = new System.Drawing.Point(415, 31);
-            this.panel_ana.Name = "panel_ana";
-            this.panel_ana.Size = new System.Drawing.Size(242, 747);
-            this.panel_ana.TabIndex = 19;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.checkBox3);
-            this.panel4.Controls.Add(this.tap_avan_panel);
-            this.panel4.Controls.Add(this.tap_inch_rb);
-            this.panel4.Controls.Add(this.tap_mm_rb);
-            this.panel4.Controls.Add(this.tap_tool_tb);
-            this.panel4.Controls.Add(this.label40);
-            this.panel4.Controls.Add(this.tap_tool_combobox);
-            this.panel4.Controls.Add(this.tap_z_tb);
-            this.panel4.Controls.Add(this.label39);
-            this.panel4.Controls.Add(this.label43);
-            this.panel4.Location = new System.Drawing.Point(3, 178);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(236, 235);
-            this.panel4.TabIndex = 99;
-            this.panel4.Visible = false;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(70, 111);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(72, 16);
-            this.checkBox3.TabIndex = 85;
-            this.checkBox3.Text = "詳細設定";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // tap_avan_panel
-            // 
-            this.tap_avan_panel.Controls.Add(this.tap_k_tb);
-            this.tap_avan_panel.Controls.Add(this.tap_pitch_tb);
-            this.tap_avan_panel.Controls.Add(this.label46);
-            this.tap_avan_panel.Controls.Add(this.label44);
-            this.tap_avan_panel.Controls.Add(this.tap_q_tb);
-            this.tap_avan_panel.Controls.Add(this.label41);
-            this.tap_avan_panel.Controls.Add(this.label45);
-            this.tap_avan_panel.Controls.Add(this.tap_kaiten_tb);
-            this.tap_avan_panel.Location = new System.Drawing.Point(32, 133);
-            this.tap_avan_panel.Name = "tap_avan_panel";
-            this.tap_avan_panel.Size = new System.Drawing.Size(152, 69);
-            this.tap_avan_panel.TabIndex = 83;
-            this.tap_avan_panel.Visible = false;
-            // 
-            // tap_k_tb
-            // 
-            this.tap_k_tb.Location = new System.Drawing.Point(102, 43);
-            this.tap_k_tb.Name = "tap_k_tb";
-            this.tap_k_tb.Size = new System.Drawing.Size(36, 19);
-            this.tap_k_tb.TabIndex = 89;
-            this.tap_k_tb.Text = "3.3";
-            // 
-            // tap_pitch_tb
-            // 
-            this.tap_pitch_tb.Location = new System.Drawing.Point(41, 18);
-            this.tap_pitch_tb.Name = "tap_pitch_tb";
-            this.tap_pitch_tb.Size = new System.Drawing.Size(36, 19);
-            this.tap_pitch_tb.TabIndex = 77;
-            this.tap_pitch_tb.Text = "3.3";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(83, 46);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(12, 12);
-            this.label46.TabIndex = 90;
-            this.label46.Text = "K";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(6, 25);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(33, 12);
-            this.label44.TabIndex = 78;
-            this.label44.Text = "ピーチ";
-            // 
-            // tap_q_tb
-            // 
-            this.tap_q_tb.Location = new System.Drawing.Point(102, 18);
-            this.tap_q_tb.Name = "tap_q_tb";
-            this.tap_q_tb.Size = new System.Drawing.Size(36, 19);
-            this.tap_q_tb.TabIndex = 87;
-            this.tap_q_tb.Text = "3.3";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(6, 50);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(29, 12);
-            this.label41.TabIndex = 86;
-            this.label41.Text = "回転";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(83, 21);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(13, 12);
-            this.label45.TabIndex = 88;
-            this.label45.Text = "Q";
-            // 
-            // tap_kaiten_tb
-            // 
-            this.tap_kaiten_tb.Location = new System.Drawing.Point(41, 43);
-            this.tap_kaiten_tb.Name = "tap_kaiten_tb";
-            this.tap_kaiten_tb.Size = new System.Drawing.Size(36, 19);
-            this.tap_kaiten_tb.TabIndex = 85;
-            this.tap_kaiten_tb.Text = "3.3";
-            // 
-            // tap_inch_rb
-            // 
-            this.tap_inch_rb.AutoSize = true;
-            this.tap_inch_rb.Location = new System.Drawing.Point(17, 64);
-            this.tap_inch_rb.Name = "tap_inch_rb";
-            this.tap_inch_rb.Size = new System.Drawing.Size(58, 16);
-            this.tap_inch_rb.TabIndex = 84;
-            this.tap_inch_rb.Text = "(インチ)";
-            this.tap_inch_rb.UseVisualStyleBackColor = true;
-            // 
-            // tap_mm_rb
-            // 
-            this.tap_mm_rb.AutoSize = true;
-            this.tap_mm_rb.Checked = true;
-            this.tap_mm_rb.Location = new System.Drawing.Point(17, 47);
-            this.tap_mm_rb.Name = "tap_mm_rb";
-            this.tap_mm_rb.Size = new System.Drawing.Size(49, 16);
-            this.tap_mm_rb.TabIndex = 83;
-            this.tap_mm_rb.TabStop = true;
-            this.tap_mm_rb.Text = "(mm)";
-            this.tap_mm_rb.UseVisualStyleBackColor = true;
-            // 
-            // tap_tool_tb
-            // 
-            this.tap_tool_tb.Location = new System.Drawing.Point(70, 86);
-            this.tap_tool_tb.Name = "tap_tool_tb";
-            this.tap_tool_tb.Size = new System.Drawing.Size(36, 19);
-            this.tap_tool_tb.TabIndex = 82;
-            this.tap_tool_tb.Text = "01";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(50, 93);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(12, 12);
-            this.label40.TabIndex = 83;
-            this.label40.Text = "T";
-            // 
-            // tap_tool_combobox
-            // 
-            this.tap_tool_combobox.FormattingEnabled = true;
-            this.tap_tool_combobox.Location = new System.Drawing.Point(88, 53);
-            this.tap_tool_combobox.Name = "tap_tool_combobox";
-            this.tap_tool_combobox.Size = new System.Drawing.Size(126, 20);
-            this.tap_tool_combobox.TabIndex = 80;
-            this.tap_tool_combobox.Text = "タップ";
-            // 
-            // tap_z_tb
-            // 
-            this.tap_z_tb.Location = new System.Drawing.Point(133, 86);
-            this.tap_z_tb.Name = "tap_z_tb";
-            this.tap_z_tb.Size = new System.Drawing.Size(36, 19);
-            this.tap_z_tb.TabIndex = 80;
-            this.tap_z_tb.Text = "-10";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label39.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label39.Location = new System.Drawing.Point(84, 11);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(62, 24);
-            this.label39.TabIndex = 80;
-            this.label39.Text = "タップ";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(113, 93);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(12, 12);
-            this.label43.TabIndex = 81;
-            this.label43.Text = "Z";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(0, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 100;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button5.Location = new System.Drawing.Point(35, 446);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(78, 65);
-            this.button5.TabIndex = 26;
-            this.button5.Text = "ADD";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // panel_lado
-            // 
-            this.panel_lado.Controls.Add(this.checkBox2);
-            this.panel_lado.Controls.Add(this.checkBox1);
-            this.panel_lado.Controls.Add(this.tras_checkBox);
-            this.panel_lado.Controls.Add(this.frente_checkBox);
-            this.panel_lado.Controls.Add(this.label3);
-            this.panel_lado.Location = new System.Drawing.Point(175, 32);
-            this.panel_lado.Name = "panel_lado";
-            this.panel_lado.Size = new System.Drawing.Size(64, 137);
-            this.panel_lado.TabIndex = 23;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(13, 108);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(42, 16);
-            this.checkBox2.TabIndex = 3;
-            this.checkBox2.Text = "横2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.Visible = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(13, 81);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(42, 16);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "横1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.Visible = false;
-            // 
-            // tras_checkBox
-            // 
-            this.tras_checkBox.Location = new System.Drawing.Point(0, 0);
-            this.tras_checkBox.Name = "tras_checkBox";
-            this.tras_checkBox.Size = new System.Drawing.Size(104, 24);
-            this.tras_checkBox.TabIndex = 4;
-            // 
-            // frente_checkBox
-            // 
-            this.frente_checkBox.Location = new System.Drawing.Point(0, 0);
-            this.frente_checkBox.Name = "frente_checkBox";
-            this.frente_checkBox.Size = new System.Drawing.Size(104, 24);
-            this.frente_checkBox.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 12);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "面";
-            // 
-            // comboBoxCores
-            // 
-            this.comboBoxCores.FormattingEnabled = true;
-            this.comboBoxCores.Location = new System.Drawing.Point(739, 339);
-            this.comboBoxCores.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxCores.Name = "comboBoxCores";
-            this.comboBoxCores.Size = new System.Drawing.Size(74, 20);
-            this.comboBoxCores.TabIndex = 77;
-            this.comboBoxCores.SelectedIndexChanged += new System.EventHandler(this.comboBoxCores_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -701,7 +322,7 @@
             this.Delete1,
             this.nomeDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.listFrenteBindingSource5;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 380);
+            this.dataGridView1.Location = new System.Drawing.Point(1326, 405);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -710,9 +331,6 @@
             this.dataGridView1.RowTemplate.Height = 21;
             this.dataGridView1.Size = new System.Drawing.Size(177, 162);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // Delete1
             // 
@@ -759,7 +377,7 @@
             // panel_yoko
             // 
             this.panel_yoko.BackColor = System.Drawing.Color.White;
-            this.panel_yoko.Location = new System.Drawing.Point(817, 756);
+            this.panel_yoko.Location = new System.Drawing.Point(120, 745);
             this.panel_yoko.Name = "panel_yoko";
             this.panel_yoko.Size = new System.Drawing.Size(1000, 250);
             this.panel_yoko.TabIndex = 27;
@@ -776,7 +394,7 @@
             this.Delete2,
             this.nomeDataGridViewTextBoxColumn2});
             this.dataGridView2.DataSource = this.listTrasBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(241, 380);
+            this.dataGridView2.Location = new System.Drawing.Point(1148, 405);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
@@ -784,9 +402,6 @@
             this.dataGridView2.RowTemplate.Height = 21;
             this.dataGridView2.Size = new System.Drawing.Size(158, 162);
             this.dataGridView2.TabIndex = 28;
-            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
             // 
             // Delete2
             // 
@@ -828,7 +443,7 @@
             this.mentoriFBoolDataGridViewCheckBoxColumn,
             this.mentoriBBoolDataGridViewCheckBoxColumn});
             this.dataGridView3.DataSource = this.listTotalBindingSource1;
-            this.dataGridView3.Location = new System.Drawing.Point(5, 27);
+            this.dataGridView3.Location = new System.Drawing.Point(1125, 50);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
@@ -837,8 +452,6 @@
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView3.Size = new System.Drawing.Size(404, 325);
             this.dataGridView3.TabIndex = 29;
-            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
-            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             this.dataGridView3.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentDoubleClick);
             this.dataGridView3.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
             // 
@@ -934,7 +547,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(71, 364);
+            this.label14.Location = new System.Drawing.Point(1394, 389);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(41, 12);
@@ -944,7 +557,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(239, 364);
+            this.label15.Location = new System.Drawing.Point(1207, 389);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 12);
@@ -953,7 +566,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(22, 784);
+            this.button6.Location = new System.Drawing.Point(1148, 793);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(115, 49);
             this.button6.TabIndex = 34;
@@ -966,7 +579,7 @@
             this.lado_checkbox.AutoSize = true;
             this.lado_checkbox.Checked = true;
             this.lado_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.lado_checkbox.Location = new System.Drawing.Point(1111, 31);
+            this.lado_checkbox.Location = new System.Drawing.Point(439, 18);
             this.lado_checkbox.Name = "lado_checkbox";
             this.lado_checkbox.Size = new System.Drawing.Size(36, 16);
             this.lado_checkbox.TabIndex = 35;
@@ -1055,22 +668,6 @@
             this.dataGridViewTextBoxColumn13.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
-            // txtY
-            // 
-            this.txtY.Location = new System.Drawing.Point(751, 768);
-            this.txtY.Name = "txtY";
-            this.txtY.Size = new System.Drawing.Size(59, 19);
-            this.txtY.TabIndex = 63;
-            this.txtY.Tag = "Y";
-            // 
-            // txtX
-            // 
-            this.txtX.Location = new System.Drawing.Point(673, 768);
-            this.txtX.Name = "txtX";
-            this.txtX.Size = new System.Drawing.Size(59, 19);
-            this.txtX.TabIndex = 62;
-            this.txtX.Tag = "X";
-            // 
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(708, 876);
@@ -1098,16 +695,6 @@
             this.dataGridViewTextBoxColumn15.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(755, 364);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(57, 37);
-            this.button11.TabIndex = 93;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
             // button12
             // 
             this.button12.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -1126,26 +713,6 @@
             this.dataGridViewTextBoxColumn16.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn16.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(656, 771);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(12, 12);
-            this.label1.TabIndex = 95;
-            this.label1.Text = "X";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(737, 773);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(12, 12);
-            this.label2.TabIndex = 96;
-            this.label2.Text = "Y";
             // 
             // dataGridViewTextBoxColumn17
             // 
@@ -1178,7 +745,7 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(23, 620);
+            this.button13.Location = new System.Drawing.Point(1149, 629);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(114, 49);
             this.button13.TabIndex = 97;
@@ -1188,7 +755,7 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(23, 565);
+            this.button14.Location = new System.Drawing.Point(1149, 574);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(114, 49);
             this.button14.TabIndex = 98;
@@ -1196,32 +763,25 @@
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(0, 0);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 101;
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(143, 565);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(114, 49);
-            this.button16.TabIndex = 99;
-            this.button16.Text = "Tap List";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
-            // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(737, 441);
+            this.button17.Location = new System.Drawing.Point(12, 65);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(72, 26);
+            this.button17.Size = new System.Drawing.Size(102, 26);
             this.button17.TabIndex = 102;
             this.button17.Text = "孔開け";
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(12, 14);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(102, 26);
+            this.button4.TabIndex = 103;
+            this.button4.Text = "メインメニュー";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
@@ -1229,29 +789,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(2136, 854);
-            this.Controls.Add(this.button17);
-            this.Controls.Add(this.button16);
+            this.ClientSize = new System.Drawing.Size(1567, 854);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button14);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button17);
             this.Controls.Add(this.button13);
-            this.Controls.Add(this.button15);
             this.Controls.Add(this.panel_yoko);
-            this.Controls.Add(this.comboBoxCores);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.txtY);
-            this.Controls.Add(this.lado_checkbox);
-            this.Controls.Add(this.txtX);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.dgvCoordenadas);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.lado_checkbox);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.button8);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView2);
@@ -1260,10 +811,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.scale_tb);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel_ana);
             this.Controls.Add(this.paneld_f);
-            this.Controls.Add(this.panel_Code);
             this.Controls.Add(this.panel_b);
             this.Name = "Form1";
             this.Text = "Krisiun Project";
@@ -1272,18 +820,23 @@
             this.panel_inverso.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel_Code.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCoordenadas)).EndInit();
-            this.panel_ana.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.tap_avan_panel.ResumeLayout(false);
-            this.tap_avan_panel.PerformLayout();
-            this.panel_lado.ResumeLayout(false);
-            this.panel_lado.PerformLayout();
-        
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listTrasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1298,14 +851,11 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox scale_tb;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel_Code;
         private System.Windows.Forms.Panel panel_inverso;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox y_inv_checkbox;
         private System.Windows.Forms.CheckBox x_inv_checkbok;
-        private System.Windows.Forms.Panel panel_ana;
         public System.Windows.Forms.Panel paneld_f;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel_yoko;
         private System.Windows.Forms.BindingSource ferramentasBindingSource;
         private System.Windows.Forms.ColorDialog colorDialog1;
@@ -1318,31 +868,23 @@
         private System.Windows.Forms.Button button6;
         public System.Windows.Forms.CheckBox lado_checkbox;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button Add_Coor;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.BindingSource listFrenteBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn toolCumpDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridView dgvCoordenadas;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        public System.Windows.Forms.TextBox txtY;
-        public System.Windows.Forms.TextBox txtX;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.ComboBox comboBoxCores;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         public System.Windows.Forms.Panel panel_b;
         private System.Windows.Forms.DataGridViewTextBoxColumn ToolName;
@@ -1355,8 +897,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn mentoriFBoolDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn mentoriBBoolDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
@@ -1376,35 +916,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.Panel tap_avan_panel;
-        public System.Windows.Forms.TextBox tap_k_tb;
-        public System.Windows.Forms.TextBox tap_pitch_tb;
-        public System.Windows.Forms.Label label46;
-        public System.Windows.Forms.Label label44;
-        public System.Windows.Forms.TextBox tap_q_tb;
-        public System.Windows.Forms.Label label41;
-        public System.Windows.Forms.Label label45;
-        public System.Windows.Forms.TextBox tap_kaiten_tb;
-        public System.Windows.Forms.Button button15;
-        public System.Windows.Forms.RadioButton tap_inch_rb;
-        public System.Windows.Forms.RadioButton tap_mm_rb;
-        public System.Windows.Forms.TextBox tap_tool_tb;
-        public System.Windows.Forms.Label label40;
-        public System.Windows.Forms.ComboBox tap_tool_combobox;
-        public System.Windows.Forms.TextBox tap_z_tb;
-        private System.Windows.Forms.Label label39;
-        public System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Panel panel_lado;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox tras_checkBox;
-        private System.Windows.Forms.CheckBox frente_checkBox;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button17;
         public System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Button button4;
     }
 }
 

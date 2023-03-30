@@ -64,11 +64,10 @@ namespace Krisiun_Project.G_Code
             Mentori.CriarMentori(ferramentas.ListTotal,ferramentas.ListFrente,ferramentas.ListTras, drills, peca, MentoriF, MentoriT);
 
             ferramentas.ListTotal.Add(drills);
-            if(drills.Frente)
-            {
-                ferramentas.ListFrente.Add(drills);
-            }
+            if(drills.Frente){ ferramentas.ListFrente.Add(drills); }
             if(drills.Tras) { ferramentas.ListTras.Add(drills);}
+            if (drills.Mentori_F_Bool) { ferramentas.MentoriFrente.Add(drills); }
+            if(drills.Mentori_B_Bool) { ferramentas.MentoriTras.Add(drills); }
 
         }
 
