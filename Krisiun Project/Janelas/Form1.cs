@@ -513,11 +513,7 @@ namespace Krisiun_Project
            
 
         }
-        private void dataGridView3_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Ferramentas ferramentaSelecionada = ObterFerramentaSelecionada();
-            AbrirFormEdicao(ferramentaSelecionada);
-        }
+ 
         #endregion
         #region Sobre as Checkboxs frente/tras
 
@@ -634,22 +630,11 @@ namespace Krisiun_Project
 
         private void button17_Click(object sender, EventArgs e)
         {
-            DrillsForm drillsFOrm = new DrillsForm(this, ferramentas, peca, Mydrills);
+            DrillsForm drillsFOrm = new DrillsForm(this, ferramentas, null, peca, Mydrills);
             drillsFOrm.ShowDialog();
         }
 
-        private void AbrirFormEdicao(Ferramentas ferramenta)
-        {
-            if (ferramenta != null)
-            {
-                if (ferramenta is Drills)
-                {
-                    DrillsForm drillsFOrm = new DrillsForm(this, ferramentas, peca, Mydrills);
-                    drillsFOrm.ShowDialog();
-                }
-                // Adicione condições para outras classes derivadas de Ferramenta, se houver.
-            }
-        }
+     
         private Ferramentas ObterFerramentaSelecionada()
         {
             if (dataGridView3.CurrentRow != null)
@@ -662,6 +647,28 @@ namespace Krisiun_Project
         private void button4_Click(object sender, EventArgs e)
         {
             form3.ShowDialog();
+        }
+
+        private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView3.CurrentRow != null)
+            {
+                Ferramentas ferramenta = (Ferramentas)dataGridView3.CurrentRow.DataBoundItem;
+
+                AbrirFormEdicao(ferramenta);
+            }
+        }
+        private void AbrirFormEdicao(Ferramentas ferramenta)
+        {
+            if (ferramenta != null)
+            {
+                if (ferramenta is Drills)
+                {
+                    DrillsForm drillsFOrm = new DrillsForm(this, ferramentas, ferramenta, peca, Mydrills);
+                    drillsFOrm.ShowDialog();
+                }
+                // Adicione condições para outras classes derivadas de Ferramenta, se houver.
+            }
         }
     }
 

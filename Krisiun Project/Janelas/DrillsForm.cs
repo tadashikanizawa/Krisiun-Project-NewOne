@@ -19,14 +19,24 @@ namespace Krisiun_Project.Janelas
         private Pitch_principal.Peca peca;
         private Form1 form1;
         private Ferramentas ferramentas;
+        private Ferramentas ferramenta;
         private Drills drills;
-        public DrillsForm(Form1 form1, Ferramentas ferramentas, Pitch_principal.Peca peca, Drills drills)
+        public DrillsForm(Form1 form1, Ferramentas ferramentas, Ferramentas ferramenta, Pitch_principal.Peca peca, Drills drills)
         {
             InitializeComponent();
             this.form1 = form1;
             this.ferramentas = ferramentas;
             this.peca = peca;
             this.drills = drills;
+            this.ferramenta = ferramenta;
+            if(ferramenta != null )
+            {
+                if(ferramenta is Drills drill)
+                {
+                    drill_UserControl1.LoadData(drill);
+                    drill_UserControl1.Atsumi = peca.z;
+                    }
+            }
 
             mentori_Frente1.Visible = false;
             lado_UserControl1.OnAlterarPropriedades += mentori_Frente1.alterar;
@@ -37,7 +47,6 @@ namespace Krisiun_Project.Janelas
         public bool mentorifrentevisible;
         private void lado_UserControl1_Load(object sender, EventArgs e)
         {
-                drill_UserControl1.peca = this.peca;
             
         }
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

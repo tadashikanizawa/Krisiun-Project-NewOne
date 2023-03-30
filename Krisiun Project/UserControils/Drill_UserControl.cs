@@ -1,5 +1,6 @@
 ﻿using Krisiun_Project.Dados_aleatorios;
 using Krisiun_Project.Dados_Aleatorios1;
+using Krisiun_Project.G_Code;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,14 +18,16 @@ namespace Krisiun_Project.UserControils
     public partial class Drill_UserControl : UserControl
     {
       
-        public Pitch_principal.Peca peca;
+        public float atsumi;
         public Drill_UserControl()
         {
             InitializeComponent();
+
+            
             drill_combobox.DataSource = TipoDeDrills.ListaDeTiposdeDrills;
             drill_combobox.DisplayMember = "Name";
             drill_combobox.ValueMember = "Name";
-            this.peca = peca;
+      
         }
         public TipoDeDrills DrillTipo
         {
@@ -58,7 +61,25 @@ namespace Krisiun_Project.UserControils
             get { return Kakou_Annai_tb.Text; }
             set { Kakou_Annai_tb.Text = value; }
         }
-
+        public float Atsumi
+        {
+            get { return atsumi; } 
+            set { atsumi = value; }
+        }
+        public void LoadData(Drills drill)
+        {
+            if (drill != null)
+            {
+                DrillNumber = drill.ToolNumber.ToString();
+                DrillKei = drill.Kei.ToString();
+                DrillZ = drill.Fukasa.ToString();
+                Sentan = drill.Sentan;
+                DrillKakouAnnai = drill.Description;
+                DrillTipo = drill.TipoDrill;
+                
+                // Adicione outras propriedades conforme necessário
+            }
+        }
         private void drill_combobox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (drill_combobox.SelectedIndex <= 2) { Resfri_Combobox.SelectedIndex = 2; }
@@ -89,7 +110,6 @@ namespace Krisiun_Project.UserControils
         private void drill_z_tb_TextChanged(object sender, EventArgs e)
         {
 
-            float atsumi = peca.z;
             string valor = drill_z_tb.Text.ToString().Replace("-", "");
             float z;
             float kei;
