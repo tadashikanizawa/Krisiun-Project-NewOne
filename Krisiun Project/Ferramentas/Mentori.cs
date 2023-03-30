@@ -9,6 +9,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Linq;
 
 namespace Krisiun_Project.G_Code
 {
@@ -125,34 +126,71 @@ namespace Krisiun_Project.G_Code
             TiposdeMentori selectedMentori = frente.men_frente_tipo_combo.SelectedItem as TiposdeMentori;
             TiposdeMentori selectedMentoriB = tras.men_tras_tipo_combo.SelectedItem as TiposdeMentori;
 
-            mentori.TipoDeCutter = selectedMentori;
-            mentorib.TipoDeCutter = selectedMentoriB;
+            mentori.TipoDeCutter = (TiposdeMentori)selectedMentori;
+            mentorib.TipoDeCutter = (TiposdeMentori)selectedMentoriB;
+            mentori.ToolName = selectedMentori.Tool.ToString();
+            mentorib.ToolName = selectedMentoriB.Tool.ToString();
+            mentori.Nome = selectedMentori.Tool.ToString();
+            mentorib.Nome = selectedMentoriB.Tool.ToString();
+            mentori.Kei = selectedMentori.Diametro;          
+            mentorib.Kei = selectedMentoriB.Diametro;
+            mentori.ToolNumber = selectedMentori.MenCutterToolNum;
+            mentorib.ToolNumber = selectedMentoriB.MenCutterToolNum;
+            Ferramentas existingMentori = listatotal.FirstOrDefault(x => x.ToolName == mentori.ToolName);
+            Ferramentas existingMentoriB = listatotal.FirstOrDefault(x => x.ToolName == mentorib.ToolName);
 
-            if(float.TryParse(frente.men_frente_kei_tb.Text, out keif)) { mentori.MenKei = keif; }
-            if(float.TryParse(tras.men_tras_kei.Text, out keib)) { mentorib.MenKei = keib; }
+            // Adicionar ou remover mentori baseado na propriedade Mentori_F_Bool
+            if (frente.men_frente_checkbox.Checked)
+            {
+                if (existingMentori == null)
+                {
+                    listatotal.Add(mentori);
+                    ListFrente.Add(mentori);
+                }
+            }
+            else
+            {
+                if (existingMentori != null)
+                {
+                    listatotal.Remove(existingMentori);
+                    ListFrente.Remove(existingMentori);
+                }
+            }
 
-            if(float.TryParse(frente.men_frente_z_tb.Text, out zf)) { mentori.Z = zf; }
-            if(float.TryParse(tras.men_tras_z.Text, out zb)) { mentorib.Z = zb; }
+            // Adicionar ou remover mentorib baseado na propriedade Mentori_B_Bool
+            if (tras.men_tras_checkbox.Checked)
+            {
+                if (existingMentoriB == null)
+                {
+                    listatotal.Add(mentorib);
+                    listtras.Add(mentorib);
+                }
+            }
+            else
+            {
+                if (existingMentoriB != null)
+                {
+                    listatotal.Remove(existingMentoriB);
+                    listtras.Remove(existingMentoriB);
+                }
+            }
+          
+            if (float.TryParse(frente.men_frente_kei_tb.Text, out keif)) { mentori.MenKei = keif; }
+            if (float.TryParse(tras.men_tras_kei.Text, out keib)) { mentorib.MenKei = keib; }
 
-            if(float.TryParse(frente.men_frente_tam_tb.Text,out cf)) { mentori.C = cf; }
-            if(float.TryParse(tras.men_tras_tam.Text, out cb)) { mentorib.C = cb; }
+            if (float.TryParse(frente.men_frente_z_tb.Text, out zf)) { mentori.Z = zf; }
+            if (float.TryParse(tras.men_tras_z.Text, out zb)) { mentorib.Z = zb; }
 
-            if(float.TryParse(frente.men_frente_dan_tb.Text,out dansaf)) { mentori.Dansa = dansaf; }
-            if(float.TryParse(tras.men_tras_dan.Text,out dansab)) { mentorib.Dansa = dansab; }
+            if (float.TryParse(frente.men_frente_tam_tb.Text, out cf)) { mentori.C = cf; }
+            if (float.TryParse(tras.men_tras_tam.Text, out cb)) { mentorib.C = cb; }
+
+            if (float.TryParse(frente.men_frente_dan_tb.Text, out dansaf)) { mentori.Dansa = dansaf; }
+            if (float.TryParse(tras.men_tras_dan.Text, out dansab)) { mentorib.Dansa = dansab; }
 
             ferramenta.Mentori = mentori;
             ferramenta.MentoriB = mentorib;
-            if(ferramenta.Mentori_F_Bool)
-            {
-                listatotal.Add(ferramenta);
-                ListFrente.Add(ferramenta);
-            }
-            if(ferramenta.Mentori_B_Bool)
-            {
-                listatotal.Add(ferramenta);
-                listtras.Add(ferramenta);
-            }
-
+         
+            
      
         }
 
