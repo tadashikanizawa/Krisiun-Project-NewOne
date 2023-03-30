@@ -31,7 +31,7 @@ namespace Krisiun_Project.G_Code
   
         }
         
-        public  void CriarDrills(Ferramentas ferramentas, Drill_UserControl drill, Lado_UserControl lado, Mentori_Frente MentoriF, Mentori_Tras MentoriT, DataGridView xy_dgv, DataGridView pcd_dgv, RadioButton xyradiobutton, RadioButton pcdradiobutton, TextBox PCDRaio, TextBox pontoinicialX, TextBox pontoinicialY)
+        public  void CriarDrills(Ferramentas ferramentas, Drill_UserControl drill, Lado_UserControl lado, Mentori_Frente MentoriF, Mentori_Tras MentoriT, Colors_UserControl color, DataGridView xy_dgv, DataGridView pcd_dgv, RadioButton xyradiobutton, RadioButton pcdradiobutton, TextBox PCDRaio, TextBox pontoinicialX, TextBox pontoinicialY)
         {
             float kei;
             float fukasa;
@@ -56,10 +56,12 @@ namespace Krisiun_Project.G_Code
 
             drills.Frente = lado.Bool_Frente;
             drills.Tras = lado.Bool_Tras;
+            Color colorselecionada = (Color)color.comboBox1.SelectedItem;
+            drills.Color = colorselecionada;
             drills.numlado = 0;
 
             Ferramentas.DGVtoCoordenadasList(drills, xy_dgv, pcd_dgv, xyradiobutton, pcdradiobutton, PCDRaio, pontoinicialX, pontoinicialY);
-            Mentori.CriarMentori(drills, peca, MentoriF, MentoriT);
+            Mentori.CriarMentori(ferramentas.ListTotal,ferramentas.ListFrente,ferramentas.ListTras, drills, peca, MentoriF, MentoriT);
 
             ferramentas.ListTotal.Add(drills);
             if(drills.Frente)
@@ -67,6 +69,7 @@ namespace Krisiun_Project.G_Code
                 ferramentas.ListFrente.Add(drills);
             }
             if(drills.Tras) { ferramentas.ListTras.Add(drills);}
+
         }
 
         protected override void UpdateKaitenAndOkuri()

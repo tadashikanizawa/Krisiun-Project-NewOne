@@ -56,7 +56,7 @@ namespace Krisiun_Project.Janelas
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            drills.CriarDrills(ferramentas,drill_UserControl1,lado_UserControl1,mentori_Frente1,mentori_Tras1,dataGridView1,dataGridView2, radioButton1, radioButton2, textBox1, textBox2, textBox3);   
+            drills.CriarDrills(ferramentas,drill_UserControl1,lado_UserControl1,mentori_Frente1,mentori_Tras1,colors_UserControl1, dataGridView1,dataGridView2, radioButton1, radioButton2, textBox1, textBox2, textBox3);   
             form1.panel_update();
             this.Close();
 
