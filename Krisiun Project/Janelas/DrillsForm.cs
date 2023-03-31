@@ -37,6 +37,7 @@ namespace Krisiun_Project.Janelas
                     drill_UserControl1.Atsumi = peca.z;
                     }
                 colors_UserControl1.LoadColor(ferramenta);
+                lado_UserControl1.LoadLado(ferramenta);
             }
 
             mentori_Frente1.Visible = false;
@@ -66,13 +67,23 @@ namespace Krisiun_Project.Janelas
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.Rows.Count <= 1 || dataGridView2.Rows.Count <= 1) { MessageBox.Show("Add coordenadas"); return; }
+            if (radioButton1.Checked)
+            { 
+                if(dataGridView1.Rows.Count <= 1) { MessageBox.Show("Add coordenadas"); return; }
+            }
+            if(radioButton2.Checked)
+            { 
+            if (dataGridView2.Rows.Count <= 1) { MessageBox.Show("Add coordenadas"); return; }
+            }
             drills.CriarDrills(ferramentas,drill_UserControl1,lado_UserControl1,mentori_Frente1,mentori_Tras1,colors_UserControl1, dataGridView1,dataGridView2, radioButton1, radioButton2, textBox1, textBox2, textBox3);   
             form1.panel_update();
             this.Close();
 
         }
 
- 
+        private void DrillsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
