@@ -99,6 +99,7 @@ namespace Krisiun_Project.UserControils
             if (numero != null)
             {
                 tool_tb.Text = numero.DrillNumber.ToString();
+                drill_combobox.Text = numero.DrillName.ToString();
             }
             else
             {

@@ -58,10 +58,17 @@
             // 
             // drill_UserControl1
             // 
+            this.drill_UserControl1.Atsumi = 0F;
             this.drill_UserControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.drill_UserControl1.DrillKakouAnnai = "";
+            this.drill_UserControl1.DrillKei = "1";
+            this.drill_UserControl1.DrillNumber = "01";
+            this.drill_UserControl1.DrillTipo = null;
+            this.drill_UserControl1.DrillZ = "0";
             this.drill_UserControl1.Location = new System.Drawing.Point(152, 22);
             this.drill_UserControl1.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
             this.drill_UserControl1.Name = "drill_UserControl1";
+            this.drill_UserControl1.Sentan = false;
             this.drill_UserControl1.Size = new System.Drawing.Size(235, 279);
             this.drill_UserControl1.TabIndex = 0;
             this.drill_UserControl1.Load += new System.EventHandler(this.drill_UserControl1_Load);
@@ -305,6 +312,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "DrillsForm";
             this.Text = "DrillsFOrm";
+            this.Load += new System.EventHandler(this.DrillsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.xy_panel.ResumeLayout(false);
             this.pcd_panel.ResumeLayout(false);

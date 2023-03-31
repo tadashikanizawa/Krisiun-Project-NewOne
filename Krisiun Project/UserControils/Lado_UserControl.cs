@@ -1,4 +1,5 @@
-﻿using Krisiun_Project.Janelas;
+﻿using Krisiun_Project.G_Code;
+using Krisiun_Project.Janelas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,7 +63,11 @@ namespace Krisiun_Project.UserControils
             get { return tras_checkBox.Checked; }
             set { tras_checkBox.Checked = value; }
         }
-
+        public void LoadLado(Ferramentas ferramenta)
+        {
+            Bool_Frente = ferramenta.Frente;
+            Bool_Tras = ferramenta.Tras;
+        }
    
     }
 }
