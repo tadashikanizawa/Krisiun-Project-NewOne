@@ -38,11 +38,15 @@ namespace Krisiun_Project.Janelas
                     }
                 colors_UserControl1.LoadColor(ferramenta);
                 lado_UserControl1.LoadLado(ferramenta);
+                mentori_Frente1.LoadMentori(ferramenta, false);
+                mentori_Frente2.LoadMentori(ferramenta, true);
+                if (ferramenta.Mentori_F_Bool) { mentori_Frente1.Visible = true; }
+                if (ferramenta.Mentori_B_Bool) { mentori_Frente2.Visible = true; }
             }
 
             mentori_Frente1.Visible = false;
             lado_UserControl1.OnAlterarPropriedades += mentori_Frente1.alterar;
-            lado_UserControl1.OnAlterarPropriedades1 += mentori_Tras1.alterar;
+            lado_UserControl1.OnAlterarPropriedades1 += mentori_Frente2.alterar;
 
         }
 
@@ -75,7 +79,7 @@ namespace Krisiun_Project.Janelas
             { 
             if (dataGridView2.Rows.Count <= 1) { MessageBox.Show("Add coordenadas"); return; }
             }
-            drills.CriarDrills(ferramentas,drill_UserControl1,lado_UserControl1,mentori_Frente1,mentori_Tras1,colors_UserControl1, dataGridView1,dataGridView2, radioButton1, radioButton2, textBox1, textBox2, textBox3);   
+            drills.CriarDrills(ferramentas,drill_UserControl1,lado_UserControl1,mentori_Frente1,mentori_Frente2,colors_UserControl1, dataGridView1,dataGridView2, radioButton1, radioButton2, textBox1, textBox2, textBox3);   
             form1.panel_update();
             this.Close();
 

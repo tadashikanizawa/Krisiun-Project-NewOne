@@ -88,12 +88,17 @@
             // mentori_Frente1
             // 
             this.mentori_Frente1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.mentori_Frente1.Kei = "1";
+            this.mentori_Frente1.Check = false;
+            this.mentori_Frente1.Dansa = 0F;
+            this.mentori_Frente1.Kei = 1F;
             this.mentori_Frente1.Location = new System.Drawing.Point(242, 27);
             this.mentori_Frente1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.mentori_Frente1.Name = "mentori_Frente1";
             this.mentori_Frente1.Size = new System.Drawing.Size(138, 115);
             this.mentori_Frente1.TabIndex = 3;
+            this.mentori_Frente1.Tamanho = 3F;
+            this.mentori_Frente1.Tipo = null;
+            this.mentori_Frente1.Z = -15F;
             this.mentori_Frente1.Load += new System.EventHandler(this.mentori_Frente1_Load);
             // 
             // dataGridView1
@@ -276,11 +281,17 @@
             // mentori_Frente2
             // 
             this.mentori_Frente2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.mentori_Frente2.Kei = "1";
+            this.mentori_Frente2.Check = false;
+            this.mentori_Frente2.Dansa = 0F;
+            this.mentori_Frente2.Kei = 1F;
             this.mentori_Frente2.Location = new System.Drawing.Point(242, 159);
             this.mentori_Frente2.Name = "mentori_Frente2";
             this.mentori_Frente2.Size = new System.Drawing.Size(138, 115);
             this.mentori_Frente2.TabIndex = 16;
+            this.mentori_Frente2.Tamanho = 3F;
+            this.mentori_Frente2.Tipo = null;
+            this.mentori_Frente2.Visible = false;
+            this.mentori_Frente2.Z = -15F;
             // 
             // DrillsForm
             // 
