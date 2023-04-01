@@ -85,5 +85,10 @@ namespace Krisiun_Project.Janelas
         {
 
         }
+
+        private void mentori_Frente1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -25,10 +25,61 @@ namespace Krisiun_Project.UserControils
 
         }
         public float tamcutter;
-        public string Kei
+        public bool Check
         {
-            get{ return men_frente_kei_tb.Text; }
-            set { men_frente_kei_tb.Text = value; }
+            get { return men_frente_checkbox.Checked; }
+            set { men_frente_checkbox.Checked = value; }    
+        }
+        
+        public TiposdeMentori Tipo
+        {
+            get { return (TiposdeMentori)men_frente_tipo_combo.SelectedItem; }
+            set { men_frente_tipo_combo.SelectedItem = value; }
+        }
+        public float Kei
+        {
+            get{ return float.Parse( men_frente_kei_tb.Text); }
+            set { men_frente_kei_tb.Text = value.ToString(); }
+        }
+
+        public float Tamanho
+        {
+            get { return float.Parse(men_frente_tam_tb.Text); }
+            set { men_frente_tam_tb.Text = value.ToString(); }
+        }
+        public float Z
+        {
+            get { return float.Parse(men_frente_z_tb.Text); }
+            set { men_frente_z_tb.Text = value.ToString(); }
+        }
+
+        public float Dansa
+        {
+            get { return float.Parse(men_frente_dan_tb.Text); }
+            set { men_frente_dan_tb.Text = value.ToString(); }
+        }
+
+        public void LoadMentori(Ferramentas ferramentas, bool tras)
+        {
+            if(!tras)
+            {
+                Check = ferramentas.Mentori_F_Bool;
+                Tipo = ferramentas.Mentori.TipoDeCutter;
+                Kei = ferramentas.Mentori.MenKei;
+                Tamanho = ferramentas.Mentori.C;
+                Z = ferramentas.Mentori.Z;
+                Dansa = ferramentas.Mentori.Dansa;
+            }
+            if(tras)
+            {
+                Check = ferramentas.Mentori_B_Bool;
+                Tipo = ferramentas.MentoriB.TipoDeCutter;
+                Kei = ferramentas.MentoriB.MenKei;
+                Tamanho = ferramentas.MentoriB.C;
+                Z = ferramentas.MentoriB.Z;
+                Dansa = ferramentas.MentoriB.Dansa;
+
+            }
         }
 
         public void alterar (bool visible)
