@@ -86,6 +86,10 @@ namespace Krisiun_Project.UserControils
         {
             this.Visible = visible;
         }
+        public void alterarkei(float kei)
+        {
+            Kei = kei;
+        }
         private void men_frente_tipo_combo_SelectedIndexChanged(object sender, EventArgs e)
         {
             TiposdeMentori selectedMentori = men_frente_tipo_combo.SelectedItem as TiposdeMentori;

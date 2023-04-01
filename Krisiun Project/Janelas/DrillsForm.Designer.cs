@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.drill_UserControl1 = new Krisiun_Project.UserControils.Drill_UserControl();
-            this.lado_UserControl1 = new Krisiun_Project.UserControils.Lado_UserControl();
-            this.mentori_Frente1 = new Krisiun_Project.UserControils.Mentori_Frente();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,58 +45,16 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
-            this.colors_UserControl1 = new Krisiun_Project.UserControils.Colors_UserControl();
             this.mentori_Frente2 = new Krisiun_Project.UserControils.Mentori_Frente();
+            this.colors_UserControl1 = new Krisiun_Project.UserControils.Colors_UserControl();
+            this.mentori_Frente1 = new Krisiun_Project.UserControils.Mentori_Frente();
+            this.lado_UserControl1 = new Krisiun_Project.UserControils.Lado_UserControl();
+            this.drill_UserControl1 = new Krisiun_Project.UserControils.Drill_UserControl();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.xy_panel.SuspendLayout();
             this.pcd_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // drill_UserControl1
-            // 
-            this.drill_UserControl1.Atsumi = 0F;
-            this.drill_UserControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.drill_UserControl1.DrillKakouAnnai = "";
-            this.drill_UserControl1.DrillKei = "1";
-            this.drill_UserControl1.DrillNumber = "01";
-            this.drill_UserControl1.DrillTipo = null;
-            this.drill_UserControl1.DrillZ = "0";
-            this.drill_UserControl1.Location = new System.Drawing.Point(91, 15);
-            this.drill_UserControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.drill_UserControl1.Name = "drill_UserControl1";
-            this.drill_UserControl1.Sentan = false;
-            this.drill_UserControl1.Size = new System.Drawing.Size(141, 186);
-            this.drill_UserControl1.TabIndex = 0;
-            this.drill_UserControl1.Load += new System.EventHandler(this.drill_UserControl1_Load);
-            // 
-            // lado_UserControl1
-            // 
-            this.lado_UserControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lado_UserControl1.Bool_Frente = false;
-            this.lado_UserControl1.Bool_Tras = false;
-            this.lado_UserControl1.Location = new System.Drawing.Point(14, 15);
-            this.lado_UserControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.lado_UserControl1.Name = "lado_UserControl1";
-            this.lado_UserControl1.Size = new System.Drawing.Size(67, 150);
-            this.lado_UserControl1.TabIndex = 2;
-            this.lado_UserControl1.Load += new System.EventHandler(this.lado_UserControl1_Load);
-            // 
-            // mentori_Frente1
-            // 
-            this.mentori_Frente1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.mentori_Frente1.Check = false;
-            this.mentori_Frente1.Dansa = 0F;
-            this.mentori_Frente1.Kei = 1F;
-            this.mentori_Frente1.Location = new System.Drawing.Point(242, 27);
-            this.mentori_Frente1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.mentori_Frente1.Name = "mentori_Frente1";
-            this.mentori_Frente1.Size = new System.Drawing.Size(138, 115);
-            this.mentori_Frente1.TabIndex = 3;
-            this.mentori_Frente1.Tamanho = 3F;
-            this.mentori_Frente1.Tipo = null;
-            this.mentori_Frente1.Z = -15F;
-            this.mentori_Frente1.Load += new System.EventHandler(this.mentori_Frente1_Load);
             // 
             // dataGridView1
             // 
@@ -269,15 +224,6 @@
             this.button2.Text = "閉じる";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // colors_UserControl1
-            // 
-            this.colors_UserControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.colors_UserControl1.Location = new System.Drawing.Point(19, 197);
-            this.colors_UserControl1.Margin = new System.Windows.Forms.Padding(1);
-            this.colors_UserControl1.Name = "colors_UserControl1";
-            this.colors_UserControl1.Size = new System.Drawing.Size(116, 58);
-            this.colors_UserControl1.TabIndex = 15;
-            // 
             // mentori_Frente2
             // 
             this.mentori_Frente2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -292,6 +238,61 @@
             this.mentori_Frente2.Tipo = null;
             this.mentori_Frente2.Visible = false;
             this.mentori_Frente2.Z = -15F;
+            // 
+            // colors_UserControl1
+            // 
+            this.colors_UserControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.colors_UserControl1.Location = new System.Drawing.Point(19, 197);
+            this.colors_UserControl1.Margin = new System.Windows.Forms.Padding(1);
+            this.colors_UserControl1.Name = "colors_UserControl1";
+            this.colors_UserControl1.Size = new System.Drawing.Size(116, 58);
+            this.colors_UserControl1.TabIndex = 15;
+            // 
+            // mentori_Frente1
+            // 
+            this.mentori_Frente1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.mentori_Frente1.Check = false;
+            this.mentori_Frente1.Dansa = 0F;
+            this.mentori_Frente1.Kei = 1F;
+            this.mentori_Frente1.Location = new System.Drawing.Point(242, 27);
+            this.mentori_Frente1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.mentori_Frente1.Name = "mentori_Frente1";
+            this.mentori_Frente1.Size = new System.Drawing.Size(138, 115);
+            this.mentori_Frente1.TabIndex = 3;
+            this.mentori_Frente1.Tamanho = 3F;
+            this.mentori_Frente1.Tipo = null;
+            this.mentori_Frente1.Visible = false;
+            this.mentori_Frente1.Z = -15F;
+            this.mentori_Frente1.Load += new System.EventHandler(this.mentori_Frente1_Load);
+            // 
+            // lado_UserControl1
+            // 
+            this.lado_UserControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lado_UserControl1.Bool_Frente = false;
+            this.lado_UserControl1.Bool_Tras = false;
+            this.lado_UserControl1.Location = new System.Drawing.Point(14, 15);
+            this.lado_UserControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.lado_UserControl1.Name = "lado_UserControl1";
+            this.lado_UserControl1.Size = new System.Drawing.Size(67, 150);
+            this.lado_UserControl1.TabIndex = 2;
+            this.lado_UserControl1.Load += new System.EventHandler(this.lado_UserControl1_Load);
+            // 
+            // drill_UserControl1
+            // 
+            this.drill_UserControl1.Atsumi = 0F;
+            this.drill_UserControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.drill_UserControl1.DrillKakouAnnai = "";
+            this.drill_UserControl1.DrillKei = "1";
+            this.drill_UserControl1.DrillNumber = "01";
+            this.drill_UserControl1.DrillTipo = null;
+            this.drill_UserControl1.DrillZ = "0";
+            this.drill_UserControl1.Location = new System.Drawing.Point(91, 15);
+            this.drill_UserControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.drill_UserControl1.Name = "drill_UserControl1";
+            this.drill_UserControl1.Sentan = false;
+            this.drill_UserControl1.Size = new System.Drawing.Size(141, 186);
+            this.drill_UserControl1.TabIndex = 0;
+            this.drill_UserControl1.Load += new System.EventHandler(this.drill_UserControl1_Load);
             // 
             // DrillsForm
             // 

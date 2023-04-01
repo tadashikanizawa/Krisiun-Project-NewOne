@@ -44,9 +44,10 @@ namespace Krisiun_Project.Janelas
                 if (ferramenta.Mentori_B_Bool) { mentori_Frente2.Visible = true; }
             }
 
-            mentori_Frente1.Visible = false;
             lado_UserControl1.OnAlterarPropriedades += mentori_Frente1.alterar;
             lado_UserControl1.OnAlterarPropriedades1 += mentori_Frente2.alterar;
+            drill_UserControl1.OnAlterarPropriedades += mentori_Frente1.alterarkei;
+            drill_UserControl1.OnAlterarPropriedades1 += mentori_Frente2.alterarkei;
 
         }
 
