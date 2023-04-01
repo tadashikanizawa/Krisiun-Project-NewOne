@@ -17,7 +17,13 @@ namespace Krisiun_Project.UserControils
 {
     public partial class Drill_UserControl : UserControl
     {
-      
+        public delegate void AlterarPropriedadesEventHandler(float tamanho);
+
+        public delegate void AlterarPropriedadesEventHandler1(float tamanho1);
+
+        // Declarando um evento usando o delegado
+        public event AlterarPropriedadesEventHandler OnAlterarPropriedades;
+        public event AlterarPropriedadesEventHandler1 OnAlterarPropriedades1;
         public float atsumi;
         public Drill_UserControl()
         {
@@ -80,6 +86,17 @@ namespace Krisiun_Project.UserControils
                 // Adicione outras propriedades conforme necessário
             }
         }
+        private void Mudarvisibilidade(float valor)
+        {
+            OnAlterarPropriedades?.Invoke(valor);
+
+        }
+        private void Mudarvisibilidade1(float valor1)
+        {
+
+            OnAlterarPropriedades1?.Invoke(valor1);
+        }
+
         private void drill_combobox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (drill_combobox.SelectedIndex <= 2) { Resfri_Combobox.SelectedIndex = 2; }
@@ -95,6 +112,8 @@ namespace Krisiun_Project.UserControils
 
             float kei = 0;
             float.TryParse(drill_kei_tb.Text, out kei);
+            Mudarvisibilidade(kei);
+            Mudarvisibilidade1(kei);
             Kougu numero = Kougu.ListadeKougu.Find(x => x.DrillKei == kei);
             if (numero != null)
             {
