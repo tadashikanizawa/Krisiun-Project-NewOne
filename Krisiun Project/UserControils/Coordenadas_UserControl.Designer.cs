@@ -89,7 +89,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.X,
             this.Y});
-            this.dataGridView1.Location = new System.Drawing.Point(26, 18);
+            this.dataGridView1.Location = new System.Drawing.Point(34, 18);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
@@ -204,8 +204,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.pcd_panel);
             this.Controls.Add(this.xy_panel);
+            this.Controls.Add(this.pcd_panel);
             this.Name = "Coordenadas_UserControl";
             this.Size = new System.Drawing.Size(283, 310);
             this.xy_panel.ResumeLayout(false);

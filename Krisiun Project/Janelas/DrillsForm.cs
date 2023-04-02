@@ -124,5 +124,12 @@ namespace Krisiun_Project.Janelas
             mentori_Frente2.men_frente_z_tb.Text = "-1.5";
             mentori_Frente2.men_frente_tipo_combo.SelectedIndex = 0;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            form1.panel_update();
+            form1.DGV_Update();
+        }
     }
 }

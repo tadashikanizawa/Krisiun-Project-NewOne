@@ -633,8 +633,12 @@ namespace Krisiun_Project
             DrillsForm drillsFOrm = new DrillsForm(this, ferramentas, null, peca, Mydrills);
             drillsFOrm.ShowDialog();
         }
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            TapForm tapForm = new TapForm();
+            tapForm.ShowDialog();
+        }
 
-     
         private Ferramentas ObterFerramentaSelecionada()
         {
             if (dataGridView3.CurrentRow != null)
@@ -670,6 +674,8 @@ namespace Krisiun_Project
                 // Adicione condições para outras classes derivadas de Ferramenta, se houver.
             }
         }
+
+      
     }
 
 

@@ -176,6 +176,12 @@
     <Compile Include="Janelas\Form6.Designer.cs">
       <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Janelas\TapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Janelas\TapForm.Designer.cs">
+      <DependentUpon>TapForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Janelas\KouguForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Janelas\NSBForm.resx">
       <DependentUpon>NSBForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Janelas\TapForm.resx">
+      <DependentUpon>TapForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Janelas\TapMMForm.resx">
       <DependentUpon>TapMMForm.cs</DependentUpon>
