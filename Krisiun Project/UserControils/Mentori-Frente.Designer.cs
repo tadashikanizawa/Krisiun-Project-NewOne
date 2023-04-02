@@ -54,9 +54,9 @@
             this.men_frente_checkbox.AutoSize = true;
             this.men_frente_checkbox.Location = new System.Drawing.Point(26, 12);
             this.men_frente_checkbox.Name = "men_frente_checkbox";
-            this.men_frente_checkbox.Size = new System.Drawing.Size(76, 16);
+            this.men_frente_checkbox.Size = new System.Drawing.Size(56, 16);
             this.men_frente_checkbox.TabIndex = 77;
-            this.men_frente_checkbox.Text = "面取り(表)";
+            this.men_frente_checkbox.Text = "面取り";
             this.men_frente_checkbox.UseVisualStyleBackColor = true;
             // 
             // label35
