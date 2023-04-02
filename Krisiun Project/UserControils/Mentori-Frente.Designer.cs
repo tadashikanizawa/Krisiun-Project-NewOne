@@ -112,7 +112,7 @@
             this.men_frente_tam_tb.Name = "men_frente_tam_tb";
             this.men_frente_tam_tb.Size = new System.Drawing.Size(36, 19);
             this.men_frente_tam_tb.TabIndex = 81;
-            this.men_frente_tam_tb.Text = "0.3";
+            this.men_frente_tam_tb.Text = "0.5";
             this.men_frente_tam_tb.TextChanged += new System.EventHandler(this.men_frente_tam_tb_TextChanged);
             // 
             // men_frente_kei_tb

@@ -21,6 +21,7 @@ namespace Krisiun_Project.Janelas
         private Ferramentas ferramentas;
         private Ferramentas ferramenta;
         private Drills drills;
+        private bool isEditMode;
         public DrillsForm(Form1 form1, Ferramentas ferramentas, Ferramentas ferramenta, Pitch_principal.Peca peca, Drills drills)
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace Krisiun_Project.Janelas
             this.peca = peca;
             this.drills = drills;
             this.ferramenta = ferramenta;
+            this.isEditMode = ferramenta != null;
             if(ferramenta != null )
             {
                 if(ferramenta is Drills drill)
@@ -42,6 +44,8 @@ namespace Krisiun_Project.Janelas
                 mentori_Frente2.LoadMentori(ferramenta, true);
                 if (ferramenta.Mentori_F_Bool) { mentori_Frente1.Visible = true; }
                 if (ferramenta.Mentori_B_Bool) { mentori_Frente2.Visible = true; }
+
+                Coordenadas.LoadCoordinates(ferramenta, dataGridView1);
             }
 
             lado_UserControl1.OnAlterarPropriedades += mentori_Frente1.alterar;
@@ -72,6 +76,7 @@ namespace Krisiun_Project.Janelas
         }
         private void button1_Click(object sender, EventArgs e)
         {
+  
             if (radioButton1.Checked)
             { 
                 if(dataGridView1.Rows.Count <= 1) { MessageBox.Show("Add coordenadas"); return; }
@@ -80,7 +85,21 @@ namespace Krisiun_Project.Janelas
             { 
             if (dataGridView2.Rows.Count <= 1) { MessageBox.Show("Add coordenadas"); return; }
             }
-            drills.CriarDrills(ferramentas,drill_UserControl1,lado_UserControl1,mentori_Frente1,mentori_Frente2,colors_UserControl1, dataGridView1,dataGridView2, radioButton1, radioButton2, textBox1, textBox2, textBox3);   
+            if (!isEditMode)
+            {
+                drills.CriarDrills(ferramentas,drill_UserControl1,lado_UserControl1,mentori_Frente1,mentori_Frente2,colors_UserControl1, dataGridView1,dataGridView2, radioButton1, radioButton2, textBox1, textBox2, textBox3);   
+        
+            }
+
+
+            if(isEditMode)
+            { 
+                if(ferramenta is Drills drill)
+                { 
+                drills.EditarDrills(ferramentas, drill, drill_UserControl1, lado_UserControl1, mentori_Frente1, mentori_Frente2, colors_UserControl1, dataGridView1, dataGridView2, radioButton1, radioButton2, textBox1, textBox2, textBox3);
+                }
+                Coordenadas.SaveChanges(ferramenta, dataGridView1);
+            }
             form1.panel_update();
             this.Close();
 
@@ -93,7 +112,17 @@ namespace Krisiun_Project.Janelas
 
         private void mentori_Frente1_Load(object sender, EventArgs e)
         {
+            mentori_Frente1.men_frente_tam_tb.Text = "0.3";
+            mentori_Frente1.men_frente_z_tb.Text = "-1.5";
+            mentori_Frente1.men_frente_tipo_combo.SelectedIndex = 0;
+        }
 
+        private void mentori_Frente2_Load(object sender, EventArgs e)
+        {
+
+            mentori_Frente2.men_frente_tam_tb.Text = "0.3";
+            mentori_Frente2.men_frente_z_tb.Text = "-1.5";
+            mentori_Frente2.men_frente_tipo_combo.SelectedIndex = 0;
         }
     }
 }
