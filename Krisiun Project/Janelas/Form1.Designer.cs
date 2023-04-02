@@ -100,6 +100,7 @@
             this.button14 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel_inverso.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -742,6 +743,16 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(12, 97);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(102, 26);
+            this.button5.TabIndex = 104;
+            this.button5.Text = "タップ";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -749,6 +760,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1584, 854);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button14);
@@ -777,7 +789,23 @@
             this.panel_inverso.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-      
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listTrasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -857,6 +885,7 @@
         private System.Windows.Forms.Button button17;
         public System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 
