@@ -335,8 +335,8 @@
             this.Controls.Add(this.mentori_Frente1);
             this.Controls.Add(this.lado_UserControl1);
             this.Controls.Add(this.drill_UserControl1);
-            this.Controls.Add(this.xy_panel);
             this.Controls.Add(this.pcd_panel);
+            this.Controls.Add(this.xy_panel);
             this.Name = "DrillsForm";
             this.Text = "DrillsFOrm";
             this.Load += new System.EventHandler(this.DrillsForm_Load);
