@@ -234,6 +234,12 @@
     <Compile Include="UserControils\Colors_UserControl.Designer.cs">
       <DependentUpon>Colors_UserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControils\Coordenadas_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControils\Coordenadas_UserControl.Designer.cs">
+      <DependentUpon>Coordenadas_UserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControils\Drill_UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -308,6 +314,9 @@
     </Compile>
     <EmbeddedResource Include="UserControils\Colors_UserControl.resx">
       <DependentUpon>Colors_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControils\Coordenadas_UserControl.resx">
+      <DependentUpon>Coordenadas_UserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControils\Drill_UserControl.resx">
       <DependentUpon>Drill_UserControl.cs</DependentUpon>
