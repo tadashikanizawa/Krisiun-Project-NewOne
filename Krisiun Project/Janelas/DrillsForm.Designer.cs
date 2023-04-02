@@ -50,6 +50,8 @@
             this.mentori_Frente1 = new Krisiun_Project.UserControils.Mentori_Frente();
             this.lado_UserControl1 = new Krisiun_Project.UserControils.Lado_UserControl();
             this.drill_UserControl1 = new Krisiun_Project.UserControils.Drill_UserControl();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.xy_panel.SuspendLayout();
             this.pcd_panel.SuspendLayout();
@@ -294,12 +296,36 @@
             this.drill_UserControl1.TabIndex = 0;
             this.drill_UserControl1.Load += new System.EventHandler(this.drill_UserControl1_Load);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label4.Location = new System.Drawing.Point(295, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(24, 16);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "表";
+            this.label4.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label5.Location = new System.Drawing.Point(295, 149);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(24, 16);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "裏";
+            this.label5.Visible = false;
+            // 
             // DrillsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(739, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.mentori_Frente2);
             this.Controls.Add(this.colors_UserControl1);
             this.Controls.Add(this.button2);
@@ -348,5 +374,7 @@
         private System.Windows.Forms.Button button2;
         private UserControils.Colors_UserControl colors_UserControl1;
         private UserControils.Mentori_Frente mentori_Frente2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
