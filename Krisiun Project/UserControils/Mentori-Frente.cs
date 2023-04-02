@@ -21,7 +21,7 @@ namespace Krisiun_Project.UserControils
             men_frente_tipo_combo.DataSource = TiposdeMentori.ListadeMentoriCutterF;
             men_frente_tipo_combo.DisplayMember = "Tool";
             men_frente_tipo_combo.ValueMember = "Tool";
-            //men_frente_tipo_combo.SelectedIndex = 0;
+    
 
         }
         public float tamcutter;

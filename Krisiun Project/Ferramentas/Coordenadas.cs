@@ -1,17 +1,53 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Krisiun_Project.G_Code
 {
-        public class Coordenadas
+        public  class Coordenadas
         {
             public float X { get; set; }
             public float Y { get; set; }
 
+
+
+        public static void LoadCoordinates(Ferramentas ferramenta, DataGridView dgv)
+        {
+            dgv.Rows.Clear();
+
+            if (ferramenta != null && ferramenta.CoordenadasList != null)
+            {
+                foreach (PointF point in ferramenta.CoordenadasList)
+                {
+                    dgv.Rows.Add(point.X, point.Y);
+                }
+            }
+        }
+        public static void SaveChanges(Ferramentas ferramenta, DataGridView dgv)
+        {
+            // Salvar as alterações feitas nos controles nas propriedades do objeto
+            // Exemplo: ferramenta.Propriedade1 = textBox1.Text;
+
+            if (ferramenta != null)
+            {
+                ferramenta.CoordenadasList.Clear();
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    if (row.Cells[0].Value != null && row.Cells[1].Value != null)
+                    {
+                        float x = float.Parse(row.Cells[0].Value.ToString());
+                        float y = float.Parse(row.Cells[1].Value.ToString());
+                        ferramenta.CoordenadasList.Add(new PointF(x, y));
+                    }
+                }
+            }
+        }
+
+
     }
-        public class CoordenadasGrupo
+    public class CoordenadasGrupo
         {
             public string Id { get; set; }
             public List<Coordenadas> Coordenadas { get; set; }
