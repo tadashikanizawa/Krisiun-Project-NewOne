@@ -109,7 +109,10 @@ namespace Krisiun_Project.Janelas
         {
 
         }
-
+        public void AtualizarDGV(Ferramentas tool)
+        {
+            Coordenadas.LoadCoordinates(tool, dataGridView1);
+        }
         private void mentori_Frente1_Load(object sender, EventArgs e)
         {
             mentori_Frente1.men_frente_tam_tb.Text = "0.3";
@@ -130,6 +133,12 @@ namespace Krisiun_Project.Janelas
             this.Close();
             form1.panel_update();
             form1.DGV_Update();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CoordenadaCopyForm coordenadaCopyForm = new CoordenadaCopyForm(ferramentas, this);
+            coordenadaCopyForm.ShowDialog();
         }
     }
 }

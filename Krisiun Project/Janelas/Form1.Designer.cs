@@ -128,29 +128,26 @@
             this.panel_inverso.Controls.Add(this.label9);
             this.panel_inverso.Controls.Add(this.y_inv_checkbox);
             this.panel_inverso.Controls.Add(this.x_inv_checkbok);
-            this.panel_inverso.Location = new System.Drawing.Point(351, 11);
-            this.panel_inverso.Margin = new System.Windows.Forms.Padding(2);
+            this.panel_inverso.Location = new System.Drawing.Point(585, 16);
             this.panel_inverso.Name = "panel_inverso";
-            this.panel_inverso.Size = new System.Drawing.Size(119, 27);
+            this.panel_inverso.Size = new System.Drawing.Size(197, 40);
             this.panel_inverso.TabIndex = 22;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 7);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(13, 10);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(30, 12);
+            this.label9.Size = new System.Drawing.Size(46, 18);
             this.label9.TabIndex = 23;
             this.label9.Text = "ミラー";
             // 
             // y_inv_checkbox
             // 
             this.y_inv_checkbox.AutoSize = true;
-            this.y_inv_checkbox.Location = new System.Drawing.Point(81, 5);
-            this.y_inv_checkbox.Margin = new System.Windows.Forms.Padding(2);
+            this.y_inv_checkbox.Location = new System.Drawing.Point(135, 8);
             this.y_inv_checkbox.Name = "y_inv_checkbox";
-            this.y_inv_checkbox.Size = new System.Drawing.Size(31, 16);
+            this.y_inv_checkbox.Size = new System.Drawing.Size(45, 22);
             this.y_inv_checkbox.TabIndex = 1;
             this.y_inv_checkbox.Text = "Y";
             this.y_inv_checkbox.UseVisualStyleBackColor = true;
@@ -161,10 +158,9 @@
             this.x_inv_checkbok.AutoSize = true;
             this.x_inv_checkbok.Checked = true;
             this.x_inv_checkbok.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.x_inv_checkbok.Location = new System.Drawing.Point(42, 5);
-            this.x_inv_checkbok.Margin = new System.Windows.Forms.Padding(2);
+            this.x_inv_checkbok.Location = new System.Drawing.Point(70, 8);
             this.x_inv_checkbok.Name = "x_inv_checkbok";
-            this.x_inv_checkbok.Size = new System.Drawing.Size(31, 16);
+            this.x_inv_checkbok.Size = new System.Drawing.Size(45, 22);
             this.x_inv_checkbok.TabIndex = 0;
             this.x_inv_checkbok.Text = "X";
             this.x_inv_checkbok.UseVisualStyleBackColor = true;
@@ -172,10 +168,11 @@
             // 
             // scale_tb
             // 
-            this.scale_tb.Location = new System.Drawing.Point(475, 16);
+            this.scale_tb.Location = new System.Drawing.Point(792, 24);
+            this.scale_tb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.scale_tb.Name = "scale_tb";
             this.scale_tb.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.scale_tb.Size = new System.Drawing.Size(43, 19);
+            this.scale_tb.Size = new System.Drawing.Size(69, 25);
             this.scale_tb.TabIndex = 20;
             this.scale_tb.Text = "1";
             this.scale_tb.Visible = false;
@@ -184,9 +181,10 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("MS UI Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button3.Location = new System.Drawing.Point(146, 14);
+            this.button3.Location = new System.Drawing.Point(243, 21);
+            this.button3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(37, 26);
+            this.button3.Size = new System.Drawing.Size(62, 39);
             this.button3.TabIndex = 21;
             this.button3.Text = "-";
             this.button3.UseVisualStyleBackColor = true;
@@ -195,9 +193,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("MS UI Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(188, 14);
+            this.button2.Location = new System.Drawing.Point(313, 21);
+            this.button2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(37, 26);
+            this.button2.Size = new System.Drawing.Size(62, 39);
             this.button2.TabIndex = 19;
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = true;
@@ -205,9 +204,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1377, 826);
+            this.button1.Location = new System.Drawing.Point(2295, 1239);
+            this.button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 49);
+            this.button1.Size = new System.Drawing.Size(190, 74);
             this.button1.TabIndex = 6;
             this.button1.Text = "NSBリスト管理";
             this.button1.UseVisualStyleBackColor = true;
@@ -217,9 +217,10 @@
             // 
             this.frente_rd.AutoSize = true;
             this.frente_rd.Checked = true;
-            this.frente_rd.Location = new System.Drawing.Point(10, 1);
+            this.frente_rd.Location = new System.Drawing.Point(17, 2);
+            this.frente_rd.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.frente_rd.Name = "frente_rd";
-            this.frente_rd.Size = new System.Drawing.Size(35, 16);
+            this.frente_rd.Size = new System.Drawing.Size(51, 22);
             this.frente_rd.TabIndex = 3;
             this.frente_rd.TabStop = true;
             this.frente_rd.Text = "表";
@@ -229,9 +230,10 @@
             // tras_rd
             // 
             this.tras_rd.AutoSize = true;
-            this.tras_rd.Location = new System.Drawing.Point(72, 1);
+            this.tras_rd.Location = new System.Drawing.Point(120, 2);
+            this.tras_rd.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tras_rd.Name = "tras_rd";
-            this.tras_rd.Size = new System.Drawing.Size(35, 16);
+            this.tras_rd.Size = new System.Drawing.Size(51, 22);
             this.tras_rd.TabIndex = 4;
             this.tras_rd.TabStop = true;
             this.tras_rd.Text = "裏";
@@ -242,26 +244,29 @@
             // 
             this.panel1.Controls.Add(this.tras_rd);
             this.panel1.Controls.Add(this.frente_rd);
-            this.panel1.Location = new System.Drawing.Point(231, 15);
+            this.panel1.Location = new System.Drawing.Point(385, 22);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(115, 20);
+            this.panel1.Size = new System.Drawing.Size(192, 30);
             this.panel1.TabIndex = 5;
             // 
             // paneld_f
             // 
             this.paneld_f.BackColor = System.Drawing.Color.White;
-            this.paneld_f.Location = new System.Drawing.Point(120, 50);
+            this.paneld_f.Location = new System.Drawing.Point(200, 75);
+            this.paneld_f.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.paneld_f.Name = "paneld_f";
-            this.paneld_f.Size = new System.Drawing.Size(1000, 697);
+            this.paneld_f.Size = new System.Drawing.Size(1667, 1046);
             this.paneld_f.TabIndex = 6;
             this.paneld_f.Paint += new System.Windows.Forms.PaintEventHandler(this.paneld_f_Paint);
             // 
             // panel_b
             // 
             this.panel_b.BackColor = System.Drawing.Color.White;
-            this.panel_b.Location = new System.Drawing.Point(120, 50);
+            this.panel_b.Location = new System.Drawing.Point(200, 75);
+            this.panel_b.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel_b.Name = "panel_b";
-            this.panel_b.Size = new System.Drawing.Size(1000, 700);
+            this.panel_b.Size = new System.Drawing.Size(1667, 1050);
             this.panel_b.TabIndex = 7;
             this.panel_b.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_b_Paint);
             // 
@@ -287,10 +292,9 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(1377, 880);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
+            this.button7.Location = new System.Drawing.Point(2295, 1320);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(114, 49);
+            this.button7.Size = new System.Drawing.Size(190, 74);
             this.button7.TabIndex = 37;
             this.button7.Text = "面取りリスト管理";
             this.button7.UseVisualStyleBackColor = true;
@@ -307,14 +311,15 @@
             this.Delete1,
             this.nomeDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.listFrenteBindingSource5;
-            this.dataGridView1.Location = new System.Drawing.Point(1326, 405);
+            this.dataGridView1.Location = new System.Drawing.Point(2210, 608);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(177, 162);
+            this.dataGridView1.Size = new System.Drawing.Size(295, 243);
             this.dataGridView1.TabIndex = 0;
             // 
             // Delete1
@@ -325,14 +330,16 @@
             this.Delete1.Name = "Delete1";
             this.Delete1.ReadOnly = true;
             this.Delete1.Text = "削除";
-            this.Delete1.Width = 35;
+            this.Delete1.Width = 50;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
             this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
             this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
             this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 150;
             // 
             // listFrenteBindingSource5
             // 
@@ -362,9 +369,10 @@
             // panel_yoko
             // 
             this.panel_yoko.BackColor = System.Drawing.Color.White;
-            this.panel_yoko.Location = new System.Drawing.Point(120, 745);
+            this.panel_yoko.Location = new System.Drawing.Point(200, 1118);
+            this.panel_yoko.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel_yoko.Name = "panel_yoko";
-            this.panel_yoko.Size = new System.Drawing.Size(1000, 250);
+            this.panel_yoko.Size = new System.Drawing.Size(1667, 375);
             this.panel_yoko.TabIndex = 27;
             this.panel_yoko.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_yoko_Paint);
             // 
@@ -379,13 +387,14 @@
             this.Delete2,
             this.nomeDataGridViewTextBoxColumn2});
             this.dataGridView2.DataSource = this.listTrasBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(1148, 405);
+            this.dataGridView2.Location = new System.Drawing.Point(1913, 608);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 21;
-            this.dataGridView2.Size = new System.Drawing.Size(158, 162);
+            this.dataGridView2.Size = new System.Drawing.Size(263, 243);
             this.dataGridView2.TabIndex = 28;
             // 
             // Delete2
@@ -395,14 +404,16 @@
             this.Delete2.MinimumWidth = 8;
             this.Delete2.Name = "Delete2";
             this.Delete2.ReadOnly = true;
-            this.Delete2.Width = 35;
+            this.Delete2.Width = 50;
             // 
             // nomeDataGridViewTextBoxColumn2
             // 
             this.nomeDataGridViewTextBoxColumn2.DataPropertyName = "Nome";
             this.nomeDataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn2.MinimumWidth = 8;
             this.nomeDataGridViewTextBoxColumn2.Name = "nomeDataGridViewTextBoxColumn2";
             this.nomeDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn2.Width = 150;
             // 
             // listTrasBindingSource
             // 
@@ -428,15 +439,15 @@
             this.mentoriFBoolDataGridViewCheckBoxColumn,
             this.mentoriBBoolDataGridViewCheckBoxColumn});
             this.dataGridView3.DataSource = this.listTotalBindingSource1;
-            this.dataGridView3.Location = new System.Drawing.Point(1125, 50);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView3.Location = new System.Drawing.Point(1875, 75);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.RowHeadersWidth = 62;
             this.dataGridView3.RowTemplate.Height = 27;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(404, 325);
+            this.dataGridView3.Size = new System.Drawing.Size(673, 488);
             this.dataGridView3.TabIndex = 29;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             this.dataGridView3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellDoubleClick);
             this.dataGridView3.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
             // 
@@ -447,7 +458,7 @@
             this.ToolName.HeaderText = "使用工具";
             this.ToolName.MinimumWidth = 8;
             this.ToolName.Name = "ToolName";
-            this.ToolName.Width = 78;
+            this.ToolName.Width = 116;
             // 
             // ToolNumber
             // 
@@ -456,7 +467,7 @@
             this.ToolNumber.HeaderText = "T";
             this.ToolNumber.MinimumWidth = 8;
             this.ToolNumber.Name = "ToolNumber";
-            this.ToolNumber.Width = 37;
+            this.ToolNumber.Width = 55;
             // 
             // kei
             // 
@@ -465,7 +476,7 @@
             this.kei.HeaderText = "径";
             this.kei.MinimumWidth = 8;
             this.kei.Name = "kei";
-            this.kei.Width = 42;
+            this.kei.Width = 62;
             // 
             // fukasa
             // 
@@ -490,7 +501,7 @@
             this.frenteDataGridViewCheckBoxColumn1.HeaderText = "表";
             this.frenteDataGridViewCheckBoxColumn1.MinimumWidth = 8;
             this.frenteDataGridViewCheckBoxColumn1.Name = "frenteDataGridViewCheckBoxColumn1";
-            this.frenteDataGridViewCheckBoxColumn1.Width = 23;
+            this.frenteDataGridViewCheckBoxColumn1.Width = 32;
             // 
             // trasDataGridViewCheckBoxColumn1
             // 
@@ -499,7 +510,7 @@
             this.trasDataGridViewCheckBoxColumn1.HeaderText = "裏";
             this.trasDataGridViewCheckBoxColumn1.MinimumWidth = 8;
             this.trasDataGridViewCheckBoxColumn1.Name = "trasDataGridViewCheckBoxColumn1";
-            this.trasDataGridViewCheckBoxColumn1.Width = 23;
+            this.trasDataGridViewCheckBoxColumn1.Width = 32;
             // 
             // mentoriFBoolDataGridViewCheckBoxColumn
             // 
@@ -508,7 +519,7 @@
             this.mentoriFBoolDataGridViewCheckBoxColumn.HeaderText = "面取り（表）";
             this.mentoriFBoolDataGridViewCheckBoxColumn.MinimumWidth = 8;
             this.mentoriFBoolDataGridViewCheckBoxColumn.Name = "mentoriFBoolDataGridViewCheckBoxColumn";
-            this.mentoriFBoolDataGridViewCheckBoxColumn.Width = 67;
+            this.mentoriFBoolDataGridViewCheckBoxColumn.Width = 97;
             // 
             // mentoriBBoolDataGridViewCheckBoxColumn
             // 
@@ -517,7 +528,7 @@
             this.mentoriBBoolDataGridViewCheckBoxColumn.HeaderText = "面取り（裏）";
             this.mentoriBBoolDataGridViewCheckBoxColumn.MinimumWidth = 8;
             this.mentoriBBoolDataGridViewCheckBoxColumn.Name = "mentoriBBoolDataGridViewCheckBoxColumn";
-            this.mentoriBBoolDataGridViewCheckBoxColumn.Width = 67;
+            this.mentoriBBoolDataGridViewCheckBoxColumn.Width = 97;
             // 
             // listTotalBindingSource1
             // 
@@ -532,28 +543,27 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1394, 389);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Location = new System.Drawing.Point(2323, 584);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 12);
+            this.label14.Size = new System.Drawing.Size(62, 18);
             this.label14.TabIndex = 30;
             this.label14.Text = "表加工";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(1207, 389);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Location = new System.Drawing.Point(2012, 584);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 12);
+            this.label15.Size = new System.Drawing.Size(62, 18);
             this.label15.TabIndex = 31;
             this.label15.Text = "裏加工";
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(1376, 935);
+            this.button6.Location = new System.Drawing.Point(2293, 1402);
+            this.button6.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(115, 49);
+            this.button6.Size = new System.Drawing.Size(192, 74);
             this.button6.TabIndex = 34;
             this.button6.Text = "固定工具管理";
             this.button6.UseVisualStyleBackColor = true;
@@ -566,6 +576,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 150;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -574,6 +585,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 150;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -582,6 +594,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 150;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -590,6 +603,7 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 150;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -598,6 +612,7 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 150;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -606,6 +621,7 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn9.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 150;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -614,6 +630,7 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn10.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 150;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -622,6 +639,7 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn11.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 150;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -630,6 +648,7 @@
             this.dataGridViewTextBoxColumn12.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn12.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 150;
             // 
             // dataGridViewTextBoxColumn13
             // 
@@ -638,6 +657,7 @@
             this.dataGridViewTextBoxColumn13.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn13.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Width = 150;
             // 
             // dataGridViewTextBoxColumn14
             // 
@@ -646,6 +666,7 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn14.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.Width = 150;
             // 
             // dataGridViewTextBoxColumn15
             // 
@@ -654,13 +675,15 @@
             this.dataGridViewTextBoxColumn15.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn15.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.Width = 150;
             // 
             // button12
             // 
             this.button12.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button12.Location = new System.Drawing.Point(1148, 573);
+            this.button12.Location = new System.Drawing.Point(1913, 860);
+            this.button12.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(223, 228);
+            this.button12.Size = new System.Drawing.Size(372, 342);
             this.button12.TabIndex = 94;
             this.button12.Text = "ファイナル";
             this.button12.UseVisualStyleBackColor = true;
@@ -673,6 +696,7 @@
             this.dataGridViewTextBoxColumn16.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn16.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.Width = 150;
             // 
             // dataGridViewTextBoxColumn17
             // 
@@ -681,6 +705,7 @@
             this.dataGridViewTextBoxColumn17.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn17.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.Width = 150;
             // 
             // dataGridViewTextBoxColumn18
             // 
@@ -689,6 +714,7 @@
             this.dataGridViewTextBoxColumn18.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn18.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.Width = 150;
             // 
             // dataGridViewTextBoxColumn19
             // 
@@ -697,6 +723,7 @@
             this.dataGridViewTextBoxColumn19.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn19.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.Width = 150;
             // 
             // listFrenteBindingSource2
             // 
@@ -705,9 +732,10 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(1377, 771);
+            this.button13.Location = new System.Drawing.Point(2295, 1156);
+            this.button13.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(114, 49);
+            this.button13.Size = new System.Drawing.Size(190, 74);
             this.button13.TabIndex = 97;
             this.button13.Text = "材料リスト管理";
             this.button13.UseVisualStyleBackColor = true;
@@ -715,9 +743,10 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(1377, 716);
+            this.button14.Location = new System.Drawing.Point(2295, 1074);
+            this.button14.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(114, 49);
+            this.button14.Size = new System.Drawing.Size(190, 74);
             this.button14.TabIndex = 98;
             this.button14.Text = "Tap List";
             this.button14.UseVisualStyleBackColor = true;
@@ -725,9 +754,10 @@
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(12, 65);
+            this.button17.Location = new System.Drawing.Point(20, 98);
+            this.button17.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(102, 26);
+            this.button17.Size = new System.Drawing.Size(170, 39);
             this.button17.TabIndex = 102;
             this.button17.Text = "孔開け";
             this.button17.UseVisualStyleBackColor = true;
@@ -735,9 +765,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 14);
+            this.button4.Location = new System.Drawing.Point(20, 21);
+            this.button4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(102, 26);
+            this.button4.Size = new System.Drawing.Size(170, 39);
             this.button4.TabIndex = 103;
             this.button4.Text = "メインメニュー";
             this.button4.UseVisualStyleBackColor = true;
@@ -745,9 +776,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(12, 97);
+            this.button5.Location = new System.Drawing.Point(20, 146);
+            this.button5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(102, 26);
+            this.button5.Size = new System.Drawing.Size(170, 39);
             this.button5.TabIndex = 104;
             this.button5.Text = "タップ";
             this.button5.UseVisualStyleBackColor = true;
@@ -755,11 +787,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1584, 854);
+            this.ClientSize = new System.Drawing.Size(1924, 1050);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button4);
@@ -782,6 +814,7 @@
             this.Controls.Add(this.paneld_f);
             this.Controls.Add(this.panel_b);
             this.Controls.Add(this.panel_yoko);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Form1";
             this.Text = "Krisiun Project";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -789,23 +822,7 @@
             this.panel_inverso.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listTrasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource2)).EndInit();
+       
             this.ResumeLayout(false);
             this.PerformLayout();
 
