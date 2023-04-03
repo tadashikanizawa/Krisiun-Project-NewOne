@@ -27,6 +27,8 @@ namespace Krisiun_Project.Dados_Aleatorios1
        
         public static List<TiposdeTap> TapInch { get; set; } = new List<TiposdeTap>();
 
+        public static List<TiposdeTap> ZPro { get; set; } = new List<TiposdeTap>();
+
         public TiposdeTap(int tool, string unidade, string descricao, float diametro, float pitch, float shitaAna, int kaiten, int okuri, float q, float k)
         {
             ToolNumber = tool;
@@ -45,6 +47,7 @@ namespace Krisiun_Project.Dados_Aleatorios1
         {
             TapMM = LoadTapList("mm", "tapmm.csv");
             TapInch = LoadTapList("inch", "tapinch.csv");
+            ZPro = LoadTapList("mm-zpro", "tapz-pro.csv");
         }
         public static List<TiposdeTap> LoadTapList(string unidade, string file)
         {
@@ -90,7 +93,19 @@ namespace Krisiun_Project.Dados_Aleatorios1
 
                     }
                     float q = getQ(diametro);
-                    
+                    if (unidade == "mm-zpro")
+                    {
+                        string[] tipo = parts[1].Split(new char[] { '-' });
+                        string valorinch = tipo[1].ToString();
+                        string valorinchSomenteNumeros = Regex.Replace(valorinch, @"[^\d.]", "");
+                        float inchpich = float.Parse(valorinchSomenteNumeros);
+                        inchpich = (float)Math.Round(25.4f / inchpich, 3);
+                        inchpich = kaiten * inchpich;
+                        okuri = Convert.ToInt32(inchpich);
+                        pitch = float.Parse(valorinchSomenteNumeros);
+                        k = 50;
+                        q = 50;
+                    }
                     //  MessageBox.Show(tool + "," + diametro.ToString() +"," + profundidade.ToString() + "," + kaiten.ToString() + "," + okuri.ToString() + "," + kataban + "," + largura.ToString() + "," + tsukidashi.ToString() );
                     listaDeTap.Add(new TiposdeTap(tool, unidade,descricao, diametro, pitch, shitaana, kaiten, okuri,q,k));
                 }
@@ -113,6 +128,9 @@ namespace Krisiun_Project.Dados_Aleatorios1
         public static float getK(float pitch)
         {
             float k = 0;
+        
+                pitch = pitch / 25.4f;
+            
             k = (float)Math.Round(pitch / 2, 1);
             return k;
         }

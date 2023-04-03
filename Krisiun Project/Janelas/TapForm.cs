@@ -38,7 +38,10 @@ namespace Krisiun_Project.Janelas
             CoordenadaCopyForm coordenadaCopyForm = new CoordenadaCopyForm(ferramentas, this);
             coordenadaCopyForm.ShowDialog();
         }
-
+        public void AtualizarDGV(Ferramentas tool)
+        {
+            Coordenadas.LoadCoordinates(tool, dataGridView1);
+        }
         private void tap_mm_rb_CheckedChanged(object sender, EventArgs e)
         {
             if(tap_mm_rb.Checked)
@@ -53,6 +56,62 @@ namespace Krisiun_Project.Janelas
                 tap_tool_combobox.DisplayMember = "Descricao";
                 tap_tool_combobox.ValueMember = "Descricao";
             }
+        }
+
+        private void tap_tool_combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tap_tool_combobox.SelectedItem != null)
+            {
+                TiposdeTap selectedTap = (TiposdeTap)tap_tool_combobox.SelectedItem;
+                tap_tool_tb.Text = selectedTap.ToolNumber.ToString();
+                tap_pitch_tb.Text = selectedTap.Pitch.ToString();
+                mentori_Frente1.men_frente_kei_tb.Text = selectedTap.Diametro.ToString();
+                mentori_Frente2.men_frente_kei_tb.Text = selectedTap.Diametro.ToString();
+                tap_q_tb.Text = TiposdeTap.getQ(selectedTap.Diametro).ToString();
+                tap_k_tb.Text = selectedTap.K.ToString();
+
+                if(selectedTap.Diametro > 8)
+                {
+                    tap_z_tb.Text = "-15";
+                }
+                else
+                {
+                    tap_z_tb.Text = "-10";
+                }
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(tap_mm_rb.Checked)
+            { 
+               if(checkBox1.Checked)
+               {
+                     tap_tool_combobox.DataSource = TiposdeTap.ZPro;
+                    tap_tool_combobox.DisplayMember = "Descricao";
+                    tap_tool_combobox.ValueMember = "Descricao";
+                }
+               else
+               {
+                    tap_tool_combobox.DataSource = TiposdeTap.TapMM;
+                    tap_tool_combobox.DisplayMember = "Descricao";
+                    tap_tool_combobox.ValueMember = "Descricao";
+                }
+            }
+        }
+
+        private void mentori_Frente1_Load(object sender, EventArgs e)
+        {
+            mentori_Frente1.men_frente_tam_tb.Text = "0.5";
+            mentori_Frente1.men_frente_z_tb.Text = "-1.5";
+            mentori_Frente1.men_frente_tipo_combo.SelectedIndex = 0;
+        }
+
+        private void mentori_Frente2_Load(object sender, EventArgs e)
+        {
+            mentori_Frente2.men_frente_tam_tb.Text = "0.5";
+            mentori_Frente2.men_frente_z_tb.Text = "-1.5";
+            mentori_Frente2.men_frente_tipo_combo.SelectedIndex = 0;
         }
     }
 }

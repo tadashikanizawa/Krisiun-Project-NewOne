@@ -17,6 +17,7 @@ namespace Krisiun_Project.Janelas
 
         private Ferramentas ferramenta;
         private DrillsForm drillform;
+        private TapForm tapForm;
         public CoordenadaCopyForm(Ferramentas ferramentas, Form form)
         {
             InitializeComponent();
@@ -25,6 +26,10 @@ namespace Krisiun_Project.Janelas
             if(form is DrillsForm)
             { 
             this.drillform = (DrillsForm)form;
+            }
+            if(form is TapForm)
+            {
+                              this.tapForm = (TapForm)form;
             }
         }
 
@@ -42,7 +47,12 @@ namespace Krisiun_Project.Janelas
                 { 
                 drillform.AtualizarDGV(FerramentaSelecionada);
                 }
+                if (tapForm != null)
+                {
+                    tapForm.AtualizarDGV(FerramentaSelecionada);
+                }
             }
+
             this.Close();
         }
 
