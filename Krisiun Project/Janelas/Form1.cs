@@ -635,7 +635,7 @@ namespace Krisiun_Project
         }
         private void button5_Click_1(object sender, EventArgs e)
         {
-            TapForm tapForm = new TapForm(this, ferramentas, null, peca);
+            TapForm tapForm = new TapForm(this, ferramentas, null, peca, Mydrills);
             tapForm.ShowDialog();
         }
 

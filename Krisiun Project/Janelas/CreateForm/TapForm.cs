@@ -17,12 +17,14 @@ namespace Krisiun_Project.Janelas
         public Ferramentas ferramentas;
         public Ferramentas ferramenta;
         public Pitch_principal.Peca peca;
-        public TapForm(Form1 form, Ferramentas ferramentas, Ferramentas ferramenta, Pitch_principal.Peca peca )
+        public Drills drills;
+        public TapForm(Form1 form, Ferramentas ferramentas, Ferramentas ferramenta, Pitch_principal.Peca peca, Drills drills )
         {
             InitializeComponent();
             this.ferramentas = ferramentas;
             this.ferramenta = ferramenta;
             this.peca = peca;
+            this.drills = drills;
             tap_tool_combobox.DataSource = TiposdeTap.TapMM;
             tap_tool_combobox.DisplayMember = "Descricao";
             tap_tool_combobox.ValueMember = "Descricao";
@@ -151,6 +153,15 @@ namespace Krisiun_Project.Janelas
 
         private void button10_Click(object sender, EventArgs e)
         {
+
+            if (radioButton1.Checked)
+            {
+                if (dataGridView1.Rows.Count <= 1) { MessageBox.Show("Add coordenadas"); return; }
+            }
+            if (radioButton2.Checked)
+            {
+                if (dataGridView2.Rows.Count <= 1) { MessageBox.Show("Add coordenadas"); return; }
+            }
             TiposdeTap selectedTap = (TiposdeTap)tap_tool_combobox.SelectedItem;
             float q;
             float k;
@@ -185,6 +196,12 @@ namespace Krisiun_Project.Janelas
             if (tap.Tras) { ferramentas.ListTras.Add(tap); }
             if (tap.Mentori_F_Bool) { ferramentas.MentoriFrente.Add(tap); }
             if (tap.Mentori_B_Bool) { ferramentas.MentoriTras.Add(tap); }
+
+            if(shitaana_checkbox.Checked)
+            {
+                drills.CriarDrills(ferramentas, drill_UserControl1, lado_UserControl1, mentori_Frente1, mentori_Frente2, colors_UserControl1, dataGridView1, dataGridView2, radioButton1, radioButton2, textBox1, textBox2, textBox3);
+
+            }
 
         }
     }
