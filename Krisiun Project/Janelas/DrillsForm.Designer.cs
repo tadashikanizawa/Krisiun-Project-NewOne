@@ -47,12 +47,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.mentori_Frente2 = new Krisiun_Project.UserControils.Mentori_Frente();
             this.colors_UserControl1 = new Krisiun_Project.UserControils.Colors_UserControl();
             this.mentori_Frente1 = new Krisiun_Project.UserControils.Mentori_Frente();
             this.lado_UserControl1 = new Krisiun_Project.UserControils.Lado_UserControl();
             this.drill_UserControl1 = new Krisiun_Project.UserControils.Drill_UserControl();
-            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.xy_panel.SuspendLayout();
             this.pcd_panel.SuspendLayout();
@@ -262,6 +262,16 @@
             this.label5.Text = "裏";
             this.label5.Visible = false;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(686, 322);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(109, 48);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "XYクーロン";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // mentori_Frente2
             // 
             this.mentori_Frente2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -283,7 +293,7 @@
             // 
             this.colors_UserControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.colors_UserControl1.Location = new System.Drawing.Point(32, 296);
-            this.colors_UserControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.colors_UserControl1.Margin = new System.Windows.Forms.Padding(2);
             this.colors_UserControl1.Name = "colors_UserControl1";
             this.colors_UserControl1.Size = new System.Drawing.Size(193, 87);
             this.colors_UserControl1.TabIndex = 15;
@@ -333,16 +343,6 @@
             this.drill_UserControl1.Size = new System.Drawing.Size(235, 279);
             this.drill_UserControl1.TabIndex = 0;
             this.drill_UserControl1.Load += new System.EventHandler(this.drill_UserControl1_Load);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(707, 321);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 48);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // DrillsForm
             // 
