@@ -26,6 +26,12 @@ namespace Krisiun_Project.Janelas
             tap_tool_combobox.DataSource = TiposdeTap.TapMM;
             tap_tool_combobox.DisplayMember = "Descricao";
             tap_tool_combobox.ValueMember = "Descricao";
+
+            drill_UserControl1.Atsumi = peca.z;
+            lado_UserControl1.OnAlterarPropriedades += mentori_Frente1.alterar;
+            lado_UserControl1.OnAlterarPropriedades1 += mentori_Frente2.alterar;
+            drill_UserControl1.OnAlterarPropriedades += mentori_Frente1.alterarkei;
+            drill_UserControl1.OnAlterarPropriedades1 += mentori_Frente2.alterarkei;
         }
 
         private void TapForm_Load(object sender, EventArgs e)
@@ -67,8 +73,11 @@ namespace Krisiun_Project.Janelas
                 tap_pitch_tb.Text = selectedTap.Pitch.ToString();
                 mentori_Frente1.men_frente_kei_tb.Text = selectedTap.Diametro.ToString();
                 mentori_Frente2.men_frente_kei_tb.Text = selectedTap.Diametro.ToString();
-                tap_q_tb.Text = TiposdeTap.getQ(selectedTap.Diametro).ToString();
+                tap_q_tb.Text = selectedTap.Q.ToString();
                 tap_k_tb.Text = selectedTap.K.ToString();
+                drill_UserControl1.drill_kei_tb.Text = selectedTap.ShitaAna.ToString();
+                tap_kaiten_tb.Text = selectedTap.Kaiten.ToString();
+                drill_UserControl1.DrillKakouAnnai = "下孔(" + selectedTap.Descricao + ")";
 
                 if(selectedTap.Diametro > 8)
                 {
@@ -112,6 +121,72 @@ namespace Krisiun_Project.Janelas
             mentori_Frente2.men_frente_tam_tb.Text = "0.5";
             mentori_Frente2.men_frente_z_tb.Text = "-1.5";
             mentori_Frente2.men_frente_tipo_combo.SelectedIndex = 0;
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked) { avan_panel.Visible = true; }
+            else{ avan_panel.Visible = false; }
+
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (shitaana_checkbox.Checked) { drill_UserControl1.Visible = true; }
+            else { drill_UserControl1.Visible= false; }
+        }
+
+        private void tap_z_tb_TextChanged(object sender, EventArgs e)
+        {
+            float z;
+            float drillz = 0;
+            if(float.TryParse(tap_z_tb.Text, out z))
+            {
+                if(z < 0) { z*=-1; }
+                drillz = (z + 5)*-1;
+
+                drill_UserControl1.drill_z_tb.Text = drillz.ToString();
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            float kei;
+            float fukasa;
+            int tool;
+            Tap tap = new Tap(peca);
+            tap.Index = Programas.Index();
+            tap.Nome = drills.Index.ToString() + "-" + drill.drill_combobox.Text;
+            tap.ToolName = drill.drill_combobox.Text;
+            tap.ipoDrill = (TipoDeDrills)drill.drill_combobox.SelectedItem;
+            if (float.TryParse(drill.drill_kei_tb.Text, out kei))
+            {
+                tap.Kei = kei;
+            }
+            if (float.TryParse(drill.drill_z_tb.Text, out fukasa))
+            {
+                drills.Fukasa = fukasa;
+            }
+            drills.Sentan = drill.sentan_check.Checked;
+            drills.Description = drill.Kakou_Annai_tb.Text;
+            drills.Resfriamento = drill.Resfri_Combobox.Text;
+            if (int.TryParse(drill.tool_tb.Text, out tool)) { drills.ToolNumber = tool; }
+
+            drills.Frente = lado.Bool_Frente;
+            drills.Tras = lado.Bool_Tras;
+            Color colorselecionada = (Color)color.comboBox1.SelectedItem;
+            drills.Color = colorselecionada;
+            drills.numlado = 0;
+
+            Ferramentas.DGVtoCoordenadasList(drills, xy_dgv, pcd_dgv, xyradiobutton, pcdradiobutton, PCDRaio, pontoinicialX, pontoinicialY);
+            Mentori.CriarMentori(ferramentas.ListTotal, ferramentas.ListFrente, ferramentas.ListTras, drills, peca, MentoriF, MentoriT);
+
+            ferramentas.ListTotal.Add(drills);
+            if (drills.Frente) { ferramentas.ListFrente.Add(drills); }
+            if (drills.Tras) { ferramentas.ListTras.Add(drills); }
+            if (drills.Mentori_F_Bool) { ferramentas.MentoriFrente.Add(drills); }
+            if (drills.Mentori_B_Bool) { ferramentas.MentoriTras.Add(drills); }
+
         }
     }
 }
