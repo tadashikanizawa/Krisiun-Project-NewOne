@@ -31,12 +31,13 @@ namespace Krisiun_Project.Janelas
             this.drills = drills;
             this.ferramenta = ferramenta;
             this.isEditMode = ferramenta != null;
-            if(ferramenta != null )
+            drill_UserControl1.Atsumi = peca.z;
+            if (ferramenta != null )
             {
                 if(ferramenta is Drills drill)
                 {
                     drill_UserControl1.LoadData(drill);
-                    drill_UserControl1.Atsumi = peca.z;
+
                     }
                 colors_UserControl1.LoadColor(ferramenta);
                 lado_UserControl1.LoadLado(ferramenta);

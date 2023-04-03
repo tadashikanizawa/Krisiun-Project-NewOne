@@ -71,12 +71,12 @@ namespace Krisiun_Project.Dados_Aleatorios1
                     float diametro = float.Parse(parts[2], CultureInfo.InvariantCulture);
                     
                     
-                    float shitaana = float.Parse(parts[4], CultureInfo.InvariantCulture);
+                    float shitaana = float.Parse(parts[3], CultureInfo.InvariantCulture);
                     int kaiten = int.Parse(parts[5], CultureInfo.InvariantCulture);
                     if(unidade == "mm")
                     {
                         okuri = int.Parse(parts[6], CultureInfo.InvariantCulture);
-                        pitch = float.Parse(parts[3], CultureInfo.InvariantCulture);
+                        pitch = float.Parse(parts[4], CultureInfo.InvariantCulture);
                          k = getK(pitch);
                     }
                     if (unidade == "inch")
@@ -92,22 +92,17 @@ namespace Krisiun_Project.Dados_Aleatorios1
                          k = getKInch(pitch);
 
                     }
-                    float q = getQ(diametro);
                     if (unidade == "mm-zpro")
                     {
-                        string[] tipo = parts[1].Split(new char[] { '-' });
-                        string valorinch = tipo[1].ToString();
-                        string valorinchSomenteNumeros = Regex.Replace(valorinch, @"[^\d.]", "");
-                        float inchpich = float.Parse(valorinchSomenteNumeros);
-                        inchpich = (float)Math.Round(25.4f / inchpich, 3);
-                        inchpich = kaiten * inchpich;
-                        okuri = Convert.ToInt32(inchpich);
-                        pitch = float.Parse(valorinchSomenteNumeros);
-                        k = 50;
-                        q = 50;
+                        okuri = int.Parse(parts[6], CultureInfo.InvariantCulture);
+                        pitch = float.Parse(parts[3], CultureInfo.InvariantCulture);
+                        k = getK(pitch);
                     }
+                    float q = getQ(diametro);
+                  
                     //  MessageBox.Show(tool + "," + diametro.ToString() +"," + profundidade.ToString() + "," + kaiten.ToString() + "," + okuri.ToString() + "," + kataban + "," + largura.ToString() + "," + tsukidashi.ToString() );
                     listaDeTap.Add(new TiposdeTap(tool, unidade,descricao, diametro, pitch, shitaana, kaiten, okuri,q,k));
+                   
                 }
 
             }
@@ -129,7 +124,6 @@ namespace Krisiun_Project.Dados_Aleatorios1
         {
             float k = 0;
         
-                pitch = pitch / 25.4f;
             
             k = (float)Math.Round(pitch / 2, 1);
             return k;
