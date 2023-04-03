@@ -66,6 +66,9 @@
             this.mentori_Frente2 = new Krisiun_Project.UserControils.Mentori_Frente();
             this.mentori_Frente1 = new Krisiun_Project.UserControils.Mentori_Frente();
             this.lado_UserControl1 = new Krisiun_Project.UserControils.Lado_UserControl();
+            this.colors_UserControl1 = new Krisiun_Project.UserControils.Colors_UserControl();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.tap_avan_panel.SuspendLayout();
             this.xy_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -190,7 +193,7 @@
             // tap_inch_rb
             // 
             this.tap_inch_rb.AutoSize = true;
-            this.tap_inch_rb.Location = new System.Drawing.Point(292, 80);
+            this.tap_inch_rb.Location = new System.Drawing.Point(282, 80);
             this.tap_inch_rb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tap_inch_rb.Name = "tap_inch_rb";
             this.tap_inch_rb.Size = new System.Drawing.Size(83, 22);
@@ -202,7 +205,7 @@
             // 
             this.tap_mm_rb.AutoSize = true;
             this.tap_mm_rb.Checked = true;
-            this.tap_mm_rb.Location = new System.Drawing.Point(191, 80);
+            this.tap_mm_rb.Location = new System.Drawing.Point(204, 80);
             this.tap_mm_rb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tap_mm_rb.Name = "tap_mm_rb";
             this.tap_mm_rb.Size = new System.Drawing.Size(69, 22);
@@ -214,7 +217,7 @@
             // 
             // tap_tool_tb
             // 
-            this.tap_tool_tb.Location = new System.Drawing.Point(207, 152);
+            this.tap_tool_tb.Location = new System.Drawing.Point(203, 174);
             this.tap_tool_tb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tap_tool_tb.Name = "tap_tool_tb";
             this.tap_tool_tb.Size = new System.Drawing.Size(57, 25);
@@ -230,10 +233,11 @@
             this.tap_tool_combobox.Size = new System.Drawing.Size(241, 26);
             this.tap_tool_combobox.TabIndex = 80;
             this.tap_tool_combobox.Text = "タップ";
+            this.tap_tool_combobox.SelectedIndexChanged += new System.EventHandler(this.tap_tool_combobox_SelectedIndexChanged);
             // 
             // tap_z_tb
             // 
-            this.tap_z_tb.Location = new System.Drawing.Point(312, 152);
+            this.tap_z_tb.Location = new System.Drawing.Point(308, 174);
             this.tap_z_tb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tap_z_tb.Name = "tap_z_tb";
             this.tap_z_tb.Size = new System.Drawing.Size(57, 25);
@@ -255,7 +259,7 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(279, 163);
+            this.label43.Location = new System.Drawing.Point(280, 177);
             this.label43.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(18, 18);
@@ -435,7 +439,7 @@
             this.drill_UserControl1.DrillNumber = "01";
             this.drill_UserControl1.DrillTipo = null;
             this.drill_UserControl1.DrillZ = "0";
-            this.drill_UserControl1.Location = new System.Drawing.Point(172, 370);
+            this.drill_UserControl1.Location = new System.Drawing.Point(172, 386);
             this.drill_UserControl1.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
             this.drill_UserControl1.Name = "drill_UserControl1";
             this.drill_UserControl1.Sentan = false;
@@ -457,6 +461,7 @@
             this.mentori_Frente2.Tipo = null;
             this.mentori_Frente2.Visible = false;
             this.mentori_Frente2.Z = -15F;
+            this.mentori_Frente2.Load += new System.EventHandler(this.mentori_Frente2_Load);
             // 
             // mentori_Frente1
             // 
@@ -473,6 +478,7 @@
             this.mentori_Frente1.Tipo = null;
             this.mentori_Frente1.Visible = false;
             this.mentori_Frente1.Z = -15F;
+            this.mentori_Frente1.Load += new System.EventHandler(this.mentori_Frente1_Load);
             // 
             // lado_UserControl1
             // 
@@ -485,12 +491,44 @@
             this.lado_UserControl1.Size = new System.Drawing.Size(112, 210);
             this.lado_UserControl1.TabIndex = 94;
             // 
+            // colors_UserControl1
+            // 
+            this.colors_UserControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.colors_UserControl1.Location = new System.Drawing.Point(830, 570);
+            this.colors_UserControl1.Name = "colors_UserControl1";
+            this.colors_UserControl1.Size = new System.Drawing.Size(194, 87);
+            this.colors_UserControl1.TabIndex = 95;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(226, 147);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(115, 22);
+            this.checkBox1.TabIndex = 96;
+            this.checkBox1.Text = "Z-Proタップ";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(226, 364);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(156, 22);
+            this.checkBox3.TabIndex = 97;
+            this.checkBox3.Text = "下孔同時に追加";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
             // TapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1333, 675);
+            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.colors_UserControl1);
             this.Controls.Add(this.lado_UserControl1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.drill_UserControl1);
@@ -565,5 +603,8 @@
         private UserControils.Drill_UserControl drill_UserControl1;
         private System.Windows.Forms.Button button3;
         private UserControils.Lado_UserControl lado_UserControl1;
+        private UserControils.Colors_UserControl colors_UserControl1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox3;
     }
 }
