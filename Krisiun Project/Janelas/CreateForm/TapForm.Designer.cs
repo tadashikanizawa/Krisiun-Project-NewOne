@@ -175,11 +175,12 @@
             // 
             // button10
             // 
+            this.button10.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button10.Location = new System.Drawing.Point(630, 338);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(158, 100);
             this.button10.TabIndex = 80;
-            this.button10.Text = "ADD";
+            this.button10.Text = "作成/セーブ";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
@@ -280,7 +281,7 @@
             // 
             this.xy_panel.Controls.Add(this.dataGridView1);
             this.xy_panel.Location = new System.Drawing.Point(546, 27);
-            this.xy_panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.xy_panel.Margin = new System.Windows.Forms.Padding(2);
             this.xy_panel.Name = "xy_panel";
             this.xy_panel.Size = new System.Drawing.Size(240, 289);
             this.xy_panel.TabIndex = 89;
@@ -384,7 +385,7 @@
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1});
             this.dataGridView2.Location = new System.Drawing.Point(85, 18);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 62;
@@ -402,7 +403,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(464, 233);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(65, 32);
             this.button3.TabIndex = 93;
@@ -475,7 +476,7 @@
             // 
             this.colors_UserControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.colors_UserControl1.Location = new System.Drawing.Point(498, 380);
-            this.colors_UserControl1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.colors_UserControl1.Margin = new System.Windows.Forms.Padding(1);
             this.colors_UserControl1.Name = "colors_UserControl1";
             this.colors_UserControl1.Size = new System.Drawing.Size(116, 58);
             this.colors_UserControl1.TabIndex = 95;
@@ -484,7 +485,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(136, 98);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(78, 16);
             this.checkBox1.TabIndex = 96;
@@ -496,7 +497,7 @@
             // 
             this.shitaana_checkbox.AutoSize = true;
             this.shitaana_checkbox.Location = new System.Drawing.Point(136, 243);
-            this.shitaana_checkbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.shitaana_checkbox.Margin = new System.Windows.Forms.Padding(2);
             this.shitaana_checkbox.Name = "shitaana_checkbox";
             this.shitaana_checkbox.Size = new System.Drawing.Size(105, 16);
             this.shitaana_checkbox.TabIndex = 97;
