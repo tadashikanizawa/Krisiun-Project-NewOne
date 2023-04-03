@@ -133,23 +133,23 @@
     <Compile Include="Ferramentas\Drills.cs" />
     <Compile Include="Dados Aleatorios1\NSB.cs" />
     <Compile Include="G-Code\Tejun.cs" />
-    <Compile Include="Janelas\AdicionarForm.cs">
+    <Compile Include="Janelas\CreateForm\AdicionarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Janelas\AdicionarForm.Designer.cs">
+    <Compile Include="Janelas\CreateForm\AdicionarForm.Designer.cs">
       <DependentUpon>AdicionarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Janelas\CoordenadaCopyForm.cs">
+    <Compile Include="Janelas\CreateForm\CoordenadaCopyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Janelas\CoordenadaCopyForm.Designer.cs">
+    <Compile Include="Janelas\CreateForm\CoordenadaCopyForm.Designer.cs">
       <DependentUpon>CoordenadaCopyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Janelas\DGV_Codes.cs" />
-    <Compile Include="Janelas\DrillsForm.cs">
+    <Compile Include="Classes com códigos unicos\DGV_Codes.cs" />
+    <Compile Include="Janelas\CreateForm\DrillsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Janelas\DrillsForm.Designer.cs">
+    <Compile Include="Janelas\CreateForm\DrillsForm.Designer.cs">
       <DependentUpon>DrillsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Janelas\Form2.cs">
@@ -182,40 +182,40 @@
     <Compile Include="Janelas\Form6.Designer.cs">
       <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
-    <Compile Include="Janelas\TapForm.cs">
+    <Compile Include="Janelas\CreateForm\TapForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Janelas\TapForm.Designer.cs">
+    <Compile Include="Janelas\CreateForm\TapForm.Designer.cs">
       <DependentUpon>TapForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Janelas\KouguForm.cs">
+    <Compile Include="Janelas\Listas\KouguForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Janelas\KouguForm.Designer.cs">
+    <Compile Include="Janelas\Listas\KouguForm.Designer.cs">
       <DependentUpon>KouguForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Janelas\MaterialForm.cs">
+    <Compile Include="Janelas\Listas\MaterialForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Janelas\MaterialForm.Designer.cs">
+    <Compile Include="Janelas\Listas\MaterialForm.Designer.cs">
       <DependentUpon>MaterialForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Janelas\MentoriForm.cs">
+    <Compile Include="Janelas\Listas\MentoriForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Janelas\MentoriForm.Designer.cs">
+    <Compile Include="Janelas\Listas\MentoriForm.Designer.cs">
       <DependentUpon>MentoriForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Janelas\NSBForm.cs">
+    <Compile Include="Janelas\Listas\NSBForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Janelas\NSBForm.Designer.cs">
+    <Compile Include="Janelas\Listas\NSBForm.Designer.cs">
       <DependentUpon>NSBForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Janelas\TapMMForm.cs">
+    <Compile Include="Janelas\Listas\TapMMForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Janelas\TapMMForm.Designer.cs">
+    <Compile Include="Janelas\Listas\TapMMForm.Designer.cs">
       <DependentUpon>TapMMForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Numeros\Bools.cs" />
@@ -226,7 +226,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Desenhos\Desenho principal.cs" />
-    <Compile Include="Janelas\Bugs.cs" />
+    <Compile Include="Classes com códigos unicos\Bugs.cs" />
     <Compile Include="Numeros\Pitch_principal.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -236,8 +236,8 @@
     <Compile Include="Janelas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Janelas\Program.cs" />
-    <Compile Include="Janelas\textbox.cs" />
+    <Compile Include="Classes com códigos unicos\Program.cs" />
+    <Compile Include="Classes com códigos unicos\textbox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControils\Class1.cs" />
     <Compile Include="UserControils\Colors_UserControl.cs">
@@ -276,13 +276,13 @@
     <Compile Include="UserControils\Mentori_Tras.Designer.cs">
       <DependentUpon>Mentori_Tras.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Janelas\AdicionarForm.resx">
+    <EmbeddedResource Include="Janelas\CreateForm\AdicionarForm.resx">
       <DependentUpon>AdicionarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Janelas\CoordenadaCopyForm.resx">
+    <EmbeddedResource Include="Janelas\CreateForm\CoordenadaCopyForm.resx">
       <DependentUpon>CoordenadaCopyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Janelas\DrillsForm.resx">
+    <EmbeddedResource Include="Janelas\CreateForm\DrillsForm.resx">
       <DependentUpon>DrillsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Janelas\Form1.resx">
@@ -303,22 +303,22 @@
     <EmbeddedResource Include="Janelas\Form6.resx">
       <DependentUpon>Form6.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Janelas\KouguForm.resx">
+    <EmbeddedResource Include="Janelas\Listas\KouguForm.resx">
       <DependentUpon>KouguForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Janelas\MaterialForm.resx">
+    <EmbeddedResource Include="Janelas\Listas\MaterialForm.resx">
       <DependentUpon>MaterialForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Janelas\MentoriForm.resx">
+    <EmbeddedResource Include="Janelas\Listas\MentoriForm.resx">
       <DependentUpon>MentoriForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Janelas\NSBForm.resx">
+    <EmbeddedResource Include="Janelas\Listas\NSBForm.resx">
       <DependentUpon>NSBForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Janelas\TapForm.resx">
+    <EmbeddedResource Include="Janelas\CreateForm\TapForm.resx">
       <DependentUpon>TapForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Janelas\TapMMForm.resx">
+    <EmbeddedResource Include="Janelas\Listas\TapMMForm.resx">
       <DependentUpon>TapMMForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

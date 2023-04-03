@@ -10,7 +10,11 @@ namespace Krisiun_Project.G_Code
     public class Tap : Ferramentas
     {
         public string TapNome { get; set; }
-        public List<TiposdeTap> TapMM { get; set; }
+        public TiposdeTap Tipo { get; set; }
+        public string unidade { get; set; }
+        public float Q { get; set; }
+        public float K { get; set; }
+        
 
         public Tap(Pitch_principal.Peca peca): base(peca)
         {
