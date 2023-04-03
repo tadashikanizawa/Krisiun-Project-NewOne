@@ -675,7 +675,10 @@ namespace Krisiun_Project
             }
         }
 
-      
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 

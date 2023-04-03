@@ -139,6 +139,12 @@
     <Compile Include="Janelas\AdicionarForm.Designer.cs">
       <DependentUpon>AdicionarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Janelas\CoordenadaCopyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Janelas\CoordenadaCopyForm.Designer.cs">
+      <DependentUpon>CoordenadaCopyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Janelas\DGV_Codes.cs" />
     <Compile Include="Janelas\DrillsForm.cs">
       <SubType>Form</SubType>
@@ -272,6 +278,9 @@
     </Compile>
     <EmbeddedResource Include="Janelas\AdicionarForm.resx">
       <DependentUpon>AdicionarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Janelas\CoordenadaCopyForm.resx">
+      <DependentUpon>CoordenadaCopyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Janelas\DrillsForm.resx">
       <DependentUpon>DrillsForm.cs</DependentUpon>
