@@ -285,7 +285,6 @@
             this.mentori_Frente2.TabIndex = 16;
             this.mentori_Frente2.Tamanho = 3F;
             this.mentori_Frente2.Tipo = null;
-            this.mentori_Frente2.Visible = false;
             this.mentori_Frente2.Z = -15F;
             this.mentori_Frente2.Load += new System.EventHandler(this.mentori_Frente2_Load);
             // 
@@ -311,7 +310,6 @@
             this.mentori_Frente1.TabIndex = 3;
             this.mentori_Frente1.Tamanho = 3F;
             this.mentori_Frente1.Tipo = null;
-            this.mentori_Frente1.Visible = false;
             this.mentori_Frente1.Z = -15F;
             this.mentori_Frente1.Load += new System.EventHandler(this.mentori_Frente1_Load);
             // 

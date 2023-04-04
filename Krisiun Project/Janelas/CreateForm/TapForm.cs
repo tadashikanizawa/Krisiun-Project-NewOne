@@ -18,13 +18,18 @@ namespace Krisiun_Project.Janelas
         public Ferramentas ferramenta;
         public Pitch_principal.Peca peca;
         public Drills drills;
+        public Form1 form;
+
+        private bool isEditMode;
         public TapForm(Form1 form, Ferramentas ferramentas, Ferramentas ferramenta, Pitch_principal.Peca peca, Drills drills )
         {
             InitializeComponent();
             this.ferramentas = ferramentas;
+            this.form = form;
             this.ferramenta = ferramenta;
             this.peca = peca;
             this.drills = drills;
+            this.isEditMode = ferramenta != null;
             tap_tool_combobox.DataSource = TiposdeTap.TapMM;
             tap_tool_combobox.DisplayMember = "Descricao";
             tap_tool_combobox.ValueMember = "Descricao";
@@ -34,6 +39,20 @@ namespace Krisiun_Project.Janelas
             lado_UserControl1.OnAlterarPropriedades1 += mentori_Frente2.alterar;
             drill_UserControl1.OnAlterarPropriedades += mentori_Frente1.alterarkei;
             drill_UserControl1.OnAlterarPropriedades1 += mentori_Frente2.alterarkei;
+            if(isEditMode)
+            {
+                if(ferramenta is Tap tap)
+                {
+                    //tap_UserControl1.LoadData(tap);
+                }
+                colors_UserControl1.LoadColor(ferramenta);
+                lado_UserControl1.LoadLado(ferramenta);
+                mentori_Frente1.LoadMentori(ferramenta, false);
+                mentori_Frente2.LoadMentori(ferramenta, true);
+                if (ferramenta.Mentori_F_Bool) { mentori_Frente1.Visible = true; }
+                if (ferramenta.Mentori_B_Bool) { mentori_Frente2.Visible = true; }
+                Coordenadas.LoadCoordinates(ferramenta, dataGridView1);
+            }
         }
 
         private void TapForm_Load(object sender, EventArgs e)
@@ -173,6 +192,7 @@ namespace Krisiun_Project.Janelas
             tap.ToolName = tap_tool_combobox.Text;
             tap.Tipo = (TiposdeTap)tap_tool_combobox.SelectedItem;
             tap.Kei = selectedTap.Diametro;
+        
             if(float.TryParse(tap_q_tb.Text, out q)){ tap.Q = q; }
             if(float.TryParse(tap_k_tb.Text, out k)) { tap.K = k; }
             if (float.TryParse(tap_z_tb.Text, out fukasa)) { tap.Fukasa = fukasa; }
@@ -189,20 +209,25 @@ namespace Krisiun_Project.Janelas
             tap.numlado = 0;
 
             Ferramentas.DGVtoCoordenadasList(tap, dataGridView1, dataGridView2, radioButton1, radioButton2, textBox1, textBox2, textBox3);
-            Mentori.CriarMentori(ferramentas.ListTotal, ferramentas.ListFrente, ferramentas.ListTras, tap, peca, mentori_Frente1, mentori_Frente2);
-
+            //Mentori.CriarMentori(ferramentas.ListTotal, ferramentas.ListFrente, ferramentas.ListTras, tap, peca, mentori_Frente1, mentori_Frente2);
+           
             ferramentas.ListTotal.Add(tap);
             if (tap.Frente) { ferramentas.ListFrente.Add(tap); }
             if (tap.Tras) { ferramentas.ListTras.Add(tap); }
-            if (tap.Mentori_F_Bool) { ferramentas.MentoriFrente.Add(tap); }
-            if (tap.Mentori_B_Bool) { ferramentas.MentoriTras.Add(tap); }
+        //    if (tap.Mentori_F_Bool) { ferramentas.MentoriFrente.Add(tap); }
+          //  if (tap.Mentori_B_Bool) { ferramentas.MentoriTras.Add(tap); }
 
             if(shitaana_checkbox.Checked)
             {
                 drills.CriarDrills(ferramentas, drill_UserControl1, lado_UserControl1, mentori_Frente1, mentori_Frente2, colors_UserControl1, dataGridView1, dataGridView2, radioButton1, radioButton2, textBox1, textBox2, textBox3);
 
             }
+            form.panel_update();
+        }
 
+        private void drill_UserControl1_Load(object sender, EventArgs e)
+        {
+            drill_UserControl1.drill_z_tb.Text = "-15";
         }
     }
 }

@@ -18,6 +18,8 @@ namespace Krisiun_Project.G_Code
 
         public Tap(Pitch_principal.Peca peca): base(peca)
         {
+
+            CoordenadasList = new List<PointF>();
         }
 
 
