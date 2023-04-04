@@ -175,7 +175,6 @@ namespace Krisiun_Project.Janelas
 
         private void button10_Click(object sender, EventArgs e)
         {
-
             if (radioButton1.Checked)
             {
                 if (dataGridView1.Rows.Count <= 1) { MessageBox.Show("Add coordenadas"); return; }
@@ -190,6 +189,7 @@ namespace Krisiun_Project.Janelas
             }
             else { EditarTap(); }
             form.panel_update();
+            form.DGV_Update();
             this.Close();
         }
         public void GerarTap()

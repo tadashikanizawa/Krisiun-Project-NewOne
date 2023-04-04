@@ -413,19 +413,113 @@ namespace Krisiun_Project
                     // Verifica se a ferramenta é uma instância de Taps
                     else if (ferramenta is Tap taps)
                     {
-                        // Obtém as coordenadas do Taps
+                        // Obtém as coordenadas do Drills
                         var coordenadas = taps.CoordenadasList;
 
-                        // Itera sobre as coordenadas do Taps e desenha cada ponto na superfície do Panel
+                        // Itera sobre as coordenadas do Drills e desenha cada ponto na superfície do Panel
                         foreach (var point in coordenadas)
                         {
-                            // Inverte as coordenadas X e/ou Y, se necessário
-                            var x = inverterX ? panel.ClientSize.Width - point.X : point.X;
-                            var y = inverterY ? panel.ClientSize.Height - point.Y : point.Y;
+                            //var x = inverterX ? panel.ClientSize.Width - point.X : point.X;
+                            //var y = inverterY ? panel.ClientSize.Height - point.Y : point.Y;
+                            var x = point.X;
+                            var y = point.Y;
+                            var shinx = shin.x;
+                            var shiny = shin.y;
+                            bool frente = taps.Frente;
+                            bool tras = taps.Tras;
+                            float fukasa = taps.Fukasa * peca.scale;
+                            SolidBrush brush1 = new SolidBrush(taps.Color);
+                            if (inverterX == true)
+                            {
+                                x *= -1;
+                                shinx = shin.x1;
+                            }
+                            if (inverterY == true)
+                            {
+                                y *= -1;
+                                shiny = shin.y1;
+                            }
+                            float kei = taps.Kei * peca.scale;
+                            float halfkei = kei / 2;
+                            x *= peca.scale;
+                            x = x + shinx - halfkei;
+                            y *= peca.scale;
+                            y = shiny - y - halfkei;
 
-                            //graphics.FillRectangle(brush, x, y, 10, 10);
-                            g.DrawRectangle(pen, x, y, 10, 10);
+                            //sobre as linhas
+                            var linhax1 = x + halfkei;
+                            var linhax2 = meiox + halfpecax + linhaextra; // lado direito
+                            var linhax3 = meiox - halfpecax - linhaextra; //lado esquerdo
+                            var linhay1 = y + halfkei;
+                            var linhay2 = meioy - halfpecay - linhaextra;
+                            var linhay3 = meioy + halfpecay + linhaextra;
+
+
+                            //sobre as escritas
+                            string pitchx = point.X.ToString();
+                            string pitchy = point.Y.ToString();
+                            SizeF tamx = g.MeasureString(pitchx, font);
+                            SizeF tamy = g.MeasureString(pitchy, font);
+                            float vx1 = tamx.Width; //pitchx
+                            float vy1 = tamx.Height;//pitchx
+                            float vx2 = tamy.Width;//pitchy
+                            float vy2 = tamy.Height;//pitchy
+                            float pontox = linhax2; //ladi direito
+                            float pontox1 = linhax3 - vx2; //lado esquerto
+                            float pontoy = linhay1 - vy1 / 2; //lado de cima
+                            float pontoy1 = linhay2 - vy2;
+
+
+
+                            // Desenha o ponto na superfície do Panel
+                            Pen pen2 = new Pen(Color.Black, 5);
+
+
+                            if (panel.Name == "paneld_f" && taps.Tras == true && taps.Frente == false && fukasa < peca.sizez)
+                            {
+                                pen2.DashStyle = DashStyle.Dot;
+                                brush1.Color = Color.FromArgb(50, taps.Color);
+
+                            }
+                            if (panel.Name == "panel_b" && taps.Tras == false && taps.Frente == true && fukasa < peca.sizez)
+                            {
+                                pen2.DashStyle = DashStyle.Dot;
+
+                                brush1.Color = Color.FromArgb(50, taps.Color);
+                            }
+
+                            if (panel.Name != "panel_yoko")
+                            {
+                                g.DrawEllipse(pen2, x, y, kei, kei);
+                                g.FillEllipse(brush1, x, y, kei, kei);
+                                //desnha a linha e a escrita (linha horizontal, Pitch de Y)
+                                // System.Diagnostics.Debug.WriteLine("x = " + x);
+                                if (x <= shin.x)
+                                {
+                                    g.DrawLine(pen1, linhax1, linhay1, linhax3, linhay1);
+                                    g.DrawString(pitchy, font, brush, pontox1, pontoy);
+                                }
+                                if (x > shin.x)
+                                {
+                                    g.DrawLine(pen1, linhax1, linhay1, linhax2, linhay1);
+                                    g.DrawString(pitchy, font, brush, pontox, pontoy);
+                                }
+                                if (y <= shin.y)
+                                {
+                                    g.DrawLine(pen1, linhax1, linhay1, linhax1, linhay2); //linha vertical (Pitch de X)
+                                    g.DrawString(pitchx, font, brush, linhax1 - vy1 / 2, pontoy1, stringformat);
+                                }
+                                if (y > shin.y)
+                                {
+                                    g.DrawLine(pen1, linhax1, linhay1, linhax1, linhay3); //linha vertical (Pitch de X)
+                                    g.DrawString(pitchx, font, brush, linhax1 - vy1 / 2, linhay3, stringformat);
+                                }
+                            }
+
+
+
                         }
+
                     }
                     // Adicione mais condicionais aqui para outras ferramentas
 
