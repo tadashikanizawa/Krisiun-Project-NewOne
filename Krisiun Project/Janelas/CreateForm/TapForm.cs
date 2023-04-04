@@ -19,7 +19,11 @@ namespace Krisiun_Project.Janelas
         public Pitch_principal.Peca peca;
         public Drills drills;
         public Form1 form;
-
+        public TiposdeTap TapCombobox
+        {
+            get { return (TiposdeTap)tap_tool_combobox.SelectedItem; }
+            set { tap_tool_combobox.SelectedItem = value; }
+        }
         private bool isEditMode;
         public TapForm(Form1 form, Ferramentas ferramentas, Ferramentas ferramenta, Pitch_principal.Peca peca, Drills drills )
         {
@@ -43,15 +47,14 @@ namespace Krisiun_Project.Janelas
             {
                 if(ferramenta is Tap tap)
                 {
-                    //tap_UserControl1.LoadData(tap);
+                    LoadTap(tap);
                 }
                 colors_UserControl1.LoadColor(ferramenta);
                 lado_UserControl1.LoadLado(ferramenta);
                 mentori_Frente1.LoadMentori(ferramenta, false);
                 mentori_Frente2.LoadMentori(ferramenta, true);
-                if (ferramenta.Mentori_F_Bool) { mentori_Frente1.Visible = true; }
-                if (ferramenta.Mentori_B_Bool) { mentori_Frente2.Visible = true; }
                 Coordenadas.LoadCoordinates(ferramenta, dataGridView1);
+                shitaana_checkbox.Visible = false;
             }
         }
 
@@ -181,25 +184,37 @@ namespace Krisiun_Project.Janelas
             {
                 if (dataGridView2.Rows.Count <= 1) { MessageBox.Show("Add coordenadas"); return; }
             }
+           if(!isEditMode)
+            {
+                GerarTap();
+            }
+            else { EditarTap(); }
+            form.panel_update();
+            this.Close();
+        }
+        public void GerarTap()
+        {
             TiposdeTap selectedTap = (TiposdeTap)tap_tool_combobox.SelectedItem;
             float q;
             float k;
             float fukasa;
             int tool;
+
             Tap tap = new Tap(peca);
+
             tap.Index = Programas.Index();
             tap.Nome = tap.Index.ToString() + "-" + tap_tool_combobox.Text;
             tap.ToolName = tap_tool_combobox.Text;
             tap.Tipo = (TiposdeTap)tap_tool_combobox.SelectedItem;
             tap.Kei = selectedTap.Diametro;
-        
-            if(float.TryParse(tap_q_tb.Text, out q)){ tap.Q = q; }
-            if(float.TryParse(tap_k_tb.Text, out k)) { tap.K = k; }
+
+            if (float.TryParse(tap_q_tb.Text, out q)) { tap.Q = q; }
+            if (float.TryParse(tap_k_tb.Text, out k)) { tap.K = k; }
             if (float.TryParse(tap_z_tb.Text, out fukasa)) { tap.Fukasa = fukasa; }
-            
+
             tap.Description = selectedTap.Descricao;
             tap.Resfriamento = "M09";
-            if(checkBox1.Checked) { tap.Resfriamento = "M08"; }
+            if (checkBox1.Checked) { tap.Resfriamento = "M08"; }
             if (int.TryParse(tap_tool_tb.Text, out tool)) { tap.ToolNumber = tool; }
 
             tap.Frente = lado_UserControl1.Bool_Frente;
@@ -209,22 +224,93 @@ namespace Krisiun_Project.Janelas
             tap.numlado = 0;
 
             Ferramentas.DGVtoCoordenadasList(tap, dataGridView1, dataGridView2, radioButton1, radioButton2, textBox1, textBox2, textBox3);
-            //Mentori.CriarMentori(ferramentas.ListTotal, ferramentas.ListFrente, ferramentas.ListTras, tap, peca, mentori_Frente1, mentori_Frente2);
-           
+            Mentori.CriarMentori(ferramentas.ListTotal, ferramentas.ListFrente, ferramentas.ListTras, tap, peca, mentori_Frente1, mentori_Frente2);
+
             ferramentas.ListTotal.Add(tap);
             if (tap.Frente) { ferramentas.ListFrente.Add(tap); }
             if (tap.Tras) { ferramentas.ListTras.Add(tap); }
-        //    if (tap.Mentori_F_Bool) { ferramentas.MentoriFrente.Add(tap); }
-          //  if (tap.Mentori_B_Bool) { ferramentas.MentoriTras.Add(tap); }
-
-            if(shitaana_checkbox.Checked)
+            if (!shitaana_checkbox.Checked)
+            {
+                if (tap.Mentori_F_Bool) { ferramentas.MentoriFrente.Add(tap); }
+                if (tap.Mentori_B_Bool) { ferramentas.MentoriTras.Add(tap); }
+            }
+            if (shitaana_checkbox.Checked)
             {
                 drills.CriarDrills(ferramentas, drill_UserControl1, lado_UserControl1, mentori_Frente1, mentori_Frente2, colors_UserControl1, dataGridView1, dataGridView2, radioButton1, radioButton2, textBox1, textBox2, textBox3);
+                tap.Mentori_B_Bool = false;
+                tap.Mentori_F_Bool = false;
+            }
+        }
+        public void EditarTap()
+        {
+            TiposdeTap selectedTap = (TiposdeTap)tap_tool_combobox.SelectedItem;
+            float q;
+            float k;
+            float fukasa;
+            int tool;
+            if (ferramenta is Tap tap)
+            {
+
+                tap.Index = Programas.Index();
+                tap.Nome = tap.Index.ToString() + "-" + tap_tool_combobox.Text;
+                tap.ToolName = tap_tool_combobox.Text;
+                tap.Tipo = (TiposdeTap)tap_tool_combobox.SelectedItem;
+                tap.Kei = selectedTap.Diametro;
+
+                if (float.TryParse(tap_q_tb.Text, out q)) { tap.Q = q; }
+                if (float.TryParse(tap_k_tb.Text, out k)) { tap.K = k; }
+                if (float.TryParse(tap_z_tb.Text, out fukasa)) { tap.Fukasa = fukasa; }
+
+                tap.Description = selectedTap.Descricao;
+                tap.Resfriamento = "M09";
+                if (checkBox1.Checked) { tap.Resfriamento = "M08"; }
+                if (int.TryParse(tap_tool_tb.Text, out tool)) { tap.ToolNumber = tool; }
+
+                tap.Frente = lado_UserControl1.Bool_Frente;
+                tap.Tras = lado_UserControl1.Bool_Tras;
+                Color colorselecionada = (Color)colors_UserControl1.comboBox1.SelectedItem;
+                tap.Color = colorselecionada;
+
+
+                Ferramentas.DGVtoCoordenadasList(tap, dataGridView1, dataGridView2, radioButton1, radioButton2, textBox1, textBox2, textBox3);
+                Mentori.CriarMentori(ferramentas.ListTotal, ferramentas.ListFrente, ferramentas.ListTras, tap, peca, mentori_Frente1, mentori_Frente2);
+
+                if(!tap.Frente && !tap.Tras)
+                {
+                    if(ferramentas.ListTotal.Contains(tap))
+                    {
+                        ferramentas.ListTotal.Remove(tap);
+                    }
+                }
+                if (!tap.Frente)
+                {
+                    if (ferramentas.ListFrente.Contains(tap))
+                    {
+                        ferramentas.ListFrente.Remove(tap);
+                    }
+                }
+                if (!tap.Tras)
+                {
+                    if (ferramentas.ListTras.Contains(tap))
+                    {
+                        ferramentas.ListTras.Remove(tap);
+                    }
+                }
 
             }
-            form.panel_update();
+        }   
+        public void LoadTap(Tap tap)
+        {
+            TapCombobox = tap.Tipo;         
+            tap_tool_tb.Text = tap.ToolNumber.ToString();
+            tap_q_tb.Text = tap.Q.ToString();
+            tap_k_tb.Text = tap.K.ToString();
+            tap_z_tb.Text = tap.Fukasa.ToString();
+            lado_UserControl1.Bool_Frente = tap.Frente;
+            lado_UserControl1.Bool_Tras = tap.Tras;
+            colors_UserControl1.comboBox1.SelectedItem = tap.Color;
+           
         }
-
         private void drill_UserControl1_Load(object sender, EventArgs e)
         {
             drill_UserControl1.drill_z_tb.Text = "-15";

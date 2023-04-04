@@ -671,6 +671,11 @@ namespace Krisiun_Project
                     DrillsForm drillsFOrm = new DrillsForm(this, ferramentas, ferramenta, peca, Mydrills);
                     drillsFOrm.ShowDialog();
                 }
+                if(ferramenta is Tap)
+                {
+                    TapForm tapForm = new TapForm(this, ferramentas, ferramenta, peca, Mydrills);
+                    tapForm.ShowDialog();
+                }
                 // Adicione condições para outras classes derivadas de Ferramenta, se houver.
             }
         }
