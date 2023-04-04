@@ -102,6 +102,7 @@ namespace Krisiun_Project.Janelas
                 Coordenadas.SaveChanges(ferramenta, dataGridView1);
             }
             form1.panel_update();
+            form1.DGV_Update();
             this.Close();
 
         }
