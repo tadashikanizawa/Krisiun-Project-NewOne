@@ -199,6 +199,7 @@ namespace Krisiun_Project.Janelas
             float k;
             float fukasa;
             int tool;
+            int kaiten;
 
             Tap tap = new Tap(peca);
 
@@ -207,11 +208,13 @@ namespace Krisiun_Project.Janelas
             tap.ToolName = tap_tool_combobox.Text;
             tap.Tipo = (TiposdeTap)tap_tool_combobox.SelectedItem;
             tap.Kei = selectedTap.Diametro;
-
+            tap.TapYama = selectedTap.Pitch;
             if (float.TryParse(tap_q_tb.Text, out q)) { tap.Q = q; }
             if (float.TryParse(tap_k_tb.Text, out k)) { tap.K = k; }
             if (float.TryParse(tap_z_tb.Text, out fukasa)) { tap.Fukasa = fukasa; }
+            if(int.TryParse(tap_kaiten_tb.Text,out kaiten)) { tap.Kaiten = kaiten; }
 
+            tap.Okuri = kaiten / tap.TapYama;
             tap.Description = selectedTap.Descricao;
             tap.Resfriamento = "M09";
             if (checkBox1.Checked) { tap.Resfriamento = "M08"; }

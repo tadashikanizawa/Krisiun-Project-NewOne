@@ -15,6 +15,7 @@ namespace Krisiun_Project.G_Code
         public float Q { get; set; }
         public float K { get; set; }
         public bool Zpro { get;set; }
+        public float TapYama { get; set; }
 
         public Tap(Pitch_principal.Peca peca): base(peca)
         {

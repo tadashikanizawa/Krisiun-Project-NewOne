@@ -807,23 +807,7 @@
             this.panel_inverso.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listTrasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listTotalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ferramentasBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFrenteBindingSource2)).EndInit();
+  
             this.ResumeLayout(false);
             this.PerformLayout();
 
