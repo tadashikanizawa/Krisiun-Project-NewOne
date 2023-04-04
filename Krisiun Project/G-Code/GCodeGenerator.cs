@@ -76,7 +76,19 @@ namespace Krisiun_Project.G_Code
                 }
                 else if (ferramenta is Tap tap)
                 {
-                    // Adicione o GCode específico para o objeto Tap.
+                    gCode56.Append(inicio_osp(false, false, tap, num, false));
+                    gCode46.Append(inicio_osp(true, false, tap, num, false));
+                    gcodeokk.Append(inicio_osp(false, true, tap, num, false));
+                    gCode56F.Append(inicio_osp(false, false, tap, num, true));
+                    gCode46F.Append(inicio_osp(true, false, tap, num, true));
+                    gCodeokkF.Append(inicio_osp(false, true, tap, num, true));
+
+                    gCode46.Append(GenerateGCodeForTap(tap, omote, ura, false, false));
+                    gCode56.Append(GenerateGCodeForTap(tap, omote, ura, false, false));
+                    gcodeokk.Append(GenerateGCodeForTap(tap, omote, ura, true, false));
+                    gCode46F.Append(GenerateGCodeForTap(tap, omote, ura, false, true));
+                    gCode56F.Append(GenerateGCodeForTap(tap, omote, ura, false, true));
+                    gCodeokkF.Append(GenerateGCodeForTap(tap, omote, ura, true, true));
                 }
                 else if( ferramenta is Mentori mentori)
                 {
@@ -261,7 +273,12 @@ namespace Krisiun_Project.G_Code
             }
             else if (ferramenta is Tap tap)
             {
-                // Atribua as propriedades do objeto Tap.
+                 toolnum = tap.ToolNumber;
+                if (kousoki == true) { toolnum = tap.ToolNumberK; troca = "M207"; }
+                kei = tap.Kei;
+                tipo = tap.ToolName;
+                resfriamento = tap.Resfriamento;
+                kaiten = tap.Kaiten;
             }
             else if (ferramenta is Mentori mentori)
             {
@@ -306,7 +323,10 @@ namespace Krisiun_Project.G_Code
             {
                 cabeca.AppendLine("(N00" + numpro1 + "- T" + toolnum1 + " -" + tipo + "- φ" + kei1 + ")");
             }
-      
+            if (ferramenta is Tap)
+            {
+                cabeca.AppendLine("(N00" + numpro1 + "- T" + toolnum1 + " -" + tipo);
+            }
             cabeca.AppendLine("G0Z500.");
             cabeca.AppendLine("T" + toolnum1);
             cabeca.AppendLine(troca);
@@ -394,6 +414,61 @@ namespace Krisiun_Project.G_Code
             { gCodeForDrill.AppendLine("RTS"); }
 
             return gCodeForDrill;
+        }
+
+        private StringBuilder GenerateGCodeForTap(Tap tap, bool frente, bool tras, bool okk, bool Kanizawa)
+        {
+            StringBuilder gCodeFortap = new StringBuilder();
+            int spindleSpeed = tap.Kaiten;
+            string corte = "";
+            string restodoprimeiro = "";
+            if (!okk)
+            {
+                corte = "G283";
+                if (tap.Zpro) { restodoprimeiro = "R5.0Q50.K50.Z"; }
+                if (!tap.Zpro) { restodoprimeiro = $"R5.0Q{tap.Q}K{tap.K}Z"; }
+            }
+            else {corte = "G98G84"; restodoprimeiro = "R5.0Z"; }
+            float fukasa = tap.Fukasa;
+            if (fukasa < 0) { fukasa *= -1; }
+       
+            bool xinv = peca.xinv;
+            bool yinv = peca.yinv;
+            if (tras == false) { xinv = false; yinv = false; }
+       
+    
+            PointF primeiraCoordenada = tap.CoordenadasList[0];
+            float xCoordValuep = xinv ? -primeiraCoordenada.X : primeiraCoordenada.X;
+
+            // Multiplica a coordenada Y por -1 se yinv for verdadeiro
+            float yCoordValuep = yinv ? -primeiraCoordenada.Y : primeiraCoordenada.Y;
+            string xCoordp = xCoordValuep % 1 == 0 ? $"{xCoordValuep}." : $"{xCoordValuep}";
+            string yCoordp = yCoordValuep % 1 == 0 ? $"{yCoordValuep}." : $"{yCoordValuep}";
+
+            gCodeFortap.AppendLine($"{corte}X{xCoordp}Y{yCoordp}{restodoprimeiro}{fukasa}F{tap.Okuri}");
+
+            // Coordenadas restantes
+            for (int i = 1; i < tap.CoordenadasList.Count; i++)
+            {// Multiplica a coordenada X por -1 se xinv for verdadeiro
+
+
+                PointF coordenada = tap.CoordenadasList[i];
+                float xCoordValue = xinv ? -coordenada.X : coordenada.X;
+
+                // Multiplica a coordenada Y por -1 se yinv for verdadeiro
+                float yCoordValue = yinv ? -coordenada.Y : coordenada.Y;
+                string xCoord = xCoordValue % 1 == 0 ? $"{xCoordValue}." : $"{xCoordValue}";
+                string yCoord = yCoordValue % 1 == 0 ? $"{yCoordValue}." : $"{yCoordValue}";
+                gCodeFortap.AppendLine($"X{xCoord}Y{yCoord}");
+            }
+            gCodeFortap.AppendLine("G0Z85.");
+            gCodeFortap.AppendLine("G0Z500.");
+          
+            gCodeFortap.AppendLine("(FIM DO FURADOR)");
+            if (Kanizawa == true)
+            { gCodeFortap.AppendLine("RTS"); }
+
+            return gCodeFortap;
         }
 
         public StringBuilder GcodeMentori(Mentori mentori, Ferramentas ferramenta, bool frente, bool tras, bool okk, bool Kanizawa)

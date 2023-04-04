@@ -215,6 +215,7 @@ namespace Krisiun_Project.Janelas
             tap.Description = selectedTap.Descricao;
             tap.Resfriamento = "M09";
             if (checkBox1.Checked) { tap.Resfriamento = "M08"; }
+            tap.Zpro = checkBox1.Checked;
             if (int.TryParse(tap_tool_tb.Text, out tool)) { tap.ToolNumber = tool; }
 
             tap.Frente = lado_UserControl1.Bool_Frente;

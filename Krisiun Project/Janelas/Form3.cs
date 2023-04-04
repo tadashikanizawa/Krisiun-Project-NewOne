@@ -1,4 +1,5 @@
-﻿using Krisiun_Project.Dados_Aleatorios1;
+﻿using Krisiun_Project.Dados_aleatorios;
+using Krisiun_Project.Dados_Aleatorios1;
 using Krisiun_Project.G_Code;
 using Krisiun_Project.janela_principal;
 using Krisiun_Project.Numeros;
@@ -28,6 +29,12 @@ namespace Krisiun_Project.Janelas
             this.form1 = form1;
             this.bools = bools;
             LoadDrills();
+            TipoDeDrills.LoadListdeDrills();
+            TiposdeMentori.TipoMentoriLoad();
+            TiposdeTap.CriarListas();
+            Kougu.CarregarListadeKougu();
+            NSB.NSBLoad();
+            ColorList.AddColor();
         }
         private void LoadDrills()
         {

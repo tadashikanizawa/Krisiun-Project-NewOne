@@ -122,7 +122,6 @@ namespace Krisiun_Project
             NSB.NSBLoad();
             ColorList.AddColor();
             Mydrills.LoadKaitenValuesFromCsv();
-    
 
         }
  
@@ -680,9 +679,40 @@ namespace Krisiun_Project
             }
         }
 
+        public Ferramentas FerramentaSelecionada { get; set; }
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           
+        }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (dataGridView3.CurrentRow != null)
+            {
+                // Acessar o objeto selecionado na DataGridView
+                var objetoSelecionado = (Ferramentas)dataGridView3.CurrentRow.DataBoundItem;
+
+                // Incrementar a propriedade 'numlado' e verificar se atingiu o limite da lista
+                objetoSelecionado.numlado = (objetoSelecionado.numlado + 1) % objetoSelecionado.CoordenadasList.Count;
+
+                // Atualizar a DataGridView
+                dataGridView3.Refresh();
+
+                // Alterar a cor do objeto selecionado usando a cor selecionada na UserControl
+              //  objetoSelecionado.Color = colors_UserControl1.SelectedColor;
+            }
+            panel_update();
+        }
+
+     
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                //dataGridView3.ClearSelection();
+                dataGridView3.Rows[e.RowIndex].Selected = true;
+            }
         }
     }
 

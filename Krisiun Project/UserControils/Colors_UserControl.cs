@@ -21,6 +21,11 @@ namespace Krisiun_Project.UserControils
             comboBox1.DataSource = ColorList.ListadeCores;
 
         }
+        public Color SelectedColor
+        {
+            get { return (Color)comboBox1.SelectedItem; }
+        }
+
         public void LoadColor(Ferramentas ferramenta)
         {
             comboBox1.SelectedItem = ferramenta.Color;
@@ -32,6 +37,11 @@ namespace Krisiun_Project.UserControils
             corAtual = itemCor.Color; // Definindo a cor atual para a cor selecionada
         }
         private void Colors_UserControl_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
