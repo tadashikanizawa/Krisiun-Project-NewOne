@@ -29,7 +29,7 @@ namespace Krisiun_Project.Janelas
             }
             if(form is TapForm)
             {
-                              this.tapForm = (TapForm)form;
+            this.tapForm = (TapForm)form;
             }
         }
 
@@ -42,14 +42,13 @@ namespace Krisiun_Project.Janelas
         {
             if (FerramentaSelecionada != null)
             {
-                // Faça algo com a ferramenta selecionada, como exibir suas propriedades
                 if (drillform != null)
                 { 
                 drillform.AtualizarDGV(FerramentaSelecionada);
                 }
                 if (tapForm != null)
                 {
-                    tapForm.AtualizarDGV(FerramentaSelecionada);
+                tapForm.AtualizarDGV(FerramentaSelecionada);
                 }
             }
 
