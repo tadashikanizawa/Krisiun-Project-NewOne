@@ -11,12 +11,14 @@ namespace Krisiun_Project.G_Code
     {
         public string TapNome { get; set; }
         public TiposdeTap Tipo { get; set; }
-        public string unidade { get; set; }
+        public string Unidade { get; set; }
         public float Q { get; set; }
         public float K { get; set; }
         public bool Zpro { get;set; }
         public float TapYama { get; set; }
 
+        public bool BoolMM { get; set;  }
+        public bool BoolInch { get; set; }
         public Tap(Pitch_principal.Peca peca): base(peca)
         {
 

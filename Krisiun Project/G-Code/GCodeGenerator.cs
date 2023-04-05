@@ -76,6 +76,12 @@ namespace Krisiun_Project.G_Code
                 }
                 else if (ferramenta is Tap tap)
                 {
+                    gCode46.AppendLine("M00");
+                    gCode56.AppendLine("M00");
+                    gcodeokk.AppendLine("M00");
+                    gCode46F.AppendLine("M00");
+                    gCode56F.AppendLine("M00");
+                    gCodeokkF.AppendLine("M00");
                     gCode56.Append(inicio_osp(false, false, tap, num, false));
                     gCode46.Append(inicio_osp(true, false, tap, num, false));
                     gcodeokk.Append(inicio_osp(false, true, tap, num, false));

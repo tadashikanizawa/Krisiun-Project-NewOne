@@ -71,11 +71,13 @@
             this.shitaana_checkbox = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.avan_panel.SuspendLayout();
             this.xy_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pcd_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // checkBox2
@@ -198,7 +200,7 @@
             // tap_inch_rb
             // 
             this.tap_inch_rb.AutoSize = true;
-            this.tap_inch_rb.Location = new System.Drawing.Point(282, 80);
+            this.tap_inch_rb.Location = new System.Drawing.Point(79, 4);
             this.tap_inch_rb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tap_inch_rb.Name = "tap_inch_rb";
             this.tap_inch_rb.Size = new System.Drawing.Size(83, 22);
@@ -210,7 +212,7 @@
             // 
             this.tap_mm_rb.AutoSize = true;
             this.tap_mm_rb.Checked = true;
-            this.tap_mm_rb.Location = new System.Drawing.Point(203, 80);
+            this.tap_mm_rb.Location = new System.Drawing.Point(0, 4);
             this.tap_mm_rb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tap_mm_rb.Name = "tap_mm_rb";
             this.tap_mm_rb.Size = new System.Drawing.Size(69, 22);
@@ -501,7 +503,7 @@
             // 
             this.colors_UserControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.colors_UserControl1.Location = new System.Drawing.Point(830, 570);
-            this.colors_UserControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.colors_UserControl1.Margin = new System.Windows.Forms.Padding(2);
             this.colors_UserControl1.Name = "colors_UserControl1";
             this.colors_UserControl1.Size = new System.Drawing.Size(193, 87);
             this.colors_UserControl1.TabIndex = 95;
@@ -552,12 +554,22 @@
             this.label4.Text = "表";
             this.label4.Visible = false;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tap_mm_rb);
+            this.panel1.Controls.Add(this.tap_inch_rb);
+            this.panel1.Location = new System.Drawing.Point(212, 70);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(171, 32);
+            this.panel1.TabIndex = 100;
+            // 
             // TapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1333, 675);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.shitaana_checkbox);
@@ -577,9 +589,7 @@
             this.Controls.Add(this.label39);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.label43);
-            this.Controls.Add(this.tap_inch_rb);
             this.Controls.Add(this.tap_z_tb);
-            this.Controls.Add(this.tap_mm_rb);
             this.Controls.Add(this.tap_tool_combobox);
             this.Controls.Add(this.tap_tool_tb);
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -593,6 +603,8 @@
             this.pcd_panel.ResumeLayout(false);
             this.pcd_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -642,5 +654,6 @@
         private System.Windows.Forms.CheckBox shitaana_checkbox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
     }
 }

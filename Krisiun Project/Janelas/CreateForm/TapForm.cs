@@ -47,6 +47,26 @@ namespace Krisiun_Project.Janelas
             {
                 if(ferramenta is Tap tap)
                 {
+                    if(tap.BoolMM)
+                    {
+                        tap_tool_combobox.DataSource = TiposdeTap.TapMM;
+                        tap_tool_combobox.DisplayMember = "Descricao";
+                        tap_tool_combobox.ValueMember = "Descricao";
+                    }
+                    if(tap.BoolInch)
+                    {
+                        tap_tool_combobox.DataSource = TiposdeTap.TapInch;
+                        tap_tool_combobox.DisplayMember = "Descricao";
+                        tap_tool_combobox.ValueMember = "Descricao";
+                    }
+                    if(tap.Zpro)
+                    {
+                        tap_tool_combobox.DataSource = TiposdeTap.ZPro;
+                        tap_tool_combobox.DisplayMember = "Descricao";
+                        tap_tool_combobox.ValueMember = "Descricao";
+
+                    }
+
                     LoadTap(tap);
                 }
                 colors_UserControl1.LoadColor(ferramenta);
@@ -200,6 +220,7 @@ namespace Krisiun_Project.Janelas
             float fukasa;
             int tool;
             int kaiten;
+            float pitch;
 
             Tap tap = new Tap(peca);
 
@@ -208,13 +229,26 @@ namespace Krisiun_Project.Janelas
             tap.ToolName = tap_tool_combobox.Text;
             tap.Tipo = (TiposdeTap)tap_tool_combobox.SelectedItem;
             tap.Kei = selectedTap.Diametro;
-            tap.TapYama = selectedTap.Pitch;
+            tap.Unidade = selectedTap.Unidade;
+            tap.BoolMM = tap_mm_rb.Checked;
+            tap.BoolInch = tap_inch_rb.Checked;
+           if(float.TryParse(tap_pitch_tb.Text,out pitch))
+            {
+                if(tap_mm_rb.Checked)
+                { 
+                 tap.TapYama = pitch;
+                }
+                if(tap_inch_rb.Checked)
+                {
+                    tap.TapYama = 25.4f / pitch;
+                }
+            }
             if (float.TryParse(tap_q_tb.Text, out q)) { tap.Q = q; }
             if (float.TryParse(tap_k_tb.Text, out k)) { tap.K = k; }
             if (float.TryParse(tap_z_tb.Text, out fukasa)) { tap.Fukasa = fukasa; }
             if(int.TryParse(tap_kaiten_tb.Text,out kaiten)) { tap.Kaiten = kaiten; }
 
-            tap.Okuri = kaiten / tap.TapYama;
+            tap.Okuri = Convert.ToInt32((float)kaiten * tap.TapYama);
             tap.Description = selectedTap.Descricao;
             tap.Resfriamento = "M09";
             if (checkBox1.Checked) { tap.Resfriamento = "M08"; }
@@ -252,6 +286,8 @@ namespace Krisiun_Project.Janelas
             float k;
             float fukasa;
             int tool;
+            int kaiten;
+            float pitch;
             if (ferramenta is Tap tap)
             {
 
@@ -260,11 +296,25 @@ namespace Krisiun_Project.Janelas
                 tap.ToolName = tap_tool_combobox.Text;
                 tap.Tipo = (TiposdeTap)tap_tool_combobox.SelectedItem;
                 tap.Kei = selectedTap.Diametro;
-
+                tap.BoolMM = tap_mm_rb.Checked;
+                tap.BoolInch = tap_inch_rb.Checked;
+                tap.Unidade = selectedTap.Unidade;
                 if (float.TryParse(tap_q_tb.Text, out q)) { tap.Q = q; }
                 if (float.TryParse(tap_k_tb.Text, out k)) { tap.K = k; }
                 if (float.TryParse(tap_z_tb.Text, out fukasa)) { tap.Fukasa = fukasa; }
-
+                if (float.TryParse(tap_pitch_tb.Text, out pitch))
+                {
+                    if (tap_mm_rb.Checked)
+                    {
+                        tap.TapYama = pitch;
+                    }
+                    if (tap_inch_rb.Checked)
+                    {
+                        tap.TapYama = 25.4f / pitch;
+                    }
+                }
+                if (int.TryParse(tap_kaiten_tb.Text, out kaiten)) { tap.Kaiten = kaiten; }
+                tap.Okuri = Convert.ToInt32((float)kaiten * tap.TapYama);
                 tap.Description = selectedTap.Descricao;
                 tap.Resfriamento = "M09";
                 if (checkBox1.Checked) { tap.Resfriamento = "M08"; }
@@ -305,11 +355,14 @@ namespace Krisiun_Project.Janelas
         }   
         public void LoadTap(Tap tap)
         {
+            tap_mm_rb.Checked = tap.BoolMM;
+            tap_inch_rb.Checked = tap.BoolInch;
             TapCombobox = tap.Tipo;         
             tap_tool_tb.Text = tap.ToolNumber.ToString();
             tap_q_tb.Text = tap.Q.ToString();
             tap_k_tb.Text = tap.K.ToString();
             tap_z_tb.Text = tap.Fukasa.ToString();
+         
             lado_UserControl1.Bool_Frente = tap.Frente;
             lado_UserControl1.Bool_Tras = tap.Tras;
             colors_UserControl1.comboBox1.SelectedItem = tap.Color;

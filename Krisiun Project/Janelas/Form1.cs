@@ -665,14 +665,14 @@ namespace Krisiun_Project
         {
             if (ferramenta != null)
             {
-                if (ferramenta is Drills)
+                if (ferramenta is Drills drill)
                 {
-                    DrillsForm drillsFOrm = new DrillsForm(this, ferramentas, ferramenta, peca, Mydrills);
+                    DrillsForm drillsFOrm = new DrillsForm(this, ferramentas, drill, peca, Mydrills);
                     drillsFOrm.ShowDialog();
                 }
-                if(ferramenta is Tap)
+                if(ferramenta is Tap tap)
                 {
-                    TapForm tapForm = new TapForm(this, ferramentas, ferramenta, peca, Mydrills);
+                    TapForm tapForm = new TapForm(this, ferramentas, tap, peca, Mydrills);
                     tapForm.ShowDialog();
                 }
                 // Adicione condições para outras classes derivadas de Ferramenta, se houver.
