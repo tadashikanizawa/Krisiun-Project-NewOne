@@ -126,6 +126,7 @@
     <Compile Include="Ferramentas\MentoriB .cs" />
     <Compile Include="Ferramentas\Mentori.cs" />
     <Compile Include="G-Code\GCodeGenerator.cs" />
+    <Compile Include="G-Code\Kijun.cs" />
     <Compile Include="G-Code\Pastas.cs" />
     <Compile Include="Ferramentas\Tap.cs" />
     <Compile Include="Ferramentas\Coordenadas.cs" />
