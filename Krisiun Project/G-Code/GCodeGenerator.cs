@@ -436,7 +436,7 @@ namespace Krisiun_Project.G_Code
             }
             else {corte = "G98G84"; restodoprimeiro = "R5.0Z"; }
             float fukasa = tap.Fukasa;
-            if (fukasa < 0) { fukasa *= -1; }
+            if (fukasa > 0) { fukasa *= -1; }
        
             bool xinv = peca.xinv;
             bool yinv = peca.yinv;

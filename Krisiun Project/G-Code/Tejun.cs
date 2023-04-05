@@ -135,12 +135,14 @@ namespace Krisiun_Project.G_Code
                         "<th style=\"width: 50px;\">ツール</th>" + //4
                         "<th style=\"width: 50px;\">径</th>" + //5
                         "<th style=\"width: 150px;\">加工案内</th>" + //6
-                        "<th style =\"width: 50px;\">深さ</th>" + //7
+                        "<th style =\"width: 50px;\">深さ</th>" +
+                        "<th style =\"width: 75px;\">条件-" + peca.Material.Name.ToString() + "</th>" +
+                          "<th style =\"width: 75px;\">Q/K</th></tr>"   //7
 
-                        "<th style =\"width: 150px;\">条件-" + peca.Material.Name.ToString() + "</th></tr>" //8
+                        //"<th style =\"width: 150px;\">条件-" + peca.Material.Name.ToString() + "</th></tr>" //8
 
                         );
-
+                  
                     foreach (var objeto in ferramentaslist)
                     {
                         if (objeto.CoordenadasList != null)
@@ -215,6 +217,17 @@ namespace Krisiun_Project.G_Code
                         tabelaHtml.Append("<td><table style=\"border: 1px solid black;\"><tr><td style=\"border: 1px solid black; font-size: 8px;\">");//8
                         tabelaHtml.Append($"{"S" + objeto.Kaiten}</td></tr><tr><td style=\"border: 1px solid black; font-size: 8px;\">");//8
                         tabelaHtml.Append($"{"F" + objeto.Okuri}</td></tr></table></td>");//8
+                        if (objeto is Tap tap) // Verifica se o objeto é do tipo Tap
+                        {
+                            tabelaHtml.Append("<td><table style=\"border: 1px solid black;\"><tr><td style=\"border: 1px solid black; font-size: 8px;\">");//9
+                            tabelaHtml.Append($"{"Q:" + tap.Q}</td></tr><tr><td style=\"border: 1px solid black; font-size: 8px;\">");//9
+                            tabelaHtml.Append($"{"K" + tap.K}</td></tr></table></td>");//9
+                        }
+                        else
+                        {
+                            tabelaHtml.Append("<td></td>"); // Insere uma célula vazia se o objeto não for do tipo Tap
+                        }
+
                         tabelaHtml.Append(" </tr>");
                         numpro++;
                     }
