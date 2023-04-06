@@ -1,11 +1,13 @@
 ﻿using Krisiun_Project.Dados_aleatorios;
 using Krisiun_Project.Dados_Aleatorios1;
+using Krisiun_Project;
 using Krisiun_Project.G_Code;
 using Krisiun_Project.janela_principal;
 using Krisiun_Project.Numeros;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Krisiun_Project.Janelas
@@ -183,6 +185,25 @@ namespace Krisiun_Project.Janelas
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             peca.Material = (Material)comboBox1.SelectedItem;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            float diametroPeca = 100;
+            float diametroEndmill = 12;
+            float angulo = 0;
+            float profundidadePorPasso = 0.25f;
+            int passagensAcabamento = 3;
+            float margemSeguranca = 5;
+            float profundidadeZ = 10;
+            int numPassosZ = 4;
+            StringBuilder gcode = Kijunmen.GerarGCode11(diametroPeca, diametroEndmill, profundidadePorPasso, passagensAcabamento, margemSeguranca, profundidadeZ, numPassosZ,1);
+
+            // Salvar G-code em arquivo .txt na pasta raiz do aplicativo
+            string nomeArquivo = "gcode.txt";
+            Kijunmen.SalvarGCodeEmArquivo(gcode, nomeArquivo);
+
+            MessageBox.Show("G-code salvo com sucesso!");
         }
     }
 }

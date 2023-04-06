@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 
-namespace Krisiun_Project.Ferramentas.Endmills
+namespace Krisiun_Project
 {
     public class Kijunmen
     {
@@ -25,7 +26,144 @@ namespace Krisiun_Project.Ferramentas.Endmills
         public float KijunRd { get; set; }
         public int KijunShiage { get; set; }
 
+
+
+
         //O do chatgpt
+        public static StringBuilder GerarGCodecomZ(float diametroPeca, float diametroEndmill, float angulo, float profundidadePorPasso, int passagensAcabamento, float margemSeguranca, float profundidadeZ, int numPassosZ, float profundidadeCorte)
+        {
+            float raioPeca = diametroPeca / 2;
+            float raioEndmill = diametroEndmill / 2;
+            double anguloRadianos = angulo * Math.PI / 180;
+
+            StringBuilder gcode = new StringBuilder();
+
+            for (int passoZ = 0; passoZ < numPassosZ; passoZ++)
+            {
+                float zAtual = profundidadeZ * (passoZ + 1) / numPassosZ;
+                float profundidadeAtual = profundidadePorPasso;
+
+                while (profundidadeAtual <= profundidadeCorte)
+                {
+                    float raioEfetivo = raioPeca + raioEndmill - profundidadeAtual;
+                    float x = raioEfetivo * (float)Math.Cos(anguloRadianos);
+                    float y = raioEfetivo * (float)Math.Sin(anguloRadianos);
+
+                    gcode.AppendLine($"G01 X{x + margemSeguranca} Y0 Z{zAtual} F100"); // Movimento inicial com margem de segurança
+                    gcode.AppendLine($"G01 X{x} Y0 Z{zAtual} F100"); // Movimento inicial
+                    gcode.AppendLine($"G01 X{x} Y{y} Z{zAtual} F100"); // Movimento até o topo
+                    gcode.AppendLine($"G01 X{x} Y{-y} Z{zAtual} F100"); // Movimento até a base
+                    gcode.AppendLine($"G01 X{x + margemSeguranca} Y{-y} Z{zAtual} F100"); // Movimento final com margem de segurança
+
+                    profundidadeAtual += profundidadePorPasso;
+                }
+
+                // Passagens de acabamento
+                for (int i = 0; i < passagensAcabamento; i++)
+                {
+                    float raioEfetivo = raioPeca + raioEndmill - profundidadeCorte;
+                    float x = raioEfetivo * (float)Math.Cos(anguloRadianos);
+                    float y = raioEfetivo * (float)Math.Sin(anguloRadianos);
+
+                    gcode.AppendLine($"G01 X{x + margemSeguranca} Y0 Z{zAtual} F100"); // Movimento inicial com margem de segurança
+                    gcode.AppendLine($"G01 X{x} Y0 Z{zAtual} F100"); // Movimento inicial
+                    gcode.AppendLine($"G01 X{x} Y{y} Z{zAtual} F100"); // Movimento até o topo
+                    gcode.AppendLine($"G01 X{x} Y{-y} Z{zAtual} F100"); // Movimento até a base
+                    gcode.AppendLine($"G01 X{x + margemSeguranca} Y{-y} Z{zAtual} F100"); // Movimento final com margem de segurança
+                }
+            }
+
+            return gcode;
+        }
+            public static StringBuilder GerarGCode11(float diametroPeca, float diametroEndmill, float profundidadePorPasso, int passagensAcabamento, float margemSeguranca, float profundidadeZ, int numPassosZ, float profundidadeCorte)
+            {
+                float raioPeca = diametroPeca / 2;
+                float raioEndmill = diametroEndmill / 2;
+
+                StringBuilder gcode = new StringBuilder();
+
+                for (int passoZ = 0; passoZ < numPassosZ; passoZ++)
+                {
+                    float zAtual = profundidadeZ * (passoZ + 1) / numPassosZ;
+                    float profundidadeAtual = profundidadePorPasso;
+
+                    while (profundidadeAtual <= profundidadeCorte)
+                    {
+                        float x = raioPeca - raioEndmill + profundidadeAtual;
+                        float y = (float)Math.Sqrt(Math.Pow(raioPeca, 2) - Math.Pow(x, 2));
+
+                        gcode.AppendLine($"G01 X{x + margemSeguranca} Y0 Z{zAtual} F100"); // Movimento inicial com margem de segurança
+                        gcode.AppendLine($"G01 X{x} Y0 Z{zAtual} F100"); // Movimento inicial
+                        gcode.AppendLine($"G01 X{x} Y{y} Z{zAtual} F100"); // Movimento até o topo
+                        gcode.AppendLine($"G01 X{x} Y{-y} Z{zAtual} F100"); // Movimento até a base
+                        gcode.AppendLine($"G01 X{x + margemSeguranca} Y{-y} Z{zAtual} F100"); // Movimento final com margem de segurança
+
+                        profundidadeAtual += profundidadePorPasso;
+                    }
+
+                    // Passagens de acabamento
+                    for (int i = 0; i < passagensAcabamento; i++)
+                    {
+                        float x = raioPeca - raioEndmill + profundidadeCorte;
+                        float y = (float)Math.Sqrt(Math.Pow(raioPeca, 2) - Math.Pow(x, 2));
+
+                        gcode.AppendLine($"G01 X{x + margemSeguranca} Y0 Z{zAtual} F100"); // Movimento inicial com margem de segurança
+                        gcode.AppendLine($"G01 X{x} Y0 Z{zAtual} F100"); // Movimento inicial
+                        gcode.AppendLine($"G01 X{x} Y{y} Z{zAtual} F100"); // Movimento até o topo
+                        gcode.AppendLine($"G01 X{x} Y{-y} Z{zAtual} F100"); // Movimento até a base
+                        gcode.AppendLine($"G01 X{x + margemSeguranca} Y{-y} Z{zAtual} F100"); // Movimento final com margem de segurança
+                    }
+                }
+
+                return gcode;
+            }
+        
+
+        public static StringBuilder gerargodecomZBackup(float diametroPeca, float diametroEndmill, float angulo, float profundidadePorPasso, int passagensAcabamento, float margemSeguranca, float profundidadeZ, int numPassosZ, float profundidadeCorte)
+        {
+            float raioPeca = diametroPeca / 2;
+            float raioEndmill = diametroEndmill / 2;
+            double anguloRadianos = angulo * Math.PI / 180;
+
+            StringBuilder gcode = new StringBuilder();
+
+            for (int passoZ = 0; passoZ < numPassosZ; passoZ++)
+            {
+                float zAtual = profundidadeZ * (passoZ + 1) / numPassosZ;
+                float profundidadeAtual = profundidadePorPasso;
+
+                while (profundidadeAtual <= profundidadeCorte)
+                {
+                    float raioEfetivo = raioPeca + raioEndmill - profundidadeAtual;
+                    float x = raioEfetivo * (float)Math.Cos(anguloRadianos);
+                    float y = raioEfetivo * (float)Math.Sin(anguloRadianos);
+
+                    gcode.AppendLine($"G01 X{x + margemSeguranca} Y0 Z{zAtual} F100"); // Movimento inicial com margem de segurança
+                    gcode.AppendLine($"G01 X{x} Y0 Z{zAtual} F100"); // Movimento inicial
+                    gcode.AppendLine($"G01 X{x} Y{y} Z{zAtual} F100"); // Movimento até o topo
+                    gcode.AppendLine($"G01 X{x} Y{-y} Z{zAtual} F100"); // Movimento até a base
+                    gcode.AppendLine($"G01 X{x + margemSeguranca} Y{-y} Z{zAtual} F100"); // Movimento final com margem de segurança
+
+                    profundidadeAtual += profundidadePorPasso;
+                }
+
+                // Passagens de acabamento
+                for (int i = 0; i < passagensAcabamento; i++)
+                {
+                    float raioEfetivo = raioPeca + raioEndmill - profundidadeCorte;
+                    float x = raioEfetivo * (float)Math.Cos(anguloRadianos);
+                    float y = raioEfetivo * (float)Math.Sin(anguloRadianos);
+
+                    gcode.AppendLine($"G01 X{x + margemSeguranca} Y0 Z{zAtual} F100"); // Movimento inicial com margem de segurança
+                    gcode.AppendLine($"G01 X{x} Y0 Z{zAtual} F100"); // Movimento inicial
+                    gcode.AppendLine($"G01 X{x} Y{y} Z{zAtual} F100"); // Movimento até o topo
+                    gcode.AppendLine($"G01 X{x} Y{-y} Z{zAtual} F100"); // Movimento até a base
+                    gcode.AppendLine($"G01 X{x + margemSeguranca} Y{-y} Z{zAtual} F100"); // Movimento final com margem de segurança
+                }
+            }
+
+            return gcode;
+        }
         public static StringBuilder GerarGCode(float diametroPeca, float diametroEndmill, float angulo, float profundidadePorPasso, int passagensAcabamento, float margemSeguranca)
         {
             float raioPeca = diametroPeca / 2;
@@ -259,6 +397,15 @@ namespace Krisiun_Project.Ferramentas.Endmills
 
             }
             return kijun_code;
+        }
+        public static void SalvarGCodeEmArquivo(StringBuilder gcode, string nomeArquivo)
+        {
+            string caminhoArquivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, nomeArquivo);
+
+            using (StreamWriter sw = new StreamWriter(caminhoArquivo, false, Encoding.UTF8))
+            {
+                sw.Write(gcode.ToString());
+            }
         }
     }
 }
