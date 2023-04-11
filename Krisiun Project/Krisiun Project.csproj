@@ -154,6 +154,12 @@
     <Compile Include="Janelas\CreateForm\DrillsForm.Designer.cs">
       <DependentUpon>DrillsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Janelas\CreateForm\Kijunmen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Janelas\CreateForm\Kijunmen.Designer.cs">
+      <DependentUpon>Kijunmen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Janelas\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Janelas\CreateForm\DrillsForm.resx">
       <DependentUpon>DrillsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Janelas\CreateForm\Kijunmen.resx">
+      <DependentUpon>Kijunmen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Janelas\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
