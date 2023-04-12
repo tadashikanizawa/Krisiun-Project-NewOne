@@ -25,6 +25,7 @@ namespace Krisiun_Project
         public float KijunOkuri { get; set; }
         public float KijunRd { get; set; }
         public int KijunShiage { get; set; }
+        public float KijunAngle { get; set; }
 
 
 
@@ -241,6 +242,67 @@ namespace Krisiun_Project
             }
         }
         //O meu
+
+        //o meu plus
+        public static StringBuilder kijunkakou1(Kijunmen kijunmen, Pitch_principal.Peca peca, RadioButton front, RadioButton back, RadioButton right, RadioButton left)
+        {
+            // ... (restante do código) ...
+            StringBuilder kijun_code = new StringBuilder();
+            float haba = kijunmen.KijunHaba / 2;
+            float anzen = kijunmen.KijunAnzen;
+            float kei = kijunmen.KijunKei / 2;
+            float y = kijunmen.KijunHaba;
+            float z = kijunmen.KijunZ;
+            float okuri = kijunmen.KijunOkuri;
+            float rb = kijunmen.KijunRd;
+            float seihin = peca.height / 2;
+            float pontodepartidax = haba + anzen + kei;
+            float pontodepartiday = seihin + anzen + kei;
+            float iniciodocorte = seihin + kei; //positivo
+            y += kei;
+            int shiage = kijunmen.KijunShiage;
+
+            string s_pontodepartidax = pontodepartidax.ToString();
+            string s_pontodepartiday = pontodepartiday.ToString();
+            string s_z = z.ToString();
+            string inicioy = iniciodocorte.ToString();
+            string s_y = y.ToString();
+            // Adicionar a propriedade de ângulo na classe Kijunmen
+            float angle = kijunmen.KijunAngle; // ângulo em graus
+            float angleRadians = (float)(angle * Math.PI / 180); // converter ângulo para radianos
+
+            // Calcular as novas coordenadas X e Y com base no ângulo
+            float newX = (float)(Math.Cos(angleRadians) * s_pontodepartidax - Math.Sin(angleRadians) * s_pontodepartiday);
+            float newY = (float)(Math.Sin(angleRadians) * s_pontodepartidax + Math.Cos(angleRadians) * s_pontodepartiday);
+
+            // Atualizar as coordenadas X e Y no G-code
+            string s_newX = newX.ToString();
+            string s_newY = newY.ToString();
+            if (newX % 1 == 0) { s_newX = s_newX + "."; }
+            if (newY % 1 == 0) { s_newY = s_newY + "."; }
+
+            if (front.Checked)
+            {
+                // ... (restante do código) ...
+
+                while (iniciodocorte > y)
+                {
+                    // ... (restante do código) ...
+
+                    // Atualizar as coordenadas X e Y nos comandos G-code
+                    kijun_code.AppendLine("X" + s_newX + "Y-" + s_newY + "\r\n" +
+                               "X" + s_newX + "Y-" + s_newY + "Z-" + s_z + "\r\n" +
+                               "G01X" + s_newX + "Y-" + inicioy + "F500" + "\r\n" +
+                               "G01X-" + s_newX + "Y-" + inicioy + "F" + okuri.ToString() + "\r\n" +
+                               "G0X-" + s_newX + "Y-" + s_newY + "\r\n" +
+                               "G0Z85." + "\r\n");
+
+                    // ... (restante do código) ...
+                };
+            }
+            return kijun_code;
+        }
+
         public static StringBuilder kijunkakou(Kijunmen kijunmen, Pitch_principal.Peca peca, RadioButton front, RadioButton back, RadioButton right, RadioButton left)
         {
             StringBuilder kijun_code = new StringBuilder();
